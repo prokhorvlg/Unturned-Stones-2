@@ -1,0 +1,61 @@
+<!doctype>
+<html>
+  <head>
+    <title></title>
+    <!--     Custom Styles     -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1 id="colorator">colorator</h1>
+
+<p>Colorize your text for the terminal</p>
+
+<p><a href="https://travis-ci.org/octopress/colorator"><img src="https://travis-ci.org/octopress/colorator.png?branch=master" alt="Build Status" /></a></p>
+
+<h2 id="example">Example</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"this string"</span><span class="p">.</span><span class="nf">red</span>
+<span class="c1"># =&gt; \e[31mthis string\e[0m</span>
+<span class="s2">"my string"</span><span class="p">.</span><span class="nf">blue</span>
+<span class="c1"># =&gt; \e[34mmy string\e[0m</span>
+<span class="c1"># etc...</span>
+</code></pre></div></div>
+
+<h2 id="supported-colors">Supported Colors</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">red</code></li>
+  <li><code class="highlighter-rouge">black</code></li>
+  <li><code class="highlighter-rouge">green</code></li>
+  <li><code class="highlighter-rouge">yellow</code></li>
+  <li><code class="highlighter-rouge">magenta</code></li>
+  <li><code class="highlighter-rouge">white</code></li>
+  <li><code class="highlighter-rouge">blue</code></li>
+  <li><code class="highlighter-rouge">cyan</code></li>
+  <li><code class="highlighter-rouge">bold</code></li>
+</ul>
+
+<h2 id="other-supported-ansi-methods">Other supported Ansi methods</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">clear_line</code></li>
+  <li><code class="highlighter-rouge">has_ansi?</code>, <code class="highlighter-rouge">has_color?</code></li>
+  <li><code class="highlighter-rouge">strip_ansi</code>, <code class="highlighter-rouge">strip_color</code></li>
+  <li><code class="highlighter-rouge">reset_ansi</code>, <code class="highlighter-rouge">reset_color</code></li>
+  <li><code class="highlighter-rouge">clear_screen</code></li>
+  <li><code class="highlighter-rouge">ansi_jump</code></li>
+</ul>
+
+<h2 id="why">Why</h2>
+
+<p>There are a bunch of gems that provide functionality like this, but none have
+as simple an API as this. Just call <code class="highlighter-rouge">"string".color</code> and your text will be
+colorized.</p>
+
+<h2 id="license">License</h2>
+
+<p>MIT. Written as a single Ruby file by Brandon Mathis, converted into a gem by
+Parker Moore.</p>
+
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype>
+<html>
+  <head>
+    <title></title>
+    <!--     Custom Styles     -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1 id="http_parserrb">http_parser.rb</h1>
+
+<p>A simple callback-based HTTP request/response parser for writing http
+servers, clients and proxies.</p>
+
+<p>This gem is built on top of <a href="http://github.com/joyent/http-parser">joyent/http-parser</a> and its java port <a href="http://github.com/http-parser/http-parser.java">http-parser/http-parser.java</a>.</p>
+
+<h2 id="supported-platforms">Supported Platforms</h2>
+
+<p>This gem aims to work on all major Ruby platforms, including:</p>
+
+<ul>
+  <li>MRI 1.8 and 1.9</li>
+  <li>Rubinius</li>
+  <li>JRuby</li>
+  <li>win32</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"http/parser"</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="no">Http</span><span class="o">::</span><span class="no">Parser</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="n">parser</span><span class="p">.</span><span class="nf">on_headers_complete</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span>
+  <span class="nb">p</span> <span class="n">parser</span><span class="p">.</span><span class="nf">http_version</span>
+
+  <span class="nb">p</span> <span class="n">parser</span><span class="p">.</span><span class="nf">http_method</span> <span class="c1"># for requests</span>
+  <span class="nb">p</span> <span class="n">parser</span><span class="p">.</span><span class="nf">request_url</span>
+
+  <span class="nb">p</span> <span class="n">parser</span><span class="p">.</span><span class="nf">status_code</span> <span class="c1"># for responses</span>
+
+  <span class="nb">p</span> <span class="n">parser</span><span class="p">.</span><span class="nf">headers</span>
+<span class="k">end</span>
+
+<span class="n">parser</span><span class="p">.</span><span class="nf">on_body</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span> <span class="o">|</span><span class="n">chunk</span><span class="o">|</span>
+  <span class="c1"># One chunk of the body</span>
+  <span class="nb">p</span> <span class="n">chunk</span>
+<span class="k">end</span>
+
+<span class="n">parser</span><span class="p">.</span><span class="nf">on_message_complete</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span>
+  <span class="c1"># Headers and body is all parsed</span>
+  <span class="nb">puts</span> <span class="s2">"Done!"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h1 id="feed-raw-data-from-the-socket-to-the-parser">Feed raw data from the socket to the parser</h1>
+<p><code class="highlighter-rouge">parser &lt;&lt; raw_data</code></p>
+
+<h2 id="advanced-usage">Advanced Usage</h2>
+
+<h3 id="accept-callbacks-on-an-object">Accept callbacks on an object</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">MyHttpConnection</span>
+  <span class="k">def</span> <span class="nf">connection_completed</span>
+    <span class="vi">@parser</span> <span class="o">=</span> <span class="no">Http</span><span class="o">::</span><span class="no">Parser</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">receive_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="vi">@parser</span> <span class="o">&lt;&lt;</span> <span class="n">data</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">on_message_begin</span>
+    <span class="vi">@headers</span> <span class="o">=</span> <span class="kp">nil</span>
+    <span class="vi">@body</span> <span class="o">=</span> <span class="s1">''</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">on_headers_complete</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+    <span class="vi">@headers</span> <span class="o">=</span> <span class="n">headers</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">on_body</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    <span class="vi">@body</span> <span class="o">&lt;&lt;</span> <span class="n">chunk</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">on_message_complete</span>
+    <span class="nb">p</span> <span class="p">[</span><span class="vi">@headers</span><span class="p">,</span> <span class="vi">@body</span><span class="p">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="stop-parsing-after-headers">Stop parsing after headers</h3>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">parser</span> <span class="o">=</span> <span class="no">Http</span><span class="o">::</span><span class="no">Parser</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">parser</span><span class="p">.</span><span class="nf">on_headers_complete</span> <span class="o">=</span> <span class="nb">proc</span><span class="p">{</span> <span class="ss">:stop</span> <span class="p">}</span>
+
+<span class="n">offset</span> <span class="o">=</span> <span class="n">parser</span> <span class="o">&lt;&lt;</span> <span class="n">request_data</span>
+<span class="n">body</span> <span class="o">=</span> <span class="n">request_data</span><span class="p">[</span><span class="n">offset</span><span class="o">..-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+  </body>
+</html>

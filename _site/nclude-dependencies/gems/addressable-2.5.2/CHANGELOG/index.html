@@ -1,0 +1,299 @@
+<!doctype>
+<html>
+  <head>
+    <title></title>
+    <!--     Custom Styles     -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1 id="addressable-252">Addressable 2.5.2</h1>
+<ul>
+  <li>better support for frozen string literals</li>
+  <li>fixed bug w/ uppercase characters in scheme</li>
+  <li>IDNA errors w/ emoji URLs</li>
+  <li>compatibility w/ public_suffix 3.x</li>
+</ul>
+
+<h1 id="addressable-251">Addressable 2.5.1</h1>
+<ul>
+  <li>allow unicode normalization to be disabled for URI Template expansion</li>
+  <li>removed duplicate test</li>
+</ul>
+
+<h1 id="addressable-250">Addressable 2.5.0</h1>
+<ul>
+  <li>dropping support for Ruby 1.9</li>
+  <li>adding support for Ruby 2.4 preview</li>
+  <li>add support for public suffixes and tld; first runtime dependency</li>
+  <li>hostname escaping should match RFC; underscores in hostnames no longer escaped</li>
+  <li>paths beginning with // and missing an authority are now considered invalid</li>
+  <li>validation now also takes place after setting a path</li>
+  <li>handle backslashes in authority more like a browser for <code class="highlighter-rouge">heuristic_parse</code></li>
+  <li>unescaped backslashes in host now raise an <code class="highlighter-rouge">InvalidURIError</code></li>
+  <li><code class="highlighter-rouge">merge!</code>, <code class="highlighter-rouge">join!</code>, <code class="highlighter-rouge">omit!</code> and <code class="highlighter-rouge">normalize!</code> don’t disable deferred validation</li>
+  <li><code class="highlighter-rouge">heuristic_parse</code> now trims whitespace before parsing</li>
+  <li>host parts longer than 63 bytes will be ignored and not passed to libidn</li>
+  <li>normalized values always encoded as UTF-8</li>
+</ul>
+
+<h1 id="addressable-240">Addressable 2.4.0</h1>
+<ul>
+  <li>support for 1.8.x dropped</li>
+  <li>double quotes in a host now raises an error</li>
+  <li>newlines in host will no longer get unescaped during normalization</li>
+  <li>stricter handling of bogus scheme values</li>
+  <li>stricter handling of encoded port values</li>
+  <li>calling <code class="highlighter-rouge">require 'addressable'</code> will now load both the URI and Template files</li>
+  <li>assigning to the <code class="highlighter-rouge">hostname</code> component with an <code class="highlighter-rouge">IPAddr</code> object is now supported</li>
+  <li>assigning to the <code class="highlighter-rouge">origin</code> component is now supported</li>
+  <li>fixed minor bug where an exception would be thrown for a missing ACE suffix</li>
+  <li>better partial expansion of URI templates</li>
+</ul>
+
+<h1 id="addressable-238">Addressable 2.3.8</h1>
+<ul>
+  <li>fix warnings</li>
+  <li>update dependency gems</li>
+  <li>support for 1.8.x officially deprecated</li>
+</ul>
+
+<h1 id="addressable-237">Addressable 2.3.7</h1>
+<ul>
+  <li>fix scenario in which invalid URIs don’t get an exception until inspected</li>
+  <li>handle hostnames with two adjacent periods correctly</li>
+  <li>upgrade of RSpec</li>
+</ul>
+
+<h1 id="addressable-236">Addressable 2.3.6</h1>
+<ul>
+  <li>normalization drops empty query string</li>
+  <li>better handling in template extract for missing values</li>
+  <li>template modifier for <code class="highlighter-rouge">'?'</code> now treated as optional</li>
+  <li>fixed issue where character class parameters were modified</li>
+  <li>templates can now be tested for equality</li>
+  <li>added <code class="highlighter-rouge">:sorted</code> option to normalization of query strings</li>
+  <li>fixed issue with normalization of hosts given in <code class="highlighter-rouge">'example.com.'</code> form</li>
+</ul>
+
+<h1 id="addressable-235">Addressable 2.3.5</h1>
+<ul>
+  <li>added Addressable::URI#empty? method</li>
+  <li>Addressable::URI#hostname methods now strip square brackets from IPv6 hosts</li>
+  <li>compatibility with Net::HTTP in Ruby 2.0.0</li>
+  <li>Addressable::URI#route_from should always give relative URIs</li>
+</ul>
+
+<h1 id="addressable-234">Addressable 2.3.4</h1>
+<ul>
+  <li>fixed issue with encoding altering its inputs</li>
+  <li>query string normalization now leaves ‘;’ characters alone</li>
+  <li>FakeFS is detected before attempting to load unicode tables</li>
+  <li>additional testing to ensure frozen objects don’t cause problems</li>
+</ul>
+
+<h1 id="addressable-233">Addressable 2.3.3</h1>
+<ul>
+  <li>fixed issue with converting common primitives during template expansion</li>
+  <li>fixed port encoding issue</li>
+  <li>removed a few warnings</li>
+  <li>normalize should now ignore %2B in query strings</li>
+  <li>the IDNA logic should now be handled by libidn in Ruby 1.9</li>
+  <li>no template match should now result in nil instead of an empty MatchData</li>
+  <li>added license information to gemspec</li>
+</ul>
+
+<h1 id="addressable-232">Addressable 2.3.2</h1>
+<ul>
+  <li>added Addressable::URI#default_port method</li>
+  <li>fixed issue with Marshalling Unicode data on Windows</li>
+  <li>improved heuristic parsing to better handle IPv4 addresses</li>
+</ul>
+
+<h1 id="addressable-231">Addressable 2.3.1</h1>
+<ul>
+  <li>fixed missing unicode data file</li>
+</ul>
+
+<h1 id="addressable-230">Addressable 2.3.0</h1>
+<ul>
+  <li>updated Addressable::Template to use RFC 6570, level 4</li>
+  <li>fixed compatibility problems with some versions of Ruby</li>
+  <li>moved unicode tables into a data file for performance reasons</li>
+  <li>removing support for multiple query value notations</li>
+</ul>
+
+<h1 id="addressable-228">Addressable 2.2.8</h1>
+<ul>
+  <li>fixed issues with dot segment removal code</li>
+  <li>form encoding can now handle multiple values per key</li>
+  <li>updated development environment</li>
+</ul>
+
+<h1 id="addressable-227">Addressable 2.2.7</h1>
+<ul>
+  <li>fixed issues related to Addressable::URI#query_values=</li>
+  <li>the Addressable::URI.parse method is now polymorphic</li>
+</ul>
+
+<h1 id="addressable-226">Addressable 2.2.6</h1>
+<ul>
+  <li>changed the way ambiguous paths are handled</li>
+  <li>fixed bug with frozen URIs</li>
+  <li>https supported in heuristic parsing</li>
+</ul>
+
+<h1 id="addressable-225">Addressable 2.2.5</h1>
+<ul>
+  <li>‘parsing’ a pre-parsed URI object is now a dup operation</li>
+  <li>introduced conditional support for libidn</li>
+  <li>fixed normalization issue on ampersands in query strings</li>
+  <li>added additional tests around handling of query strings</li>
+</ul>
+
+<h1 id="addressable-224">Addressable 2.2.4</h1>
+<ul>
+  <li>added origin support from draft-ietf-websec-origin-00</li>
+  <li>resolved issue with attempting to navigate below root</li>
+  <li>fixed bug with string splitting in query strings</li>
+</ul>
+
+<h1 id="addressable-223">Addressable 2.2.3</h1>
+<ul>
+  <li>added :flat_array notation for query strings</li>
+</ul>
+
+<h1 id="addressable-222">Addressable 2.2.2</h1>
+<ul>
+  <li>fixed issue with percent escaping of ‘+’ character in query strings</li>
+</ul>
+
+<h1 id="addressable-221">Addressable 2.2.1</h1>
+<ul>
+  <li>added support for application/x-www-form-urlencoded.</li>
+</ul>
+
+<h1 id="addressable-220">Addressable 2.2.0</h1>
+<ul>
+  <li>added site methods</li>
+  <li>improved documentation</li>
+</ul>
+
+<h1 id="addressable-212">Addressable 2.1.2</h1>
+<ul>
+  <li>added HTTP request URI methods</li>
+  <li>better handling of Windows file paths</li>
+  <li>validation_deferred boolean replaced with defer_validation block</li>
+  <li>normalization of percent-encoded paths should now be correct</li>
+  <li>fixed issue with constructing URIs with relative paths</li>
+  <li>fixed warnings</li>
+</ul>
+
+<h1 id="addressable-211">Addressable 2.1.1</h1>
+<ul>
+  <li>more type checking changes</li>
+  <li>fixed issue with unicode normalization</li>
+  <li>added method to find template defaults</li>
+  <li>symbolic keys are now allowed in template mappings</li>
+  <li>numeric values and symbolic values are now allowed in template mappings</li>
+</ul>
+
+<h1 id="addressable-210">Addressable 2.1.0</h1>
+<ul>
+  <li>refactored URI template support out into its own class</li>
+  <li>removed extract method due to being useless and unreliable</li>
+  <li>removed Addressable::URI.expand_template</li>
+  <li>removed Addressable::URI#extract_mapping</li>
+  <li>added partial template expansion</li>
+  <li>fixed minor bugs in the parse and heuristic_parse methods</li>
+  <li>fixed incompatibility with Ruby 1.9.1</li>
+  <li>fixed bottleneck in Addressable::URI#hash and Addressable::URI#to_s</li>
+  <li>fixed unicode normalization exception</li>
+  <li>updated query_values methods to better handle subscript notation</li>
+  <li>worked around issue with freezing URIs</li>
+  <li>improved specs</li>
+</ul>
+
+<h1 id="addressable-202">Addressable 2.0.2</h1>
+<ul>
+  <li>fixed issue with URI template expansion</li>
+  <li>fixed issue with percent escaping characters 0-15</li>
+</ul>
+
+<h1 id="addressable-201">Addressable 2.0.1</h1>
+<ul>
+  <li>fixed issue with query string assignment</li>
+  <li>fixed issue with improperly encoded components</li>
+</ul>
+
+<h1 id="addressable-200">Addressable 2.0.0</h1>
+<ul>
+  <li>the initialize method now takes an options hash as its only parameter</li>
+  <li>added query_values method to URI class</li>
+  <li>completely replaced IDNA implementation with pure Ruby</li>
+  <li>renamed Addressable::ADDRESSABLE_VERSION to Addressable::VERSION</li>
+  <li>completely reworked the Rakefile</li>
+  <li>changed the behavior of the port method significantly</li>
+  <li>Addressable::URI.encode_segment, Addressable::URI.unencode_segment renamed</li>
+  <li>documentation is now in YARD format</li>
+  <li>more rigorous type checking</li>
+  <li>to_str method implemented, implicit conversion to Strings now allowed</li>
+  <li>Addressable::URI#omit method added, Addressable::URI#merge method replaced</li>
+  <li>updated URI Template code to match v 03 of the draft spec</li>
+  <li>added a bunch of new specifications</li>
+</ul>
+
+<h1 id="addressable-104">Addressable 1.0.4</h1>
+<ul>
+  <li>switched to using RSpec’s pending system for specs that rely on IDN</li>
+  <li>fixed issue with creating URIs with paths that are not prefixed with ‘/’</li>
+</ul>
+
+<h1 id="addressable-103">Addressable 1.0.3</h1>
+<ul>
+  <li>implemented a hash method</li>
+</ul>
+
+<h1 id="addressable-102">Addressable 1.0.2</h1>
+<ul>
+  <li>fixed minor bug with the extract_mapping method</li>
+</ul>
+
+<h1 id="addressable-101">Addressable 1.0.1</h1>
+<ul>
+  <li>fixed minor bug with the extract_mapping method</li>
+</ul>
+
+<h1 id="addressable-100">Addressable 1.0.0</h1>
+<ul>
+  <li>heuristic parse method added</li>
+  <li>parsing is slightly more strict</li>
+  <li>replaced to_h with to_hash</li>
+  <li>fixed routing methods</li>
+  <li>improved specifications</li>
+  <li>improved heckle rake task</li>
+  <li>no surviving heckle mutations</li>
+</ul>
+
+<h1 id="addressable-012">Addressable 0.1.2</h1>
+<ul>
+  <li>improved normalization</li>
+  <li>fixed bug in joining algorithm</li>
+  <li>updated specifications</li>
+</ul>
+
+<h1 id="addressable-011">Addressable 0.1.1</h1>
+<ul>
+  <li>updated documentation</li>
+  <li>added URI Template variable extraction</li>
+</ul>
+
+<h1 id="addressable-010">Addressable 0.1.0</h1>
+<ul>
+  <li>initial release</li>
+  <li>implementation based on RFC 3986, 3987</li>
+  <li>support for IRIs via libidn</li>
+  <li>support for the URI Template draft spec</li>
+</ul>
+
+  </body>
+</html>
