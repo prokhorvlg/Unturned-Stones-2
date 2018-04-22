@@ -1,11 +1,99 @@
 <!doctype>
-<html>
+<html lang="en">
   <head>
-    <title></title>
     <!--     Custom Styles     -->
-    <link href="{% link assets/css/style.css %}" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="In the distant future, during one of many nameless interstellar conflicts, a technology was perfected that could replace a persons morality, ethics, and empathy - named the prosthetic soul.">
+    <meta name="author" content="prokhorVLG">
+    <meta name="revisit-after" content="5 days">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <title>Unturned Stones</title>
+
+    <!--     jQuery     -->
+    <!--     The jQuery library.     -->
+    <script src="{% link assets/js/jQuery/jquery-3.3.1.min.js %}"></script>
+    <link rel="stylesheet" href="{% link assets/css/jQuery/jquery-ui.min.css %}">
+    <link rel="stylesheet" href="{% link assets/css/jQuery/jquery-ui.theme.min.css %}">
+    <script src="{% link assets/js/jQuery/jquery-ui.min.js %}"></script>
+
+    <!--     jQuery: Shuffle Letters     -->
+    <!--    The plugin that shuffles letters on certain text elements.     -->
+    <script src="{% link assets/js/jQuery-plugins/jquery.shuffleLetters.js %}"></script>
+
+    <!--     Animate on Scroll library     -->
+    <!--     The library that animates elements when you scroll to/away from them.     -->
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    
+
+    <!--     Bootstrap Core     -->
+    <!--     For setting up page layouts.     -->
+    <link href="{% link assets/css/bootstrap/bootstrap.min.css %}" rel="stylesheet">
+    <script src="{% link assets/js/bootstrap/bootstrap.min.js %}"></script>
+
+    <!--     Web Fonts     -->
+    <!--     Adds the site fonts.     -->
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!--     Custom Styles     -->
+    <!--     Adds my site styles.     -->
+    <link href="{% link assets/css/main-style.css %}" rel="stylesheet">
+
+    <!-- <link href="{% link assets/css/pushmenu/icons.css %}" rel="stylesheet"> -->
+    <link href="{% link assets/css/pushmenu/component.css %}" rel="stylesheet">
+
+    <!--     Normalize     -->
+    <!--     Adds cross-browser consistency and fixes some bugs.     -->
+    <link href="{% link assets/css/normalize/normalize.css %}" rel="stylesheet">
+
+    <!--     Custom Scripts     -->
+    <script src="{% link assets/js/site/site-parallax.js %}"></script>
+    <script src="{% link assets/js/site/site-shufflequote.js %}"></script>
+    <script src="{% link assets/js/pushmenu/modernizr.custom.js %}"></script>
+    
   </head>
   <body>
-    {{ content }}
+
+    <div class="mpc-side color-bg-1">
+      <div class="hamburger hamburger--emphatic" id="trigger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+    </div>
+    <div class="siteContainer color-bg-2-l color-primary-l mpc-container">
+      <div class="navContainer mp-pusher" id="mp-pusher">
+
+        <!--     Includes the navigation menu on the side of the site.     -->
+        {% include nav.html %}
+
+        <!--     Contains the site, which is pushed when the nav is opened.     -->
+        <div class="contentContainer mpc-scroller">
+
+          <!--     Includes the header at the top of the site.     -->
+          {% include header.html %}
+
+          <!--     Contains whatever content is templated into the page.     -->
+          {{ content }}
+
+          <!--     Includes the footer at the end of the site.     -->
+          {% include footer.html %}
+
+        </div>
+      </div>
+    </div>
+    <!--     Pushmenu     -->
+    <script src="{% link assets/js/pushmenu/classie.js %}"></script>
+    <script src="{% link assets/js/pushmenu/mlpushmenu.js %}"></script>
+    <script>
+      new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+    </script>
+
   </body>
 </html>

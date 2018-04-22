@@ -1,0 +1,308 @@
+/* 
+
+Unturned Styles
+Hello, developer :)
+Main style sheet for the Unturned Stones website.
+
+- Colors
+To find colors on this style sheet, look up the following values:
+color-primary          : Content
+color-primary-fade     : Content, slightly less prominent
+color-highlight        : Highlight (links, buttons)
+color-highlight-hov    : Highlight, hovered
+color-bg-1             : Generic background 1
+color-bg-2             : Generic background 2
+color-bg-3             : Generic background 3
+
+*/
+
+/* - General Layout                     */
+
+/*body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}*/
+
+/* -- default.html Layout               */
+
+/*.siteContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.navContainer {
+  height: 100%;
+  width: 0;
+}
+
+.contentContainer {
+  height: 100vh;
+  width: 100vw;
+}*/
+
+/* - Style Guide                        */
+/*  Moody. Dark. Neon highlight colors. That's what Unturned Styles is all about... */
+
+/* -- Fonts & Typography                */
+/*  The typographical styles for headers, paragraphs, spans, and other texts. */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+}
+
+body {
+  font-family: 'Cabin', Arial, sans-serif;
+  /* color-primary */
+  color: rgba(255,255,255,1);
+}
+
+p {
+  font-family: 'Cabin', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.font-title {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+}
+
+.font-body {
+  font-family: 'Cabin', Arial, sans-serif;
+}
+
+.justify {
+  text-align: justify;
+}
+
+/* -- Browser Specific                  */
+/*  Styles for selected elements and text, etc. */
+
+::selection {
+  color: white;
+  background: #222222;
+  text-shadow: none;
+}
+
+img::selection {
+  color: white;
+  background: transparent; }
+
+/* -- Dividers & Horizontal Rules       */
+/*  Styles for various divider elements. */
+
+hr {
+  width: 150px;
+  border-width: 2px;
+  /* color-primary */
+  border-color: rgba(255,255,255,1);
+}
+
+hr.full {
+  width: 100%;
+  border-width: 1px;
+  /* color-primary */
+  border-color: rgba(255,255,255,1);
+}
+
+hr.left {
+  margin-left: 0px;
+}
+
+hr.right {
+  margin-right: 0px;
+}
+
+/* -- Colors                            */
+/*  Self-explanatory. Used for coloring any non-specific colors and is referred t generically. */
+
+.color-primary {
+  /* color-primary */
+  color: rgba(255,255,255,1);
+}
+
+.color-primary-fade {
+  /* color-primary-fade */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.color-highlight {
+  /* color-highlight */
+  color: rgba(247, 169, 42 ,1);
+}
+
+.color-primary-l {
+  /* color-primary */
+  color: rgba(5,5,5,1);
+}
+
+.color-bg-1 {
+  /* color-bg-1 */
+  background-color: #222;
+}
+
+.color-bg-2 {
+  /* color-bg-2 */
+  background-color: #151515;
+}
+
+.color-bg-3 {
+  /* color-bg-3 */
+  background-color: #111;
+}
+
+.color-bg-1-l {
+  /* color-bg-1 */
+  background-color: rgba(220,220,220,1);
+}
+
+.color-bg-2-l {
+  /* color-bg-2 */
+  background-color: rgba(255,255,255,1);
+}
+
+.color-bg-3-l {
+  /* color-bg-3 */
+  background-color: rgba(240,240,240,1);
+}
+
+/* - Elements                           */
+
+/* -- Buttons (individual)              */
+
+
+
+/* -- Hamburger Button                  */
+/* Thanks to */
+
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  .hamburger:hover {
+    opacity: 0.7; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+    .hamburger--3dx .hamburger-box {
+  perspective: 80px; }
+
+.hamburger--3dx .hamburger-inner {
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .hamburger--3dx .hamburger-inner::before, .hamburger--3dx .hamburger-inner::after {
+    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.hamburger--3dx.is-active .hamburger-inner {
+  background-color: transparent;
+  transform: rotateY(180deg); }
+  .hamburger--3dx.is-active .hamburger-inner::before {
+    transform: translate3d(0, 10px, 0) rotate(45deg); }
+  .hamburger--3dx.is-active .hamburger-inner::after {
+    transform: translate3d(0, -10px, 0) rotate(-45deg); }
+
+    .hamburger--3dy .hamburger-box {
+  perspective: 80px; }
+
+.hamburger--3dy .hamburger-inner {
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .hamburger--3dy .hamburger-inner::before, .hamburger--3dy .hamburger-inner::after {
+    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.hamburger--3dy.is-active .hamburger-inner {
+  background-color: transparent;
+  transform: rotateX(-180deg); }
+  .hamburger--3dy.is-active .hamburger-inner::before {
+    transform: translate3d(0, 10px, 0) rotate(45deg); }
+  .hamburger--3dy.is-active .hamburger-inner::after {
+    transform: translate3d(0, -10px, 0) rotate(-45deg); }
+
+    .hamburger--emphatic {
+  overflow: hidden; }
+  .hamburger--emphatic .hamburger-inner {
+    transition: background-color 0.125s 0.175s ease-in; }
+    .hamburger--emphatic .hamburger-inner::before {
+      left: 0;
+      transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in; }
+    .hamburger--emphatic .hamburger-inner::after {
+      top: 10px;
+      right: 0;
+      transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in; }
+  .hamburger--emphatic.is-active .hamburger-inner {
+    transition-delay: 0s;
+    transition-timing-function: ease-out;
+    background-color: transparent; }
+    .hamburger--emphatic.is-active .hamburger-inner::before {
+      left: -80px;
+      top: -80px;
+      transform: translate3d(80px, 80px, 0) rotate(45deg);
+      transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1); }
+    .hamburger--emphatic.is-active .hamburger-inner::after {
+      right: -80px;
+      top: -80px;
+      transform: translate3d(-80px, 80px, 0) rotate(-45deg);
+      transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1); }
+
+
+
+/* -- Links (in-text)                   */
+
+a {
+  /* color-highlight */
+  color: rgba(247, 169, 42 ,1);
+  transition: all 0.2s; 
+}
+
+a:focus, a:hover {
+  /* color-highlight-hov */
+  color: rgba(250, 201, 127, 1);
+}
+
+/* -- Icons                             */
+
+/* -- Text Sections                     */
+
+.quickPadding {
+  padding: 20px;
+}
+
+/* -- Image Sections                    */
+
