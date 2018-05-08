@@ -24,6 +24,11 @@
     <!--    The plugin that shuffles letters on certain text elements.     -->
     <script src="/assets/js/jQuery-plugins/jquery.shuffleLetters.js"></script>
 
+    <!--     jQuery: Terminal     -->
+    <!--    The plugin that operates the terminal component.     -->
+    <script src="/assets/js/jQuery-terminal/jquery.terminal.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/jQuery-terminal/jquery.terminal.css">
+
     <!--     Animate on Scroll library     -->
     <!--     The library that animates elements when you scroll to/away from them.     -->
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
@@ -38,15 +43,12 @@
     <!--     Web Fonts     -->
     <!--     Adds the site fonts.     -->
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <!--     Custom Styles     -->
     <!--     Adds my site styles.     -->
     <link href="/assets/css/main-style.css" rel="stylesheet">
-
-    <!-- <link href="/assets/css/pushmenu/icons.css" rel="stylesheet"> -->
-    <link href="/assets/css/pushmenu/component.css" rel="stylesheet">
 
     <!--     Normalize     -->
     <!--     Adds cross-browser consistency and fixes some bugs.     -->
@@ -55,176 +57,114 @@
     <!--     Custom Scripts     -->
     <script src="/assets/js/site/site-parallax.js"></script>
     <script src="/assets/js/site/site-shufflequote.js"></script>
-    <script src="/assets/js/pushmenu/modernizr.custom.js"></script>
+    <script src="/assets/js/site/site-nav.js"></script>
+    <script src="/assets/js/site/site-terminal.js"></script>
     
   </head>
   <body>
 
-    <div class="mpc-side color-bg-1">
-      <div class="hamburger hamburger--emphatic" id="trigger">
-            <div class="hamburger-box">
-              <div class="hamburger-inner"></div>
-            </div>
-          </div>
-    </div>
-    <div class="siteContainer color-bg-2-l color-primary-l mpc-container">
-      <div class="navContainer mp-pusher" id="mp-pusher">
-
-        <!--     Includes the navigation menu on the side of the site.     -->
-        <nav id="mp-menu" class="mp-menu">
-  <div class="mp-level">
-    <h2 class="icon icon-world">Unturned Stones</h2>
-    <hr class="full">
-    <p>Modern cyberpunk.</p>
-    <ul>
-      <li class="icon icon-arrow-left">
-        <a class="icon icon-display" href="#">Devices</a>
-        <div class="mp-level">
-          <h2 class="icon icon-display">Devices</h2>
-          <a class="mp-back" href="#">back</a>
-          <ul>
-            <li class="icon icon-arrow-left">
-              <a class="icon icon-phone" href="#">Mobile Phones</a>
-              <div class="mp-level">
-                <h2>Mobile Phones</h2>
-                <a class="mp-back" href="#">back</a>
-                <ul>
-                  <li><a href="#">Super Smart Phone</a></li>
-                  <li><a href="#">Thin Magic Mobile</a></li>
-                  <li><a href="#">Performance Crusher</a></li>
-                  <li><a href="#">Futuristic Experience</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="icon icon-arrow-left">
-              <a class="icon icon-tv" href="#">Televisions</a>
-              <div class="mp-level">
-                <h2>Televisions</h2>
-                <a class="mp-back" href="#">back</a>
-                <ul>
-                  <li><a href="#">Flat Superscreen</a></li>
-                  <li><a href="#">Gigantic LED</a></li>
-                  <li><a href="#">Power Eater</a></li>
-                  <li><a href="#">3D Experience</a></li>
-                  <li><a href="#">Classic Comfort</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="icon icon-arrow-left">
-              <a class="icon icon-camera" href="#">Cameras</a>
-              <div class="mp-level">
-                <h2>Cameras</h2>
-                <a class="mp-back" href="#">back</a>
-                <ul>
-                  <li><a href="#">Smart Shot</a></li>
-                  <li><a href="#">Power Shooter</a></li>
-                  <li><a href="#">Easy Photo Maker</a></li>
-                  <li><a href="#">Super Pixel</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li class="icon icon-arrow-left">
-        <a class="icon icon-news" href="#">Magazines</a>
-        <div class="mp-level">
-          <h2 class="icon icon-news">Magazines</h2>
-          <a class="mp-back" href="#">back</a>
-          <ul>
-            <li><a href="#">National Geographic</a></li>
-            <li><a href="#">Scientific American</a></li>
-            <li><a href="#">The Spectator</a></li>
-            <li><a href="#">The Rambler</a></li>
-            <li><a href="#">Physics World</a></li>
-            <li><a href="#">The New Scientist</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="icon icon-arrow-left">
-        <a class="icon icon-shop" href="#">Store</a>
-        <div class="mp-level">
-          <h2 class="icon icon-shop">Store</h2>
-          <a class="mp-back" href="#">back</a>
-          <ul>
-            <li class="icon icon-arrow-left">
-              <a class="icon icon-t-shirt" href="#">Clothes</a>
-              <div class="mp-level">
-                <h2 class="icon icon-t-shirt">Clothes</h2>
-                <a class="mp-back" href="#">back</a>
-                <ul>
-                  <li class="icon icon-arrow-left">
-                    <a class="icon icon-female" href="#">Women's Clothing</a>
-                    <div class="mp-level">
-                      <h2 class="icon icon-female">Women's Clothing</h2>
-                      <a class="mp-back" href="#">back</a>
-                      <ul>
-                        <li><a href="#">Tops</a></li>
-                        <li><a href="#">Dresses</a></li>
-                        <li><a href="#">Trousers</a></li>
-                        <li><a href="#">Shoes</a></li>
-                        <li><a href="#">Sale</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="icon icon-arrow-left">
-                    <a class="icon icon-male" href="#">Men's Clothing</a>
-                    <div class="mp-level">
-                      <h2 class="icon icon-male">Men's Clothing</h2>
-                      <a class="mp-back" href="#">back</a>
-                      <ul>
-                        <li><a href="#">Shirts</a></li>
-                        <li><a href="#">Trousers</a></li>
-                        <li><a href="#">Shoes</a></li>
-                        <li><a href="#">Sale</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <a class="icon icon-diamond" href="#">Jewelry</a>
-            </li>
-            <li>
-              <a class="icon icon-music" href="#">Music</a>
-            </li>
-            <li>
-              <a class="icon icon-food" href="#">Grocery</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li><a class="icon icon-photo" href="#">Collections</a></li>
-      <li><a class="icon icon-wallet" href="#">Credits</a></li>
-    </ul>
+    <div id="siteContainer" class="siteContainer color-bg-2-l color-primary-l">
       
-  </div>
-</nav>
+      <!--     Contains the site, which is pushed when the nav is opened.     -->
+      <div id="contentContainer" class="contentContainer">
 
-        <!--     Contains the site, which is pushed when the nav is opened.     -->
-        <div class="contentContainer mpc-scroller">
+        <!--     Includes the header at the top of the site.     -->
+        This is the header.
 
-          <!--     Includes the header at the top of the site.     -->
-          This is the header.
-
-          <!--     Contains whatever content is templated into the page.     -->
-          <p>Sorry this is a test home.
+        <!--     Contains whatever content is templated into the page.     -->
+        <p>Sorry this is a test home.
 testhome.md</p>
 
 
-          <!--     Includes the footer at the end of the site.     -->
-          Footer.
+        <!--     Includes the footer at the end of the site.     -->
+        Footer.
 
+      </div>
+      <div id="dimDiv" class="dimDiv" onclick="outsideClick()"></div>
+      <div id="navContainer" class="navContainer color-primary">
+
+        <!--     Includes the navigation menu on the side of the site.     -->
+        <!-- Upper Nav Section -->
+<div class="navChild center navTitleContainer">
+
+  <!-- Nav Title Section -->
+  <div class="navTitleSection">
+    <h1 class="navTitle">UNTURNED <strong>STONES</strong></h1>
+    <p class="navDesc font-code nav_color">Morality at the flick of a switch</p>
+  </div>
+
+  <!-- Nav Tabs -->
+  <div class="navTabs">
+    <div class="navTab">
+      <div class="navTabCircle nav_home" id="nav_home" onclick="navClick('home')"></div>
+    </div>
+    <div class="navTab">
+      <div class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"></div>
+    </div>
+    <div class="navTab">
+      <div class="navTabCircle nav_codex" id="nav_codex" onclick="navClick('codex')"></div>
+    </div>
+    <div class="navTab">
+      <div class="navTabCircle nav_terminal" id="nav_terminal" onclick="navClick('terminal')"></div>
+    </div>
+    <div class="navTab">
+      <div class="navTabCircle nav_about" id="nav_about" onclick="navClick('about')"></div>
+    </div>
+  </div>
+
+  <!-- Nav Seperator Bar Line -->
+  <div class="navSectionBarContainer">
+    <div class="navSectionBarLine nav_color_bg"></div>
+    <div class="navSectionBarText nav_color" id="nav_sectionTitle">HOME</div>
+    <div class="navSectionBarLine nav_color_bg"></div>
+  </div>
+
+  <!-- Nav Description -->
+  <div class="navSectionDescriptionContainer">
+    <p id="nav_sectionDescription">Description here.</p>
+  </div>
+
+  <!--<div class="navBackButton" id="navBackButton">
+    <p class="font-code nav_color"><< BACK</p>
+  </div>-->
+
+</div>
+
+<!-- Nav Main Section -->
+<div class="navChild navScrollable utsScrollBar" id="navScrollable">
+  No navigation items!
+</div>
+
+<!-- Nav Terminal Section -->
+<div class="navChild navTerminal font-code" id='navTerminal'>
+  <div class="utsTerminal navTerminalChild utsScrollBar">
+    
+  </div>
+</div>
+
+      </div>
+      <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()">
+
+        
+        <div class="menuBarFlex">
+          <div class="menuBarChild">
+            logo
+          </div>
+          <div class="menuBarChildMenu">
+            <svg class="menuBarArrow menuBarArrowRight" x="0px" y="0px" viewBox="0 0 6.4 10" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+
+            <p class="font-code" id="menuBarLabel">Menu</p>
+
+            <svg class="menuBarArrow menuBarArrowLeft" x="0px" y="0px" viewBox="0 0 6.4 10" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+          </div>
+          <div class="menuBarChildText">
+            <p class="font-code">Contemporary Cyberpunk<span class="blinkingScore">_</span></p>
+          </div>
         </div>
+        
+
       </div>
     </div>
-    <!--     Pushmenu     -->
-    <script src="/assets/js/pushmenu/classie.js"></script>
-    <script src="/assets/js/pushmenu/mlpushmenu.js"></script>
-    <script>
-      new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
-    </script>
 
   </body>
 </html>

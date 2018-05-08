@@ -1,130 +1,57 @@
-<nav id="mp-menu" class="mp-menu">
-  <div class="mp-level">
-    <h2 class="icon icon-world">Unturned Stones</h2>
-    <hr class="full">
-    <p>Modern cyberpunk.</p>
-    <ul>
-      <li class="icon icon-arrow-left">
-        <a class="icon icon-display" href="#">Devices</a>
-        <div class="mp-level">
-          <h2 class="icon icon-display">Devices</h2>
-          <a class="mp-back" href="#">back</a>
-          <ul>
-            <li class="icon icon-arrow-left">
-              <a class="icon icon-phone" href="#">Mobile Phones</a>
-              <div class="mp-level">
-                <h2>Mobile Phones</h2>
-                <a class="mp-back" href="#">back</a>
-                <ul>
-                  <li><a href="#">Super Smart Phone</a></li>
-                  <li><a href="#">Thin Magic Mobile</a></li>
-                  <li><a href="#">Performance Crusher</a></li>
-                  <li><a href="#">Futuristic Experience</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="icon icon-arrow-left">
-              <a class="icon icon-tv" href="#">Televisions</a>
-              <div class="mp-level">
-                <h2>Televisions</h2>
-                <a class="mp-back" href="#">back</a>
-                <ul>
-                  <li><a href="#">Flat Superscreen</a></li>
-                  <li><a href="#">Gigantic LED</a></li>
-                  <li><a href="#">Power Eater</a></li>
-                  <li><a href="#">3D Experience</a></li>
-                  <li><a href="#">Classic Comfort</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="icon icon-arrow-left">
-              <a class="icon icon-camera" href="#">Cameras</a>
-              <div class="mp-level">
-                <h2>Cameras</h2>
-                <a class="mp-back" href="#">back</a>
-                <ul>
-                  <li><a href="#">Smart Shot</a></li>
-                  <li><a href="#">Power Shooter</a></li>
-                  <li><a href="#">Easy Photo Maker</a></li>
-                  <li><a href="#">Super Pixel</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li class="icon icon-arrow-left">
-        <a class="icon icon-news" href="#">Magazines</a>
-        <div class="mp-level">
-          <h2 class="icon icon-news">Magazines</h2>
-          <a class="mp-back" href="#">back</a>
-          <ul>
-            <li><a href="#">National Geographic</a></li>
-            <li><a href="#">Scientific American</a></li>
-            <li><a href="#">The Spectator</a></li>
-            <li><a href="#">The Rambler</a></li>
-            <li><a href="#">Physics World</a></li>
-            <li><a href="#">The New Scientist</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="icon icon-arrow-left">
-        <a class="icon icon-shop" href="#">Store</a>
-        <div class="mp-level">
-          <h2 class="icon icon-shop">Store</h2>
-          <a class="mp-back" href="#">back</a>
-          <ul>
-            <li class="icon icon-arrow-left">
-              <a class="icon icon-t-shirt" href="#">Clothes</a>
-              <div class="mp-level">
-                <h2 class="icon icon-t-shirt">Clothes</h2>
-                <a class="mp-back" href="#">back</a>
-                <ul>
-                  <li class="icon icon-arrow-left">
-                    <a class="icon icon-female" href="#">Women's Clothing</a>
-                    <div class="mp-level">
-                      <h2 class="icon icon-female">Women's Clothing</h2>
-                      <a class="mp-back" href="#">back</a>
-                      <ul>
-                        <li><a href="#">Tops</a></li>
-                        <li><a href="#">Dresses</a></li>
-                        <li><a href="#">Trousers</a></li>
-                        <li><a href="#">Shoes</a></li>
-                        <li><a href="#">Sale</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li class="icon icon-arrow-left">
-                    <a class="icon icon-male" href="#">Men's Clothing</a>
-                    <div class="mp-level">
-                      <h2 class="icon icon-male">Men's Clothing</h2>
-                      <a class="mp-back" href="#">back</a>
-                      <ul>
-                        <li><a href="#">Shirts</a></li>
-                        <li><a href="#">Trousers</a></li>
-                        <li><a href="#">Shoes</a></li>
-                        <li><a href="#">Sale</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <a class="icon icon-diamond" href="#">Jewelry</a>
-            </li>
-            <li>
-              <a class="icon icon-music" href="#">Music</a>
-            </li>
-            <li>
-              <a class="icon icon-food" href="#">Grocery</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li><a class="icon icon-photo" href="#">Collections</a></li>
-      <li><a class="icon icon-wallet" href="#">Credits</a></li>
-    </ul>
-      
+<!-- Upper Nav Section -->
+<div class="navChild center navTitleContainer">
+
+  <!-- Nav Title Section -->
+  <div class="navTitleSection">
+    <h1 class="navTitle">UNTURNED <strong>STONES</strong></h1>
+    <p class="navDesc font-code nav_color">Morality at the flick of a switch</p>
   </div>
-</nav>
+
+  <!-- Nav Tabs -->
+  <div class="navTabs">
+    <div class="navTab">
+      <div class="navTabCircle nav_home" id="nav_home" onclick="navClick('home')"></div>
+    </div>
+    <div class="navTab">
+      <div class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"></div>
+    </div>
+    <div class="navTab">
+      <div class="navTabCircle nav_codex" id="nav_codex" onclick="navClick('codex')"></div>
+    </div>
+    <div class="navTab">
+      <div class="navTabCircle nav_terminal" id="nav_terminal" onclick="navClick('terminal')"></div>
+    </div>
+    <div class="navTab">
+      <div class="navTabCircle nav_about" id="nav_about" onclick="navClick('about')"></div>
+    </div>
+  </div>
+
+  <!-- Nav Seperator Bar Line -->
+  <div class="navSectionBarContainer">
+    <div class="navSectionBarLine nav_color_bg"></div>
+    <div class="navSectionBarText nav_color" id="nav_sectionTitle">HOME</div>
+    <div class="navSectionBarLine nav_color_bg"></div>
+  </div>
+
+  <!-- Nav Description -->
+  <div class="navSectionDescriptionContainer">
+    <p id="nav_sectionDescription">Description here.</p>
+  </div>
+
+  <!--<div class="navBackButton" id="navBackButton">
+    <p class="font-code nav_color"><< BACK</p>
+  </div>-->
+
+</div>
+
+<!-- Nav Main Section -->
+<div class="navChild navScrollable utsScrollBar" id="navScrollable">
+  No navigation items!
+</div>
+
+<!-- Nav Terminal Section -->
+<div class="navChild navTerminal font-code" id='navTerminal'>
+  <div class="utsTerminal navTerminalChild utsScrollBar">
+    
+  </div>
+</div>

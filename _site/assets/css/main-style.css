@@ -18,31 +18,308 @@ color-bg-3             : Generic background 3
 
 /* - General Layout                     */
 
-/*body, html {
+body, html {
   width: 100%;
   height: 100%;
 }
 
 body {
   overflow-x: hidden;
-}*/
+}
+
+.hidden {
+  display: none;
+}
 
 /* -- default.html Layout               */
+/* --- nav Layout               */
 
-/*.siteContainer {
+.siteContainer {
   height: 100%;
   width: 100%;
+
+  background: green;
+}
+
+.menuBarContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+
+  background: rgba(17, 17, 17, 1);
+  transition: 0.2s ease-out;
+  border-right: 1px solid white;
+
+  cursor: hand;
+}
+.menuBarContainer:hover {
+  background: rgba(33, 33, 33, 1);
+  width: 80px;
+}
+
+.menuBarFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.menuBarChildMenu {
+  transform: rotate(180deg);
+  user-select: none;
+  text-align: center;
+  margin-top: 100px;
+}
+.menuBarChildMenu p {
+  writing-mode: vertical-rl;
+  margin: 0;
+}
+.menuBarArrow {
+  height: 12px;
+  transition: 0.2s ease-in-out;
+}
+.menuBarArrowRight {
+  margin-bottom: 20px;
+  transform: rotate(-180deg);
+}
+.menuBarArrowLeft {
+  margin-top: 20px;
+  transform: rotate(180deg);
+}
+.menuBarContainer:hover .menuBarArrowRight {
+  margin-bottom: 50px;
+}
+.menuBarContainer:hover .menuBarArrowLeft {
+  margin-top: 50px;
+}
+.fullRotation {
+  transform: rotate(360deg);
+}
+.fullOppositeRotation {
+  transform: rotate(-360deg);
+}
+
+.menuBarChildText {
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+  user-select: none;
+  text-align: left;
 }
 
 .navContainer {
+  padding: 10px;
+  padding-left: 90px;
+  padding-right: 30px;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: -700px;
+  min-width: 650px;
+
+  background: #161616;
+  border-right: 1px solid white;
+
+  transition: 0.3s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: auto;
+}
+.navTitle {
+  margin-bottom: 0.1em;
+  letter-spacing: 0.1em;
+}
+.navTitleSection {
+  padding-top: 30px;
+}
+.navTabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+.navTab {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.navTabCircle {
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.2);
+  transition: 0.2s ease-in-out;
+  cursor: hand;
+
   height: 100%;
-  width: 0;
+  width: 100%;
+}
+.nav_color {
+  transition: 0.0s ease-in-out;
+}
+.nav_home:hover {
+  border: 3px solid #fff;
+}
+.nav_chronicle:hover {
+  border: 3px solid #00ffff;
+}
+.nav_codex:hover {
+  border: 3px solid #ff00ff;
+}
+.nav_terminal:hover {
+  border: 3px solid #00ff36;
+}
+.nav_about:hover {
+  border: 3px solid #fff;
+}
+
+.navSectionBarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 50px;
+}
+.navSectionBarLine {
+  flex-grow: 1;
+  background-color: #ff00ff;
+  height: 2px;
+  margin-left: 50px;
+  margin-right: 50px;
+  /* transform: rotate(90deg); */
+  transition: 0.0s ease-in-out;
+}
+.navSectionBarLineUnrotated {
+  transform: rotate(0deg);
+}
+.navSectionBarText {
+  color: #ff00ff;
+  font-size: 18px;
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.navTitleContainer {
+  margin-bottom: -30px;
+}
+.navSectionDescriptionContainer {
+  height: 60px;
+  text-align: left;
+}
+.navBackButton {
+  user-select: none;
+  cursor: hand;
+}
+.navBackButton {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  user-select: none;
+  cursor: hand;
+  background-color: rgba(255,255,255,0.05);
+  transition: 0.2s ease-in-out;
+}
+.navBackButton:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+.navBackButton p {
+  margin: 0px;
+}
+.navScrollable {
+  /* height: 100%; */
+  /* max-height: 35vh; */
+  overflow-y: scroll;
+  padding-right: 20px;
+  transition: 0.2s ease-in-out;
+  flex-grow: 1;
+  /* margin-top: 30px; */
+}
+
+.utsScrollBar::-webkit-scrollbar {
+  width: 4px;
+}
+ 
+/* Track */
+.utsScrollBar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.3); 
+  border-radius: 0px;
+  width: 2px;
+  background-color: rgba(255,255,255,0.2);
+}
+ 
+.utsScrollBar::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background: rgba(255,255,255,1); 
+    -webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.5); 
+}
+.utsScrollBar::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255,255,255,0.4); 
+}
+
+.navTerminal {
+  height: 150px;
+  /* background: rgba(0,0,0,0.3); */
+  display: flex;
+  flex-direction: column;
+  
+  padding-top: 40px;
+  padding-left: 10px;
+  transition: 0.2s ease-in-out;
+  padding-bottom: 20px;
+}
+.navTerminalChild {
+  padding-right: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  overflow-y: scroll;
+  height: 100%;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 5px;
+}
+.activeTerminal {
+  border: 1px solid white;
+}
+.navTerminalInput {
+  width: 100%;
+  padding-left: 20px;
+  background: rgba(0,0,0,0);
+  color: #fff;
+  border: none;
+  border-left: 2px solid white;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.navTerminalInput:focus {
+  outline: none;
+}
+
+.dimDiv {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  background: black;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .contentContainer {
   height: 100vh;
   width: 100vw;
-}*/
+
+  background: blue;
+}
 
 /* - Style Guide                        */
 /*  Moody. Dark. Neon highlight colors. That's what Unturned Styles is all about... */
@@ -51,7 +328,7 @@ body {
 /*  The typographical styles for headers, paragraphs, spans, and other texts. */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto Condensed', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 body {
@@ -68,23 +345,45 @@ p {
 }
 
 .font-title {
-  font-family: 'Roboto Condensed', Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .font-body {
   font-family: 'Cabin', Arial, sans-serif;
 }
 
+.font-code {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
 .justify {
   text-align: justify;
+}
+
+.center {
+  text-align: center;
+}
+
+.blinkingScore {
+  animation: score-opacity 1s infinite;
+}
+
+@keyframes score-opacity {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 /* -- Browser Specific                  */
 /*  Styles for selected elements and text, etc. */
 
 ::selection {
-  color: white;
-  background: #222222;
+  color: #222;
+  background: #ddd;
   text-shadow: none;
 }
 
@@ -173,114 +472,6 @@ hr.right {
 /* - Elements                           */
 
 /* -- Buttons (individual)              */
-
-
-
-/* -- Hamburger Button                  */
-/* Thanks to */
-
-.hamburger {
-  padding: 15px 15px;
-  display: inline-block;
-  cursor: pointer;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible; }
-  .hamburger:hover {
-    opacity: 0.7; }
-
-.hamburger-box {
-  width: 40px;
-  height: 24px;
-  display: inline-block;
-  position: relative; }
-
-.hamburger-inner {
-  display: block;
-  top: 50%;
-  margin-top: -2px; }
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-    width: 40px;
-    height: 4px;
-    background-color: #fff;
-    border-radius: 4px;
-    position: absolute;
-    transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease; }
-  .hamburger-inner::before, .hamburger-inner::after {
-    content: "";
-    display: block; }
-  .hamburger-inner::before {
-    top: -10px; }
-  .hamburger-inner::after {
-    bottom: -10px; }
-
-    .hamburger--3dx .hamburger-box {
-  perspective: 80px; }
-
-.hamburger--3dx .hamburger-inner {
-  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
-  .hamburger--3dx .hamburger-inner::before, .hamburger--3dx .hamburger-inner::after {
-    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
-
-.hamburger--3dx.is-active .hamburger-inner {
-  background-color: transparent;
-  transform: rotateY(180deg); }
-  .hamburger--3dx.is-active .hamburger-inner::before {
-    transform: translate3d(0, 10px, 0) rotate(45deg); }
-  .hamburger--3dx.is-active .hamburger-inner::after {
-    transform: translate3d(0, -10px, 0) rotate(-45deg); }
-
-    .hamburger--3dy .hamburger-box {
-  perspective: 80px; }
-
-.hamburger--3dy .hamburger-inner {
-  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
-  .hamburger--3dy .hamburger-inner::before, .hamburger--3dy .hamburger-inner::after {
-    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
-
-.hamburger--3dy.is-active .hamburger-inner {
-  background-color: transparent;
-  transform: rotateX(-180deg); }
-  .hamburger--3dy.is-active .hamburger-inner::before {
-    transform: translate3d(0, 10px, 0) rotate(45deg); }
-  .hamburger--3dy.is-active .hamburger-inner::after {
-    transform: translate3d(0, -10px, 0) rotate(-45deg); }
-
-    .hamburger--emphatic {
-  overflow: hidden; }
-  .hamburger--emphatic .hamburger-inner {
-    transition: background-color 0.125s 0.175s ease-in; }
-    .hamburger--emphatic .hamburger-inner::before {
-      left: 0;
-      transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, left 0.125s 0.175s ease-in; }
-    .hamburger--emphatic .hamburger-inner::after {
-      top: 10px;
-      right: 0;
-      transition: transform 0.125s cubic-bezier(0.6, 0.04, 0.98, 0.335), top 0.05s 0.125s linear, right 0.125s 0.175s ease-in; }
-  .hamburger--emphatic.is-active .hamburger-inner {
-    transition-delay: 0s;
-    transition-timing-function: ease-out;
-    background-color: transparent; }
-    .hamburger--emphatic.is-active .hamburger-inner::before {
-      left: -80px;
-      top: -80px;
-      transform: translate3d(80px, 80px, 0) rotate(45deg);
-      transition: left 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1); }
-    .hamburger--emphatic.is-active .hamburger-inner::after {
-      right: -80px;
-      top: -80px;
-      transform: translate3d(-80px, 80px, 0) rotate(-45deg);
-      transition: right 0.125s ease-out, top 0.05s 0.125s linear, transform 0.125s 0.175s cubic-bezier(0.075, 0.82, 0.165, 1); }
-
 
 
 /* -- Links (in-text)                   */
