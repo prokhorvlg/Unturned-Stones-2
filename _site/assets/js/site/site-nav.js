@@ -11,19 +11,19 @@ var navSections = {
     "color": "#fff"
   },
   "chronicle": {
-    "description": "The chronicle.",
+    "description": "Experience an introduction to the world of Unturned Stones by following the chronicle, a journey touching upon all aspects of life in this cyberpunk world.",
     "color": "#00ffff"
   },
   "codex": {
-    "description": "Explore the world of Unturned Stones by scouring the codex, an organized repository of information.",
+    "description": "Explore the world of Unturned Stones by scouring the codex, an organized repository of information; much like a wiki.",
     "color": "#ff00ff"
   },
   "terminal": {
-    "description": "A Network Utility Terminal hooked directly into... something? Enter commands to interact.",
+    "description": "An old Network Utility Terminal hooked directly into... something. Enter commands into the terminal and push enter to interact with it.",
     "color": "#00ff36"
   },
   "about": {
-    "description": "The about.",
+    "description": "Learn more about the project, what it’s about, why I started it, and how it came to be.",
     "color": "#fff"
   }
 }
@@ -32,8 +32,9 @@ var headings = {
   "geography": {
     "title": "Geography",
     "description": "", 
+    "details": "Five suns. Three brown dwarfs. Dozens of rogues. All orbiting a massive black hole meandering through space. Find out more through the interactive cartouche, a map of the known universe.",
     "actions": "expand",
-    "icon": "",
+    "icon": "═",
     "link": "",
     "subheadings": [
       "cartouche",
@@ -45,23 +46,108 @@ var headings = {
     "title": "Cartouche",
     "description": "An interactive map of the world", 
     "actions": "direct",
-    "icon": "*",
+    "icon": ">",
     "link": "/cartouche",
     "subheadings": []
   },
   "places-by-system": {
-    "title": "Locations",
+    "title": "List of Locations",
     "description": "(Sorted by system)", 
-    "actions": "direct",
-    "icon": "",
+    "details": "A full list of locations in Unturned Stones, ordered on a what-orbits-what basis.",
+    "actions": "expand",
+    "icon": "═",
     "link": "/system",
+    "subheadings": [ "bahamut" ]
+  },
+  "bahamut": {
+    "title": "Bahamut Black Hole",
+    "description": "Center of the world", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/system/bahamut",
+    "subheadings": []
+  },
+  "places-by-alphabet": {
+    "title": "List of Locations",
+    "description": "(Sorted by alphabet)", 
+    "actions": "direct",
+    "icon": "═",
+    "link": "/system",
+    "subheadings": []
+  },
+  "technology": {
+    "title": "Technology",
+    "description": "", 
+    "actions": "expand",
+    "icon": "═",
+    "link": "",
+    "subheadings": [
+      "technology-page",
+      "spacecraft"
+    ]
+  },
+  "technology-page": {
+    "title": "Technology: Overview",
+    "description": "Starships and computers.", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/technology",
+    "subheadings": []
+  },
+  "spacecraft": {
+    "title": "Spacecraft",
+    "description": "Interstellar Torchships", 
+    "actions": "expand",
+    "icon": "═",
+    "link": "/technology/spacecraft",
+    "subheadings": [
+      "starscrapers",
+      "metavaski-minke",
+      "boring-rocket"
+    ]
+  },
+  "starscrapers": {
+    "title": "Starscrapers",
+    "description": "A briefing on spacecraft", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/technology/spacecraft/starscrapers",
+    "subheadings": []
+  },
+  "metavaski-minke": {
+    "title": "The Metavaski Minke",
+    "description": "Data Hauler", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/technology/spacecraft/metavaski-minke",
+    "subheadings": []
+  },
+  "boring-rocket": {
+    "title": "The Boring Rocket",
+    "description": "Mining vessel", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/technology/spacecraft/boring-rocket",
     "subheadings": []
   }
 }
 
+var generatedNav = {};
+
 $(document).ready(function(){
+  generateNav();
   navClick('home');
 });
+
+function generateNav() {
+  generatedNav = { 
+    'home': findNavItems('home'),
+    'chronicle': findNavItems('chronicle'),
+    'codex': findNavItems('codex'),
+    'terminal': findNavItems('terminal'),
+    'about': findNavItems('about')
+  };
+}
 
 function manipNav() {
   if (navIsOpen) {
@@ -138,12 +224,6 @@ function navClick(target) {
   sectionTitle.innerHTML = target;
   sectionDescription.innerHTML = navSections[target]['description'];
 
-  $('.nav_color_bg').css('background-color', navSections[target]['color']);
-  $('.nav_color').css('color', navSections[target]['color']);
-
-  $('.navTabCircle').css('border-color', '');
-  $('#nav_' + target).css('border-color', navSections[target]['color']);
-
   // Update navigation structure
 
   var navScrollable = document.getElementById('navScrollable');
@@ -151,7 +231,7 @@ function navClick(target) {
   if (target == 'terminal') {
     // navScrollable.style.display = 'none';
     navScrollable.style.height = '0px';
-    navTerminal.style.height = '100%';
+    //navTerminal.style.height = '100%';
     navTerminal.style.flexGrow = '1';
     navScrollable.style.flexGrow = '0';
     navScrollable.style.marginTop = '0px';
@@ -163,32 +243,146 @@ function navClick(target) {
     navTerminal.style.flexGrow = '0';
     navTerminal.style.height = '150px';
     navScrollable.style.marginTop = '30px';
-    navScrollable.innerHTML = findNavItems(target);
+    navScrollable.innerHTML = generatedNav[target];
   }
-  
+
+  $('.nav_color_bg').css('background-color', navSections[target]['color']);
+  $('.nav_color').css('color', navSections[target]['color']);
+
+  //$('.navTabCircle').css('border-color', '');
+  $('.navTabImage').removeClass('navHoveredImage');
+  $('#nav_' + target).children().addClass('navHoveredImage');
+
+  //$('#nav_' + target).css('border-color', navSections[target]['color']);
 }
 
-function findNavItems(heading) {
-
+function findNavItems(target) {
+  var currentHeadingObject = '';
+  if (target == 'codex') {
+    currentHeadingObject += compileNavObject('geography');
+    currentHeadingObject += compileNavObject('technology');
+  }
+  // console.log(currentHeadingObject);
+  return currentHeadingObject;
 }
 
-function compileNavObject(currentHeading, currentLeft) {
+function compileNavObject(currentHeading, currentLeft = 0) {
   var divStyles;
 
+  var calcLeft = currentLeft * 20;
+
+  console.log(headings[currentHeading]['actions'])
   if (headings[currentHeading]['actions'] == 'expand') {
 
     var currentHeadingObject = '';
 
-    currentHeadingObject += "<div class=''>";
+    currentHeadingObject += "<div class='navHeadingItem' id='" + currentHeading + "' onclick=\"expandNavObject('" + currentHeading + "')\" style='margin-left: " + calcLeft + "px'>";
 
-    var compiledSubheadings = '';
+    currentHeadingObject += "<div style='display: flex;'>";
+
+    currentHeadingObject += "<div class='navHeadingItemIcon'>";
+    currentHeadingObject += headings[currentHeading]['icon'];
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "<div class='navHeadingItemTitle'>";
+    currentHeadingObject += headings[currentHeading]['title'];
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "<div class='navHeadingItemDescription'>";
+    currentHeadingObject += headings[currentHeading]['description'];
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "<div class='navHeadingItemDown nav_color' id=\"navHeadingItemDown_" + currentHeading + "\">";
+    currentHeadingObject += "+";
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "</div>";
+
+    if (headings[currentHeading]['details']) {
+      currentHeadingObject += "<div class='navHeadingDetails' id='details_" + currentHeading + "' onclick=\"expandNavObject('" + currentHeading + "')\" style='margin-left: " + calcLeft + "px; height: 0px; display:none;'>";
+      currentHeadingObject += headings[currentHeading]['details'];
+      currentHeadingObject += "</div>";
+    }
+
+    var compiledSubheadings = "<div class='navHeadingContainer' id='expand_" + currentHeading + "' style='height: 0px;'>";
     for (var i = 0; i < headings[currentHeading]['subheadings'].length; i++) {
       compiledSubheadings += compileNavObject(headings[currentHeading]['subheadings'][i], (currentLeft + 1));
     }
+    compiledSubheadings += "</div>";
+
+
+    return currentHeadingObject + compiledSubheadings;
 
   }
   else if (headings[currentHeading]['actions'] == 'direct') {
-    
+    var currentHeadingObject = '';
+
+    currentHeadingObject += "<div class='navHeadingItem' id='nav_" + currentHeading + "' onclick=\"openNavObject('" + currentHeading + "')\" style='margin-left: " + calcLeft + "px'>";
+
+    currentHeadingObject += "<div style='display: flex;'>";
+
+    currentHeadingObject += "<div class='navHeadingItemIcon'>";
+    currentHeadingObject += headings[currentHeading]['icon'];
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "<div class='navHeadingItemTitle'>";
+    currentHeadingObject += headings[currentHeading]['title'];
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "<div class='navHeadingItemDescription'>";
+    currentHeadingObject += headings[currentHeading]['description'];
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "<div class='navHeadingItemDown nav_color'>";
+    currentHeadingObject += "⤷";
+    currentHeadingObject += "</div>";
+
+    currentHeadingObject += "</div>";
+
+    return currentHeadingObject;
   }
 
+}
+
+function expandNavObject(currentHeading) {
+  var child = document.getElementById('expand_' + currentHeading);
+  var child_details = document.getElementById('details_' + currentHeading);
+  if (document.getElementById('details_' + currentHeading)) {
+    child_details = document.getElementById('details_' + currentHeading);
+  }
+
+  if (child.style.height == '0px') {
+    child.style.height = "auto"; // child.scrollHeight;
+    if (child_details) {
+      child_details.style.height = "auto";
+      child_details.style.display = "block";
+    }
+    $('#navHeadingItemDown_' + currentHeading).html('-');
+  }
+  else {
+    child.style.height = '0px';
+    if (child_details) {
+      child_details.style.height = "0px";
+      child_details.style.display = "none";
+    }
+    $('#navHeadingItemDown_' + currentHeading).html('+');
+  }
+}
+
+function openNavObject(currentHeading) {
+  console.log('navigating to', headings[currentHeading]['link']);
+}
+
+function resetSpin() {
+  var logo = document.getElementById('menuBarLogo');
+  //var me = this;
+  logo.style.animation = 'none';
+  setTimeout(function() {
+    logo.style.animation = '';
+    logo.style.backgroundImage = 'url(../images/spinning_logo/d13.png)';
+  }, 10);
 }

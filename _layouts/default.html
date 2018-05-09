@@ -45,6 +45,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
     <!--     Custom Styles     -->
     <!--     Adds my site styles.     -->
@@ -85,12 +86,12 @@
         {% include nav.html %}
 
       </div>
-      <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()">
+      <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
 
         
         <div class="menuBarFlex">
-          <div class="menuBarChild">
-            logo
+          <div class="menuBarChild menuBarLogo" id='menuBarLogo'>
+            <!--<img src="{% link assets/images/spinning_logo/d1.png %}" class="menuBarLogoImage" />-->
           </div>
           <div class="menuBarChildMenu">
             <svg class="menuBarArrow menuBarArrowRight" x="0px" y="0px" viewBox="0 0 6.4 10" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
@@ -104,9 +105,10 @@
           </div>
         </div>
         
-
       </div>
     </div>
+
+    <div class='preloadImages'></div>
 
   </body>
 </html>

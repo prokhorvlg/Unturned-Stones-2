@@ -45,6 +45,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
     <!--     Custom Styles     -->
     <!--     Adds my site styles.     -->
@@ -97,19 +98,19 @@ codex/test.md
   <!-- Nav Tabs -->
   <div class="navTabs">
     <div class="navTab">
-      <div class="navTabCircle nav_home" id="nav_home" onclick="navClick('home')"></div>
+      <div class="navTabCircle nav_home" id="nav_home" onclick="navClick('home')"><img src='/assets/images/nav/nav_home.png' class="navTabImage" /></div>
     </div>
     <div class="navTab">
-      <div class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"></div>
+      <div class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"><img src='/assets/images/nav/nav_chronicle_color.png' class="navTabImage" /></div>
     </div>
     <div class="navTab">
-      <div class="navTabCircle nav_codex" id="nav_codex" onclick="navClick('codex')"></div>
+      <div class="navTabCircle nav_codex" id="nav_codex" onclick="navClick('codex')"><img src='/assets/images/nav/nav_codex_color.png' class="navTabImage" /></div>
     </div>
     <div class="navTab">
-      <div class="navTabCircle nav_terminal" id="nav_terminal" onclick="navClick('terminal')"></div>
+      <div class="navTabCircle nav_terminal" id="nav_terminal" onclick="navClick('terminal')"><img src='/assets/images/nav/nav_terminal_color.png' class="navTabImage" /></div>
     </div>
     <div class="navTab">
-      <div class="navTabCircle nav_about" id="nav_about" onclick="navClick('about')"></div>
+      <div class="navTabCircle nav_about" id="nav_about" onclick="navClick('about')"><img src='/assets/images/nav/nav_about.png' class="navTabImage" /></div>
     </div>
   </div>
 
@@ -137,19 +138,19 @@ codex/test.md
 </div>
 
 <!-- Nav Terminal Section -->
-<div class="navChild navTerminal font-code" id='navTerminal'>
+<div class="navChild navTerminal" id='navTerminal'>
   <div class="utsTerminal navTerminalChild utsScrollBar">
     
   </div>
 </div>
 
       </div>
-      <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()">
+      <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
 
         
         <div class="menuBarFlex">
-          <div class="menuBarChild">
-            logo
+          <div class="menuBarChild menuBarLogo" id='menuBarLogo'>
+            <!--<img src="/assets/images/spinning_logo/d1.png" class="menuBarLogoImage" />-->
           </div>
           <div class="menuBarChildMenu">
             <svg class="menuBarArrow menuBarArrowRight" x="0px" y="0px" viewBox="0 0 6.4 10" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
@@ -163,9 +164,10 @@ codex/test.md
           </div>
         </div>
         
-
       </div>
     </div>
+
+    <div class='preloadImages'></div>
 
   </body>
 </html>
