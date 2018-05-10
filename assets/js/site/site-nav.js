@@ -5,6 +5,7 @@ var openedBefore = false;
 // Used to check if nav is currently open.
 var navIsOpen = false;
 
+// Stores data regarding the nav tabs in the sidebar.
 var navSections = { 
   "home": {
     "description": "Go home.",
@@ -28,6 +29,8 @@ var navSections = {
   }
 }
 
+// Stores data regarding each navigation item in the sidebar navigation system.
+// Items here reference other objects within headings that are its children, within the subheadings array.
 var headings = {
   "geography": {
     "title": "Geography",
@@ -132,6 +135,7 @@ var headings = {
   }
 }
 
+// The HTML generated from the above object is stored here.
 var generatedNav = {};
 
 $(document).ready(function(){
@@ -157,7 +161,7 @@ function manipNav() {
   else {
     openNav();
     if (!openedBefore) {
-      firstNavOpen();
+      // firstNavOpen();
       openedBefore = true;
     }
     navIsOpen = true;
@@ -177,22 +181,26 @@ function openNav() {
   var menuBarLabel = document.getElementById('menuBarLabel');
   var menuBarContainer = document.getElementById('menuBarContainer');
 
-  // navContainer.style.right = "50%";
-  navContainer.style.left = "0";
-  navContainer.style.minWidth = "700px";
-  dimDiv.style.opacity = "0.5";
-  menuBarContainer.style.borderRight = "1px solid rgba(255,255,255,0.3)";
+  if (isMobile()) {
+    console.log('mobileNavOpen');
+    navContainer.style.left = "0";
+    navContainer.style.minWidth = "100%";
+    navContainer.style.height = "100%";
+    navContainer.style.bottom = "0";
+    menuBarContainer.style.borderRight = "none";
+    menuBarContainer.style.borderBottom = "1px solid rgba(255,255,255,0.3)";
+  }
+  else {
+    navContainer.style.left = "0";
+    navContainer.style.minWidth = "700px";
+    dimDiv.style.opacity = "0.5";
+    menuBarContainer.style.borderRight = "1px solid rgba(255,255,255,0.3)";
+  }
 
   $('.menuBarArrowRight').addClass('fullRotation');
   $('.menuBarArrowLeft').addClass('fullOppositeRotation');
 
   setTimeout( function() { $('.navTerminalChild').removeClass('hidden'); }, 300);
-
-  //$('.navSectionBarLine').addClass('navSectionBarLineUnrotated');
-}
-
-function firstNavOpen() {
-  // load terminal
 }
 
 function closeNav() {
@@ -203,17 +211,25 @@ function closeNav() {
 
   $('.navTerminalChild').addClass('hidden');
 
-  // navContainer.style.right = "100%";
-  navContainer.style.left = "-700px";
-  navContainer.style.minWidth = "650px";
+  if (isMobile()) {
+    console.log('mobileNavClose');
+    navContainer.style.left = "0";
+    navContainer.style.minWidth = "100%";
+    navContainer.style.height = "0px";
+    navContainer.style.bottom = "100%";
+    menuBarContainer.style.borderRight = "none";
+    menuBarContainer.style.borderBottom = "1px solid white";
+  }
+  else {
+    navContainer.style.left = "-700px";
+    navContainer.style.minWidth = "650px";
+    menuBarContainer.style.borderRight = "1px solid white";
+  }
+  
   dimDiv.style.opacity = "0";
-  menuBarContainer.style.borderRight = "1px solid white";
 
   $('.menuBarArrowRight').removeClass('fullRotation');
   $('.menuBarArrowLeft').removeClass('fullOppositeRotation');
-
-  //$('.navSectionBarLine').removeClass('navSectionBarLineUnrotated');
-
 }
 
 function navClick(target) {
@@ -229,16 +245,12 @@ function navClick(target) {
   var navScrollable = document.getElementById('navScrollable');
   var navTerminal = document.getElementById('navTerminal');
   if (target == 'terminal') {
-    // navScrollable.style.display = 'none';
     navScrollable.style.height = '0px';
-    //navTerminal.style.height = '100%';
     navTerminal.style.flexGrow = '1';
     navScrollable.style.flexGrow = '0';
     navScrollable.style.marginTop = '0px';
   }
   else {
-    // navScrollable.style.display = 'block';
-    // navScrollable.style.height = '100%';
     navScrollable.style.flexGrow = '1';
     navTerminal.style.flexGrow = '0';
     navTerminal.style.height = '150px';
@@ -249,12 +261,10 @@ function navClick(target) {
   $('.nav_color_bg').css('background-color', navSections[target]['color']);
   $('.nav_color').css('color', navSections[target]['color']);
 
-  //$('.navTabCircle').css('border-color', '');
   $('.navTabImage').removeClass('navHoveredImage');
   $('#nav_' + target).children().addClass('navHoveredImage');
-
-  //$('#nav_' + target).css('border-color', navSections[target]['color']);
 }
+
 
 function findNavItems(target) {
   var currentHeadingObject = '';
@@ -262,12 +272,13 @@ function findNavItems(target) {
     currentHeadingObject += compileNavObject('geography');
     currentHeadingObject += compileNavObject('technology');
   }
-  // console.log(currentHeadingObject);
   return currentHeadingObject;
 }
 
+// Recursively generates HTML for the innerHTML of the nav sections in a sidebar;
+// based on the items in the headings objects;
+// currentLeft is passed to add additional margin on the left of the nav object to show it is 'below' its parent. This is incremented for each child.
 function compileNavObject(currentHeading, currentLeft = 0) {
-  var divStyles;
 
   var calcLeft = currentLeft * 20;
 
@@ -312,7 +323,6 @@ function compileNavObject(currentHeading, currentLeft = 0) {
     }
     compiledSubheadings += "</div>";
 
-
     return currentHeadingObject + compiledSubheadings;
 
   }
@@ -348,6 +358,7 @@ function compileNavObject(currentHeading, currentLeft = 0) {
 
 }
 
+// Expands an expandable nav item in the sidebar when the nav item is clicked, and closes it if already open.
 function expandNavObject(currentHeading) {
   var child = document.getElementById('expand_' + currentHeading);
   var child_details = document.getElementById('details_' + currentHeading);
@@ -356,7 +367,7 @@ function expandNavObject(currentHeading) {
   }
 
   if (child.style.height == '0px') {
-    child.style.height = "auto"; // child.scrollHeight;
+    child.style.height = "auto";
     if (child_details) {
       child_details.style.height = "auto";
       child_details.style.display = "block";
@@ -373,16 +384,28 @@ function expandNavObject(currentHeading) {
   }
 }
 
+// Navigates to the selected page.
 function openNavObject(currentHeading) {
   console.log('navigating to', headings[currentHeading]['link']);
 }
 
+// Resets the animation of the spinning dorito upon mouseleave of the nav bar.
 function resetSpin() {
   var logo = document.getElementById('menuBarLogo');
-  //var me = this;
   logo.style.animation = 'none';
   setTimeout(function() {
     logo.style.animation = '';
     logo.style.backgroundImage = 'url(../images/spinning_logo/d13.png)';
   }, 10);
+}
+
+// Checks if device is mobile.
+// returns bool
+function isMobile(){
+  if ($(window).width() <= 640) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }

@@ -5,14 +5,6 @@ Hello, developer :)
 Main style sheet for the Unturned Stones website.
 
 - Colors
-To find colors on this style sheet, look up the following values:
-color-primary          : Content
-color-primary-fade     : Content, slightly less prominent
-color-highlight        : Highlight (links, buttons)
-color-highlight-hov    : Highlight, hovered
-color-bg-1             : Generic background 1
-color-bg-2             : Generic background 2
-color-bg-3             : Generic background 3
 
 #00ffff
 #ff00ff
@@ -66,6 +58,21 @@ body {
   
   animation-play-state: running;
 }
+@media (max-width: 640px) {
+  .menuBarContainer {
+    bottom: auto;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    border-right: 0px solid white;
+    border-bottom: 1px solid white;
+  }
+  .menuBarContainer:hover {
+    background: rgba(33, 33, 33, 1);
+    width: 100%;
+    height: 80px;
+  }
+}
 
 .menuBarFlex {
   display: flex;
@@ -77,6 +84,13 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+@media (max-width: 640px) {
+  .menuBarFlex {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
 .menuBarLogo {
   height: 47px;
   width: 47px;
@@ -148,9 +162,21 @@ body {
   text-align: center;
   margin-top: 100px;
 }
+@media (max-width: 640px) {
+  .menuBarChildMenu {
+    transform: rotate(270deg);
+    margin-top: 0px;
+  }
+}
 .menuBarChildMenu p {
   writing-mode: vertical-rl;
   margin: 0;
+}
+@media (max-width: 640px) {
+  .menuBarChildMenu p {
+    writing-mode: initial;
+    transform: rotate(90deg);
+  }
 }
 .menuBarArrow {
   height: 12px;
@@ -160,9 +186,19 @@ body {
   margin-bottom: 20px;
   transform: rotate(-180deg);
 }
+@media (max-width: 640px) {
+  .menuBarArrowRight {
+    margin-bottom: 50px;
+  }
+}
 .menuBarArrowLeft {
   margin-top: 20px;
   transform: rotate(180deg);
+}
+@media (max-width: 640px) {
+  .menuBarArrowLeft {
+    margin-top: 50px;
+  }
 }
 .menuBarContainer:hover .menuBarArrowRight {
   margin-bottom: 50px;
@@ -182,6 +218,14 @@ body {
   writing-mode: vertical-rl;
   user-select: none;
   text-align: left;
+}
+@media (max-width: 640px) {
+  .menuBarChildText {
+    transform: rotate(0deg);
+    writing-mode: initial;
+    margin-top: 20px;
+    display: none;
+  }
 }
 
 .navContainer {
@@ -209,6 +253,20 @@ body {
   justify-content: space-around;
   overflow: auto;
 }
+@media (max-width: 640px) {
+  .navContainer {
+    min-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    right: 0;
+    left: 0;
+    bottom: 100%;
+    top: none;
+    border-right: none;
+    border-bottom: 1px solid white;
+  }
+}
+
 .navTitle {
   margin-bottom: 0.1em;
   letter-spacing: 0.1em;
@@ -254,21 +312,6 @@ body {
 .nav_color {
   transition: 0.0s ease-in-out;
 }
-/*.nav_home:hover {
-   border: 3px solid #fff; 
-}
-.nav_chronicle:hover {
-  border: 3px solid #00ffff;
-}
-.nav_codex:hover {
-  border: 3px solid #ff00ff;
-}
-.nav_terminal:hover {
-  border: 3px solid #00ff36;
-}
-.nav_about:hover {
-  border: 3px solid #fff;
-}*/
 
 .navSectionBarContainer {
   display: flex;
@@ -302,6 +345,13 @@ body {
   background-repeat: no-repeat;
   background-position: right top;
 }
+@media (max-width: 640px) {
+  .navTitleContainer {
+    padding-top: 30px;
+    margin-top: 20px;
+  }
+}
+
 .navSectionDescriptionContainer {
   height: 60px;
   text-align: left;
@@ -446,6 +496,11 @@ body {
   padding-left: 10px;
   transition: 0.2s ease-in-out;
   padding-bottom: 20px;
+}
+@media (max-width: 640px) {
+  .navTerminal {
+    display: none;
+  }
 }
 .navTerminalChild {
   padding-right: 20px;

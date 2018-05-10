@@ -16,8 +16,8 @@
 title: Unturned Stones
 description: > # this means to ignore newlines until "baseurl:"
   Unturned Stones is a space cyberpunk world that explores the implications of trends emerging in the realm of cybertechnology and society today.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.unturnedston.es" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/Unturned-Stones-2" # the subpath of your site, e.g. /blog
+url: "https://prokhorvlg.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # theme: minima
 # End

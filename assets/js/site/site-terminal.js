@@ -11,6 +11,8 @@ $(document).ready(function(){
         console.log(command);
         var cmd = command.toUpperCase().split(" ");
 
+        // If you are looking here, shame on you because this is a lame way of finding the commands
+        // but all the power to you <3
         if (cmd[0] == 'ECHO') {
           var output = '';
           for (var i = 1; i < cmd.length; i++) {
