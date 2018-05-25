@@ -35,7 +35,7 @@ var headings = {
   "geography": {
     "title": "Geography",
     "description": "", 
-    "details": "Five suns. Three brown dwarfs. Dozens of rogues. All orbiting a massive black hole meandering through space. Find out more through the interactive cartouche, a map of the known universe.",
+    "details": "Five suns. Three brown dwarfs. Dozens of rogues. All orbiting a massive black hole meandering through space.<br><br>Find out more through the interactive cartouche, a map of the known universe.",
     "actions": "expand",
     "icon": "═",
     "link": "",
@@ -80,6 +80,7 @@ var headings = {
   },
   "technology": {
     "title": "Technology",
+    "details": "Ubiquitous cybertechnology and superluminal starships reign in a society dominated by artificial intelligence in every aspect, where man operates in union with the machine but in turn has arguably lost free will. <br><br>Meanwhile, mechatronics and energy technology wane in a world where those concepts haven't even been considered as viable; where an advanced understanding of human psychology and the prevalence of centralized fusion have rendered those ideas virtually useless to study.",
     "description": "", 
     "actions": "expand",
     "icon": "═",
@@ -136,22 +137,15 @@ var headings = {
 }
 
 // The HTML generated from the above object is stored here.
-var generatedNav = {};
+var generatedNavButtons = {};
+var generatedNavPages = {};
+
+var activeSection = 'home';
 
 $(document).ready(function(){
   generateNav();
   navClick('home');
 });
-
-function generateNav() {
-  generatedNav = { 
-    'home': findNavItems('home'),
-    'chronicle': findNavItems('chronicle'),
-    'codex': findNavItems('codex'),
-    'terminal': findNavItems('terminal'),
-    'about': findNavItems('about')
-  };
-}
 
 function manipNav() {
   if (navIsOpen) {
@@ -182,19 +176,14 @@ function openNav() {
   var menuBarContainer = document.getElementById('menuBarContainer');
 
   if (isMobile()) {
-    console.log('mobileNavOpen');
-    navContainer.style.left = "0";
-    navContainer.style.minWidth = "100%";
-    navContainer.style.height = "100%";
-    navContainer.style.bottom = "0";
-    menuBarContainer.style.borderRight = "none";
-    menuBarContainer.style.borderBottom = "1px solid rgba(255,255,255,0.3)";
+    
   }
   else {
     navContainer.style.left = "0";
-    navContainer.style.minWidth = "700px";
-    dimDiv.style.opacity = "0.5";
+    dimDiv.style.display = 'block';
+    setTimeout(function() { dimDiv.style.opacity = "0.5"; }, 5);
     menuBarContainer.style.borderRight = "1px solid rgba(255,255,255,0.3)";
+    $('.navElement').removeClass('navSlideToLeft');
   }
 
   $('.menuBarArrowRight').addClass('fullRotation');
@@ -212,22 +201,19 @@ function closeNav() {
   $('.navTerminalChild').addClass('hidden');
 
   if (isMobile()) {
-    console.log('mobileNavClose');
-    navContainer.style.left = "0";
-    navContainer.style.minWidth = "100%";
-    navContainer.style.height = "0px";
-    navContainer.style.bottom = "100%";
-    menuBarContainer.style.borderRight = "none";
-    menuBarContainer.style.borderBottom = "1px solid white";
+    
   }
   else {
-    navContainer.style.left = "-700px";
-    navContainer.style.minWidth = "650px";
+    navContainer.style.left = "-750px";
     menuBarContainer.style.borderRight = "1px solid white";
+    dimDiv.style.opacity = "0";
+    $('.navElement').addClass('navSlideToLeft');
+    setTimeout(function() { 
+      dimDiv.style.display = 'none';
+      $('.navElement').remove();
+    }, 300);
   }
   
-  dimDiv.style.opacity = "0";
-
   $('.menuBarArrowRight').removeClass('fullRotation');
   $('.menuBarArrowLeft').removeClass('fullOppositeRotation');
 }
@@ -249,45 +235,70 @@ function navClick(target) {
     navTerminal.style.flexGrow = '1';
     navScrollable.style.flexGrow = '0';
     navScrollable.style.marginTop = '0px';
+    $('.navTerminal').addClass('displayMe');
   }
   else {
     navScrollable.style.flexGrow = '1';
     navTerminal.style.flexGrow = '0';
     navTerminal.style.height = '150px';
     navScrollable.style.marginTop = '30px';
-    navScrollable.innerHTML = generatedNav[target];
+    navScrollable.innerHTML = generatedNavButtons[target];
+    setTimeout( function() { $('.navTerminal').removeClass('displayMe'); }, 200);
   }
 
   $('.nav_color_bg').css('background-color', navSections[target]['color']);
   $('.nav_color').css('color', navSections[target]['color']);
+  activeSection = target;
 
   $('.navTabImage').removeClass('navHoveredImage');
   $('#nav_' + target).children().addClass('navHoveredImage');
 }
 
+// Overhead function for generating the entire contents of the nav.
+function generateNav() {
+  generatedNavButtons['home'] = findNavItems('home');
+  generatedNavButtons['chronicle'] = findNavItems('chronicle');
+  generatedNavButtons['codex'] = findNavItems('codex');
+  generatedNavButtons['terminal'] = findNavItems('terminal');
+  generatedNavButtons['about'] = findNavItems('about');
+}
 
+// Triggers all of the overheads for nav generation.
 function findNavItems(target) {
   var currentHeadingObject = '';
   if (target == 'codex') {
-    currentHeadingObject += compileNavObject('geography');
-    currentHeadingObject += compileNavObject('technology');
+    compileObjectOverhead('geography');
+    compileObjectOverhead('technology');
+    currentHeadingObject += generatedNavButtons['geography'];
+    currentHeadingObject += generatedNavButtons['technology'];
   }
   return currentHeadingObject;
 }
 
-// Recursively generates HTML for the innerHTML of the nav sections in a sidebar;
-// based on the items in the headings objects;
-// currentLeft is passed to add additional margin on the left of the nav object to show it is 'below' its parent. This is incremented for each child.
-function compileNavObject(currentHeading, currentLeft = 0) {
+// Overhead function; takes care of all HTML generation for an inputted nav object.
+function compileObjectOverhead(currentHeading) {
+  // Begin by compiling the button for the object.
+  compileNavObjectButton(currentHeading);
 
-  var calcLeft = currentLeft * 20;
+  // Cycle through object children (if any), and run this function on them.
+  for (var i = 0; i < headings[currentHeading]['subheadings'].length; i++) {
+    compileObjectOverhead(headings[currentHeading]['subheadings'][i]);
+  }
 
-  console.log(headings[currentHeading]['actions'])
+  // Proceed to compile the slideout for the object if it has children. - NEEDS CHILDREN BUTTONS
+  if (headings[currentHeading]['actions'] == 'expand') {
+    compileNavObjectSlideout(currentHeading);
+  }
+  // The object is now created.  
+}
+
+// Compiles a button for the input object.
+function compileNavObjectButton(currentHeading) {
   if (headings[currentHeading]['actions'] == 'expand') {
 
     var currentHeadingObject = '';
 
-    currentHeadingObject += "<div class='navHeadingItem' id='" + currentHeading + "' onclick=\"expandNavObject('" + currentHeading + "')\" style='margin-left: " + calcLeft + "px'>";
+    currentHeadingObject += "<div class='navHeadingItem' id='" + headings[currentHeading]['title'] + "' onclick=\"openNavObject('" + currentHeading + "')\" >";
 
     currentHeadingObject += "<div style='display: flex;'>";
 
@@ -311,25 +322,12 @@ function compileNavObject(currentHeading, currentLeft = 0) {
 
     currentHeadingObject += "</div>";
 
-    if (headings[currentHeading]['details']) {
-      currentHeadingObject += "<div class='navHeadingDetails' id='details_" + currentHeading + "' onclick=\"expandNavObject('" + currentHeading + "')\" style='margin-left: " + calcLeft + "px; height: 0px; display:none;'>";
-      currentHeadingObject += headings[currentHeading]['details'];
-      currentHeadingObject += "</div>";
-    }
-
-    var compiledSubheadings = "<div class='navHeadingContainer' id='expand_" + currentHeading + "' style='height: 0px;'>";
-    for (var i = 0; i < headings[currentHeading]['subheadings'].length; i++) {
-      compiledSubheadings += compileNavObject(headings[currentHeading]['subheadings'][i], (currentLeft + 1));
-    }
-    compiledSubheadings += "</div>";
-
-    return currentHeadingObject + compiledSubheadings;
-
+    generatedNavButtons[currentHeading] = currentHeadingObject;
   }
   else if (headings[currentHeading]['actions'] == 'direct') {
     var currentHeadingObject = '';
 
-    currentHeadingObject += "<div class='navHeadingItem' id='nav_" + currentHeading + "' onclick=\"openNavObject('" + currentHeading + "')\" style='margin-left: " + calcLeft + "px'>";
+    currentHeadingObject += "<div class='navHeadingItem' id='nav_" + currentHeading + "' onclick=\"navigateNavObject('" + currentHeading + "')\" >";
 
     currentHeadingObject += "<div style='display: flex;'>";
 
@@ -353,39 +351,54 @@ function compileNavObject(currentHeading, currentLeft = 0) {
 
     currentHeadingObject += "</div>";
 
-    return currentHeadingObject;
+    generatedNavButtons[currentHeading] = currentHeadingObject;
   }
-
 }
 
-// Expands an expandable nav item in the sidebar when the nav item is clicked, and closes it if already open.
-function expandNavObject(currentHeading) {
-  var child = document.getElementById('expand_' + currentHeading);
-  var child_details = document.getElementById('details_' + currentHeading);
-  if (document.getElementById('details_' + currentHeading)) {
-    child_details = document.getElementById('details_' + currentHeading);
+function compileNavObjectSlideout(currentHeading) {
+
+  var buttonsInThisNav = '';
+  for (var i = 0; i < headings[currentHeading]['subheadings'].length; i++) {
+    buttonsInThisNav += generatedNavButtons[headings[currentHeading]['subheadings'][i]];
   }
 
-  if (child.style.height == '0px') {
-    child.style.height = "auto";
-    if (child_details) {
-      child_details.style.height = "auto";
-      child_details.style.display = "block";
-    }
-    $('#navHeadingItemDown_' + currentHeading).html('-');
+  generatedNavPages[currentHeading] = "<div class='navElement' id='child_"+ currentHeading + "'>\
+      <div class='navBackButton' onclick='closeNavObject(\""+ currentHeading + "\")'>\
+        <p class='font-code nav_color'><< BACK</p>\
+      </div>\
+      <h1 class='navTitle allCaps'>"+ headings[currentHeading]['title'] + "</h1>\
+      <p class='navHeadingDetails'>" + headings[currentHeading]['details'] + "</p>\
+      <div class='navChild navScrollable utsScrollBar'>\
+        " + buttonsInThisNav + "\
+      </div>\
+    </div>";
+}
+
+function openNavObject(currentHeading) {
+  var navObject = generatedNavPages[currentHeading];
+  if (!$("#child_" + currentHeading).length) {
+    $('.siteContainer').append( navObject );
+    
+    var child = document.getElementById('child_' + currentHeading);
+    setTimeout( function() { 
+      child.style.left = "0";
+      $('.nav_color').css('color', navSections[activeSection]['color']);
+     }, 5);
+    
   }
-  else {
-    child.style.height = '0px';
-    if (child_details) {
-      child_details.style.height = "0px";
-      child_details.style.display = "none";
-    }
-    $('#navHeadingItemDown_' + currentHeading).html('+');
+}
+
+function closeNavObject(currentHeading) {
+  if ($("#child_" + currentHeading).length) {
+    var child = document.getElementById('child_' + currentHeading);
+    child.style.left = "-750px";
+
+    setTimeout( function() { $("#child_" + currentHeading).remove(); }, 300);
   }
 }
 
 // Navigates to the selected page.
-function openNavObject(currentHeading) {
+function navigateNavObject(currentHeading) {
   console.log('navigating to', headings[currentHeading]['link']);
 }
 

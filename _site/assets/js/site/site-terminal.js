@@ -4,6 +4,12 @@
 var terminalClassName = 'navTerminalChild';
 
 $(document).ready(function(){
+  function randomizeEcho(items, multi = 300) {
+    $('.navTerminalChild').terminal().echo(items[0]);
+    if (items[1]) {
+      setTimeout(function() { randomizeEcho(items.slice(1), multi); }, Math.floor(Math.random() * multi));
+    }
+  }
   jQuery(function($, undefined) {
     $('.navTerminalChild').terminal(function(command) {
       if (command !== '') {
@@ -53,8 +59,21 @@ $(document).ready(function(){
         }
         else if (cmd[0] == 'HELP') {
           randomizeEcho(['Locating [[b;#00ff36;]help] file...',
+            'message found: >Fuck off<',
             'File path corrupted. Please consult an administrator.',
             '[[b;#ff00ff;]Help file not found]'], 500);
+        }
+        else if (cmd[0] == 'PING') {
+          randomizeEcho(['To use this application',
+            '---'], 500);
+        }
+        else if (cmd[0] == 'CHAT') {
+          randomizeEcho(['This kaizen is currently offline.',
+            'Exiting application.'], 800);
+        }
+        else if (cmd[0] == 'SWEDUS') {
+          randomizeEcho(['GAME VER 5.2',
+            'This application is currently in development.'], 800);
         }
 
       }
@@ -75,13 +94,4 @@ $(document).ready(function(){
 
 function updateTerminal(update) {
   $('.navTerminalChild').terminal().echo(update);
-}
-
-function randomizeEcho(items, multi = 300) {
-
-  $('.navTerminalChild').terminal().echo(items[0]);
-  if (items[1]) {
-    setTimeout(function() { randomizeEcho(items.slice(1), multi); }, Math.floor(Math.random() * multi));
-  }
-
 }

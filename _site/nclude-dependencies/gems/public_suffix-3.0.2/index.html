@@ -55,12 +55,17 @@
     <!--     Adds cross-browser consistency and fixes some bugs.     -->
     <link href="/assets/css/normalize/normalize.css" rel="stylesheet">
 
+    <script src="/assets/js/greensock/TweenMax.min.js"></script>
+    <script src="/assets/js/snap/snap.svg-min.js"></script>
+
     <!--     Custom Scripts     -->
+    <!-- Script: Provides parallaxing background functionality -->
     <script src="/assets/js/site/site-parallax.js"></script>
     <script src="/assets/js/site/site-shufflequote.js"></script>
     <script src="/assets/js/site/site-nav.js"></script>
     <script src="/assets/js/site/site-terminal.js"></script>
-    
+    <script src="/assets/js/site/site-animateHome.js"></script>
+
   </head>
   <body>
 
@@ -70,7 +75,15 @@
       <div id="contentContainer" class="contentContainer">
 
         <!--     Includes the header at the top of the site.     -->
-        This is the header.
+        <div class="header">
+  <div class="headerTitle font-code-l">
+    UNTURNED STONES
+  </div>
+
+  <div class="headerItems font-code-l">
+    <div class="headerRightItem"><a>CHRONICLE</a></div>
+  </div>
+</div>
 
         <!--     Contains whatever content is templated into the page.     -->
         <h1 id="public-suffix-for-ruby">Public Suffix <small>for Ruby</small></h1>
@@ -99,7 +112,7 @@
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'public_suffix'</span>
 </code></pre></div></div>
 
-<p>If you are upgrading to 2.0, see <a href="/Unturned-Stones-2/nclude-dependencies/gems/public_suffix-3.0.2/2.0-Upgrade/">2.0-Upgrade.md</a>.</p>
+<p>If you are upgrading to 2.0, see <a href="/nclude-dependencies/gems/public_suffix-3.0.2/2.0-Upgrade/">2.0-Upgrade.md</a>.</p>
 
 <h2 id="usage">Usage</h2>
 
@@ -252,7 +265,7 @@
 
 <h2 id="changelog">Changelog</h2>
 
-<p>See the <a href="/Unturned-Stones-2/nclude-dependencies/gems/public_suffix-3.0.2/CHANGELOG/">CHANGELOG.md</a> file for details.</p>
+<p>See the <a href="/nclude-dependencies/gems/public_suffix-3.0.2/CHANGELOG/">CHANGELOG.md</a> file for details.</p>
 
 <h2 id="license">License</h2>
 
@@ -281,7 +294,7 @@
   <!-- Nav Tabs -->
   <div class="navTabs">
     <div class="navTab">
-      <div class="navTabCircle nav_home" id="nav_home" onclick="navClick('home')"><img src='/Unturned-Stones-2/assets/images/nav/nav_home.png' class="navTabImage" /></div>
+      <div class="navTabCircle nav_home" id="nav_home" onclick="navClick('home')"><img src='/assets/images/nav/nav_home.png' class="navTabImage" /></div>
     </div>
     <div class="navTab">
       <div class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"><img src='/assets/images/nav/nav_chronicle_color.png' class="navTabImage" /></div>
@@ -328,7 +341,9 @@
 </div>
 
       </div>
-      <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
+      
+    </div>
+    <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
 
         
         <div class="menuBarFlex">
@@ -348,9 +363,9 @@
         </div>
         
       </div>
-    </div>
 
-    <div class='preloadImages'></div>
-
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- Script: Saves scroll position of div on refresh -->
+    <script src="/assets/js/site/site-scrollSave.js"></script>
   </body>
 </html>

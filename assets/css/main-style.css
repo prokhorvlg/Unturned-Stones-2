@@ -68,9 +68,12 @@ body {
     border-bottom: 1px solid white;
   }
   .menuBarContainer:hover {
-    background: rgba(33, 33, 33, 1);
+    background: rgba(17, 17, 17, 1);
     width: 100%;
-    height: 80px;
+    height: 60px;
+  }
+  .menuBarContainer:hover .menuBarLogo {
+    animation-play-state: paused;
   }
 }
 
@@ -98,8 +101,8 @@ body {
   background-image: url(../images/spinning_logo/d13.png);
   background-repeat: no-repeat;
   background-position: center;
-  animation: spinning-logo 1s linear infinite;
-  animation-play-state: paused; 
+  /* animation: spinning-logo 1s linear infinite;
+  animation-play-state: paused; */
 }
 @keyframes spinning-logo {
   0%   { 
@@ -237,8 +240,8 @@ body {
   top: 0;
   bottom: 0;
   right: 100%;
-  left: -700px;
-  min-width: 650px;
+  left: -750px;
+  min-width: 700px;
 
   background-color: #161616;
   background-image: url('../images/gridbg_lite.png');
@@ -252,6 +255,8 @@ body {
   flex-direction: column;
   justify-content: space-around;
   overflow: auto;
+
+  will-change: transform;
 }
 @media (max-width: 640px) {
   .navContainer {
@@ -270,6 +275,10 @@ body {
 .navTitle {
   margin-bottom: 0.1em;
   letter-spacing: 0.1em;
+  padding-left: 20px;
+}
+.allCaps {
+  text-transform: uppercase;
 }
 .navTitleSection {
   padding-top: 30px;
@@ -357,23 +366,29 @@ body {
   text-align: left;
 }
 .navBackButton {
-  user-select: none;
-  cursor: hand;
-}
-.navBackButton {
   padding: 10px;
   margin-bottom: 20px;
   width: 100%;
   user-select: none;
   cursor: hand;
   background-color: rgba(255,255,255,0.05);
-  transition: 0.2s ease-in-out;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+
+  transition: 0.1s ease-in-out;
+  border-left: 2px solid rgba(255,255,255,0.4);
+  border-right: 2px solid rgba(255,255,255,0.4);
+
 }
 .navBackButton:hover {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.2);
+  border-left: 2px solid white;
+  border-right: 2px solid white;
 }
 .navBackButton p {
   margin: 0px;
+  font-size: 16px;
 }
 .navScrollable {
   /* height: 100%; */
@@ -437,32 +452,45 @@ body {
 .navHeadingDetails {
   overflow: hidden;
   transition: 0.1s ease-in-out;
-  user-select: none;
-  background-color: rgba(255,255,255,0.05);
-  border-left: 2px solid rgba(255,255,255,0.4);
-  border-right: 2px solid rgba(255,255,255,0.4);
 
   margin-top: -5px;
   margin-bottom: 5px;
 
   padding-left: 20px;
 
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   padding-top: 10px;
+}
 
-  cursor: hand;
-}
-.navHeadingDetails:hover {
-  border-left: 2px solid white;
-  border-right: 2px solid white;
-}
-.navHeadingItem:hover ~ .navHeadingDetails {
-  border-left: 2px solid white;
-  border-right: 2px solid white;
-}
 .navHeadingContainer {
   transition: 0.2s ease-in-out;
   overflow: hidden;
+}
+
+.navElement {
+  padding: 10px;
+  padding-left: 80px;
+  padding-right: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -750px;
+  min-width: 700px;
+  max-width: 700px;
+  background-color: #161616;
+  background-image: url(../images/gridbg_lite.png);
+  background-repeat: repeat;
+  border-right: 1px solid white;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: auto;
+  color: white;
+}
+.navSlideToLeft {
+  left: -700px !important;
+  min-width: 650px !important;
 }
 
 .utsScrollBar::-webkit-scrollbar {
@@ -502,6 +530,14 @@ body {
     display: none;
   }
 }
+@media (max-height: 800px) {
+  .navTerminal {
+    display: none;
+  }
+}
+.displayMe {
+  display: block !important;
+}
 .navTerminalChild {
   padding-right: 20px;
   padding-bottom: 5px;
@@ -533,6 +569,7 @@ body {
   opacity: 0;
   transition: 0.3s ease-in-out;
   background: black;
+  display: none;
 
   position: absolute;
   top: 0;
@@ -544,8 +581,279 @@ body {
 .contentContainer {
   height: 100vh;
   width: 100vw;
+  padding-left: 60px;
+  background: #222;
+  color: white;
+  overflow-y: scroll;
+}
 
-  background: blue;
+/* Home page spinner styles */
+
+.spinContainer {
+  height: 60%;
+  overflow: hidden;
+  width: 100%;
+  background-color: #161616;
+  background-image: url('../images/gridbg_lite.png');
+  background-repeat: repeat;
+  margin: 0 auto;
+  will-change: transform;
+  border-bottom: 1px solid #2d2d2d;
+  box-shadow: inset 0 -100px 100px -100px #000000, inset 0 100px 100px -100px #000000;
+}
+
+.spinCenter {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%,-50%);
+}
+.spinTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+}
+.spinDescription {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  margin-top: -24px;
+  background-color: #fff;
+  color: #000;
+  padding-top: 2px;
+}
+
+.spinSVG {
+  width: 100%;
+  height: 100%;
+  /* display: block;
+  margin: 0 auto;*/
+}
+
+.spinCircle1C {
+  overflow: visible !important;
+}
+
+.spinTurned {
+  transform: rotate(45deg);
+}
+
+.spinFunk {
+  animation: spinFunkStroke 30s ease-in-out infinite;
+}
+@keyframes spinFunkStroke {
+  0% { 
+    stroke-dasharray: 400;
+  }
+  50% { 
+    stroke-dasharray: 900;
+  }
+  100% { 
+    stroke-dasharray: 400;
+  }
+}
+
+/* General page header styles */
+
+.header {
+  height: 80px;
+  background: #212121;
+  border-bottom: 1px solid #2d2d2d;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerTitle {
+  padding-left: 50px;
+}
+.headerItems {
+  padding-right: 50px;
+}
+.headerRightItem {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Home page directory buttons */
+
+.homeButtons {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homeButtonsInset {
+  width: 100%;
+  max-width: 1800px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.homeButton {
+  padding: 8px;
+  margin: 20px;
+  cursor: hand;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(0,0,0,0.1);
+  background-clip: content-box;
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 35px;
+  margin-right: 35px;
+  transition: 0.1s ease-in-out;
+}
+.homeButton:hover {
+  border: 1px solid rgba(255,255,255,0);
+  background-color: rgba(255,255,255,0.9);
+  color: black;
+}
+.homeButton path, .homeButton polygon {
+  transition: 0.1s ease-in-out;
+}
+.homeButton:hover path, .homeButton:hover polygon {
+  fill: rgb(0,0,0);
+}
+.homeButtonInset {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.homeButtonImage {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+.homeButtonText {
+  padding-left: 20px;
+}
+.homeButtonArrow {
+  flex-grow: 1;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.homeUpdate {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 0px;
+  padding-bottom: 40px;
+  padding-left: 95px;
+  padding-right: 95px; 
+}
+.homeUpdateInset {
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  max-width: 1800px;
+}
+.homeUpdateImage {
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.homeUpdateBody {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.homeUpdateArrow {
+  text-align: center;
+  padding: 10px;
+  width: 200px;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  user-select: none;
+  transition: 0.1s ease-in-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: hand;
+
+  background-color: rgba(0,0,0,0.1);
+  background-clip: content-box;
+}
+.homeUpdateArrowInset {
+
+}
+.homeUpdateArrow svg {
+  margin-left: 2px;
+}
+.homeUpdateArrow:hover {
+  border-left: 1px solid rgba(255,255,255,0);
+  background-color: rgba(255,255,255,0.9);
+  color: black;
+}
+.homeUpdateArrow:hover polygon {
+  fill: black;
+}
+
+
+.homeContent {
+  overflow: hidden;
+  width: 100%;
+  background-color: #161616;
+  background-image: url('../images/gridbg_lite.png');
+  background-repeat: repeat;
+  margin: 0 auto;
+  border-top: 1px solid #2d2d2d;
+  border-bottom: 1px solid #2d2d2d;
+  box-shadow: inset 0 -100px 100px -100px #000000, inset 0 100px 100px -100px #000000;
+}
+.homeContentSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
+}
+.homePadding {
+  padding-top: 100px;
+}
+.homeContentText {
+  padding-top: 90px;
+  width: 50%;
+  min-width: 1000px;
+}
+.homeContentLeft {
+  text-align: left;
+  align-self: flex-start;
+  padding-left: 90px;
+}
+.homeContentRight {
+  text-align: right;
+  align-self: flex-end;
+  padding-right: 90px;
+}
+.homeContentText p {
+  letter-spacing: 0.02em;
+  font-size: 18px;
+}
+.homeContentTextEmphasis {
+  color: #ff00ff;
+}
+
+.homeContentFade {
+  opacity: 0;
+  transition: 2s ease-in-out;
 }
 
 /* - Style Guide                        */
@@ -560,8 +868,8 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: 'Cabin', Arial, sans-serif;
-  /* color-primary */
   color: rgba(255,255,255,1);
+  overflow: hidden;
 }
 
 p {
@@ -574,6 +882,22 @@ p {
 .font-title {
   font-family: 'Montserrat', Arial, sans-serif;
 }
+.font-title-primary {
+  font-family: 'Montserrat', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+}
+.font-title-secondary {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  font-size: 26px;
+}
+.font-title-primary-small {
+  font-family: 'Montserrat', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+}
 
 .font-body {
   font-family: 'Cabin', Arial, sans-serif;
@@ -584,6 +908,37 @@ p {
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 0.2em;
+}
+
+.font-code-l {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+}
+
+.font-SVG {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  fill: rgba(255,255,255,0.2);"
+}
+
+.font-SVG-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  letter-spacing: 0.1em;
+  fill: rgba(255,255,255,1);"
+}
+
+.font-SVG-desc {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  fill: rgba(0,0,0,0.8);"
 }
 
 .justify {

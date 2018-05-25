@@ -55,12 +55,17 @@
     <!--     Adds cross-browser consistency and fixes some bugs.     -->
     <link href="{% link assets/css/normalize/normalize.css %}" rel="stylesheet">
 
+    <script src="{% link assets/js/greensock/TweenMax.min.js %}"></script>
+    <script src="{% link assets/js/snap/snap.svg-min.js %}"></script>
+
     <!--     Custom Scripts     -->
+    <!-- Script: Provides parallaxing background functionality -->
     <script src="{% link assets/js/site/site-parallax.js %}"></script>
     <script src="{% link assets/js/site/site-shufflequote.js %}"></script>
     <script src="{% link assets/js/site/site-nav.js %}"></script>
     <script src="{% link assets/js/site/site-terminal.js %}"></script>
-    
+    <script src="{% link assets/js/site/site-animateHome.js %}"></script>
+
   </head>
   <body>
 
@@ -86,7 +91,9 @@
         {% include nav.html %}
 
       </div>
-      <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
+      
+    </div>
+    <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
 
         
         <div class="menuBarFlex">
@@ -106,9 +113,9 @@
         </div>
         
       </div>
-    </div>
 
-    <div class='preloadImages'></div>
-
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- Script: Saves scroll position of div on refresh -->
+    <script src="{% link assets/js/site/site-scrollSave.js %}"></script>
   </body>
 </html>

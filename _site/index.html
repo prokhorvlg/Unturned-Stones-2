@@ -55,12 +55,17 @@
     <!--     Adds cross-browser consistency and fixes some bugs.     -->
     <link href="/assets/css/normalize/normalize.css" rel="stylesheet">
 
+    <script src="/assets/js/greensock/TweenMax.min.js"></script>
+    <script src="/assets/js/snap/snap.svg-min.js"></script>
+
     <!--     Custom Scripts     -->
+    <!-- Script: Provides parallaxing background functionality -->
     <script src="/assets/js/site/site-parallax.js"></script>
     <script src="/assets/js/site/site-shufflequote.js"></script>
     <script src="/assets/js/site/site-nav.js"></script>
     <script src="/assets/js/site/site-terminal.js"></script>
-    
+    <script src="/assets/js/site/site-animateHome.js"></script>
+
   </head>
   <body>
 
@@ -70,16 +75,224 @@
       <div id="contentContainer" class="contentContainer">
 
         <!--     Includes the header at the top of the site.     -->
-        This is the header.
+        <div class="header">
+  <div class="headerTitle font-code-l">
+    UNTURNED STONES
+  </div>
+
+  <div class="headerItems font-code-l">
+    <div class="headerRightItem"><a>CHRONICLE</a></div>
+  </div>
+</div>
 
         <!--     Contains whatever content is templated into the page.     -->
-        <div class="quickPadding">
+        <div class="">
+  <div class="spinContainer">
+    <div class="spinCenter">
+      <h1 class="spinTitle">Unturned <strong>Stones</strong></h1>
+      <p class="spinDescription">a world defined by the technology of today's future</p>
+    </div>
+
+    <svg class="spinSVG" width="100%" height="100%">
+      <svg class="spinCircle1C" x="50%" y="70%">
+
+        <defs>
+          <mask id="cut-out-center-1">
+            <rect width="1200" height="2" x="-600" y="-1" fill="#fff" />
+            <circle r="355" />
+          </mask>
+          <mask id="cut-out-center-2">
+            <rect width="800" height="2" x="-400" y="-1" fill="#fff" />
+            <circle r="355" />
+          </mask>
+          <mask id="cut-out-center-3">
+            <rect width="1600" height="2" x="-800" y="-1" fill="#fff" />
+            <circle r="355" />
+          </mask>
+          <mask id="cut-out-center-4">
+            <rect width="1100" height="2" x="-550" y="-1" fill="#fff" />
+            <circle r="355" />
+          </mask>
+        </defs>
+
+        <!-- Innermost square -->
+        <rect width="400" height="400" class="spinTurned" stroke="rgba(255,255,255,0.1)" stroke-width="4" fill="none" x="-200" y="-200" />
+        <!-- text on that square -->
+        <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(45)">
+          reinitializing model
+        </text>
+        <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(135)">
+          deploying cloud solution for bahamut exploitation grid
+        </text>
+        <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(-45)">
+          running operation counter kaizen HAN
+        </text>
+        <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(-135)">
+          redistributing pattern recognition assets
+        </text>
+
+        <g class="spinRightBig">
+
+          <rect width="1400" height="4" x="-700" y="-2" mask="url(#cut-out-center-1)" fill="#fff" />
+
+          <rect transform="rotate(45)" width="800" height="4" x="-400" y="-2" mask="url(#cut-out-center-2)" fill="#fff" />
+
+          <rect transform="rotate(90)" width="1600" height="4" x="-800" y="-2" mask="url(#cut-out-center-3)" fill="#fff" />
+
+          <rect transform="rotate(135)" width="1100" height="4" x="-550" y="-2" mask="url(#cut-out-center-4)" fill="#fff" />
+
+          <!-- dotted spinning circle -->
+          <circle r="450" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round" />
+
+          <circle class="spinFunk" r="355" fill="none" stroke="rgba(255,255,255,1)" stroke-width="2" stroke-dasharray="400" stroke-dashoffset="1000" />
+
+        </g>
+
+        <g class="spinLeftBig">
+
+          <!-- dashed circle spinning -->
+          <circle r="320" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="8 8" />
+
+          <!-- thick slitted stroke spinning circle -->
+          <circle r="481" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="50" stroke-dasharray="10 10" />
+
+        </g>        
+
+        <!-- solid circle -->
+        <circle r="360" fill="none" stroke="rgba(255,255,255,1)" stroke-width="2" />
+
+        <!-- Faint thick circle -->
+        <circle class="" r="432" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="25" stroke-dasharray="1" stroke-linecap="round" />
+
+        <!-- huge faint circle -->
+        <circle r="610" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="200" />
+
+      </svg>
+    </svg>
+  </div>
+
+  <div class="homeButtons font-code-l">
+    <div class="homeButtonsInset">
+      <div class="homeButton">
+        <div class="homeButtonInset">
+          <div class="homeButtonImage">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="50px">
+              <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M25.196,19.276 C25.188,19.270 25.181,19.264 25.173,19.259 C25.173,19.259 25.107,19.404 24.970,19.648 C24.309,20.714 23.509,21.669 22.860,22.367 C21.760,23.453 20.237,24.582 18.194,25.321 C19.794,24.865 21.284,24.566 22.267,24.392 C22.865,25.531 23.517,27.829 22.033,31.385 C21.936,31.617 21.840,31.862 21.744,32.098 C21.722,32.099 21.706,32.097 21.683,32.098 C21.683,32.098 19.938,36.116 18.260,36.947 C18.930,36.700 19.653,36.341 20.285,35.936 C18.799,40.217 17.667,44.971 17.845,49.930 C15.922,48.891 11.555,44.302 9.839,39.640 C11.688,38.906 13.000,37.110 13.000,35.000 L13.000,34.000 C13.000,31.239 10.761,29.000 8.000,29.000 L7.000,29.000 C4.306,29.000 2.125,31.135 2.020,33.803 C1.014,33.659 -0.021,33.245 0.047,32.098 C0.129,30.698 2.470,28.221 5.284,26.695 C6.562,26.569 8.886,26.334 11.563,26.035 C8.959,26.207 7.081,25.793 5.796,25.285 C4.334,24.533 1.550,22.620 1.443,18.902 C1.335,15.165 4.539,10.379 11.563,9.273 C12.825,9.066 13.308,8.916 13.308,8.916 L11.563,0.713 L12.261,0.356 L14.355,8.916 C14.355,8.916 26.220,8.342 26.220,16.049 C26.220,17.119 25.790,18.238 25.196,19.276 ZM6.344,19.250 C5.377,19.250 4.594,20.047 4.594,21.031 C4.594,22.015 5.377,22.812 6.344,22.812 C7.310,22.812 8.094,22.015 8.094,21.031 C8.094,20.047 7.310,19.250 6.344,19.250 ZM16.100,36.734 C16.792,37.290 17.223,37.250 17.845,36.734 C17.265,37.054 17.687,35.889 17.321,35.513 C15.473,33.361 18.543,30.315 18.543,30.315 C15.092,33.476 15.408,36.178 16.100,36.734 ZM15.750,19.250 C14.783,19.250 14.000,20.047 14.000,21.031 C14.000,22.015 14.783,22.812 15.750,22.812 C16.716,22.812 17.500,22.015 17.500,21.031 C17.500,20.047 16.716,19.250 15.750,19.250 Z" />
+              <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M7.500,30.000 C9.985,30.000 12.000,32.015 12.000,34.500 C12.000,36.985 9.985,39.000 7.500,39.000 C5.015,39.000 3.000,36.985 3.000,34.500 C3.000,32.015 5.015,30.000 7.500,30.000 Z" />
+            </svg>
+          </div>
+          <div class="homeButtonText">
+            worldbuilding subreddit
+          </div>
+          <div class="homeButtonArrow">
+            <svg width="10px" height="10px" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+          </div>
+        </div>
+      </div>
+      <div class="homeButton">
+        <div class="homeButtonInset">
+          <div class="homeButtonImage">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0.472in" height="0.403in" style="margin-top: 10px; margin-left: 10px; transform: scale(1.2);">
+              <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M0.689,28.359 L17.189,-0.000 L33.688,28.359 L0.689,28.359 ZM17.189,16.541 C17.189,16.541 8.953,15.929 7.289,23.702 C7.236,24.182 9.436,21.519 10.401,21.732 C11.313,23.809 13.191,25.034 17.189,25.034 C21.186,25.034 23.064,23.809 23.976,21.732 C24.942,21.519 27.142,24.182 27.088,23.702 C25.425,15.929 17.189,16.541 17.189,16.541 Z" />
+              <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M17.125,17.187 C19.161,17.187 20.812,18.824 20.812,20.843 C20.812,22.863 19.161,24.500 17.125,24.500 C15.088,24.500 13.437,22.863 13.437,20.843 C13.437,18.824 15.088,17.187 17.125,17.187 Z" />
+              </svg>
+          </div>
+          <div class="homeButtonText">
+            unturned stones subreddit
+          </div>
+          <div class="homeButtonArrow">
+            <svg width="10px" height="10px" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+          </div>
+        </div>
+      </div>
+      <div class="homeButton">
+        <div class="homeButtonInset">
+          <div class="homeButtonImage">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55px" height="40px" style="margin-top: 9px; margin-left: 5px;">
+              <path fill="#fff" style="transform: scale(0.045);" d="M 361.9857,0.00138389 C 348.73055,0.05478389 239.07459,3.1670339 123.39327,89.124664 123.39327,89.124664 0,311.06297 0,584.4136 c 0,0 71.978249,123.39208 261.35281,129.39038 0,0 31.70511,-37.7037 57.41206,-70.26582 C 209.93876,610.97599 168.80785,543.28361 168.80785,543.28361 c 0,0 8.5708,5.99726 23.99498,14.56626 0.85689,0 1.71122,0.85558 3.42502,1.7125 2.57069,1.71377 5.1422,2.57081 7.7129,4.28459 21.42246,11.99658 42.84423,21.42368 62.5529,29.13581 35.13283,14.56729 77.12215,27.41951 125.96536,36.84541 64.26736,11.9966 139.67306,16.28044 221.93532,0.85625 40.27424,-7.71208 81.40794,-18.85053 124.25286,-36.84541 29.99142,-11.13969 63.40925,-27.41914 98.54205,-50.55541 0,0 -42.84417,69.40888 -155.09786,101.11413 25.70697,31.70521 56.55581,68.54998 56.55581,68.54998 C 928.02173,706.94949 1000,583.55668 1000,584.4136 1000,311.06297 876.60671,89.124664 876.60671,89.124664 754.07028,-2.5634661 636.67349,0.00803389 636.67349,0.00803389 L 624.67932,13.718014 C 770.35209,57.419834 838.04548,121.6888 838.04548,121.6888 748.92802,73.702484 661.52634,49.707644 580.121,40.281764 c -61.69669,-6.85519 -120.82499,-5.13937 -173.09576,1.71581 -5.14137,0 -9.42484,0.85563 -14.56623,1.7125 -29.99144,3.42762 -102.82721,13.70953 -194.51535,53.98375 -31.70523,13.710366 -50.55871,23.994976 -50.55871,23.994976 0,0 70.26568,-67.697276 224.50739,-111.399106 L 363.32318,0.00803389 c 0,0 -0.4538,-0.0102 -1.33748,-0.007 z M 340.18778,316.20414 c 48.8432,0 88.26098,41.98669 87.40413,94.25746 0,52.27084 -38.56093,94.2608 -87.40413,94.2608 -47.98632,0 -87.40413,-41.98996 -87.40413,-94.2608 0,-52.27077 38.56091,-94.25746 87.40413,-94.25746 z m 312.76778,0 c 47.98631,0 87.40413,41.98669 87.40413,94.25746 0,52.27084 -38.56089,94.2608 -87.40413,94.2608 -47.9863,0 -87.40413,-41.98996 -87.40413,-94.2608 0,-52.27077 38.56091,-94.25746 87.40413,-94.25746 z" inkscape:connector-curvature="0" />
+            </svg>
+          </div>
+          <div class="homeButtonText">
+            unturned stones discord
+          </div>
+          <div class="homeButtonArrow">
+            <svg width="10px" height="10px" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="homeUpdate">
+    <div class="homeUpdateInset">
+      <div class="homeUpdateImage">
+        <img src="http://via.placeholder.com/500x300" />
+      </div>
+      <div class="homeUpdateBody">
+        <h1 class="font-code-l">Featured Update</h1>
+        <hr class="full" />
+        <h2 class="font-title-primary">The Dorkmeister</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet neque nec blandit semper. Integer dignissim pretium justo eget viverra. Integer massa nibh, vulputate vitae laoreet eu, congue ut libero. Sed posuere nibh ipsum, nec bibendum tortor ultricies at. Phasellus vitae pharetra ante. Vivamus quis ligula porttitor, lacinia mi at, tincidunt ante. Proin varius nisl non dignissim maximus.</p>
+      </div>
+      <div class="homeUpdateArrow">
+        <div class="homeUpdateArrowInset">
+          <svg width="10px" height="10px" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="homeContent">
+
+    <div class="homeContentSection">
+      <div class="homeContentText homeContentLeft">
+        <h2 class="scrollCheck homeContentFade font-title-primary-small">The science of today is the technology of tomorrow.</h2>
+      </div>
+      <div class="homeContentText homeContentRight homePadding">
+        <h2 class="scrollCheck homeContentFade font-title-primary-small">- Edward Teller</h2>
+      </div>
+    </div>
+
+    <div class="homeContentSection">
+      <div class="homeContentText homeContentLeft">
+        <p class="scrollCheck homeContentFade">In the distant future, during one of many nameless conflicts among the interstellar descendants of Earth, a technology was perfected that could replace a person's morality with programmable ethics.</p>
+        <p class="scrollCheck homeContentFade">It was called the <span class="homeContentTextEmphasis">prosthetic soul</span>.</p>
+      </div>
+      <div class="scrollCheck homeContentFade homePadding">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="720px" height="650px" id="soulSVG">
+          <path id="soulFaintCircle" fill-rule="evenodd" transform-origin="50% 50%" transform="scale(1.1)" stroke="rgb(255, 255, 255)" stroke-width="40px" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.05" fill="none" d="M392.000,106.000 C498.591,106.000 585.000,192.409 585.000,299.000 C585.000,405.591 498.591,492.000 392.000,492.000 C285.409,492.000 199.000,405.591 199.000,299.000 C199.000,192.409 285.409,106.000 392.000,106.000 Z" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M392.937,112.156 C497.147,112.156 581.625,195.802 581.625,298.984 C581.625,402.167 497.147,485.812 392.937,485.812 C288.728,485.812 204.250,402.167 204.250,298.984 C204.250,195.802 288.728,112.156 392.937,112.156 Z" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M243.177,378.875 C230.211,355.103 222.851,327.892 222.851,298.981 M254.081,201.710 C284.893,158.676 335.601,130.590 392.935,130.590 C423.244,130.590 451.702,138.439 476.347,152.196 M556.400,252.303 C560.710,267.125 563.019,282.786 563.019,298.981 C563.019,370.819 517.581,432.150 453.607,456.342 " />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M248.234,376.062 C252.903,376.062 256.687,379.812 256.687,384.437 C256.687,389.063 252.903,392.812 248.234,392.812 C243.566,392.812 239.781,389.063 239.781,384.437 C239.781,379.812 243.566,376.062 248.234,376.062 Z" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M445.558,433.925 C467.895,488.942 501.000,569.000 501.000,569.000 " />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M256.703,283.062 C264.651,283.062 271.094,289.442 271.094,297.312 C271.094,305.182 264.651,311.562 256.703,311.562 C248.755,311.562 242.312,305.182 242.312,297.312 C242.312,289.442 248.755,283.062 256.703,283.062 Z" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M523.672,250.375 C529.514,250.375 534.250,255.069 534.250,260.859 C534.250,266.650 529.514,271.343 523.672,271.343 C517.830,271.343 513.094,266.650 513.094,260.859 C513.094,255.069 517.830,250.375 523.672,250.375 Z" transform="translate(-2,0)" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M435.672,389.468 C448.987,389.468 459.781,400.158 459.781,413.344 C459.781,426.529 448.987,437.218 435.672,437.218 C422.357,437.218 411.562,426.529 411.562,413.344 C411.562,400.158 422.357,389.468 435.672,389.468 Z" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M438.625,211.844 C443.302,211.844 447.094,215.593 447.094,220.219 C447.094,224.844 443.302,228.594 438.625,228.594 C433.948,228.594 430.156,224.844 430.156,220.219 C430.156,215.593 433.948,211.844 438.625,211.844 Z" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M392.935,223.582 L360.780,329.978 L392.935,361.813 L425.090,329.978 L392.935,223.582 Z" />
+          <path id="soulBlueFlame" fill-rule="evenodd" fill="rgb(0, 255, 255)" d="M376.029,341.000 L393.000,324.029 L409.970,341.000 L393.000,357.970 L376.029,341.000 Z" transform="translate(0,-2)" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M385.319,367.677 L354.010,336.680 L304.085,336.680 L335.394,367.677 L385.319,367.677 Z" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M399.704,367.677 L431.014,336.680 L480.939,336.680 L449.630,367.677 L399.704,367.677 Z" />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M530.122,257.621 C577.082,243.464 618.022,231.122 618.022,231.122 " />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M440.672,213.381 C474.514,152.696 513.940,82.000 513.940,82.000 " />
+          <path fill-rule="evenodd" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M243.159,298.981 L82.000,298.981 " />
+          <text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" font-size="16px" x="99px" y="291px"><tspan font-size="16px" font-family="Roboto Condensed" font-weight="bold" fill="#FFFFFF">MORALITY</tspan></text>
+          <text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" font-size="16px" x="311px" y="154.624px"><tspan font-size="16px" font-family="Roboto Condensed" font-weight="bold" fill="#FFFFFF">FLICK</tspan></text>
+          <text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" transform="matrix( 0.38977469466425, 0.92091024937254, -0.92091024937254, 0.38977469466424,470.363720120182, 481.999394865076)" font-size="16px"><tspan font-size="16px" font-family="Roboto Condensed" font-weight="bold" fill="#FFFFFF">SWITCH&#46;</tspan></text>
+          <text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" font-size="16px" x="431px" y="419px"><tspan font-size="16px" font-family="Roboto Condensed" font-weight="bold" fill="#FF00FF">A</tspan></text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
   <h1 class="title" role="presentation">Unturned Stones</h1>
-  <p><a href="/Unturned-Stones-2/testhome/">This is a test link to /testhome.</a></p>
-  <p><a href="/Unturned-Stones-2/test/">This is a test link to /test.</a></p>
+  <p><a href="/testhome/">This is a test link to /testhome.</a></p>
+  <p><a href="/test/">This is a test link to /test.</a></p>
 
   /
 </div>
+
+<script src="/assets/js/site/site-animateHome.js"></script>
+
 
 
         <!--     Includes the footer at the end of the site.     -->
@@ -102,7 +315,7 @@
   <!-- Nav Tabs -->
   <div class="navTabs">
     <div class="navTab">
-      <div class="navTabCircle nav_home" id="nav_home" onclick="navClick('home')"><img src='/Unturned-Stones-2/assets/images/nav/nav_home.png' class="navTabImage" /></div>
+      <div class="navTabCircle nav_home" id="nav_home" onclick="navClick('home')"><img src='/assets/images/nav/nav_home.png' class="navTabImage" /></div>
     </div>
     <div class="navTab">
       <div class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"><img src='/assets/images/nav/nav_chronicle_color.png' class="navTabImage" /></div>
@@ -149,7 +362,9 @@
 </div>
 
       </div>
-      <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
+      
+    </div>
+    <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
 
         
         <div class="menuBarFlex">
@@ -169,9 +384,9 @@
         </div>
         
       </div>
-    </div>
 
-    <div class='preloadImages'></div>
-
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- Script: Saves scroll position of div on refresh -->
+    <script src="/assets/js/site/site-scrollSave.js"></script>
   </body>
 </html>
