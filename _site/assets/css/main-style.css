@@ -281,13 +281,21 @@ body {
   text-transform: uppercase;
 }
 .navTitleSection {
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: 0.3s ease-in-out;
+  user-select: none;
+  background-color: rgba(255,255,255,0);
+  background-clip: content-box;
+  cursor: hand;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .navTabs {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 0px;
   height: 80px;
 }
 .navTab {
@@ -608,6 +616,7 @@ body {
   left: 50%;
   top: 70%;
   transform: translate(-50%,-50%);
+  user-select: none;
 }
 .spinTitle {
   font-family: 'Montserrat', Arial, sans-serif;
@@ -713,6 +722,7 @@ body {
   margin-left: 35px;
   margin-right: 35px;
   transition: 0.1s ease-in-out;
+  user-select: none;
 }
 .homeButton:hover {
   border: 1px solid rgba(255,255,255,0);
@@ -922,7 +932,8 @@ p {
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 0.2em;
-  fill: rgba(255,255,255,0.2);"
+  fill: rgba(255,255,255,0.2);
+  user-select: none;
 }
 
 .font-SVG-title {
@@ -930,7 +941,7 @@ p {
   text-transform: uppercase;
   font-size: 25px;
   letter-spacing: 0.1em;
-  fill: rgba(255,255,255,1);"
+  fill: rgba(255,255,255,1);
 }
 
 .font-SVG-desc {
@@ -938,7 +949,7 @@ p {
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 0.1em;
-  fill: rgba(0,0,0,0.8);"
+  fill: rgba(0,0,0,0.8);
 }
 
 .justify {
@@ -1049,6 +1060,22 @@ hr.right {
 .color-bg-3-l {
   /* color-bg-3 */
   background-color: rgba(240,240,240,1);
+}
+
+.nav-color_home:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+.nav-color_chronicle:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+}
+.nav-color_codex:hover {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+.nav-color_terminal:hover {
+  background-color: rgba(0, 255, 51, 0.1);
+}
+.nav-color_about:hover {
+  background-color: rgba(255,255,255,0.1);
 }
 
 /* - Elements                           */

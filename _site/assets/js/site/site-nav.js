@@ -181,7 +181,13 @@ var activeSection = 'home';
 $(document).ready(function(){
   generateNav();
   navClick('home');
+
+  $('.navTitleSection').click(function() {
+    window.location.href = '/';
+  });
+
 });
+
 
 function manipNav() {
   if (navIsOpen) {
@@ -283,6 +289,7 @@ function navClick(target) {
   }
 
   $('.nav_color_bg').css('background-color', navSections[target]['color']);
+  $('.nav_color_bg_home').attr('class', 'navTitleSection nav_color_bg_home nav-color_' + target);
   $('.nav_color').css('color', navSections[target]['color']);
   activeSection = target;
 
