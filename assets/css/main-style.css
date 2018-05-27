@@ -888,6 +888,7 @@ body {
 .codexTOC {
   margin: 20px;
   border-right: 1px solid rgba(255,255,255,0.2);
+  text-align: right;
 }
 .codexTOC ul {
   margin: 10px;
@@ -897,8 +898,8 @@ body {
   padding-top: 20px;
 }
 .codexTOCLink {
-  border-left: 2px solid;
-  padding-left: 30px;
+  border-right: 2px solid;
+  padding-right: 30px;
   text-transform: uppercase;
   transition: 0.1s ease-in-out;
 }
