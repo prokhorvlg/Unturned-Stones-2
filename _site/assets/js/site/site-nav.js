@@ -106,9 +106,13 @@ var headings = {
     "link": "/technology/spacecraft",
     "subheadings": [
       "starscrapers",
+      "boring-rocket",
+      "loxley",
       "metavaski-minke",
-      "boring-rocket"
-    ]
+      "nedry",
+      "petra-wayward",
+      "shenlong",
+    ],
   },
   "starscrapers": {
     "title": "Starscrapers",
@@ -119,21 +123,53 @@ var headings = {
     "subheadings": []
   },
   "metavaski-minke": {
-    "title": "The Metavaski Minke",
+    "title": "Metavaski Minke",
     "description": "Data Hauler", 
     "actions": "direct",
     "icon": ">",
-    "link": "/technology/spacecraft/metavaski-minke",
+    "link": "/codex/technology/spacecraft/metavaski-minke",
     "subheadings": []
   },
   "boring-rocket": {
-    "title": "The Boring Rocket",
+    "title": "Boring Rocket",
     "description": "Mining vessel", 
     "actions": "direct",
     "icon": ">",
-    "link": "/technology/spacecraft/boring-rocket",
+    "link": "/codex/technology/spacecraft/boring-rocket",
     "subheadings": []
-  }
+  },
+  "nedry": {
+    "title": "BOS Nedry",
+    "description": "Warships without guns", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/codex/technology/spacecraft/nedry",
+    "subheadings": []
+  },
+  "loxley": {
+    "title": "Lord of Loxley",
+    "description": "Merry men", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/codex/technology/spacecraft/loxley",
+    "subheadings": []
+  },
+  "shenlong": {
+    "title": "COEK Shenlong",
+    "description": "Emperor's Spirit Dragon", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/codex/technology/spacecraft/shenlong",
+    "subheadings": []
+  },
+  "petra-wayward": {
+    "title": "Petra-Wayward Startower",
+    "description": "Center of Commerce", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/codex/technology/spacecraft/petra-wayward",
+    "subheadings": []
+  },
 }
 
 // The HTML generated from the above object is stored here.
@@ -400,6 +436,7 @@ function closeNavObject(currentHeading) {
 // Navigates to the selected page.
 function navigateNavObject(currentHeading) {
   console.log('navigating to', headings[currentHeading]['link']);
+  window.location.href = headings[currentHeading]['link'];
 }
 
 // Resets the animation of the spinning dorito upon mouseleave of the nav bar.

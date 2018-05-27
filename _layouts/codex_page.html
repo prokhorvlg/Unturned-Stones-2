@@ -2,4 +2,120 @@
 layout: codex_page
 ---
 
-*
+<!doctype>
+<html lang="en">
+  <head>
+    <!--     Custom Styles     -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ page.excerpt }}">
+    <meta name="author" content="{{ page.author }}">
+    <meta name="revisit-after" content="5 days">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <title>{{ page.title }}</title>
+
+    <!--     jQuery     -->
+    <!--     The jQuery library.     -->
+    <script src="{% link assets/js/jQuery/jquery-3.3.1.min.js %}"></script>
+    <link rel="stylesheet" href="{% link assets/css/jQuery/jquery-ui.min.css %}">
+    <link rel="stylesheet" href="{% link assets/css/jQuery/jquery-ui.theme.min.css %}">
+    <script src="{% link assets/js/jQuery/jquery-ui.min.js %}"></script>
+
+    <!--     jQuery: Shuffle Letters     -->
+    <!--    The plugin that shuffles letters on certain text elements.     -->
+    <script src="{% link assets/js/jQuery-plugins/jquery.shuffleLetters.js %}"></script>
+
+    <!--     jQuery: Terminal     -->
+    <!--    The plugin that operates the terminal component.     -->
+    <script src="{% link assets/js/jQuery-terminal/jquery.terminal.min.js %}"></script>
+    <link rel="stylesheet" href="{% link assets/css/jQuery-terminal/jquery.terminal.css %}">
+
+    <!--     Bootstrap Core     -->
+    <!--     For setting up page layouts.     -->
+    <link href="{% link assets/css/bootstrap/bootstrap.min.css %}" rel="stylesheet">
+    <script src="{% link assets/js/bootstrap/bootstrap.min.js %}"></script>
+
+    <!--     Web Fonts     -->
+    <!--     Adds the site fonts.     -->
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    <!--     Custom Styles     -->
+    <!--     Adds my site styles.     -->
+    <link href="{% link assets/css/main-style.css %}" rel="stylesheet">
+
+    <!--     Normalize     -->
+    <!--     Adds cross-browser consistency and fixes some bugs.     -->
+    <link href="{% link assets/css/normalize/normalize.css %}" rel="stylesheet">
+
+    <script src="{% link assets/js/greensock/TweenMax.min.js %}"></script>
+    <script src="{% link assets/js/snap/snap.svg-min.js %}"></script>
+
+    <!--     Custom Scripts     -->
+    <!-- Script: Provides parallaxing background functionality -->
+    <script src="{% link assets/js/site/site-parallax.js %}"></script>
+    <script src="{% link assets/js/site/site-shufflequote.js %}"></script>
+    <script src="{% link assets/js/site/site-nav.js %}"></script>
+    <script src="{% link assets/js/site/site-terminal.js %}"></script>
+    <script src="{% link assets/js/site/site-animateHome.js %}"></script>
+
+  </head>
+  <body>
+
+    <div id="siteContainer" class="siteContainer color-bg-2-l color-primary-l">
+      
+      <!--     Contains the site, which is pushed when the nav is opened.     -->
+      <div id="contentContainer" class="contentContainer">
+
+        <!--     Includes the header at the top of the site.     -->
+        {% include header.html %}
+
+        {{ page.page_description }}
+
+        <!--     Contains whatever content is templated into the page.     -->
+        {{ content }}
+
+        <!--     Includes the footer at the end of the site.     -->
+        {% include footer.html %}
+
+      </div>
+      <div id="dimDiv" class="dimDiv" onclick="outsideClick()"></div>
+      <div id="navContainer" class="navContainer color-primary">
+
+        <!--     Includes the navigation menu on the side of the site.     -->
+        {% include nav.html %}
+
+      </div>
+      
+    </div>
+    <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
+
+        
+        <div class="menuBarFlex">
+          <div class="menuBarChild menuBarLogo" id='menuBarLogo'>
+            <!--<img src="{% link assets/images/spinning_logo/d1.png %}" class="menuBarLogoImage" />-->
+          </div>
+          <div class="menuBarChildMenu">
+            <svg class="menuBarArrow menuBarArrowRight" x="0px" y="0px" viewBox="0 0 6.4 10" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+
+            <p class="font-code" id="menuBarLabel">Menu</p>
+
+            <svg class="menuBarArrow menuBarArrowLeft" x="0px" y="0px" viewBox="0 0 6.4 10" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+          </div>
+          <div class="menuBarChildText">
+            <p class="font-code">Contemporary Cyberpunk<span class="blinkingScore">_</span></p>
+          </div>
+        </div>
+        
+      </div>
+
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- Script: Saves scroll position of div on refresh -->
+    <script src="{% link assets/js/site/site-scrollSave.js %}"></script>
+  </body>
+</html>
