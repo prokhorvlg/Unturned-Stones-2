@@ -370,7 +370,7 @@ function compileNavObjectButton(currentHeading) {
   else if (headings[currentHeading]['actions'] == 'direct') {
     var currentHeadingObject = '';
 
-    currentHeadingObject += "<div class='navHeadingItem' id='nav_" + currentHeading + "' onclick=\"navigateNavObject('" + currentHeading + "')\" >";
+    currentHeadingObject += "<a class='divLink' href='" + headings[currentHeading]['link'] + "'><div class='navHeadingItem' id='nav_" + currentHeading + "' >";
 
     currentHeadingObject += "<div style='display: flex;'>";
 
@@ -392,7 +392,7 @@ function compileNavObjectButton(currentHeading) {
     currentHeadingObject += "⤷";
     currentHeadingObject += "</div>";
 
-    currentHeadingObject += "</div>";
+    currentHeadingObject += "</div></a>";
 
     generatedNavButtons[currentHeading] = currentHeadingObject;
   }

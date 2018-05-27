@@ -74,7 +74,57 @@ layout: codex_page
         <!--     Includes the header at the top of the site.     -->
         {% include header.html %}
 
-        {{ page.page_description }}
+        <div class="codexHead">
+          <div class="codexUpper">
+            <div class="codexTextBlock">
+              <div class="codexTOC">
+                <ul>
+                  {% for item in page.page_toc %}
+                    <li><a href="javascript:void(0);" onclick="$('#contentContainer').animate({ scrollTop: $('#{{ item.url }}').offset().top - $('#contentContainer').offset().top + $('#contentContainer').scrollTop() })" style="color: {{ page.page_highlight }};" class="codexTOCLink font-code-l">{{ item.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="codexTextContent">
+                <h1>{{ page.page_title }}</h1>
+                <h2 class='font-code' style="color: {{ page.page_highlight }};">⤷ {{ page.page_flavor }}</h2>
+                {{ page.page_description }}
+                <p class='font-code' style="color: {{ page.page_highlight }};">{{ page.url }}</p>
+              </div>
+            </div>
+            <div class="codexImageBlock">
+              <div class="codexImageContent">
+                <div class="codexLeftBar" style="border-color: {{ page.page_highlight }}"></div>
+                <div class="codexImage"><img src="{{ page.page_image }}" /></div>
+                <div class="codexRightBar" style="border-color: {{ page.page_highlight }}"></div>
+              </div>
+              <div class="codexImageUnderblurb font-code">
+                {{ page.page_imageBlurb }}
+              </div>
+            </div>
+          </div>
+          <div class="codexLower">
+            <div class="codexScrollLine">
+              <hr class="full">
+            </div>
+            <div class="codexScrollText">
+              <p class="font-code">v SCROLL DOWN v</p>
+            </div>
+          </div>
+        </div>
+
+    		{% for item in page.page_features %}
+    		  {% if item.type == "parallaxBlock" %}
+
+            <div class="parallaxBlock parallax_s1 resizeHeader" style="background-image: url({{ item.init.backLayerURL | prepend: site.url }}); height: 100%;">
+              <div class="parallaxBlockChild parallax_ns2" style="background-image: url({{ item.init.frontLayerURL | prepend: site.url }});">
+              </div>
+            </div>
+
+            {{ page.bgBlock }}
+          {% elsif item.type == "somethingElse" %}
+            Something else
+          {% endif %}
+    		{% endfor %}
 
         <!--     Contains whatever content is templated into the page.     -->
         {{ content }}
@@ -113,7 +163,6 @@ layout: codex_page
         
       </div>
 
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
     <!-- Script: Saves scroll position of div on refresh -->
     <script src="{% link assets/js/site/site-scrollSave.js %}"></script>
   </body>

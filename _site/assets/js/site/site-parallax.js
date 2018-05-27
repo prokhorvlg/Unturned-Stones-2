@@ -1,5 +1,16 @@
 $(document).ready(function() {
 
+  var resizeTimer;
+  resizeHeader('resizeHeader', 0.5625);
+  $(window).on('resize', function(e) {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+
+      resizeHeader('resizeHeader', 0.5625);
+              
+    }, 30);
+  });
+
   // Detects browser; only runs certain scripts on desktop browsers.
   if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
    // some code..
@@ -13,6 +24,7 @@ $(document).ready(function() {
     $('.parallax_s6').parallax("50%", 0.6, true);
     $('.parallax_s7').parallax("50%", 0.7, true);
     $('.parallax_s8').parallax("50%", 0.8, true);
+    console.log('running parallax')
 
     $('.parallax_ns4_dossier').parallax("40%", 0.4, true);
     $('.parallax_ns4_gadget').parallax("100%", -0.4, true);
@@ -32,11 +44,6 @@ $(document).ready(function() {
       });
     }
 
-
-
-    /* for (var i = 1; i < 6; i++){
-      animFunction(i);
-    } */
   }
 
 });
@@ -82,7 +89,7 @@ $(document).ready(function() {
 
       // function to be called whenever the window is scrolled or resized
       function update() {
-        var pos = $window.scrollTop();
+        var pos = $('.contentContainer').scrollTop();
 
         $this.each(function() {
           var $element = $(this);
@@ -104,7 +111,27 @@ $(document).ready(function() {
         });
       }
 
-      $window.bind('scroll', update).resize(update);
+      $('.contentContainer').bind('scroll', update).resize(update);
       update();
     };
 })(jQuery);
+
+function resizeHeader(elClass, fac){
+
+  if ($( window ).width() < 992){
+    $('.' + elClass).each(function () {
+      $(this).css("height", (($( window ).width() * fac) + 65) + "px");
+    });
+  }
+  else if ($( window ).width() > 992 && $( window ).width() < 1200) {
+    $('.' + elClass).each(function () {
+      $(this).css("height", (($( window ).width() * fac) + 85) + "px");
+    });
+  }
+  else {
+    $('.' + elClass).each(function () {
+      $(this).css("height", ($( window ).width() * fac) + "px");
+    });
+  }
+
+}

@@ -95,6 +95,7 @@ layout: default
 
   <div class="homeButtons font-code-l">
     <div class="homeButtonsInset">
+      <a class="divLink homeButtonLink" href="https://www.reddit.com/r/worldbuilding/" target="_blank">
       <div class="homeButton">
         <div class="homeButtonInset">
           <div class="homeButtonImage">
@@ -116,6 +117,8 @@ layout: default
           </div>
         </div>
       </div>
+      </a>
+      <a class="divLink homeButtonLink" href="https://www.reddit.com/r/unturnedstones/" target="_blank">
       <div class="homeButton">
         <div class="homeButtonInset">
           <div class="homeButtonImage">
@@ -137,6 +140,8 @@ layout: default
           </div>
         </div>
       </div>
+      </a>
+      <a class="divLink homeButtonLink" href="https://discord.gg/zRtWqKJ" target="_blank">
       <div class="homeButton">
         <div class="homeButtonInset">
           <div class="homeButtonImage">
@@ -158,6 +163,7 @@ layout: default
           </div>
         </div>
       </div>
+      </a>
     </div>
   </div>
   <div class="homeUpdate">
@@ -168,14 +174,17 @@ layout: default
       <div class="homeUpdateBody">
         <h1 class="font-code-l">Featured Update</h1>
         <hr class="full">
-        <h2 class="font-title-primary">The Dorkmeister</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet neque nec blandit semper. Integer dignissim pretium justo eget viverra. Integer massa nibh, vulputate vitae laoreet eu, congue ut libero. Sed posuere nibh ipsum, nec bibendum tortor ultricies at. Phasellus vitae pharetra ante. Vivamus quis ligula porttitor, lacinia mi at, tincidunt ante. Proin varius nisl non dignissim maximus.</p>
+        <h2 class="font-title-primary"><a class="divLink" href="/codex/technology/spacecraft/metavaski-minke/">Metavaski Minke</a></h2>
+        <p>The interstellar economy runs on information. Nothing, not even exotic matter ripped straight from black holes, is as precious as a corporation’s data.</p>
+        <p>Metavaski Applied Technologies is just one of numerous similar organizations and corporations that can be found among the stars. Their mission statement: the secure transport and delivery of information to and from research labs and manufactories.</p>
       </div>
+      <a class="divLink homeUpdateArrowLink" href="/codex/technology/spacecraft/metavaski-minke/">
       <div class="homeUpdateArrow">
         <div class="homeUpdateArrowInset">
           <svg width="10px" height="10px" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
         </div>
       </div>
+      </a>
     </div>
   </div>
 
