@@ -468,6 +468,9 @@ body {
 
   padding-bottom: 30px;
   padding-top: 10px;
+
+  text-align: justify;
+  margin-right: 15px;
 }
 
 .navHeadingContainer {
@@ -683,6 +686,7 @@ body {
 }
 .headerItems {
   padding-right: 50px;
+  display: flex;
 }
 .headerRightItem {
   padding-left: 20px;
@@ -884,11 +888,17 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 1600px) {
+  .codexUpper {
+    flex-direction: column;
+  }
+}
 
 .codexTOC {
   margin: 20px;
   border-right: 1px solid rgba(255,255,255,0.2);
   text-align: right;
+  white-space: nowrap;
 }
 .codexTOC ul {
   margin: 10px;
@@ -938,6 +948,13 @@ body {
   justify-content: center;
   flex-direction: column;
   margin-right: 40px;
+}
+@media screen and (max-width: 1600px) {
+  .codexImageBlock {
+    padding: 40px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-right: 0;
+  }
 }
 
 .codexImageContent {
@@ -993,6 +1010,25 @@ body {
   background-position: 50% 50%;
   background-size: 100% auto;
   background-repeat: no-repeat;
+}
+
+.headerLink {
+  color: white;
+}
+.headerHub:hover, .headerHub:active, .headerHub:focus {
+  color: white;
+}
+.headerChronicle:hover, .headerChronicle:active, .headerChronicle:focus {
+  color: #00ffff;
+}
+.headerCodex:hover, .headerCodex:active, .headerCodex:focus {
+  color: #ff00ff;
+}
+.headerTerminal:hover, .headerTerminal:active, .headerTerminal:focus {
+  color: #00ff36;
+}
+.headerAbout:hover, .headerAbout:active, .headerAbout:focus {
+  color: white;
 }
 
 /* - Style Guide                        */
@@ -1125,6 +1161,10 @@ a.divLink:focus, a.divLink:active {
   color: inherit;
 }
 
+.breadcrumbDivider {
+  color: white;
+}
+
 /* -- Dividers & Horizontal Rules       */
 /*  Styles for various divider elements. */
 
@@ -1140,6 +1180,13 @@ hr.full {
   border-width: 1px;
   /* color-primary */
   border-color: rgba(255,255,255,1);
+}
+
+hr.fullDim {
+  width: 100%;
+  border-width: 1px;
+  /* color-primary */
+  border-color: rgba(255,255,255,0.2);
 }
 
 hr.left {
@@ -1203,7 +1250,7 @@ hr.right {
   background-color: rgba(240,240,240,1);
 }
 
-.nav-color_home:hover {
+.nav-color_hub:hover {
   background-color: rgba(255,255,255,0.1);
 }
 .nav-color_chronicle:hover {

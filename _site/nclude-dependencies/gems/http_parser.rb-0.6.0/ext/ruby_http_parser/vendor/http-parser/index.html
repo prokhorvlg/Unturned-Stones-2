@@ -67,7 +67,7 @@
     <script src="/assets/js/site/site-animateHome.js"></script>
 
   </head>
-  <body>
+  <body class="home">
 
     <div id="siteContainer" class="siteContainer color-bg-2-l color-primary-l">
       
@@ -77,11 +77,15 @@
         <!--     Includes the header at the top of the site.     -->
         <div class="header">
   <div class="headerTitle font-code-l">
-    UNTURNED STONES
+    <a href="/" class="headerLink headerHub">UNTURNED STONES</a>
   </div>
 
   <div class="headerItems font-code-l">
-    <div class="headerRightItem"><a>CHRONICLE</a></div>
+    <div class="headerRightItem"><a href="javascript:void(0)" onclick="navigateSection('hub')" class="headerLink headerHub">HUB</a></div>
+    <div class="headerRightItem"><a href="javascript:void(0)" onclick="navigateSection('chronicle')" class="headerLink headerChronicle">CHRONICLE</a></div>
+    <div class="headerRightItem"><a href="javascript:void(0)" onclick="navigateSection('codex')" class="headerLink headerCodex">CODEX</a></div>
+    <div class="headerRightItem"><a href="javascript:void(0)" onclick="navigateSection('terminal')" class="headerLink headerTerminal">TERMINAL</a></div>
+    <div class="headerRightItem"><a href="javascript:void(0)" onclick="navigateSection('about')" class="headerLink headerAbout">ABOUT</a></div>
   </div>
 </div>
 
@@ -291,7 +295,7 @@ consecutive <code class="highlighter-rouge">on_url</code> callbacks.</p>
   <!-- Nav Tabs -->
   <div class="navTabs">
     <div class="navTab">
-      <div class="navTabCircle nav_home" id="nav_home" onclick="navClick('home')"><img src='/assets/images/nav/nav_home.png' class="navTabImage" /></div>
+      <div class="navTabCircle nav_hub" id="nav_hub" onclick="navClick('hub')"><img src='/assets/images/nav/nav_home.png' class="navTabImage" /></div>
     </div>
     <div class="navTab">
       <div class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"><img src='/assets/images/nav/nav_chronicle_color.png' class="navTabImage" /></div>
@@ -310,7 +314,7 @@ consecutive <code class="highlighter-rouge">on_url</code> callbacks.</p>
   <!-- Nav Seperator Bar Line -->
   <div class="navSectionBarContainer">
     <div class="navSectionBarLine nav_color_bg"></div>
-    <div class="navSectionBarText nav_color" id="nav_sectionTitle">HOME</div>
+    <div class="navSectionBarText nav_color" id="nav_sectionTitle">HUB</div>
     <div class="navSectionBarLine nav_color_bg"></div>
   </div>
 

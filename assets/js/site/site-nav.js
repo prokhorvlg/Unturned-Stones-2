@@ -7,8 +7,8 @@ var navIsOpen = false;
 
 // Stores data regarding the nav tabs in the sidebar.
 var navSections = { 
-  "home": {
-    "description": "Go home.",
+  "hub": {
+    "description": "A quick access point for major links.",
     "color": "#fff"
   },
   "chronicle": {
@@ -101,6 +101,7 @@ var headings = {
   "spacecraft": {
     "title": "Spacecraft",
     "description": "Interstellar Torchships", 
+    "details": "Ranging from rock-hopping pods to mile-high monoliths, centuries of interstellar travel has perfected the 'starscraper' design. The best way to describe the common starship is an air-sealed high-rise building with a fusion drive strapped to the bottom, hurtling through space at 1g of acceleration.<br><br>Starscrapers have changed greatly over the course of time, but one thing has always remained certain - they are the tool of choice for anyone with any influence, and there is little reason to believe that will ever change.",
     "actions": "expand",
     "icon": "═",
     "link": "/technology/spacecraft",
@@ -176,19 +177,70 @@ var headings = {
 var generatedNavButtons = {};
 var generatedNavPages = {};
 
-var activeSection = 'home';
+var activeSection = 'hub';
+
+var pageType = '';
 
 $(document).ready(function(){
+  pageType = $('body').attr('class');
   generateNav();
-  navClick('home');
+  navClick('hub');
 
   $('.navTitleSection').click(function() {
     window.location.href = '/';
   });
 
+  var urlString = $("#processURL").html();
+  var pageColor = $("#processURL").css('color');
+  $("#processURL").html(processURL(urlString, pageColor, pageType));
+
 });
 
+function scrollToElement(targetEl) {
+  $('#contentContainer').animate({ 
+    scrollTop: $('#' + targetEl).offset().top - $('#contentContainer').offset().top + $('#contentContainer').scrollTop()
+  });
+}
 
+function processURL(urlString, color, section) {
+  var urlArray = urlString.split('/');
+  var final = '';
+
+  for (var i = 0; i < urlArray.length; i++) {
+    if (urlArray[i] != ''){
+      if (headings[urlArray[i]]) {
+        if (headings[urlArray[i]].actions != 'direct') {
+          final = final + "<span class='breadcrumbDivider font-code'> : </span>";
+          final = final + "<a href='javascript:void(0)' onclick='navigateSidenav(\"" + urlArray[i] + "\", \"" + section + "\")' class='breadcrumbElement font-code' style='color:" + color + ";'>" + urlArray[i] + "</a>";
+        }
+        else {
+          final = final + "<span class='breadcrumbDivider font-code'> : ";
+          final = final + urlArray[i] + "</span>";
+        }
+      }
+      else {
+        final = final + "<span class='breadcrumbDivider font-code'> : </span>";
+        final = final + "<a href='javascript:void(0)' onclick='navigateSection(\"" + section + "\")' class='breadcrumbElement font-code' style='color:" + color + ";'>" + urlArray[i] + "</a>";
+      }
+    }
+  }
+  return final;
+}
+
+// Opens the side nav, and navigates to a section within it.
+function navigateSection(targetSection) {
+  manipNav();
+  navClick(targetSection);
+}
+
+// Opens the side nav, and navigates to a nav element within the file structure.
+function navigateSidenav(targetFolder, targetSection) {
+  manipNav();
+  navClick(targetSection);
+  openNavObject(targetFolder);
+}
+
+// Open/close the side nav based on its current state.
 function manipNav() {
   if (navIsOpen) {
     closeNav();
@@ -204,6 +256,7 @@ function manipNav() {
   }
 }
 
+// Onclick handler for the dark div that covers the content area.
 function outsideClick() {
   if (navIsOpen) {
     closeNav();
@@ -211,6 +264,7 @@ function outsideClick() {
   }
 }
 
+// Open the side nav.
 function openNav() {
   var navContainer = document.getElementById('navContainer');
   var dimDiv = document.getElementById('dimDiv');
@@ -234,6 +288,7 @@ function openNav() {
   setTimeout( function() { $('.navTerminalChild').removeClass('hidden'); }, 300);
 }
 
+// Closes the side nav.
 function closeNav() {
   var navContainer = document.getElementById('navContainer');
   var dimDiv = document.getElementById('dimDiv');
@@ -260,6 +315,7 @@ function closeNav() {
   $('.menuBarArrowLeft').removeClass('fullOppositeRotation');
 }
 
+// Handles the click of a navigation section within the side nav.
 function navClick(target) {
   var targetIcon = document.getElementById('nav_' + target);
   var sectionTitle = document.getElementById('nav_sectionTitle');
@@ -267,8 +323,6 @@ function navClick(target) {
 
   sectionTitle.innerHTML = target;
   sectionDescription.innerHTML = navSections[target]['description'];
-
-  // Update navigation structure
 
   var navScrollable = document.getElementById('navScrollable');
   var navTerminal = document.getElementById('navTerminal');
@@ -299,7 +353,7 @@ function navClick(target) {
 
 // Overhead function for generating the entire contents of the nav.
 function generateNav() {
-  generatedNavButtons['home'] = findNavItems('home');
+  generatedNavButtons['hub'] = findNavItems('hub');
   generatedNavButtons['chronicle'] = findNavItems('chronicle');
   generatedNavButtons['codex'] = findNavItems('codex');
   generatedNavButtons['terminal'] = findNavItems('terminal');

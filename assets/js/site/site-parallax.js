@@ -24,7 +24,6 @@ $(document).ready(function() {
     $('.parallax_s6').parallax("50%", 0.6, true);
     $('.parallax_s7').parallax("50%", 0.7, true);
     $('.parallax_s8').parallax("50%", 0.8, true);
-    console.log('running parallax')
 
     $('.parallax_ns4_dossier').parallax("40%", 0.4, true);
     $('.parallax_ns4_gadget').parallax("100%", -0.4, true);

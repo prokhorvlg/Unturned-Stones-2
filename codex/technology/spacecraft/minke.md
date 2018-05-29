@@ -9,6 +9,7 @@ layout: codex_page
 page_title: "Metavaski Minke"
 
 page_flavor: "Secure Data Starscrapers: the lifeblood of the interstellar information economy"
+page_flavor_url: 'overarchingConcept'
 
 page_highlight: "#8a9cdd"
 
@@ -24,16 +25,39 @@ page_image: "/assets/images/codex/technology/spacecraft/metavaski_icon.png"
 page_imageBlurb: "metavaski corporate logo"
 
 page_toc: [ 
-            { title: 'Title for thing 1', url: 'thing1' },
-            { title: 'Another title', url: 'thing2' }, 
+            { title: 'Visual', url: 'visual' },
+            { title: 'Information Sheet', url: 'infoSheet' },
+            { title: 'Overarching Concept', url: 'overarchingConcept' }, 
+            { title: 'Design Breakdown', url: 'designBreakdown' },
+            { title: 'Additional Imagery', url: 'imagery' },
+            { title: 'Related Links', url: 'related' }, 
           ]
 
 page_features: [
-            { type: 'parallaxBlock', init: {
-              backLayerURL: '/assets/images/codex/technology/spacecraft/minke_bg.png',
-              frontLayerURL: '/assets/images/codex/technology/spacecraft/minke_ship.png',
-            } },
-          ]
+                { 
+                  type: 'parallaxBlock', init: {
+                    id: 'visual',
+                    backLayerURL: '/assets/images/codex/technology/spacecraft/minke_bg.png',
+                    frontLayerURL: '/assets/images/codex/technology/spacecraft/minke_ship.png',
+                  } 
+                },
+                { 
+                  type: 'dataSheet', init: {
+                  id: 'dataSheet',
+                  title: 'Information Sheet',
+                  data: [
+                    ["Description", "1200-meter monolithic civilian starscraper designed to transport secure information, including blueprints, design specifications, and prototypes."],
+                    ["Starscraper", "(Federation) Corporate"],
+                    ["Current Operator", "Metavaski Applied Technologies LLC, subsidiary of Bloomingbelt Financial, subsidiary of CAUCorp"],
+                    ["Manufactured", "y8, at the Cillobein Sprawl"],
+                    ["Architect", "Team Hippogriff, Dinette Fabeau Design LLC (subsidiary of Reinhart HIC)"],
+                    ["Class", "Reinhart Mysticeti: 2 starscrapers"],
+                    ["Sister Vessels", "1: The Corinthian. Purchased by an unknown League faction. Current wereabouts unknown. Last known activity, apprehended by Confederate Caravansarai Trade Administration."],
+                    ["Architecture", "Interfaces with all, but core systems are mostly built upon IBM."],
+                  ]
+                  } 
+                },
+              ]
 ---
 
-Content
+Content.

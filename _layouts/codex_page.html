@@ -62,9 +62,10 @@ layout: codex_page
     <script src="{% link assets/js/site/site-shufflequote.js %}"></script>
     <script src="{% link assets/js/site/site-nav.js %}"></script>
     <script src="{% link assets/js/site/site-terminal.js %}"></script>
+    <script src="{% link assets/js/site/site-codexPage.js %}"></script>
 
   </head>
-  <body>
+  <body class="codex">
 
     <div id="siteContainer" class="siteContainer color-bg-2-l color-primary-l">
       
@@ -80,15 +81,15 @@ layout: codex_page
               <div class="codexTOC">
                 <ul>
                   {% for item in page.page_toc %}
-                    <li><a href="javascript:void(0);" onclick="$('#contentContainer').animate({ scrollTop: $('#{{ item.url }}').offset().top - $('#contentContainer').offset().top + $('#contentContainer').scrollTop() })" style="color: {{ page.page_highlight }};" class="codexTOCLink font-code-l">{{ item.title }}</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToElement('{{ item.url }}')" style="color: {{ page.page_highlight }};" class="codexTOCLink font-code-l">{{ item.title }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
               <div class="codexTextContent">
                 <h1>{{ page.page_title }}</h1>
-                <h2 class='font-code' style="color: {{ page.page_highlight }};">⤷ {{ page.page_flavor }}</h2>
+                <h2><a href="javascript:void(0);" onclick="scrollToElement('{{ page.page_flavor_url }}')" style="color: {{ page.page_highlight }};" class="font-code">⤷ {{ page.page_flavor }}</a></h2>
                 {{ page.page_description }}
-                <p class='font-code' style="color: {{ page.page_highlight }};">{{ page.url }}</p>
+                <p id="processURL" class='font-code' style="color: {{ page.page_highlight }};">{{ page.url }}</p>
               </div>
             </div>
             <div class="codexImageBlock">
@@ -104,7 +105,7 @@ layout: codex_page
           </div>
           <div class="codexLower">
             <div class="codexScrollLine">
-              <hr class="full">
+              <hr class="fullDim">
             </div>
             <div class="codexScrollText">
               <p class="font-code">v SCROLL DOWN v</p>
@@ -115,14 +116,26 @@ layout: codex_page
     		{% for item in page.page_features %}
     		  {% if item.type == "parallaxBlock" %}
 
-            <div class="parallaxBlock parallax_s1 resizeHeader" style="background-image: url({{ item.init.backLayerURL | prepend: site.url }}); height: 100%;">
-              <div class="parallaxBlockChild parallax_ns2" style="background-image: url({{ item.init.frontLayerURL | prepend: site.url }});">
+            <div id="{{ item.init.id }}" class="parallaxBlock parallax_s1 resizeHeader" style="background-image: url({{ item.init.backLayerURL | prepend: site.url }}); height: 100%;">
+              <div class="parallaxBlockChild" style="background-image: url({{ item.init.frontLayerURL | prepend: site.url }});">
               </div>
             </div>
 
             {{ page.bgBlock }}
-          {% elsif item.type == "somethingElse" %}
-            Something else
+          {% elsif item.type == "dataSheet" %}
+
+            {% for dataItem in item.init.data %}
+            <div class="statBlockBody">
+              <div class="statBlockBodyChild" style="color: {{ page.page_highlight }};">
+                <p class="statBlockContentChildH">{{ dataItem[0] }}</p>
+              </div>
+              <div class="statBlockBodyChild"></div>
+              <div class="statBlockBodyChild">
+                <p class="statBlockContentChild">{{ dataItem[1] }}</p>
+              </div>
+            </div>
+            {% endfor %}
+
           {% endif %}
     		{% endfor %}
 
@@ -144,7 +157,6 @@ layout: codex_page
     </div>
     <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
 
-        
         <div class="menuBarFlex">
           <div class="menuBarChild menuBarLogo" id='menuBarLogo'>
             <!--<img src="{% link assets/images/spinning_logo/d1.png %}" class="menuBarLogoImage" />-->
