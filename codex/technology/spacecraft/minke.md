@@ -42,9 +42,9 @@ page_features: [
                   } 
                 },
                 { 
-                  type: 'dataSheet', init: {
-                  id: 'dataSheet',
-                  title: 'Information Sheet',
+                  type: 'infoSheet', init: {
+                  id: 'infoSheet',
+                  title: 'Info Sheet',
                   data: [
                     ["Description", "1200-meter monolithic civilian starscraper designed to transport secure information, including blueprints, design specifications, and prototypes."],
                     ["Starscraper", "(Federation) Corporate"],

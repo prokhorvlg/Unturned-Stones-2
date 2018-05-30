@@ -122,7 +122,15 @@ layout: codex_page
             </div>
 
             {{ page.bgBlock }}
-          {% elsif item.type == "dataSheet" %}
+          {% elsif item.type == "infoSheet" %}
+
+          <div class="statBlock">
+            <div class="statBlockHead">
+              <h1 class="bodyTitle colorMinke">DATA SHEET</h1>
+              <p class="statBlockContent"><em>Private Industrial Vessel Metavaski Minke</em></p>
+            </div>
+            <hr style="margin:0; padding:0">
+            <div class="statBlockContainer">
 
             {% for dataItem in item.init.data %}
             <div class="statBlockBody">
@@ -135,6 +143,9 @@ layout: codex_page
               </div>
             </div>
             {% endfor %}
+
+            </div>
+          </div>
 
           {% endif %}
     		{% endfor %}
