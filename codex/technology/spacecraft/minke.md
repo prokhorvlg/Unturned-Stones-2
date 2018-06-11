@@ -41,10 +41,11 @@ page_features: [
                     frontLayerURL: '/assets/images/codex/technology/spacecraft/minke_ship.png',
                   } 
                 },
-                { 
+                {
                   type: 'infoSheet', init: {
                   id: 'infoSheet',
                   title: 'Info Sheet',
+                  desc: 'Private Industrial Vessel Metavaski Minke',
                   data: [
                     ["Description", "1200-meter monolithic civilian starscraper designed to transport secure information, including blueprints, design specifications, and prototypes."],
                     ["Starscraper", "(Federation) Corporate"],
@@ -55,6 +56,27 @@ page_features: [
                     ["Sister Vessels", "1: The Corinthian. Purchased by an unknown League faction. Current wereabouts unknown. Last known activity, apprehended by Confederate Caravansarai Trade Administration."],
                     ["Architecture", "Interfaces with all, but core systems are mostly built upon IBM."],
                   ]
+                  } 
+                },
+                {
+                  type: 'infoBlock', init: {
+                  id: 'overarchingConcept',
+                  title: 'Secure Data Starscrapers',
+                  desc: 'The lifeblood of the interstellar information economy',
+                  width: '8',
+                  data: "<p>In Unturned Stones, mankind’s interstellar economy runs on information. Nothing, not even exotic matter ripped straight from black holes, is as precious as a corporation’s data.</p>
+
+<p>But what exactly is corporate data? The vague nature of the term is intentional, but to understand why, you’d have to understand the Interstellar Information Economy.</p>
+
+<p>Corporations (and governments, where applicable) no longer directly manufacture or implement the products that they design outside of, perhaps, their own homesystem. Due to the vast distances in space and the tremendous difficulty of shipping interstellar, each system has its own local manufacturer, which in turn license or otherwise make deals for designs created by dedicated design companies in developed systems.</p>
+
+<p>This leads to a world where there are usually two major entities involved in any manufactured product, whether that’s a starship, home appliance, prefab building, even wireless services and drill bits. There are the designers - the groups located in developed solar systems that handle all things design related, and the manufactories - often single-system companies or local governments that handle the manufacturing of those products within that system.</p>
+
+<p>The cycle is fairly straightforward. A designer designs a device, ships the blueprint and prototype to extrasolar manufactories, and receives royalties from each one as they manufacture and distribute their product. If a manufactory swindles a designer, all designers stop dealing with that manufactory. This leads to a vulnerability, however - if a designer’s blueprint is leaked, the designer almost always collapses immediately as a company.</p>
+
+<p>This is where secure data starscrapers come in. These purpose-built behemoths are the futuristic amalgamation of cargo vessels and armored cars, where self-destructing vaults replace cargo containers and servers replace cash. These traveling fortresses, often operated by third party security and technology companies (such as Metavaski in the Minke's case), are virtually impossible to assault - let alone hack or steal from. However, they do become exposed during data transfers…</p>
+
+<p>Secure data starscrapers move around corporate data. This information, usually considered to be blueprints, design specifications, and prototypes, can also take the form of any sort of data that a corporation considers valuable enough to its operation that they don't want it seen for fear of it impacting their business. This includes research: databases and studies on who and how people use their products; business strategies: future plans for expansion; and other information less conventional.</p>",
                   } 
                 },
               ]

@@ -124,27 +124,49 @@ layout: codex_page
             {{ page.bgBlock }}
           {% elsif item.type == "infoSheet" %}
 
-          <div class="statBlock">
-            <div class="statBlockHead">
-              <h1 class="bodyTitle colorMinke">DATA SHEET</h1>
-              <p class="statBlockContent"><em>Private Industrial Vessel Metavaski Minke</em></p>
-            </div>
-            <hr style="margin:0; padding:0">
-            <div class="statBlockContainer">
-
-            {% for dataItem in item.init.data %}
-            <div class="statBlockBody">
-              <div class="statBlockBodyChild" style="color: {{ page.page_highlight }};">
-                <p class="statBlockContentChildH">{{ dataItem[0] }}</p>
+          <div class="row gridBG paddingTopBottom" id="{{ item.init.id }}">
+            <div class="col-md-0 col-lg-2"></div>
+            <div class="statBlock col-md-12 col-lg-8">
+              <div class="statBlockHead">
+                <h1 class="bodyTitle colorMinke">{{ item.init.title }}</h1>
+                <p class="statBlockContent font-code" style="color: {{ page.page_highlight }};">{{ item.init.desc }}</p>
               </div>
-              <div class="statBlockBodyChild"></div>
-              <div class="statBlockBodyChild">
-                <p class="statBlockContentChild">{{ dataItem[1] }}</p>
+              <div class="statBlockContainer">
+
+              {% for dataItem in item.init.data %}
+              <div class="statBlockBody">
+                <div class="statBlockBodyChild" style="color: {{ page.page_highlight }};">
+                  <p class="statBlockContentChildH font-code">{{ dataItem[0] }}</p>
+                </div>
+                <div class="statBlockBodyChild"></div>
+                <div class="statBlockBodyChild">
+                  <p class="statBlockContentChild">{{ dataItem[1] }}</p>
+                </div>
+              </div>
+              {% endfor %}
+
               </div>
             </div>
-            {% endfor %}
+            <div class="col-md-0 col-lg-2"></div>
+          </div>
 
+          {% elsif item.type == "infoBlock" %}
+
+          <div class="row gridBG paddingTopBottom" id="{{ item.init.id }}">
+            <div class="col-md-0 col-lg-{% if item.init.width == "8" %}2{% elsif item.init.width == "10" %}1{% endif %}"></div>
+            <div class="col-md-12 col-lg-{% if item.init.width == "8" %}8{% elsif item.init.width == "10" %}10{% endif %}">
+              <div class="infoDecorSquare"></div>
+              <div class="">
+                <h1 class="bodyTitle colorMinke">{{ item.init.title }}</h1>
+                <p class="statBlockContent font-code" style="color: {{ page.page_highlight }};">{{ item.init.desc }}</p>
+              </div>
+              <div class="">
+
+                {{ item.init.data }}
+
+              </div>
             </div>
+            <div class="col-md-0 col-lg-{% if item.init.width == "8" %}2{% elsif item.init.width == "10" %}1{% endif %}"></div>
           </div>
 
           {% endif %}

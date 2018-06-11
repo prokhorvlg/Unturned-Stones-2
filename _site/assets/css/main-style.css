@@ -447,6 +447,10 @@ body {
   letter-spacing: 0.2em;
   line-height: 2.3em;
   color: rgba(255,255,255,0.3);
+
+  flex-grow: 1;
+  text-align: right;
+  padding-right: 20px;
 }
 .navHeadingItemIcon {
   font-size: 26px;
@@ -877,6 +881,19 @@ body {
   transition: 2s ease-in-out;
 }
 
+.gridBG {
+  background-color: #161616;
+  background-image: url(../images/gridbg_lite.png);
+  background-repeat: repeat;
+}
+.row {
+  margin: 0;
+}
+.paddingTopBottom {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .codexHead {
   display: flex;
   flex-direction: column;
@@ -1015,22 +1032,26 @@ body {
 /*    STAT BLOCK     */
 
 .statBlock {
-  border: 2px solid white;
-  border-radius: 5px;
-  background-color: rgba(0,0,0,0.2);
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
 
-  padding-top: 20px;
-  margin: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 0px;
 }
 
 .statBlockContent {
   font-size: 14px;
+  margin-top: -15px;
 }
 
 .statBlock hr {
   width: 100%;
   border-width: 2px;
   border-color: #fff;
+}
+.statBlockHead {
+  text-align: center;
 }
 
 .statBlockContainer {
@@ -1039,6 +1060,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
+
+  background-color: rgba(0,0,0,0.3);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
 }
 
 .statBlockBody {
@@ -1088,6 +1114,13 @@ body {
 
 .statBlockContentAbilityRank {
   margin-bottom: 0px;
+}
+
+.infoDecorSquare {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border: 1px solid white;
 }
 
 .headerLink {
@@ -1161,6 +1194,10 @@ p {
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 0.2em;
+}
+
+.font-small {
+  font-size: 11px;
 }
 
 .font-code-l {

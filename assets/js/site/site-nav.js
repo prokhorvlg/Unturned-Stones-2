@@ -190,9 +190,11 @@ $(document).ready(function(){
     window.location.href = '/';
   });
 
-  var urlString = $("#processURL").html();
-  var pageColor = $("#processURL").css('color');
-  $("#processURL").html(processURL(urlString, pageColor, pageType));
+  if ($("#processURL").length){
+    var urlString = $("#processURL").html();
+    var pageColor = $("#processURL").css('color');
+    $("#processURL").html(processURL(urlString, pageColor, pageType));
+  }
 
 });
 
@@ -407,10 +409,10 @@ function compileNavObjectButton(currentHeading) {
     currentHeadingObject += headings[currentHeading]['title'];
     currentHeadingObject += "</div>";
 
-    currentHeadingObject += "<div class='navHeadingItemDescription'>";
-    currentHeadingObject += headings[currentHeading]['description'];
     currentHeadingObject += "</div>";
 
+    currentHeadingObject += "<div class='navHeadingItemDescription'>";
+    currentHeadingObject += headings[currentHeading]['description'];
     currentHeadingObject += "</div>";
 
     currentHeadingObject += "<div class='navHeadingItemDown nav_color' id=\"navHeadingItemDown_" + currentHeading + "\">";
@@ -436,10 +438,10 @@ function compileNavObjectButton(currentHeading) {
     currentHeadingObject += headings[currentHeading]['title'];
     currentHeadingObject += "</div>";
 
-    currentHeadingObject += "<div class='navHeadingItemDescription'>";
-    currentHeadingObject += headings[currentHeading]['description'];
     currentHeadingObject += "</div>";
 
+    currentHeadingObject += "<div class='navHeadingItemDescription'>";
+    currentHeadingObject += headings[currentHeading]['description'];
     currentHeadingObject += "</div>";
 
     currentHeadingObject += "<div class='navHeadingItemDown nav_color'>";
