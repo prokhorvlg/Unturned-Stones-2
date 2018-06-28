@@ -564,32 +564,96 @@ which exists, but is not allowed by the current definition list (#3)</p>
   <!-- Nav Tabs -->
   <div class="navTabs">
     <div class="navTab">
-      <div class="navTabCircle nav_hub" id="nav_hub" onclick="navClick('hub')"><img src='/assets/images/nav/nav_home.png' class="navTabImage" /></div>
+      <a href="#" class="navTabCircle nav_hub" id="nav_hub" onclick="navClick('hub')"><img src='/assets/images/nav/nav_home.png' class="navTabImage" /></a>
     </div>
     <div class="navTab">
-      <div class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"><img src='/assets/images/nav/nav_chronicle_color.png' class="navTabImage" /></div>
+      <a href="#" class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"><img src='/assets/images/nav/nav_chronicle_color.png' class="navTabImage" /></a>
     </div>
     <div class="navTab">
-      <div class="navTabCircle nav_codex" id="nav_codex" onclick="navClick('codex')"><img src='/assets/images/nav/nav_codex_color.png' class="navTabImage" /></div>
+      <a href="#" class="navTabCircle nav_codex" id="nav_codex" onclick="navClick('codex')"><img src='/assets/images/nav/nav_codex_color.png' class="navTabImage" /></a>
     </div>
     <div class="navTab">
-      <div class="navTabCircle nav_terminal" id="nav_terminal" onclick="navClick('terminal')"><img src='/assets/images/nav/nav_terminal_color.png' class="navTabImage" /></div>
+      <a href="#" class="navTabCircle nav_terminal" id="nav_terminal" onclick="navClick('terminal')"><img src='/assets/images/nav/nav_terminal_color.png' class="navTabImage" /></a>
     </div>
     <div class="navTab">
-      <div class="navTabCircle nav_about" id="nav_about" onclick="navClick('about')"><img src='/assets/images/nav/nav_about.png' class="navTabImage" /></div>
+      <a href="#" class="navTabCircle nav_about" id="nav_about" onclick="navClick('about')"><img src='/assets/images/nav/nav_about.png' class="navTabImage" /></a>
     </div>
   </div>
 
   <!-- Nav Seperator Bar Line -->
   <div class="navSectionBarContainer">
     <div class="navSectionBarLine nav_color_bg"></div>
-    <div class="navSectionBarText nav_color" id="nav_sectionTitle">HUB</div>
+    <div class="navSectionBarText nav_color nav_sectionTitle" id="nav_sectionTitle">HUB</div>
     <div class="navSectionBarLine nav_color_bg"></div>
   </div>
 
   <!-- Nav Description -->
   <div class="navSectionDescriptionContainer">
-    <p id="nav_sectionDescription">Description here.</p>
+    <p class="nav_sectionDescription" id="nav_sectionDescription">Description here.</p>
+  </div>
+
+  <!--<div class="navBackButton" id="navBackButton">
+    <p class="font-code nav_color"><< BACK</p>
+  </div>-->
+
+</div>
+
+<!-- Nav Main Section -->
+<div class="navChild navScrollable utsScrollBar" id="navScrollable">
+  No navigation items!
+</div>
+
+<!-- Nav Terminal Section -->
+<div class="navChild navTerminal" id='navTerminal'>
+  <div class="utsTerminal navTerminalChild utsScrollBar">
+    
+  </div>
+</div>
+
+      </div>
+      <div id="navContainerMobile" class="navContainerMobile color-primary">
+
+        <!--     Includes the navigation menu on the side of the site.     -->
+        <!-- Upper Nav Section -->
+<div class="navChild center navTitleContainerMobile">
+
+  <!-- Nav Title Section -->
+  <a class="divLink" href="/">
+  <div class="navTitleSection nav_color_bg_home">
+    <h1 class="navTitle">UNTURNED <strong>STONES</strong></h1>
+    <p class="navDesc font-code nav_color">Morality at the flick of a switch</p>
+  </div>
+  </a>
+
+  <!-- Nav Tabs -->
+  <div class="navTabs">
+    <div class="navTab">
+      <a href="#" class="navTabCircle nav_hub" id="nav_hub" onclick="navClick('hub')"><img src='/assets/images/nav/nav_home.png' class="navTabImage" /></a>
+    </div>
+    <div class="navTab">
+      <a href="#" class="navTabCircle nav_chronicle" id="nav_chronicle" onclick="navClick('chronicle')"><img src='/assets/images/nav/nav_chronicle_color.png' class="navTabImage" /></a>
+    </div>
+    <div class="navTab">
+      <a href="#" class="navTabCircle nav_codex" id="nav_codex" onclick="navClick('codex')"><img src='/assets/images/nav/nav_codex_color.png' class="navTabImage" /></a>
+    </div>
+    <div class="navTab">
+      <a href="#" class="navTabCircle nav_terminal" id="nav_terminal" onclick="navClick('terminal')"><img src='/assets/images/nav/nav_terminal_color.png' class="navTabImage" /></a>
+    </div>
+    <div class="navTab">
+      <a href="#" class="navTabCircle nav_about" id="nav_about" onclick="navClick('about')"><img src='/assets/images/nav/nav_about.png' class="navTabImage" /></a>
+    </div>
+  </div>
+
+  <!-- Nav Seperator Bar Line -->
+  <div class="navSectionBarContainer">
+    <div class="navSectionBarLine nav_color_bg"></div>
+    <div class="navSectionBarText nav_color nav_sectionTitle" id="nav_sectionTitle">HUB</div>
+    <div class="navSectionBarLine nav_color_bg"></div>
+  </div>
+
+  <!-- Nav Description -->
+  <div class="navSectionDescriptionContainer">
+    <p class="nav_sectionDescription" id="nav_sectionDescription">Description here.</p>
   </div>
 
   <!--<div class="navBackButton" id="navBackButton">
@@ -615,7 +679,6 @@ which exists, but is not allowed by the current definition list (#3)</p>
     </div>
     <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
 
-        
         <div class="menuBarFlex">
           <div class="menuBarChild menuBarLogo" id='menuBarLogo'>
             <!--<img src="/assets/images/spinning_logo/d1.png" class="menuBarLogoImage" />-->
@@ -632,6 +695,8 @@ which exists, but is not allowed by the current definition list (#3)</p>
           </div>
         </div>
         
+      </div>
+      <div class="menuBarContainerMobile color-primary">
       </div>
 
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>

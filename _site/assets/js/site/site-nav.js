@@ -196,14 +196,30 @@ $(document).ready(function(){
     $("#processURL").html(processURL(urlString, pageColor, pageType));
   }
 
+  // Temporary fix for spinning dorito logo.
+  loadMenuBarLogo();
 });
 
+function loadMenuBarLogo() {
+  $('.menuBarLogo').css('opacity', '0');
+  $('.menuBarLogo').css('animation-play-state', 'running');
+  setTimeout(function() {
+    $('.menuBarLogo').css('transition', '0.3s ease-in-out');
+  }, 5);
+  setTimeout(function() {
+    resetSpin();
+    $('.menuBarLogo').css('opacity', '1');
+  }, 1000);
+}
+
+// Scrolls to target element within the body container.
 function scrollToElement(targetEl) {
   $('#contentContainer').animate({ 
     scrollTop: $('#' + targetEl).offset().top - $('#contentContainer').offset().top + $('#contentContainer').scrollTop()
   });
 }
 
+// Processes a URL for use in the breadcrumb display.
 function processURL(urlString, color, section) {
   var urlArray = urlString.split('/');
   var final = '';
@@ -266,82 +282,74 @@ function outsideClick() {
   }
 }
 
-// Open the side nav.
+// Open the nav.
 function openNav() {
-  var navContainer = document.getElementById('navContainer');
-  var dimDiv = document.getElementById('dimDiv');
-  var menuBarLabel = document.getElementById('menuBarLabel');
-  var menuBarContainer = document.getElementById('menuBarContainer');
 
-  if (isMobile()) {
-    
-  }
-  else {
-    navContainer.style.left = "0";
-    dimDiv.style.display = 'block';
-    setTimeout(function() { dimDiv.style.opacity = "0.5"; }, 5);
-    menuBarContainer.style.borderRight = "1px solid rgba(255,255,255,0.3)";
-    $('.navElement').removeClass('navSlideToLeft');
-  }
+  // Desktop: move nav container into view from the left.
+  $('.navContainer').css('left', '0');
+
+  // Bring the main body dimming into view.
+  $('.dimDiv').css('display', 'block');
+  setTimeout(function() { 
+    $('.dimDiv').css('opacity', '0.5');
+  }, 5);
+  
+  // Fade the right border of the leftside navbar.
+  $('.menuBarContainer').css('border-right', '1px solid rgba(255,255,255,0.3)');
+  $('.navElement').removeClass('navSlideToLeft');
 
   $('.menuBarArrowRight').addClass('fullRotation');
   $('.menuBarArrowLeft').addClass('fullOppositeRotation');
 
-  setTimeout( function() { $('.navTerminalChild').removeClass('hidden'); }, 300);
+  setTimeout( function() { 
+    $('.navTerminalChild').removeClass('hidden'); 
+  }, 300);
+
+  $('.navContainerMobile').css('bottom', '0');
+  $('.navContainerMobile').css('padding-top', '70px');
+
 }
 
 // Closes the side nav.
 function closeNav() {
-  var navContainer = document.getElementById('navContainer');
-  var dimDiv = document.getElementById('dimDiv');
-  var menuBarLabel = document.getElementById('menuBarLabel');
-  var menuBarContainer = document.getElementById('menuBarContainer');
-
   $('.navTerminalChild').addClass('hidden');
 
-  if (isMobile()) {
-    
-  }
-  else {
-    navContainer.style.left = "-750px";
-    menuBarContainer.style.borderRight = "1px solid white";
-    dimDiv.style.opacity = "0";
-    $('.navElement').addClass('navSlideToLeft');
-    setTimeout(function() { 
-      dimDiv.style.display = 'none';
-      $('.navElement').remove();
-    }, 300);
-  }
+  $('.navContainer').css('left', '-750px');
+  $('.menuBarContainer').css('border-right', '1px solid white');
+  $('.dimDiv').css('opacity', '0');
+  $('.navElement').addClass('navSlideToLeft');
+  setTimeout(function() { 
+    $('.dimDiv').css('display', 'none');
+    $('.navElement').remove();
+  }, 300);
   
   $('.menuBarArrowRight').removeClass('fullRotation');
   $('.menuBarArrowLeft').removeClass('fullOppositeRotation');
+
+  $('.navContainerMobile').css('bottom', '150%');
+  $('.navContainerMobile').css('padding-top', '0');
 }
 
 // Handles the click of a navigation section within the side nav.
 function navClick(target) {
-  var targetIcon = document.getElementById('nav_' + target);
-  var sectionTitle = document.getElementById('nav_sectionTitle');
-  var sectionDescription = document.getElementById('nav_sectionDescription');
+  $('.nav_sectionTitle').html(target);
+  $('.nav_sectionDescription').html(navSections[target]['description']);
 
-  sectionTitle.innerHTML = target;
-  sectionDescription.innerHTML = navSections[target]['description'];
-
-  var navScrollable = document.getElementById('navScrollable');
-  var navTerminal = document.getElementById('navTerminal');
   if (target == 'terminal') {
-    navScrollable.style.height = '0px';
-    navTerminal.style.flexGrow = '1';
-    navScrollable.style.flexGrow = '0';
-    navScrollable.style.marginTop = '0px';
+    $('.navScrollable').css('height', '0px');
+    $('.navTerminal').css('flex-grow', '1');
+    $('.navScrollable').css('flex-grow', '0');
+    $('.navScrollable').css('margin-top', '0px');
     $('.navTerminal').addClass('displayMe');
-  }
-  else {
-    navScrollable.style.flexGrow = '1';
-    navTerminal.style.flexGrow = '0';
-    navTerminal.style.height = '150px';
-    navScrollable.style.marginTop = '30px';
-    navScrollable.innerHTML = generatedNavButtons[target];
-    setTimeout( function() { $('.navTerminal').removeClass('displayMe'); }, 200);
+  } else {
+    $('.navScrollable').css('flex-grow', '1');
+    $('.navTerminal').css('flex-grow', '0');
+    $('.navTerminal').css('height', '150px');
+    $('.navScrollable').css('margin-top', '30px');
+    $('.navScrollable').html(generatedNavButtons[target]);
+    setTimeout( function() { 
+      $('.navTerminal').removeClass('displayMe'); 
+    }, 200);
   }
 
   $('.nav_color_bg').css('background-color', navSections[target]['color']);
@@ -478,9 +486,8 @@ function openNavObject(currentHeading) {
   if (!$("#child_" + currentHeading).length) {
     $('.siteContainer').append( navObject );
     
-    var child = document.getElementById('child_' + currentHeading);
-    setTimeout( function() { 
-      child.style.left = "0";
+    setTimeout( function() {
+      $('#child_' + currentHeading).css('left', '0');
       $('.nav_color').css('color', navSections[activeSection]['color']);
      }, 5);
     
@@ -489,10 +496,11 @@ function openNavObject(currentHeading) {
 
 function closeNavObject(currentHeading) {
   if ($("#child_" + currentHeading).length) {
-    var child = document.getElementById('child_' + currentHeading);
-    child.style.left = "-750px";
+    $('#child_' + currentHeading).css('left', '-750px');
 
-    setTimeout( function() { $("#child_" + currentHeading).remove(); }, 300);
+    setTimeout( function() { 
+      $("#child_" + currentHeading).remove(); 
+    }, 300);
   }
 }
 
@@ -504,11 +512,10 @@ function navigateNavObject(currentHeading) {
 
 // Resets the animation of the spinning dorito upon mouseleave of the nav bar.
 function resetSpin() {
-  var logo = document.getElementById('menuBarLogo');
-  logo.style.animation = 'none';
+  $('.menuBarLogo').css('animation', 'none');
   setTimeout(function() {
-    logo.style.animation = '';
-    logo.style.backgroundImage = 'url(../images/spinning_logo/d13.png)';
+    $('.menuBarLogo').css('animation', '');
+    $('.menuBarLogo').css('background-image', 'url(/assets/images/spinning_logo/d13.png)');
   }, 10);
 }
 

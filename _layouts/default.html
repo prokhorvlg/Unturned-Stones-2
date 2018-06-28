@@ -91,11 +91,16 @@
         {% include nav.html %}
 
       </div>
+      <div id="navContainerMobile" class="navContainerMobile color-primary">
+
+        <!--     Includes the navigation menu on the side of the site.     -->
+        {% include navMobile.html %}
+
+      </div>
       
     </div>
     <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
 
-        
         <div class="menuBarFlex">
           <div class="menuBarChild menuBarLogo" id='menuBarLogo'>
             <!--<img src="{% link assets/images/spinning_logo/d1.png %}" class="menuBarLogoImage" />-->
@@ -112,6 +117,8 @@
           </div>
         </div>
         
+      </div>
+      <div class="menuBarContainerMobile color-primary">
       </div>
 
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
