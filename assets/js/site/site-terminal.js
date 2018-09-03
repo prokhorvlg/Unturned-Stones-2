@@ -4,6 +4,9 @@
 var terminalClassName = 'navTerminalChild';
 
 $(document).ready(function(){
+  function updateTerminal(update) {
+    $('.navTerminalChild').terminal().echo(update);
+  }
   function randomizeEcho(items, multi = 300) {
     $('.navTerminalChild').terminal().echo(items[0]);
     if (items[1]) {
@@ -14,7 +17,6 @@ $(document).ready(function(){
     $('.navTerminalChild').terminal(function(command) {
       if (command !== '') {
 
-        console.log(command);
         var cmd = command.toUpperCase().split(" ");
 
         // If you are looking here, shame on you because this is a lame way of finding the commands
@@ -83,15 +85,12 @@ $(document).ready(function(){
       prompt: '//> ',
       onFocus: function(terminal){ $('.navTerminalChild').addClass('activeTerminal'); },
       onBlur: function(terminal){ $('.navTerminalChild').removeClass('activeTerminal'); },
+      onInit: function(terminal){
+        this.echo('LOADING organizational_matrix...');
+        this.echo('[[b;#ff00ff;]WARNING]: TERMINAL UNSTABLE');
+      },
       outputLimit: 30
     });
-
-    updateTerminal('LOADING organizational_matrix...');
-    updateTerminal('[[b;#ff00ff;]WARNING]: TERMINAL UNSTABLE');
   });
   
 });
-
-function updateTerminal(update) {
-  $('.navTerminalChild').terminal().echo(update);
-}

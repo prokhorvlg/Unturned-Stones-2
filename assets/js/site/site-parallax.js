@@ -12,10 +12,10 @@ $(document).ready(function() {
   });
 
   // Detects browser; only runs certain scripts on desktop browsers.
-  if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  //if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
    // some code..
-  }
-  else {
+  //}
+  //else {
     $('.parallax_s1').parallax("50%", 0.1, true);
     $('.parallax_s2').parallax("50%", 0.2, true);
     $('.parallax_s3').parallax("50%", 0.3, true);
@@ -37,13 +37,9 @@ $(document).ready(function() {
     $('.parallax_ns7').parallax("50%", -0.7, true);
     $('.parallax_ns8').parallax("50%", -0.8, true);
 
-    if ($(".vanishOnScroll").length) {
-      $( window ).scroll(function() {
-        $( ".vanishOnScroll" ).css( "opacity", "0" );
-      });
-    }
+//    }
 
-  }
+//  }
 
 });
 
@@ -88,7 +84,7 @@ $(document).ready(function() {
 
       // function to be called whenever the window is scrolled or resized
       function update() {
-        var pos = $('.contentContainer').scrollTop();
+        var pos = $('body').scrollTop();
 
         $this.each(function() {
           var $element = $(this);
@@ -110,7 +106,7 @@ $(document).ready(function() {
         });
       }
 
-      $('.contentContainer').bind('scroll', update).resize(update);
+      $('body').bind('scroll', update).resize(update);
       update();
     };
 })(jQuery);

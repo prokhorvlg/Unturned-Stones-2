@@ -49,7 +49,7 @@ $(document).ready( function() {
 
   $( "#contentContainer" ).scroll(function() {
     $('.scrollCheck').each( function() {
-      if ( checkInView(document.getElementById('contentContainer'), this, 500) ){
+      if ( checkInView(document.getElementById('body'), this, 500) ){
         // console.log(this, 'in view');
         if ($(this).hasClass('homeContentFade')) {
           this.style.opacity = '1';

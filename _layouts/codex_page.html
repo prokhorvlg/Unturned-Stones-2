@@ -13,6 +13,8 @@ layout: codex_page
     <meta name="author" content="{{ page.author }}">
     <meta name="revisit-after" content="5 days">
 
+    <meta name="theme-color" content="#222" />
+
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
     <title>{{ page.title }}</title>
@@ -73,6 +75,7 @@ layout: codex_page
   </head>
   <body class="codex">
 
+    <div class="pageHighlight" style="color: {{ page.page_highlight }};"></div>
     <div id="siteContainer" class="siteContainer color-bg-2-l color-primary-l">
       
       <!--     Contains the site, which is pushed when the nav is opened.     -->
@@ -93,7 +96,7 @@ layout: codex_page
               </div>
               <div class="codexTextContent">
                 <h1>{{ page.page_title }}</h1>
-                <h2><a href="javascript:void(0);" onclick="scrollToElement('{{ page.page_flavor_url }}')" style="color: {{ page.page_highlight }};" class="font-code">⤷ {{ page.page_flavor }}</a></h2>
+                <h2><a href="javascript:void(0);" onclick="scrollToElement('{{ page.page_flavor_url }}')" style="color: {{ page.page_highlight }};" class="font-code">{{ page.page_flavor }}</a></h2>
                 {{ page.page_description }}
                 <p id="processURL" class="codexTextProcess font-code" style="color: {{ page.page_highlight }};">{{ page.url }}</p>
               </div>
@@ -109,7 +112,7 @@ layout: codex_page
               </div>
             </div>
           </div>
-          <div class="codexLower">
+          <div class="codexLower {{ page.page_lower_clear }}">
             <div class="codexScrollLine">
               <hr class="fullDim">
             </div>
@@ -122,28 +125,81 @@ layout: codex_page
     		{% for item in page.page_features %}
     		  {% if item.type == "parallaxBlock" %}
 
-            <div id="{{ item.init.id }}" class="parallaxBlock parallax_s1 resizeHeader" style="background-image: url({{ item.init.backLayerURL | prepend: site.url }}); height: 100%;">
-              <div class="parallaxBlockChild" style="background-image: url({{ item.init.frontLayerURL | prepend: site.url }});">
+            <div id="{{ item.init.id }}" class="parallaxBlock parallax_s1 resizeHeader" style="background-image: url({{ item.init.backLayerURL }}); height: 100%;">
+              <div class="parallaxBlockChild" style="background-image: url({{ item.init.frontLayerURL }});">
               </div>
             </div>
 
             {{ page.bgBlock }}
+
+          {% elsif item.type == "imageBlock" %}
+
+            <div id="{{ item.init.id }}" class="imageBlock gridBG row">
+              <div class="col-md-12 col-lg-2"></div>
+              <div class="col-md-12 col-lg-8 imageBlockContainer">
+                {% for dataItem in item.init.items %}
+                  <div class="imageBlockChild">
+                    <a class="image-popup-no-margins" href="{{ dataItem.full }}" target="_blank" style="text-decoration: none;"><img src="{{ dataItem.thumb }}" class="imageBlockImage {% if item.init.circle %}circle{% endif %}  {% if item.init.rounded %}rounded{% endif %}"/></a>
+                    <h1 class="colorMinke">{{ dataItem.title }}</h1>
+                    <p class="statBlockContent imageBlockDesc">{{ dataItem.desc }}</p>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="col-md-12 col-lg-2"></div>
+            </div>
+
+          {% elsif item.type == "headingBar" %}
+
+          <div class="row gridBG" id="{{ item.init.id }}">
+            <div class="col-md-0 col-lg-2"></div>
+            <div class="col-md-0 col-lg-8">
+              {% if item.init.decor_square %}
+                <div class="infoDecorSquare"></div>
+              {% endif %}
+              <div>
+                <p class="font-code-l infoBlockOvertitle" style="color: {{ page.page_highlight }};">{{ item.init.overtitle }}</p>
+                <hr class="full">
+                <h1 class="bodyTitle colorMinke">{{ item.init.title }}</h1>
+                {% if item.init.desc_color %}
+                  <p class="statBlockContent font-code" style="color: {{ item.init.desc_color }};">{{ item.init.desc }}</p>
+                {% else %}
+                  <p class="statBlockContent font-code" style="color: {{ page.page_highlight }};">{{ item.init.desc }}</p>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-md-0 col-lg-2"></div>
+          </div>
+
+          {% elsif item.type == "paddingBar" %}
+
+            <div class="gridBG" style="padding-top: {{ item.init.size }};"></div>
+
           {% elsif item.type == "infoSheet" %}
 
             <div class="row gridBG paddingTopBottom" id="{{ item.init.id }}">
               <div class="col-md-0 col-lg-2"></div>
-              <div class="statBlock col-md-12 col-lg-8">
+              <div class="statBlock {% if item.init.no_border %}{% else %}statBlockBorder{% endif %} col-md-12 col-lg-8">
                 <div class="statBlockHead">
                   <h1 class="bodyTitle colorMinke">{{ item.init.title }}</h1>
-                  <p class="statBlockContent font-code" style="color: {{ page.page_highlight }};">{{ item.init.desc }}</p>
+                  {% if item.init.desc_color %}
+                    <p class="statBlockContent font-code" style="color: {{ item.init.desc_color }};">{{ item.init.desc }}</p>
+                  {% else %}
+                    <p class="statBlockContent font-code" style="color: {{ page.page_highlight }};">{{ item.init.desc }}</p>
+                  {% endif %}
                 </div>
                 <div class="statBlockContainer">
 
                 {% for dataItem in item.init.data %}
                 <div class="statBlockBody">
-                  <div class="statBlockBodyChild" style="color: {{ page.page_highlight }};">
-                    <p class="statBlockContentChildH font-code">{{ dataItem[0] }}</p>
-                  </div>
+                  {% if item.init.desc_color %}
+                    <div class="statBlockBodyChild" style="color: {{ item.init.desc_color }};">
+                      <p class="statBlockContentChildH font-code">{{ dataItem[0] }}</p>
+                    </div>
+                  {% else %}
+                    <div class="statBlockBodyChild" style="color: {{ page.page_highlight }};">
+                      <p class="statBlockContentChildH font-code">{{ dataItem[0] }}</p>
+                    </div>
+                  {% endif %}
                   <div class="statBlockBodyChild"></div>
                   <div class="statBlockBodyChild">
                     <p class="statBlockContentChild">{{ dataItem[1] }}</p>
@@ -161,14 +217,15 @@ layout: codex_page
             <div class="row gridBG paddingTopBottom" id="{{ item.init.id }}">
               <div class="col-md-0 col-lg-{% if item.init.width == "8" %}2{% elsif item.init.width == "10" %}1{% elsif item.init.width == "6" %}3{% endif %}"></div>
               <div class="col-md-12 col-lg-{{ item.init.width }}">
-                <div class="infoDecorSquare"></div>
-                <div class="">
-                  <p class="font-code-l infoBlockOvertitle" style="color: {{ page.page_highlight }};">{{ item.init.overtitle }}</p>
-                  <hr class="full">
-                  <h1 class="bodyTitle colorMinke">{{ item.init.title }}</h1>
-                  <p class="statBlockContent font-code" style="color: {{ page.page_highlight }};">{{ item.init.desc }}</p>
-                </div>
-                <div class="infoBlockBody">
+                <div class="infoBlockBody {% if item.init.dualFloatBlock %}dualFloatBlock{% endif %} {% if item.init.dualFloatBlockAdvanced %}dualFloatBlock{% endif %} {% if item.init.centered %}center{% endif %} {% if item.init.curatorBlock %}curatorBlock{% endif %}">
+
+                  {% if item.init.dualFloatBlockAdvanced %}
+                    <div class="imageBlockChild">
+                      <a class="image-popup-no-margins" href="{{ item.init.dualFloatBlockInit.image.full }}" target="_blank" style="text-decoration: none;"><img src="{{ item.init.dualFloatBlockInit.image.thumb }}" class="imageBlockImage {% if item.init.dualFloatBlockInit.image.circle %}circle{% endif %}"/></a>
+                      <h1 class="colorMinke">{{ item.init.dualFloatBlockInit.image.title }}</h1>
+                      <p class="statBlockContent imageBlockDesc">{{ item.init.dualFloatBlockInit.image.desc }}</p>
+                    </div>
+                  {% endif %}
 
                   {{ item.init.data }}
 
@@ -222,6 +279,7 @@ layout: codex_page
         {% include footer.html %}
 
       </div>
+      </div>
       <div id="dimDiv" class="dimDiv" onclick="outsideClick()"></div>
       <div id="navContainer" class="navContainer color-primary">
 
@@ -237,7 +295,8 @@ layout: codex_page
 
       </div>
       
-    </div>
+      <div class="appendNavElements"></div>
+    
     <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
 
         <div class="menuBarFlex">
@@ -264,7 +323,7 @@ layout: codex_page
           <div class="menuBarChildMobile headerTitleMobile font-code-l">
             <a href="/" class="headerLink headerHub">UNTURNED STONES</a>
           </div>
-          <a href="#" class="menuBarChildMobile menuBarChildMenuMobile" onclick="manipNav()">
+          <a href="javascript:void(0)" class="menuBarChildMobile menuBarChildMenuMobile" onclick="manipNav()">
             <p class="font-code-l">Menu</p>
           </a>
         </div>
@@ -273,7 +332,16 @@ layout: codex_page
 
       {% include infoTagModal.html %}
 
-    <!-- Script: Saves scroll position of div on refresh -->
-    <script src="{% link assets/js/site/site-scrollSave.js %}"></script>
+      <script>
+        $(document).ready(function() {
+          $('.image-popup-no-margins').magnificPopup(
+            {
+              type: 'image',
+              fixedContentPos: false,
+              closeOnContentClick: true,
+            }
+          );
+        });
+      </script>
   </body>
 </html>

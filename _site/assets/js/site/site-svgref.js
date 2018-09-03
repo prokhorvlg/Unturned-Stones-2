@@ -17,4 +17,12 @@ window.svgRef = {
     "</g>" +
     "</svg>",
   'exoticMatterIMG': "\\assets\\images\\codex\\technology\\exoticMatterIMG.png",
+  'covert-firearms': "\\assets\\images\\codex\\technology\\covert-firearms.png",
+  'bogatyrIMG': "\\assets\\images\\bogatyrIMG.png",
+  'computersIMG': "\\assets\\images\\codex\\technology\\compsci\\computers-uts.png",
+  'standard-firearms': "\\assets\\images\\codex\\technology\\standard-firearms.png",
+  'powered-firearms': "\\assets\\images\\codex\\technology\\powered-firearms.png",
+  'personal-transport': "\\assets\\images\\codex\\technology\\personal-transport.png",
+  'local-commute': "\\assets\\images\\codex\\technology\\local-commute.png",
+  'distant-travel': "\\assets\\images\\codex\\technology\\distant-travel.png",
 }
