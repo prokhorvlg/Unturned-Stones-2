@@ -3,10 +3,12 @@ title: "Kerastoxis"
 excerpt: "This is the miracle drug of Unturned Stones. If there was one invention other than the torch drive that could be implicated as the thing that drove humanity beyond their terrestrial homes, it would be kerastoxis: a solution of blood thinners, adrenaline, and a thousand other drugs that turn the fleshy human body into a hardened cocoon resistant against the strongest onslaught of interstellar forces."
 author: "prokhorVLG"
 
+raw: kerastoxis
 permalink: /codex/technology/medical-science/kerastoxis
 layout: blank_page
 
 page_highlight: "#edc920"
+image: "/assets/images/codex/technology/kera.png"
 
 page_features: [
                 {

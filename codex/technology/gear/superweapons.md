@@ -1,5 +1,5 @@
 ---
-title: "Covert Firearms"
+title: "Superweapons"
 excerpt: "It shouldn't be surprising that covert firearms are those used by spies and operatives - valuing concealability and deception above all else. These are the sorts of weapons that induce heart attacks and disassamble into neat misdirecting components, or are built to be disguised as inconspicious or miniature objects."
 author: "prokhorVLG"
 

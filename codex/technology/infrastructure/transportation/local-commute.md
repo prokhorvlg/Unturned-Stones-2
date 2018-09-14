@@ -3,10 +3,12 @@ title: "Local Commute"
 excerpt: "Local commute vehicles are a class of transportation devices that you're likely very familiar with. It's hard to strictly define as they encompass anything from trams to cars to rockets, essentially anything that operates in a range that is a bit out of reach for walking but not quite enough to be considered a 'journey'."
 author: "prokhorVLG"
 
+raw: local-commute
 permalink: /codex/technology/infrastructure/transportation/local-commute/
 layout: blank_page
 
 page_highlight: "#6e7fd2"
+image: "/assets/images/codex/technology/local-commute.png"
 
 page_features: [
                 {

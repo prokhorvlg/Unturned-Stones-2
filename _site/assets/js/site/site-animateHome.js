@@ -15,112 +15,187 @@ var phrases = ["reinitializing model",
   "resolving proxy conflicts",
   "optimizing lightspeed thought",
   "running malware scan",
-  "deploying operations team"
+  "deploying operations team",
+  "annoying grine_",
+  "admiring caba",
 ];
 
 $( '.spinText' ).each(function() {
-  
   randomizeEcho(this);
-
 });
 
 function randomizeEcho( element, multi = 3000) {
-
   $(element).text(phrases[Math.floor(Math.random()*phrases.length)]);
   setTimeout(function() { randomizeEcho( element, multi); }, Math.floor(Math.random() * multi));
-
 }
 
 $(document).ready( function() {
 
   // Initiate home page spinner banner animations
-
   TweenMax.to('.spinRightBig', 200, {rotation:"360", ease:Linear.easeNone, repeat:-1, transformOrigin:'50% 50%'}, {timeScale:0}
   );
 
   TweenMax.to('.spinLeftBig', 200, {rotation:"-360", ease:Linear.easeNone, repeat:-1, transformOrigin:'50% 50%'}, {timeScale:0}
   );
 
-
   // Initiate scroll listeners for triggering animations
-
-  var soulSVG = Snap( '#soulSVG' );
-  animateHomeSoul(soulSVG);
-
-  $( "#contentContainer" ).scroll(function() {
+  $(window).scroll(function() {
     $('.scrollCheck').each( function() {
-      if ( checkInView(document.getElementById('body'), this, 500) ){
-        // console.log(this, 'in view');
+      if ( checkInView(document.getElementById('body'), this, 1000) ){
+
         if ($(this).hasClass('homeContentFade')) {
           this.style.opacity = '1';
         }
+        else if ($(this).hasClass('fadeInCodeParas')) {
+          animateCodeIn(this);
+        }
+
       }
     });
   });
+  $(window).scroll();
 
+  $('.hcdCodelinePara').each(function() {
+    hcdCodelinePara(this);
+  });
+
+  streakerSwap($('.streaker_sp1 img'), '/assets/images/streaker/sp1_1.png', '/assets/images/streaker/sp1_2.png');
+
+  streakerSwap($('.streaker_sp2 img'), '/assets/images/streaker/sp2_1.png', '/assets/images/streaker/sp2_2.png');
+
+  streakerSwap($('.streaker_sp3 img'), '/assets/images/streaker/sp3_1.png', '/assets/images/streaker/sp3_2.png');
+
+  streakerSwap($('.streaker_sp4 img'), '/assets/images/streaker/sp4_1.png', '/assets/images/streaker/sp4_2.png');
+
+  streakerSwap($('.streaker_sp5 img'), '/assets/images/streaker/sp5_1.png', '/assets/images/streaker/sp5_2.png');
+
+  setTimeout(function() {
+    streakerRandomAnim('streaker-left-to-right', 'streaker_sp');
+    streakerRandomAnim('streaker-right-to-left', 'streaker_spr');
+  }, 20);
+
+  $('.hcdIcon_interactive').click(function() {
+    var $target = $('.' + $(this).data('hcd'));
+    var $header = $target.find('.hcdHeader');
+    var $body = $target.find('.hcdBody');
+    var $replace = $target.find('.hcdReplace');
+    var $replaceChild = $replace.find('.hcdReplaceContent');
+
+    var height = $body.height() + $header.height();
+
+    $body.hide();
+    $header.hide();
+
+    var timeStretch = 50;
+    var scaleStretch = 50;
+    setTimeout(function() {
+      $replace.css('display','flex');
+      $replace.css('border','2px solid white');
+      $target.css('height', height + 'px');
+
+      $replace.css('margin', (scaleStretch * 1) + 'px auto');
+      // $replace.css('width', ($target.width() - (scaleStretch * 1)) + 'px');
+      $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
+    }, (timeStretch * 1));
+
+    setTimeout(function() {
+      $replace.css('margin', (scaleStretch * 2) + 'px auto');
+      // $replace.css('width', ($target.width() - (scaleStretch * 2)) + 'px');
+      $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
+    }, (timeStretch * 2));
+
+    setTimeout(function() {
+      $replace.css('margin', (scaleStretch * 3) + 'px auto');
+      // $replace.css('width', ($target.width() - (scaleStretch * 3)) + 'px');
+      $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
+    }, (timeStretch * 3));
+
+    setTimeout(function() {
+      $replace.css('margin', (scaleStretch * 4) + 'px auto');
+      // $replace.css('width', ($target.width() - (scaleStretch * 4)) + 'px');
+      $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
+    }, (timeStretch * 4));
+
+    setTimeout(function() {
+      $replace.css('border','none');
+      $replace.css('margin', '0px');
+      $replaceChild.css('opacity', '1');
+    }, (timeStretch * 5));
+    
+  }).on("keydown", function(event) {
+    if (event.which == 13) {
+      $(this).trigger( "click" );
+    }
+  });
+  
 });
 
-function animateHomeSoul(soulSVG){
-  // big
-  soulSVG.select("#soulBlueFlame").animate( { transform: 's0.95' }, 1000, mina.easeinout );
-
-  // small
-  setTimeout( function() { 
-    soulSVG.select("#soulBlueFlame").animate( { transform: 's0.4' }, 1000, mina.easeinout );
-  }, 1000);
-
-  setTimeout( function() { animateHomeSoul(soulSVG) }, 2000);
+function streakerRandomAnim(animation = 'streaker-left-to-right', elClass) {
+  $('.' + elClass).each(function () {
+    var $el = $(this);
+    setTimeout(function() {
+      streakerGenerateRandomAnim($el, animation);
+    }, (Math.floor(Math.random() * 200)));
+  });
 }
 
-/*
+function streakerGenerateRandomAnim(el, animation) {
+  $(el).css('display','block');
+  var randomTime = Math.floor(Math.random() * 70) + 20; // Time in milliseconds. Multiple is max
+  var randomMargin = Math.floor(Math.random() * $('.homeContentContainer').outerHeight()); // Multiple is max
+  $(el).css('margin-top', randomMargin + 'px');
 
-function animateHomeSoul(soulSVG){
-  soulSVG.select("#soulBlueFlame").stop().animate(
-    { transform: 's0.95' }, 120, mina.easeinout);
+  $(el).children('.hcdStreakerMover').css('transition', '0s');
 
-  setTimeout( function() { 
-    soulSVG.select("#soulBlueFlame").stop().animate(
-    { transform: 's0.3' }, 180, mina.easeinout);
-  }, 120);
+  if (animation == 'streaker-left-to-right') {
+    $(el).children('.hcdStreakerMover').css('margin-left', '-10vw');
 
-  setTimeout( function() { 
-    soulSVG.select("#soulBlueFlame").stop().animate(
-    { transform: 's0.27' }, 30, mina.easeinout);
-  }, 300);
+    setTimeout(function() {
+      $(el).children('.hcdStreakerMover').css('transition', randomTime + 's linear');
+      $(el).children('.hcdStreakerMover').css('margin-left', '110vw');
+    }, 10);
+  } else if (animation == 'streaker-right-to-left') {
+    $(el).children('.hcdStreakerMover').css('margin-right', '-10vw');
 
-  setTimeout( function() { 
-    soulSVG.select("#soulBlueFlame").stop().animate(
-    { transform: 's0.35' }, 150, mina.easeinout);
-  }, 330);
+    setTimeout(function() {
+      $(el).children('.hcdStreakerMover').css('transition', randomTime + 's linear');
+      $(el).children('.hcdStreakerMover').css('margin-right', '110vw');
+    }, 10);
+  }
 
-  setTimeout( function() { 
-    soulSVG.select("#soulBlueFlame").stop().animate(
-    { transform: 's0.33' }, 20, mina.easeinout);
-  }, 480);
-
-  setTimeout( function() { 
-    soulSVG.select("#soulBlueFlame").stop().animate(
-    { transform: 's0.48' }, 90, mina.easeinout);
-  }, 500);
-
-  setTimeout( function() { animateHomeSoul(soulSVG) }, 590);
+  setTimeout(function() {
+    streakerGenerateRandomAnim(el, animation);
+  }, ((randomTime*1000)+100));
 }
 
-function animateHomeRepeaters(){
-  s.select("#soulBlueFlame").stop().animate(
-    { d: "M376.029,341.000 L393.000,304.029 L409.970,341.000 L393.000,357.970 L376.029,341.000 Z" }, 500, mina.easeinout);
-  s.select("#soulFaintCircle").stop().animate(
-    { strokeWidth: '60px' }, 500, mina.easeinout);
-
-  setTimeout( function() { 
-    s.select("#soulBlueFlame").stop().animate(
-    { d: "M376.029,341.000 L393.000,324.029 L409.970,341.000 L393.000,357.970 L376.029,341.000 Z" }, 300, mina.easeinout);
-    s.select("#soulFaintCircle").stop().animate(
-    { strokeWidth: '30px' }, 300, mina.easeinout);
+function streakerSwap(el, first, second) {
+  if ($(el).attr('src') == first) {
+    $(el).attr('src', second);
+  } else {
+    $(el).attr('src', first);
+  }
+  setTimeout(function() {
+    streakerSwap(el, first, second);
   }, 500);
+}
 
-  setTimeout( function() { animateHomeRepeaters() }, 800);
-}*/
+function hcdCodelinePara(o, multi = 300){
+  $(o).html(Math.random().toString(36).substring(2));
+  setTimeout(function() { 
+    hcdCodelinePara($(o), multi);
+  }, Math.floor(Math.random() * multi));
+}
+
+function animateCodeIn(o) {
+  recursiveCodeIn($(o).children('p').first());
+}
+
+function recursiveCodeIn(o, multi = 300) {
+  $(o).css('opacity', '1');
+  setTimeout(function() { 
+    recursiveCodeIn($(o).next(), multi);
+  }, Math.floor(Math.random() * multi));
+}
 
 function checkInView(container, element, partial) {
 
@@ -129,7 +204,7 @@ function checkInView(container, element, partial) {
     let cBottom = cTop + container.clientHeight;
 
     //Get element properties
-    let eTop = element.offsetTop;
+    let eTop = element.offsetTop + 300;
     let eBottom = eTop + element.clientHeight;
 
     //Check if in view    

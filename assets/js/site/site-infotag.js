@@ -192,6 +192,21 @@ $(document).ready( function() {
         centerImageParent: true,
         link: '/codex/technology/infrastructure/transportation/distant-travel/',
       },
+
+      'prosthetic-soul': {
+        name: 'Prosthetic Soul',
+        body: "<p class='text-left'>An old technique which involves cutting out the morality center of the brain, and replacing it with a cybernetic device which replaces the target's personal morality.</p> \
+          <p class='text-left'>However... it doesn't quite work as one would expect.</p>",
+        color: '#00ffff',
+        imageType: 'source',
+        image: '/assets/images/centerpiece/prosthetic-soul.png',
+        styles: [
+          [ 'margin', '10px' ],
+          [ 'marginBottom', '20px' ],
+        ],
+        centerImageParent: true,
+        link: '',
+      },
     };
     var target = $(this).data('info');
 
@@ -214,6 +229,11 @@ $(document).ready( function() {
         $('.infoTagImage').html(window.svgRef[tags[target].image]);
         for (var i = 0; i < tags[target].styles.length; i++) {
           document.getElementById('infoTagModalImageSVG').style[tags[target].styles[i][0]] = tags[target].styles[i][1];
+        }
+      } else if (tags[target].imageType == 'source') {
+        $('.infoTagImage').html("<img id='infoTagModalImage' src='" + tags[target].image + "' />");
+        for (var i = 0; i < tags[target].styles.length; i++) {
+          document.getElementById('infoTagModalImage').style[tags[target].styles[i][0]] = tags[target].styles[i][1];
         }
       } 
     } else {

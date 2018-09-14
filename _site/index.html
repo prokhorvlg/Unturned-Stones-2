@@ -61,7 +61,6 @@
     <!--     Custom Scripts     -->
     <!-- Script: Provides parallaxing background functionality -->
     <script src="/assets/js/site/site-svgref.js"></script>
-    <script src="/assets/js/site/site-parallax.js"></script>
     <script src="/assets/js/site/site-shufflequote.js"></script>
     <script src="/assets/js/site/site-nav.js"></script>
     <script src="/assets/js/site/site-terminal.js"></script>
@@ -96,7 +95,7 @@
 
           
 
-            <div class="spinContainer" id="homeSpinBanner">
+            <div class="spinContainer gridbg" id="homeSpinBanner">
               <div class="spinCenter">
                 <h1 class="spinTitle">Unturned <strong>Stones</strong></h1>
                 <p class="spinDescription">a world defined by the technology of today's future</p>
@@ -155,6 +154,10 @@
 
                     <circle class="spinFunk" r="355" fill="none" stroke="rgba(255,255,255,1)" stroke-width="2" stroke-dasharray="400" stroke-dashoffset="1000" />
 
+                    <circle r="440" fill="none" stroke="rgba(255,0,255,1)" stroke-width="2"  />
+
+                    <circle r="720" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"  />
+
                   </g>
 
                   <g class="spinLeftBig">
@@ -188,12 +191,12 @@
           
 
             <div class="homeButtons font-code-l" id="homeSocialButtonSet">
-                <div class="homeButtonsInset">
+                <div class="homeButtonsInset social">
                   <a class="divLink homeButtonLink" href="https://www.reddit.com/r/worldbuilding/" target="_blank">
                   <div class="homeButton">
                     <div class="homeButtonInset">
                       <div class="homeButtonImage">
-                        <svg 
+                        <!-- <svg 
                            xmlns="http://www.w3.org/2000/svg"
                            xmlns:xlink="http://www.w3.org/1999/xlink"
                            width="30px" height="50px">
@@ -201,7 +204,8 @@
                            d="M25.196,19.276 C25.188,19.270 25.181,19.264 25.173,19.259 C25.173,19.259 25.107,19.404 24.970,19.648 C24.309,20.714 23.509,21.669 22.860,22.367 C21.760,23.453 20.237,24.582 18.194,25.321 C19.794,24.865 21.284,24.566 22.267,24.392 C22.865,25.531 23.517,27.829 22.033,31.385 C21.936,31.617 21.840,31.862 21.744,32.098 C21.722,32.099 21.706,32.097 21.683,32.098 C21.683,32.098 19.938,36.116 18.260,36.947 C18.930,36.700 19.653,36.341 20.285,35.936 C18.799,40.217 17.667,44.971 17.845,49.930 C15.922,48.891 11.555,44.302 9.839,39.640 C11.688,38.906 13.000,37.110 13.000,35.000 L13.000,34.000 C13.000,31.239 10.761,29.000 8.000,29.000 L7.000,29.000 C4.306,29.000 2.125,31.135 2.020,33.803 C1.014,33.659 -0.021,33.245 0.047,32.098 C0.129,30.698 2.470,28.221 5.284,26.695 C6.562,26.569 8.886,26.334 11.563,26.035 C8.959,26.207 7.081,25.793 5.796,25.285 C4.334,24.533 1.550,22.620 1.443,18.902 C1.335,15.165 4.539,10.379 11.563,9.273 C12.825,9.066 13.308,8.916 13.308,8.916 L11.563,0.713 L12.261,0.356 L14.355,8.916 C14.355,8.916 26.220,8.342 26.220,16.049 C26.220,17.119 25.790,18.238 25.196,19.276 ZM6.344,19.250 C5.377,19.250 4.594,20.047 4.594,21.031 C4.594,22.015 5.377,22.812 6.344,22.812 C7.310,22.812 8.094,22.015 8.094,21.031 C8.094,20.047 7.310,19.250 6.344,19.250 ZM16.100,36.734 C16.792,37.290 17.223,37.250 17.845,36.734 C17.265,37.054 17.687,35.889 17.321,35.513 C15.473,33.361 18.543,30.315 18.543,30.315 C15.092,33.476 15.408,36.178 16.100,36.734 ZM15.750,19.250 C14.783,19.250 14.000,20.047 14.000,21.031 C14.000,22.015 14.783,22.812 15.750,22.812 C16.716,22.812 17.500,22.015 17.500,21.031 C17.500,20.047 16.716,19.250 15.750,19.250 Z"/>
                           <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
                            d="M7.500,30.000 C9.985,30.000 12.000,32.015 12.000,34.500 C12.000,36.985 9.985,39.000 7.500,39.000 C5.015,39.000 3.000,36.985 3.000,34.500 C3.000,32.015 5.015,30.000 7.500,30.000 Z"/>
-                        </svg>
+                        </svg>-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24"><path fill="rgb(255, 255, 255)" d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
                       </div>
                       <div class="homeButtonText">
                         worldbuilding subreddit
@@ -216,7 +220,7 @@
                   <div class="homeButton">
                     <div class="homeButtonInset">
                       <div class="homeButtonImage">
-                        <svg 
+                        <!--<svg 
                            xmlns="http://www.w3.org/2000/svg"
                            xmlns:xlink="http://www.w3.org/1999/xlink"
                            width="0.472in" height="0.403in" style="margin-top: 10px; margin-left: 10px; transform: scale(1.2);">
@@ -224,7 +228,8 @@
                            d="M0.689,28.359 L17.189,-0.000 L33.688,28.359 L0.689,28.359 ZM17.189,16.541 C17.189,16.541 8.953,15.929 7.289,23.702 C7.236,24.182 9.436,21.519 10.401,21.732 C11.313,23.809 13.191,25.034 17.189,25.034 C21.186,25.034 23.064,23.809 23.976,21.732 C24.942,21.519 27.142,24.182 27.088,23.702 C25.425,15.929 17.189,16.541 17.189,16.541 Z"/>
                           <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
                            d="M17.125,17.187 C19.161,17.187 20.812,18.824 20.812,20.843 C20.812,22.863 19.161,24.500 17.125,24.500 C15.088,24.500 13.437,22.863 13.437,20.843 C13.437,18.824 15.088,17.187 17.125,17.187 Z"/>
-                          </svg>
+                          </svg>-->
+                          <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24"><path fill="rgb(255, 255, 255)" d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
                       </div>
                       <div class="homeButtonText">
                         unturned stones subreddit
@@ -242,7 +247,7 @@
                         <svg 
                            xmlns="http://www.w3.org/2000/svg"
                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                           width="55px" height="40px" style="margin-top: 9px; margin-left: 5px;">
+                           width="50px" height="50px" style="margin-top: 9px; margin-left: 5px;">
                           <path
                            fill="#fff" style="transform: scale(0.045);"
                            d="M 361.9857,0.00138389 C 348.73055,0.05478389 239.07459,3.1670339 123.39327,89.124664 123.39327,89.124664 0,311.06297 0,584.4136 c 0,0 71.978249,123.39208 261.35281,129.39038 0,0 31.70511,-37.7037 57.41206,-70.26582 C 209.93876,610.97599 168.80785,543.28361 168.80785,543.28361 c 0,0 8.5708,5.99726 23.99498,14.56626 0.85689,0 1.71122,0.85558 3.42502,1.7125 2.57069,1.71377 5.1422,2.57081 7.7129,4.28459 21.42246,11.99658 42.84423,21.42368 62.5529,29.13581 35.13283,14.56729 77.12215,27.41951 125.96536,36.84541 64.26736,11.9966 139.67306,16.28044 221.93532,0.85625 40.27424,-7.71208 81.40794,-18.85053 124.25286,-36.84541 29.99142,-11.13969 63.40925,-27.41914 98.54205,-50.55541 0,0 -42.84417,69.40888 -155.09786,101.11413 25.70697,31.70521 56.55581,68.54998 56.55581,68.54998 C 928.02173,706.94949 1000,583.55668 1000,584.4136 1000,311.06297 876.60671,89.124664 876.60671,89.124664 754.07028,-2.5634661 636.67349,0.00803389 636.67349,0.00803389 L 624.67932,13.718014 C 770.35209,57.419834 838.04548,121.6888 838.04548,121.6888 748.92802,73.702484 661.52634,49.707644 580.121,40.281764 c -61.69669,-6.85519 -120.82499,-5.13937 -173.09576,1.71581 -5.14137,0 -9.42484,0.85563 -14.56623,1.7125 -29.99144,3.42762 -102.82721,13.70953 -194.51535,53.98375 -31.70523,13.710366 -50.55871,23.994976 -50.55871,23.994976 0,0 70.26568,-67.697276 224.50739,-111.399106 L 363.32318,0.00803389 c 0,0 -0.4538,-0.0102 -1.33748,-0.007 z M 340.18778,316.20414 c 48.8432,0 88.26098,41.98669 87.40413,94.25746 0,52.27084 -38.56093,94.2608 -87.40413,94.2608 -47.98632,0 -87.40413,-41.98996 -87.40413,-94.2608 0,-52.27077 38.56091,-94.25746 87.40413,-94.25746 z m 312.76778,0 c 47.98631,0 87.40413,41.98669 87.40413,94.25746 0,52.27084 -38.56089,94.2608 -87.40413,94.2608 -47.9863,0 -87.40413,-41.98996 -87.40413,-94.2608 0,-52.27077 38.56091,-94.25746 87.40413,-94.25746 z"
@@ -266,9 +271,13 @@
 
           
 
-            <div class="homeUpdate" id="homeLatestUpdate">
-              <div class="homeUpdateInset">
-                <div class="homeUpdateImage">
+            <div class="homeButtons font-code-l" id="latestUpdate">
+                <div class="homeButtonsInset update">
+
+            <!-- <div class="homeUpdate" id="latestUpdate">
+              <div class="homeUpdateInset"> -->
+
+                <!-- <div class="homeUpdateImage">
                   <img src="http://via.placeholder.com/500x300" />
                 </div>
                 <div class="homeUpdateBody">
@@ -284,73 +293,660 @@
                     <svg width="10px" height="10px" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
                   </div>
                 </div>
+                </a> -->
+
+                <a class="divLink homeButtonLink" href="" target="_blank">
+                  <div class="homeButton">
+                    <div class="homeButtonInset">
+                      <div class="homeButtonImage">
+                        <svg 
+                           xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink"
+                            style="margin-top: 9px; margin-left: 5px;" width="50px" height="50px">
+                          <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                           d="M30.278,23.993 L32.608,31.995 L25.400,27.393 L18.392,31.995 L20.523,23.993 L13.999,19.022 L22.386,18.491 L25.500,11.005 L28.415,18.491 L37.001,19.022 L30.278,23.993 ZM18.136,13.997 L13.435,10.929 L8.864,13.997 L10.254,8.662 L5.999,5.348 L11.469,4.994 L13.500,0.003 L15.401,4.994 L21.001,5.348 L16.616,8.662 L18.136,13.997 ZM8.147,24.924 L13.000,25.202 L9.200,27.806 L10.518,31.998 L6.444,29.587 L2.482,31.998 L3.687,27.806 L-0.000,25.202 L4.740,24.924 L6.500,21.002 L8.147,24.924 Z"/>
+                          </svg>
+                      </div>
+                      <div class="homeButtonText">
+                        list of updates
+                      </div>
+                      <div class="homeButtonArrow">
+                        <svg width="10px" height="10px" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+                      </div>
+                    </div>
+                  </div>
                 </a>
+
+                <a class="divLink homeButtonLink twoWide" href="" target="_blank">
+                  <div class="homeButton featured">
+                    <div class="homeButtonInset">
+                      <div class="homeButtonImage">
+                        <svg 
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         id="featuredSVG"
+                         style="margin-top: 9px; margin-left: 5px;" width="50px" height="50px">
+                        <path id="featuredFill" fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                         d="M18.500,0.008 L23.189,12.842 L37.001,13.753 L26.186,22.273 L29.935,35.992 L18.340,28.102 L7.065,35.992 L10.493,22.273 L-0.001,13.753 L13.490,12.842 L18.500,0.008 "/>
+                        </svg>
+                      </div>
+                      <div class="homeButtonText">
+                        featured update
+                      </div>
+                      
+
+                      <div class="homeButtomRightBracket">
+                        <div class="quote font-code-l"><p></p></div>
+                        <div class="line"></div>
+                        <div class="title"><p></p></div>
+                        <div class="image"><img height="50" src="" /></div>
+                      </div>
+                      <div class="homeButtonArrow rightBracket">
+                        <svg width="10px" height="10px" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
               </div>
+
+              <!--<div class="homeButtonsDarkbar">
+                <div class="homeButtonsTitle">
+                  <p class="font-code"><span class="color-highlight">\\></span> Visit the community</p>
+                </div>
+              </div>-->
             </div>
+
+            <div class="featuredHidden">
+              
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <div id="immortality-taboo">
+                      <div class="page_highlight">#a666e7</div>
+                      <div class="title">Immortality Taboo</div>
+                      <div class="image">/assets/images/codex/technology/immortality-taboo.png</div>
+                    </div>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <div id="personal-transport">
+                      <div class="page_highlight">#3de3ae</div>
+                      <div class="title">Personal Transport</div>
+                      <div class="image">/assets/images/codex/technology/personal-transport.png</div>
+                    </div>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <div id="computers">
+                      <div class="page_highlight">#c165d8</div>
+                      <div class="title">Computers</div>
+                      <div class="image">/assets/images/codex/technology/compsci/computers-uts.png</div>
+                    </div>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <div id="kerastoxis">
+                      <div class="page_highlight">#edc920</div>
+                      <div class="title">Kerastoxis</div>
+                      <div class="image">/assets/images/codex/technology/kera.png</div>
+                    </div>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <div id="productive-life">
+                      <div class="page_highlight">#4fc180</div>
+                      <div class="title">Productive Life</div>
+                      <div class="image">/assets/images/codex/technology/productive-life.png</div>
+                    </div>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                    <div id="powered-firearms">
+                      <div class="page_highlight">#b5343d</div>
+                      <div class="title">Powered Firearms</div>
+                      <div class="image">/assets/images/codex/technology/powered-firearms.png</div>
+                    </div>
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+                  
+                
+              
+            </div>
+
+            <script>
+              $(document).ready(function() {
+                loadFeaturedHome();
+              });
+            </script>
 
           
     		
 
           
-          
-            <div class="homeContent">
 
-              <div class="homeContentSection">
-                <div class="homeContentText homeContentLeft">
-                  <h2 class="scrollCheck homeContentFade font-title-primary-small" >The science of today is the technology of tomorrow.</h2>
-                </div>
-                <div class="homeContentText homeContentRight homePadding">
-                  <h2 class="scrollCheck homeContentFade font-title-primary-small" >- Edward Teller</h2>
-                </div>
-              </div>
+            <div class="homeContent parallax_ns5 homeBottomParallax">
+              <div class="gridbg-t" style="height: 200px; margin-top: -80px;"></div>
+              <div class="parallax_ns3 homeTopParallax">
+                <div class="homeContentContainer">
 
-              <div class="homeContentSection">
-                <div class="homeContentText homeContentLeft">
-                  <p class="scrollCheck homeContentFade" >In the distant future, during one of many nameless conflicts among the interstellar descendants of Earth, a technology was perfected that could replace a person's morality with programmable ethics.</p>
-                  <p class="scrollCheck homeContentFade" >It was called the <span class="homeContentTextEmphasis">prosthetic soul</span>.</p>
-                </div>
-                <div class="scrollCheck homeContentFade homePadding">
-                  <svg 
+                  <div class="hcdStreakerContainer">
+
+                    <div class="hcdStreaker parallax_content_ns4 streaker_sp streaker_sp1">
+                      <div class="hcdStreakerMover">
+                        <img src="" />
+                      </div>
+                    </div>
+
+                    <div class="hcdStreaker parallax_content_ns5 streaker_sp streaker_sp2">
+                      <div class="hcdStreakerMover">
+                        <img src="" />
+                      </div>
+                    </div>
+
+                    <div class="hcdStreaker parallax_content_ns6 streaker_sp streaker_sp3">
+                      <div class="hcdStreakerMover">
+                        <img src="" />
+                      </div>
+                    </div>
+
+                    <div class="hcdStreaker parallax_content_ns4 streaker_sp streaker_sp4">
+                      <div class="hcdStreakerMover">
+                        <img src="" />
+                      </div>
+                    </div>
+
+                    <div class="hcdStreaker parallax_content_ns5 streaker_sp streaker_sp5">
+                      <div class="hcdStreakerMover">
+                        <img src="" />
+                      </div>
+                    </div>
+
+
+
+                    <div class="hcdStreaker hcdStreakerR parallax_content_ns4 streaker_spr streaker_sp1">
+                      <div class="hcdStreakerMover streakerMoverR">
+                        <img src="" />
+                      </div>
+                    </div>
+
+                    <div class="hcdStreaker hcdStreakerR parallax_content_ns5 streaker_spr streaker_sp2">
+                      <div class="hcdStreakerMover streakerMoverR">
+                        <img src="" />
+                      </div>
+                    </div>
+
+                    <div class="hcdStreaker hcdStreakerR parallax_content_ns6 streaker_spr streaker_sp3">
+                      <div class="hcdStreakerMover streakerMoverR">
+                        <img src="" />
+                      </div>
+                    </div>
+
+                    <div class="hcdStreaker hcdStreakerR parallax_content_ns4 streaker_spr streaker_sp4">
+                      <div class="hcdStreakerMover streakerMoverR">
+                        <img src="" />
+                      </div>
+                    </div>
+
+                    <div class="hcdStreaker hcdStreakerR parallax_content_ns5 streaker_spr streaker_sp5">
+                      <div class="hcdStreakerMover streakerMoverR">
+                        <img src="" />
+                      </div>
+                    </div>
+
+                  </div>
+                  
+                  <div class="homeContentSpacing homeContentCode">
+                    <div class="homeContentCodeContent scrollCheck fadeInCodeParas noVisibility">
+                      <p>*** WELCOME TO <span class="color-secondaryAccent">NUT</span> 3.88 ***</p>
+                      <p>LOADING ORGANIZATIONAL_MATRIX...</p>
+                      <p>&nbsp;</p>
+                      <p><span class="color-primaryAccent">\\></span> RUN CURATOR.EXE</p>
+                      <p>ENTER PASSWORD: ***************************************************</p>
+                      <p>RE-ENTER PASSWORD: ***************************************************</p>
+                      <p><span class="color-positiveAccent">ACCEPTED</span></p>
+                      <p>LOADING <span class="color-primaryAccent">CURATOR</span></p>
+                      <p>c@neutral <span class="color-primaryAccent">~ >></span> HI!</p>
+                      <p>c@neutral <span class="color-primaryAccent">~ >></span> OH, WAIT.</p>
+                      <p>&nbsp;</p>
+                      <p>c@neutral <span class="color-primaryAccent">~ >></span> COMPILERR -P P.AL </p>
+                      <p>FILE FOUND</p>
+                      <p>GENERATING OBJECT...</p>
+                      <p>GRAPHICAL OBJECT GENERATED <span class="color-positiveAccent">SUCCESS</span></p>
+                      <p>c@neutral <span class="color-primaryAccent">~ >></span> ONE MORE THING...</p>
+                      <p>&nbsp;</p>
+                      <p>c@neutral <span class="color-primaryAccent">~ >></span> DISPLAYGUI -D F9000:233:00001</p>
+                      <p>Locating device...</p>
+                      <p>PUSHING DDS BY DHIA:8080...</p>
+                    </div>
+                  </div>
+
+                  <div class="homeContentSpacing homeContentCuratorIntro scrollCheck fadeInCodeParas noVisibility">
+                    <p>c@neutral <span class="color-primaryAccent">~ >></span> IT is I the magnificent curator!</p>
+                    <div class="swapImageContainer">
+                      <img src='/assets/images/cast/curator-beautiful.png' class="swapImage"/>
+                      <img src='/assets/images/cast/curator-beautiful-darq.png' class="swapTarget"/>
+                    </div>
+                    <p>i am here to absolve you of your confusion.</p>
+                  </div>
+
+                  <div class="homeContentSpacing homeContentWelcome scrollCheck fadeInCodeParas noVisibility">
+                    <p>Welcome to Unturned Stones - a world defined by the technology of today’s future.</p>
+                    <p>This world was <span class="color-primaryAccent">magnificent</span>, yet dark.</p>
+                    <p>It tested everything it meant to be <span class="color-primaryAccent">human</span>.</p>
+                    <p>&nbsp;</p>
+                    <p>No flash photography.</p>
+                    <p>Now, please scroll to the FIRST exhibit.</p>
+                  </div>
+
+                  <div class="homeContentSpacing homeContentScroll">
+                    <svg 
                      xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                     width="720px" height="650px" id="soulSVG">
-                    <path id="soulFaintCircle" fill-rule="evenodd" transform-origin="50% 50%" transform="scale(1.1)" stroke="rgb(255, 255, 255)" stroke-width="40px" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.05" fill="none"
-                     d="M392.000,106.000 C498.591,106.000 585.000,192.409 585.000,299.000 C585.000,405.591 498.591,492.000 392.000,492.000 C285.409,492.000 199.000,405.591 199.000,299.000 C199.000,192.409 285.409,106.000 392.000,106.000 Z"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M392.937,112.156 C497.147,112.156 581.625,195.802 581.625,298.984 C581.625,402.167 497.147,485.812 392.937,485.812 C288.728,485.812 204.250,402.167 204.250,298.984 C204.250,195.802 288.728,112.156 392.937,112.156 Z"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M243.177,378.875 C230.211,355.103 222.851,327.892 222.851,298.981 M254.081,201.710 C284.893,158.676 335.601,130.590 392.935,130.590 C423.244,130.590 451.702,138.439 476.347,152.196 M556.400,252.303 C560.710,267.125 563.019,282.786 563.019,298.981 C563.019,370.819 517.581,432.150 453.607,456.342 "/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M248.234,376.062 C252.903,376.062 256.687,379.812 256.687,384.437 C256.687,389.063 252.903,392.812 248.234,392.812 C243.566,392.812 239.781,389.063 239.781,384.437 C239.781,379.812 243.566,376.062 248.234,376.062 Z"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M445.558,433.925 C467.895,488.942 501.000,569.000 501.000,569.000 "/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M256.703,283.062 C264.651,283.062 271.094,289.442 271.094,297.312 C271.094,305.182 264.651,311.562 256.703,311.562 C248.755,311.562 242.312,305.182 242.312,297.312 C242.312,289.442 248.755,283.062 256.703,283.062 Z"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M523.672,250.375 C529.514,250.375 534.250,255.069 534.250,260.859 C534.250,266.650 529.514,271.343 523.672,271.343 C517.830,271.343 513.094,266.650 513.094,260.859 C513.094,255.069 517.830,250.375 523.672,250.375 Z" transform="translate(-2,0)"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M435.672,389.468 C448.987,389.468 459.781,400.158 459.781,413.344 C459.781,426.529 448.987,437.218 435.672,437.218 C422.357,437.218 411.562,426.529 411.562,413.344 C411.562,400.158 422.357,389.468 435.672,389.468 Z"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M438.625,211.844 C443.302,211.844 447.094,215.593 447.094,220.219 C447.094,224.844 443.302,228.594 438.625,228.594 C433.948,228.594 430.156,224.844 430.156,220.219 C430.156,215.593 433.948,211.844 438.625,211.844 Z"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M392.935,223.582 L360.780,329.978 L392.935,361.813 L425.090,329.978 L392.935,223.582 Z"/>
-                    <path id="soulBlueFlame" fill-rule="evenodd"  fill="rgb(0, 255, 255)"
-                     d="M376.029,341.000 L393.000,324.029 L409.970,341.000 L393.000,357.970 L376.029,341.000 Z" transform="translate(0,-2)"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M385.319,367.677 L354.010,336.680 L304.085,336.680 L335.394,367.677 L385.319,367.677 Z"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M399.704,367.677 L431.014,336.680 L480.939,336.680 L449.630,367.677 L399.704,367.677 Z"/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M530.122,257.621 C577.082,243.464 618.022,231.122 618.022,231.122 "/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M440.672,213.381 C474.514,152.696 513.940,82.000 513.940,82.000 "/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
-                     d="M243.159,298.981 L82.000,298.981 "/>
-                    <text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" font-size="16px" x="99px" y="291px"><tspan font-size="16px" font-family="Roboto Condensed" font-weight="bold" fill="#FFFFFF">MORALITY</tspan></text>
-                    <text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" font-size="16px" x="311px" y="154.624px"><tspan font-size="16px" font-family="Roboto Condensed" font-weight="bold" fill="#FFFFFF">FLICK</tspan></text>
-                    <text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" transform="matrix( 0.38977469466425, 0.92091024937254, -0.92091024937254, 0.38977469466424,470.363720120182, 481.999394865076)" font-size="16px"><tspan font-size="16px" font-family="Roboto Condensed" font-weight="bold" fill="#FFFFFF">SWITCH&#46;</tspan></text>
-                    <text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" font-size="16px" x="431px" y="419px"><tspan font-size="16px" font-family="Roboto Condensed" font-weight="bold" fill="#FF00FF">A</tspan></text>
-                  </svg>
+                     width="83px" height="70px" stroke="white">
+                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                     d="M2.000,2.000 L41.000,41.000 L81.000,2.000 "/>
+                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                     d="M2.000,12.000 L41.000,51.000 L81.000,12.000 "/>
+                    </svg>
+                  </div>
+
+                  <div class="homeContentSpacing homeContentDialog hcd-prosthetic-soul">
+                    <div class="hcdReplace">
+                      <div class="hcdReplaceContent">
+                        hi
+                      </div>
+                    </div>
+                    <div class="hcdHeader">
+                      <div class="hcdTitle"><p class="font-code-l"><span class="color-pros">pROs.TXT - </span>PROSTHETIC SOUL</p></div>
+                      <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-prosthetic-soul"></div>
+                    </div>
+                    <div class="hcdBody gridBG">
+                      <div class="hcdCodeline"><p class="font-code">NXT <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                      <div class="hcdBodyContent">
+                        <div class="hcdCorner hcdTopLeft"></div>
+                        <div class="hcdCorner hcdTopRight"></div>
+                        <div class="hcdCorner hcdBottomLeft"></div>
+                        <div class="hcdCorner hcdBottomRight"></div>
+
+                        <div class="hcdSVG">
+                          <img class="pulsing-color-image" src="/assets/images/centerpiece/prosthetic-soul.png" />
+                        </div> 
+                        <div class="hcdDesc"><p>In the distant future, during one of many nameless conflicts among the interstellar descendants of Earth, a technology was perfected that could replace a person's morality with programmable ethics.</p> 
+                        <p>It was called the <a href='#' class='infoTag common color-pros' data-info='prosthetic-soul' data-toggle='modal' data-target='#modalInfoTag'>prosthetic soul</a>.</p></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="homeContentSpacing homeContentDialog hcd-everyware">
+                    <div class="hcdReplace">
+                      <div class="hcdReplaceContent">
+                        ok
+                      </div>
+                    </div>
+                    <div class="hcdHeader">
+                      <div class="hcdTitle"><p class="font-code-l"><span class="color-everyware">everyware.TXT - </span>everyware</p></div>
+                      <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-everyware"></div>
+                    </div>
+                    <div class="hcdBody gridBG">
+                      <div class="hcdCodeline"><p class="font-code">ERW <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                      <div class="hcdBodyContent">
+                        <div class="hcdCorner hcdTopLeft"></div>
+                        <div class="hcdCorner hcdTopRight"></div>
+                        <div class="hcdCorner hcdBottomLeft"></div>
+                        <div class="hcdCorner hcdBottomRight"></div>
+
+                        <div class="hcdSVG">
+                          <img class="pulsing-color-image" src="/assets/images/centerpiece/everyware.png" />
+                        </div> 
+                        <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">As cybertechnology became smaller and widespread, computers took their ultimate role in the form of the <a href='#' class='infoTag common color-everyware' data-info='computers-uts' data-toggle='modal' data-target='#modalInfoTag'>Ubiquitous Node Internet of Things</a>. Programming was no longer was a specialization - it became a second language; a requirement for living in the new age.</p></div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -596,5 +1192,7 @@
           );
         });
       </script>
+
+      <script src="/assets/js/site/site-parallax.js"></script>
   </body>
 </html>

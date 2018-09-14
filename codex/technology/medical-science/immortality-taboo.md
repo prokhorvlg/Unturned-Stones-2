@@ -3,10 +3,12 @@ title: "Immortality Taboo"
 excerpt: "This is the miracle drug of Unturned Stones. If there was one invention other than the torch drive that could be implicated as the thing that drove humanity beyond their terrestrial homes, it would be kerastoxis: a solution of blood thinners, adrenaline, and a thousand other drugs that turn the fleshy human body into a hardened cocoon resistant against the strongest onslaught of interstellar forces."
 author: "prokhorVLG"
 
+raw: "immortality-taboo"
 permalink: /codex/technology/medical-science/immortality-taboo
 layout: blank_page
 
 page_highlight: "#a666e7"
+image: "/assets/images/codex/technology/immortality-taboo.png"
 
 page_features: [
                 {

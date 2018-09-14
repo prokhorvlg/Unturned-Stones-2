@@ -3,10 +3,12 @@ title: "Cybernetic Enhancement"
 excerpt: "You may have thought that the future is synonymous with ubiquitous cybernetics. Many science fiction authors in the past have pushed the notion that cybernetics (alternatively, augmentations) were an essential part of transhumanism, and therefore, an inevitability. They could not have been further from the truth."
 author: "prokhorVLG"
 
-permalink: /codex/technology/medical-science/cybernetic-enhancement
+raw: cybernetic-enhancement
+permalink: /codex/technology/medical-science/cybernetic-enhancement/
 layout: blank_page
 
 page_highlight: "#42dae3"
+image: "/assets/images/codex/technology/cybernetic-enhancement.png"
 
 page_features: [
                 {

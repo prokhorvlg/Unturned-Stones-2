@@ -3,10 +3,12 @@ title: "Productive Life"
 excerpt: "Instead of medical development focused on keeping people alive for as long as possible with little regard for whether that life is still worth living, little worth is ever placed on the length of a life. Instead, medical researchers and doctors remain focused on developing ways of improving the quality of the life people already have, since a post-scarcity society limited by its population demands it."
 author: "prokhorVLG"
 
+raw: productive-life
 permalink: /codex/technology/medical-science/productive-life
 layout: blank_page
 
 page_highlight: "#4fc180"
+image: "/assets/images/codex/technology/productive-life.png"
 
 page_features: [
                 {

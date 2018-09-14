@@ -1024,6 +1024,7 @@ var activeSection = 'hub';
 var pageType = '';
 
 $(document).ready(function(){
+
   pageType = $('body').attr('class');
   generateNav();
   navClick('hub');
@@ -1254,7 +1255,7 @@ function compileObjectOverhead(currentHeading) {
 
 // Compiles a button for the input object.
 function compileNavObjectButton(currentHeading) {
-  console.log(currentHeading);
+  // console.log(currentHeading);
   if (headings[currentHeading]['actions'] == 'expand') {
 
     var currentHeadingObject = '';
@@ -1336,7 +1337,7 @@ function compileNavObjectSlideout(currentHeading) {
 }
 
 function openNavObject(currentHeading) {
-  console.log('opening')
+  // console.log('opening')
   var navObject = generatedNavPages[currentHeading];
   if (!$("#child_" + currentHeading).length) {
     $('.appendNavElements').append( navObject );
@@ -1361,7 +1362,7 @@ function closeNavObject(currentHeading) {
 
 // Navigates to the selected page.
 function navigateNavObject(currentHeading) {
-  console.log('navigating to', headings[currentHeading]['link']);
+  // console.log('navigating to', headings[currentHeading]['link']);
   window.location.href = headings[currentHeading]['link'];
 }
 
@@ -1404,7 +1405,7 @@ function compileSitemap(currentHeading, currentLeft = 0) {
 
   var calcLeft = currentLeft * 20;
 
-  console.log(headings[currentHeading]['actions'])
+  // console.log(headings[currentHeading]['actions'])
   if (headings[currentHeading]['actions'] == 'expand') {
 
     var currentHeadingObject = '';
@@ -1497,4 +1498,36 @@ function expandSitemapObject(currentHeading) {
     }
     $('#navHeadingItemDown_' + currentHeading).html('+');
   }
+}
+
+// Load Featured content when required.
+function loadFeaturedHome() {
+  var $hiddenEl = $('.featuredHidden').first();
+  var $targetEl = $('.homeButton.featured .homeButtomRightBracket').first();
+
+  $lastEl = $hiddenEl.children('div').last();
+
+  var id = $lastEl.attr('id');
+  var page_highlight = $lastEl.children('.page_highlight').text();
+  var title = $lastEl.children('.title').text();
+  var image = $lastEl.children('.image').text();
+  var quote = headings[id].description;
+
+  var link = headings[id].link;
+
+  $targetEl.children('.quote').first().children('p').first().html(quote);
+  $targetEl.children('.quote').first().children('p').first().css('color',page_highlight);
+  $targetEl.children('.line').css('background',page_highlight);
+  $targetEl.children('.title').first().children('p').first().html(title);
+  $targetEl.children('.image').first().children('img').first().attr("src",image);
+
+  $targetEl.css('opacity','1');
+
+  var $targetButton = $('.homeButton.featured').first();
+
+  $targetButton.css('border','1px solid ' + page_highlight);
+  $("#featuredFill", $('#featuredSVG')).attr('style', "fill:"+page_highlight);
+  $('.homeButton.featured .homeButtonText').css('color',page_highlight);
+
+  $targetButton.parent().attr('href',link);
 }

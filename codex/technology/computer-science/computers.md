@@ -3,10 +3,12 @@ title: "Computers"
 excerpt: "These are the computer paradigms of Unturned Stones. It’s hard to say that it’s the most important aspect of the world - since everything is interlinked through and though - but if there was one thing one could point to that has somehow impacted everything, it would be these innocent electronic devices."
 author: "prokhorVLG"
 
+raw: "computers"
 permalink: /codex/technology/computer-science/computers/
 layout: blank_page
 
 page_highlight: "#c165d8"
+image: "/assets/images/codex/technology/compsci/computers-uts.png"
 
 page_features: [
                 {
@@ -334,5 +336,3 @@ page_features: [
                 },
               ]
 ---
-
-<!-- /assets/images/codex/technology/compsci/computers_uts.png -->

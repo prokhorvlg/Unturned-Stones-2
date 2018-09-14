@@ -3,10 +3,12 @@ title: "Covert Firearms"
 excerpt: "It shouldn't be surprising that covert firearms are those used by spies and operatives - valuing concealability and deception above all else. These are the sorts of weapons that induce heart attacks and disassamble into neat misdirecting components, or are built to be disguised as inconspicious or miniature objects."
 author: "prokhorVLG"
 
+raw: covert-firearms
 permalink: /codex/technology/gear/firearms/covert-firearms/
 layout: blank_page
 
 page_highlight: "#3a8841"
+image: "/assets/images/codex/technology/covert-firearms.png"
 
 page_features: [
                 {

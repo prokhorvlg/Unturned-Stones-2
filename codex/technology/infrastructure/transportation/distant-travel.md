@@ -3,10 +3,12 @@ title: "Distant Travel"
 excerpt: "At the largest scale of terrestrial transportation, there is the distant travel category. Pretty simple - these take you to distant places using devices like trains, airplanes, ships, rockets. In Unturned Stones, these are highly regional. Each planet and region features a unique challenge that must be overcome with a completely unique transportation solution."
 author: "prokhorVLG"
 
+raw: distant-travel
 permalink: /codex/technology/infrastructure/transportation/distant-travel/
 layout: blank_page
 
 page_highlight: "#edb829"
+image: "/assets/images/codex/technology/distant-travel.png"
 
 page_features: [
                 {

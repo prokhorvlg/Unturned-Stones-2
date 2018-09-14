@@ -3,10 +3,12 @@ title: "Academia"
 excerpt: "Personal transporters fill a particular kind of niche that often overlaps with local commute systems - used for travelling within neighborhoods, and sometimes between them. They are more common in some places than others, particularly in more 'ubiquitously urban' areas such as space bases - where a charging station can be found anywhere, and public transportation systems replace privately owned commute vehicles."
 author: "prokhorVLG"
 
+raw: academia
 permalink: /codex/society/culture/academia/
 layout: blank_page
 
 page_highlight: "#3cd4eb"
+image: "/assets/images/codex/technology/personal-transport.png"
 
 page_features: [
                 {

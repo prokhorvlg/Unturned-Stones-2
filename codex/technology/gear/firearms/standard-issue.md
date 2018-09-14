@@ -3,10 +3,12 @@ title: "Standard Firearms"
 excerpt: "Standard does not mean 'familiar' or 'contemporary'. Standard firearms are called as such since they are issued as standard equipment to army units, as opposed to covert weapons which are typically employed by spies, and powered weapons which are - much like power tools - used by operation specialists."
 author: "prokhorVLG"
 
+raw: standard-firearms
 permalink: /codex/technology/gear/firearms/standard-firearms/
 layout: blank_page
 
 page_highlight: "#9e6a4e"
+image: "/assets/images/codex/technology/standard-firearms.png"
 
 page_features: [
                 {

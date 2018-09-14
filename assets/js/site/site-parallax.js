@@ -12,10 +12,10 @@ $(document).ready(function() {
   });
 
   // Detects browser; only runs certain scripts on desktop browsers.
-  //if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
    // some code..
-  //}
-  //else {
+  }
+  else {
     $('.parallax_s1').parallax("50%", 0.1, true);
     $('.parallax_s2').parallax("50%", 0.2, true);
     $('.parallax_s3').parallax("50%", 0.3, true);
@@ -37,7 +37,13 @@ $(document).ready(function() {
     $('.parallax_ns7').parallax("50%", -0.7, true);
     $('.parallax_ns8').parallax("50%", -0.8, true);
 
-//    }
+    $('.parallax_content_ns2').parallax("50%", 0.2, true, true);
+    $('.parallax_content_ns3').parallax("50%", 0.3, true, true);
+    $('.parallax_content_ns4').parallax("50%", 0.4, true, true);
+    $('.parallax_content_ns5').parallax("50%", 0.5, true, true);
+    $('.parallax_content_ns6').parallax("50%", 0.6, true, true);
+
+    }
 
 //  }
 
@@ -53,7 +59,7 @@ $(document).ready(function() {
       windowHeight = $window.height();
     });
 
-    $.fn.parallax = function(xpos, speedFactor, outerHeight, full) {
+    $.fn.parallax = function(xpos, speedFactor, outerHeight, isContent = false, contentType = 'absolute') {
       var $this = $(this);
 
       var getHeight;
@@ -80,11 +86,11 @@ $(document).ready(function() {
       if (arguments.length < 1 || xpos === null) xpos = "50%";
       if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
       if (arguments.length < 3 || outerHeight === null) outerHeight = true;
-      if (arguments.length < 3 || full === null) full= 'full';
 
       // function to be called whenever the window is scrolled or resized
       function update() {
-        var pos = $('body').scrollTop();
+        var pos = $(window).scrollTop();
+        // console.log(pos);
 
         $this.each(function() {
           var $element = $(this);
@@ -93,20 +99,32 @@ $(document).ready(function() {
           var height = getHeight($element);
 
           // Check if totally above or totally below viewport
-          if (top + height < pos || top > pos + windowHeight) {
-            return;
-          }
+          if (isContent == false) {
+            if (top + height < pos || top > pos + windowHeight) {
+              return;
+            }
+          } /* else {
+            if (top + height < (pos - windowHeight) || (top + windowHeight) > pos + windowHeight) {
+              return;
+            }
+          } */
 
-          if (full != 'full') {
+          if (isContent == false) {
             $element.css('backgroundPosition', xpos + " " + Math.round((top - pos) * speedFactor) + "px");
-          }
-          else {
-            $element.css('margin-top', 0 - Math.round((top - pos) * speedFactor) + "px");
+          } else if (isContent == true) {
+
+            if (contentType == 'absolute') {
+              $element.css('top', 0 - Math.round((top - pos) * speedFactor) + "px");
+            } else if (contentType == 'relative') {
+              $element.css('margin-top', 0 - Math.round((top - pos) * speedFactor) + "px");
+            }
+
           }
         });
       }
 
-      $('body').bind('scroll', update).resize(update);
+      $(window).bind('scroll', update).resize(update);
+      $(window).scroll();
       update();
     };
 })(jQuery);

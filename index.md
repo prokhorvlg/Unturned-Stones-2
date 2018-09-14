@@ -26,12 +26,20 @@ page_features: [
                 },
                 {
                   type: 'latestUpdate', init: {
-                    id: 'homeLatestUpdate',
+                    id: 'latestUpdate',
+                    list-of-updates: [
+                      "immortality-taboo",
+                      "personal-transport",
+                      "computers",
+                      "kerastoxis",
+                      "productive-life",
+                      "powered-firearms",
+                    ],
                   }
                 },
                 {
-                  type: 'homeContent', init: {
-                    id: 'homeContent',
+                  type: 'homeFinalContent', init: {
+                    id: 'homeFinalContent',
                   }
                 },
               ]

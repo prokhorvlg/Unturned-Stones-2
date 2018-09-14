@@ -3,10 +3,12 @@ title: "Amoria"
 excerpt: "Just as we thought there was nothing human left to be corrupted, scientists discovered the key to true love. Amoria, a love-inducing treatment effective in humans, was first synthesized by Groundman Biological from a substance found in organic life native to the planet Prometheus less than a decade ago."
 author: "prokhorVLG"
 
-permalink: /codex/technology/medical-science/amoria
+raw: amoria
+permalink: /codex/technology/medical-science/amoria/
 layout: blank_page
 
 page_highlight: "#eb3c61"
+image: "/assets/images/codex/technology/amoria.png"
 
 page_features: [
                 {

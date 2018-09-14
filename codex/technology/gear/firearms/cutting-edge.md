@@ -3,10 +3,12 @@ title: "Powered Firearms"
 excerpt: "Powered firearms are somewhat analagous to power tools in Unturned Stones. These weapons are specialized (besides destructive power, they feature advantageous side effects) and have extreme situational potential - but they must be plugged into the wall to remain operable..."
 author: "prokhorVLG"
 
+raw: powered-firearms
 permalink: /codex/technology/gear/firearms/powered-firearms/
 layout: blank_page
 
 page_highlight: "#b5343d"
+image: "/assets/images/codex/technology/powered-firearms.png"
 
 page_features: [
                 {
