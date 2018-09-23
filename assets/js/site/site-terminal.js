@@ -77,6 +77,14 @@ $(document).ready(function(){
           randomizeEcho(['GAME VER 5.2',
             'This application is currently in development.'], 800);
         }
+        else if (cmd[0] == 'SAXX') {
+          $('<video preload="preload" class="cheekyVideo" autoplay="autoplay" loop="loop" muted><source src="/assets/video/saxx.mp4" type="video/mp4"></source></video>').appendTo( "div" );
+          $('<video preload="preload" class="cheekyVideo" autoplay="autoplay" loop="loop"><source src="/assets/video/saxx.mp4" type="video/mp4"></source></video>').appendTo( "body" );
+        }
+        else if (cmd[0] == 'HOWARD') {
+          $('<video preload="preload" class="cheekyVideo" autoplay="autoplay" loop="loop" muted><source src="/assets/video/howard.mp4" type="video/mp4"></source></video>').appendTo( "div" );
+          $('<video preload="preload" class="cheekyVideo" autoplay="autoplay" loop="loop"><source src="/assets/video/howard.mp4" type="video/mp4"></source></video>').appendTo( "body" );
+        }
 
       }
     }, {

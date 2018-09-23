@@ -1,5 +1,11 @@
 $(document).ready( function() {
-  $('.infoTag').click(function() {
+  var $infoTag = $('.infoTag');
+  var $infoTagTitle = $('.infoTagTitle');
+  var $infoTagImage = $('.infoTagImage');
+  var $infoTagBody = $('.infoTagBody');
+  var $infoTagFooter = $('.infoTagFooter');
+
+  $infoTag.click(function() {
     var tags = {
       'attrition': {
         name: 'The Attrition',
@@ -210,46 +216,46 @@ $(document).ready( function() {
     };
     var target = $(this).data('info');
 
-    $('.infoTagTitle').html(tags[target].name);
+    $infoTagTitle.html(tags[target].name);
 
     if ('imageType' in tags[target]) {
       if ('centerImageParent' in tags[target]) {
         if (tags[target].centerImageParent == true) {
-          $('.infoTagImage').css('text-align', 'center');
+          $infoTagImage.css('text-align', 'center');
         }
       } else {
-        $('.infoTagImage').css('text-align', 'none');
+        $infoTagImage.css('text-align', 'none');
       }
       if (tags[target].imageType == 'img') {
-        $('.infoTagImage').html("<img id='infoTagModalImage' src='" + window.svgRef[tags[target].image] + "' />");
+        $infoTagImage.html("<img id='infoTagModalImage' src='" + window.svgRef[tags[target].image] + "' />");
         for (var i = 0; i < tags[target].styles.length; i++) {
           document.getElementById('infoTagModalImage').style[tags[target].styles[i][0]] = tags[target].styles[i][1];
         }
       } else if (tags[target].imageType == 'svg') {
-        $('.infoTagImage').html(window.svgRef[tags[target].image]);
+        $infoTagImage.html(window.svgRef[tags[target].image]);
         for (var i = 0; i < tags[target].styles.length; i++) {
           document.getElementById('infoTagModalImageSVG').style[tags[target].styles[i][0]] = tags[target].styles[i][1];
         }
       } else if (tags[target].imageType == 'source') {
-        $('.infoTagImage').html("<img id='infoTagModalImage' src='" + tags[target].image + "' />");
+        $infoTagImage.html("<img id='infoTagModalImage' src='" + tags[target].image + "' />");
         for (var i = 0; i < tags[target].styles.length; i++) {
           document.getElementById('infoTagModalImage').style[tags[target].styles[i][0]] = tags[target].styles[i][1];
         }
       } 
     } else {
-      $('.infoTagImage').html('');
+      $infoTagImage.html('');
     }
 
-    $('.infoTagBody').html(tags[target].body);
+    $infoTagBody.html(tags[target].body);
 
     if ('link' in tags[target]) {
-      $('.infoTagFooter').html("<a id='infoTagModalLearnMore' href='" + tags[target].link + "' class='commonButton font-code-l'>Learn More</a>");
+      $infoTagFooter.html("<a id='infoTagModalLearnMore' href='" + tags[target].link + "' class='commonButton font-code-l'>Learn More</a>");
       if ('color' in tags[target]) {
         document.getElementById('infoTagModalLearnMore').style.color = tags[target].color;
         document.getElementById('infoTagModalLearnMore').style.borderColor = tags[target].color;
       }
     } else {
-      $('.infoTagFooter').html('');
+      $infoTagFooter.html('');
     }
 
     setTimeout(function() {
@@ -272,11 +278,15 @@ $(document).ready( function() {
 });
 
 function resolveModal(){
-  if ($('.modal-dialog').first().height() < window.innerHeight) {
-    $('.modal-flex').css('display', 'flex');
+  var $modalDialog = $('.modal-dialog');
+  var $modalFlex = $('.modal-flex');
+  var $modalInfoTag = $('.modalInfoTag');
+
+  if ($modalDialog.first().height() < window.innerHeight) {
+    $modalFlex.css('display', 'flex');
   } else {
-    $('.modal-flex').css('display', 'block');
+    $modalFlex.css('display', 'block');
   }
-  $('.modalInfoTag').css('padding-left', '0');
+  $modalInfoTag.css('padding-left', '0');
 }
 

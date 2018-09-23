@@ -1193,7 +1193,7 @@ body {
   background-image: url('../images/homebg/stars.png');
 
   background-position: 50% 0%;
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
 
   border-top: 1px solid #2d2d2d;
@@ -1203,7 +1203,8 @@ body {
   background-image: url('../images/homebg/tech.png');
 
   background-position: 50% 0%;
-  background-size: 100% auto;
+  /* background-size: 100% auto; */
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -1365,6 +1366,12 @@ body {
 .color-everyware {
   color: #ff00ff !important;
 }
+.color-kaizen {
+  color: #ffff00 !important;
+}
+.color-kaizen-dark {
+  color: #bbbb00 !important;
+}
 .color-slightlyDark {
   color: #555;
 }
@@ -1378,6 +1385,11 @@ body {
   max-width: 1100px;
 
   margin: 0 auto;
+}
+@media (max-width: 1100px) {
+  .homeContentDialog {
+    margin: 10px;
+  }
 }
 .hcdReplace {
   display: none;
@@ -1518,10 +1530,121 @@ body {
 .hcdSVG {
   padding: 10px;
   text-align: center;
+  position: relative;
 }
 .hcdSVG img {
   max-width: 100%;
 }
+.hcdSVG img.hcdMobileImage {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .hcdSVG img.hcdDesktopImage {
+    display: none;
+  }
+  .hcdSVG img.hcdMobileImage {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.hcdSVGPulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.hcdSVGPulse svg * {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/*   Prosthetic Soul SVG/Animation   */
+.hcdProstheticSoulSVG .hcdSVGPulse {
+  transform: translate(calc(-50% + 59px), calc(-50% + 34px));
+}
+@media (max-width: 1100px) {
+  .hcdProstheticSoulSVG .hcdSVGPulse {
+    display: none;
+  }
+}
+.hcdProsDiamond {
+  animation: hcdProsDiamond 5s ease-in-out infinite;
+}
+@keyframes hcdProsDiamond {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(0.8); }
+}
+
+/*   Everyware SVG/Animation   */
+.hcdEverywareSVG .hcdSVGPulse {
+  transform: translate(calc(-50% + 263px), calc(-50% + 39px));
+}
+@media (max-width: 1100px) {
+  .hcdEverywareSVG .hcdSVGPulse {
+    display: none;
+  }
+}
+.hcdEverywareTopLine, .hcdEverywareBottomLine {
+  animation: hcdEverywareTopLine 5s ease-in-out infinite;
+}
+@keyframes hcdEverywareTopLine {
+    0% { transform: scaleX(1); }
+    50% { transform: scaleX(0.4); }
+    100% { transform: scaleX(1); }
+}
+.hcdEverywareMiddleLine {
+  animation: hcdEverywareMiddleLine 5s ease-in-out infinite;
+}
+@keyframes hcdEverywareMiddleLine {
+    0% { transform: scaleX(0.4); }
+    50% { transform: scaleX(1); }
+    100% { transform: scaleX(0.4); }
+}
+.hcd-everyware .hcdIcon:hover {
+  cursor: pointer;
+  border: 2px solid #ff00ff;
+}
+.hcd-everyware .hcdIcon:hover::after {
+  background: #ff00ff;
+}
+
+/*   Kaizen SVG/Animation   */
+.hcdKaizenSVG .hcdSVGPulse {
+  transform: translate(calc(-50% + 0px), calc(-50% + 120px));
+}
+@media (max-width: 1100px) {
+  .hcdKaizenSVG .hcdSVGPulse {
+    display: none;
+  }
+}
+.hcdSVGPulse svg {
+  overflow: visible;
+}
+.hcdKaizenDiamond {
+  animation: hcdKaizenDiamond 5s ease-in-out infinite;
+}
+@keyframes hcdKaizenDiamond {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(45px); }
+    100% { transform: translateX(0px); }
+}
+.hcdKaizenDiamondReverse {
+  animation: hcdKaizenDiamondReverse 5s ease-in-out infinite;
+}
+@keyframes hcdKaizenDiamondReverse {
+    0% { transform: translateX(45px); }
+    50% { transform: translateX(0px); }
+    100% { transform: translateX(45px); }
+}
+.hcd-kaizen .hcdIcon:hover {
+  cursor: pointer;
+  border: 2px solid #ffff00;
+}
+.hcd-kaizen .hcdIcon:hover::after {
+  background: #ffff00;
+}
+
 .hcdDesc {
   margin: 20px;
   margin-top: -10px;
@@ -2828,3 +2951,6 @@ a.roll:active, a.roll:focus {
 
 /* -- Image Sections                    */
 
+.cheekyVideo {
+  width: 100%; height: 100%;
+}

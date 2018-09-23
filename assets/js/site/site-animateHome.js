@@ -20,11 +20,12 @@ var phrases = ["reinitializing model",
   "admiring caba",
 ];
 
-$( '.spinText' ).each(function() {
+var $spinText = $('.spinText');
+$spinText.each(function() {
   randomizeEcho(this);
 });
 
-function randomizeEcho( element, multi = 3000) {
+function randomizeEcho(element, multi = 3000) {
   $(element).text(phrases[Math.floor(Math.random()*phrases.length)]);
   setTimeout(function() { randomizeEcho( element, multi); }, Math.floor(Math.random() * multi));
 }
@@ -40,7 +41,8 @@ $(document).ready( function() {
 
   // Initiate scroll listeners for triggering animations
   $(window).scroll(function() {
-    $('.scrollCheck').each( function() {
+    var $scrollCheck = $('.scrollCheck');
+    $scrollCheck.each( function() {
       if ( checkInView(document.getElementById('body'), this, 1000) ){
 
         if ($(this).hasClass('homeContentFade')) {
@@ -68,6 +70,8 @@ $(document).ready( function() {
   streakerSwap($('.streaker_sp4 img'), '/assets/images/streaker/sp4_1.png', '/assets/images/streaker/sp4_2.png');
 
   streakerSwap($('.streaker_sp5 img'), '/assets/images/streaker/sp5_1.png', '/assets/images/streaker/sp5_2.png');
+
+  streakerSwap($('.streaker_sp6 img'), '/assets/images/streaker/sp6_1.png', '/assets/images/streaker/sp6_2.png');
 
   setTimeout(function() {
     streakerRandomAnim('streaker-left-to-right', 'streaker_sp');

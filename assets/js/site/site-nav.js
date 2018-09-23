@@ -1050,14 +1050,15 @@ $(document).ready(function(){
 });
 
 function loadMenuBarLogo() {
-  $('.menuBarLogo').css('opacity', '0');
-  $('.menuBarLogo').css('animation-play-state', 'running');
+  var $menuBarLogo = $('.menuBarLogo');
+  $menuBarLogo.css('opacity', '0');
+  $menuBarLogo.css('animation-play-state', 'running');
   setTimeout(function() {
-    $('.menuBarLogo').css('transition', '0.3s ease-in-out');
+    $menuBarLogo.css('transition', '0.3s ease-in-out');
   }, 5);
   setTimeout(function() {
-    resetSpin();
-    $('.menuBarLogo').css('opacity', '1');
+    resetSpin('menuBarLogo');
+    $menuBarLogo.css('opacity', '1');
   }, 1000);
 }
 
@@ -1367,11 +1368,12 @@ function navigateNavObject(currentHeading) {
 }
 
 // Resets the animation of the spinning dorito upon mouseleave of the nav bar.
-function resetSpin() {
-  $('.menuBarLogo').css('animation', 'none');
+function resetSpin(menuBarLogo) {
+  var $menuBarLogo = $('.' + menuBarLogo);
+  $menuBarLogo.css('animation', 'none');
   setTimeout(function() {
-    $('.menuBarLogo').css('animation', '');
-    $('.menuBarLogo').css('background-image', 'url(/assets/images/spinning_logo/d13.png)');
+    $menuBarLogo.css('animation', '');
+    $menuBarLogo.css('background-image', 'url(/assets/images/spinning_logo/d13.png)');
   }, 10);
 }
 
