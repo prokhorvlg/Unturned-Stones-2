@@ -1,150 +1,109 @@
 $(document).ready(function() {
+  // Capture window as a jQuery variable
+  var $window = $(window);
 
+  // Resizes the height of a parallax block according to it's width-height ratio
   var resizeTimer;
   resizeHeader('resizeHeader', 0.5625);
-  $(window).on('resize', function(e) {
+  $window.on('resize', function(e) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
-
-      resizeHeader('resizeHeader', 0.5625);
-              
+      resizeHeader('resizeHeader', 0.5625);    
     }, 30);
   });
 
-  // Detects browser; only runs certain scripts on desktop browsers.
+  // Detects browser; only runs certain scripts on desktop browsers
   if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-   // some code..
+    // Mobile code
+  } else {
+    // Desktop code
+
+    // Run parallax function on each object with parallax class
+    $('.parallax').each(function() {
+      parallax($(this), $(this).data('parallax-type'), $(this).data("parallax-speed"), $(this).data("parallax-offset"), $(this).data("parallax-object-type"));
+    });
+
+    // Run an initial scroll of the window.
+    $window.scroll();
   }
-  else {
-    $('.parallax_s1').parallax("50%", 0.1, true);
-    $('.parallax_s2').parallax("50%", 0.2, true);
-    $('.parallax_s3').parallax("50%", 0.3, true);
-    $('.parallax_s4').parallax("50%", 0.4, true);
-    $('.parallax_s5').parallax("50%", 0.5, true);
-    $('.parallax_s6').parallax("50%", 0.6, true);
-    $('.parallax_s7').parallax("50%", 0.7, true);
-    $('.parallax_s8').parallax("50%", 0.8, true);
-
-    $('.parallax_ns4_dossier').parallax("40%", 0.4, true);
-    $('.parallax_ns4_gadget').parallax("100%", -0.4, true);
-
-    $('.parallax_ns1').parallax("50%", -0.1, true);
-    $('.parallax_ns2').parallax("50%", -0.2, true);
-    $('.parallax_ns3').parallax("50%", -0.3, true);
-    $('.parallax_ns4').parallax("50%", -0.4, true);
-    $('.parallax_ns5').parallax("50%", -0.5, true);
-    $('.parallax_ns6').parallax("50%", -0.6, true);
-    $('.parallax_ns7').parallax("50%", -0.7, true);
-    $('.parallax_ns8').parallax("50%", -0.8, true);
-
-    $('.parallax_content_ns2').parallax("50%", 0.2, true, true);
-    $('.parallax_content_ns3').parallax("50%", 0.3, true, true);
-    $('.parallax_content_ns4').parallax("50%", 0.4, true, true);
-    $('.parallax_content_ns5').parallax("50%", 0.5, true, true);
-    $('.parallax_content_ns6').parallax("50%", 0.6, true, true);
-
-    }
-
-//  }
-
 });
 
-(function($) {
-    var firstTops = {};
-    var items = [];
-    var $window = $(window);
-    var windowHeight = $window.height();
-
-    $window.resize(function() {
-      windowHeight = $window.height();
+// Parallax overhead function
+// el:           jQuery object to be parallaxed
+//               example: $(this)
+// type:         "o" if the contents are parallaxed, "b" if the background is
+//               example: "o"
+// speed:        Speed factor for parallax. (Integer from -1 to 1)
+//               example: -0.3
+// offset:       xposition of parallax element. Percentage from "0%" to "100%"
+//               example: "50%"
+function parallax(el, type = "b", speed = 0.5, offset = "50%", objectType = "r") {
+  var $window = $(window);
+  // Check whether element is background or object type...
+  if (type === "b") {
+    // Run actual parallax function whenever window is scrolled.
+    $window.on('scroll resize', function() {
+      parallaxRunBackground($(el), speed, offset);
     });
+    parallaxRunBackground($(el), speed, offset);
+  } else if (type === "o") {
+    $window.on('scroll resize', function() {
+      parallaxRunObject($(el), speed, objectType);
+    });
+    parallaxRunObject($(el), speed, objectType);
+  }
+}
 
-    $.fn.parallax = function(xpos, speedFactor, outerHeight, isContent = false, contentType = 'absolute') {
-      var $this = $(this);
+// Actual parallax function for background
+function parallaxRunBackground(el, speed, offset) {
+  var $window = $(window);
+  var windowHeight = $window.height();
+  var $el = $(el);
+  var pos = $window.scrollTop();
+  var top = $el.offset().top;
+  var height = $el.outerHeight();
 
-      var getHeight;
-      var firstTop;
-      var paddingTop = 0;
+  // If the object is outside of view, ignore the object.
+  if (top + height < pos || top > pos + windowHeight) {
+    return;
+  } else { // Otherwise, change its background offset property.
+    $el.css('backgroundPosition', offset + " " + Math.round((top - pos) * speed) + "px");
+  }
+}
 
-      //get the starting position of each element to have parallax applied to it
-      $this.each(function() {
-        firstTops[$this] = $this.offset().top;
-        items.push($this);
-      });
+// Actual parallax function for object
+function parallaxRunObject(el, speed, objectType) {
+  var $window = $(window);
+  var windowHeight = $window.height();
+  var $el = $(el);
+  var pos = $window.scrollTop();
+  var top = $el.offset().top;
+  var height = $el.outerHeight();
 
-      if (outerHeight) {
-        getHeight = function(jqo) {
-          return jqo.outerHeight(true);
-        };
-      } else {
-        getHeight = function(jqo) {
-          return jqo.height();
-        };
-      }
+  // If the object is absolutely positioned, change its top attribute.
+  if (objectType === "a") {
+    $el.css('top', 0 - Math.round((top - pos) * speed) + "px");
+  } else if (objectType === "r") { // If the object is relatively positioned, change its margin-top attribute.
+    $el.css('margin-top', 0 - Math.round((top - pos) * speed) + "px");
+  }  
+}
 
-      // setup defaults if arguments aren't specified
-      if (arguments.length < 1 || xpos === null) xpos = "50%";
-      if (arguments.length < 2 || speedFactor === null) speedFactor = 0.1;
-      if (arguments.length < 3 || outerHeight === null) outerHeight = true;
-
-      // function to be called whenever the window is scrolled or resized
-      function update() {
-        var pos = $(window).scrollTop();
-        // console.log(pos);
-
-        $this.each(function() {
-          var $element = $(this);
-          var top = $element.offset().top;
-          //var top = items[i].offset().top;
-          var height = getHeight($element);
-
-          // Check if totally above or totally below viewport
-          if (isContent == false) {
-            if (top + height < pos || top > pos + windowHeight) {
-              return;
-            }
-          } /* else {
-            if (top + height < (pos - windowHeight) || (top + windowHeight) > pos + windowHeight) {
-              return;
-            }
-          } */
-
-          if (isContent == false) {
-            $element.css('backgroundPosition', xpos + " " + Math.round((top - pos) * speedFactor) + "px");
-          } else if (isContent == true) {
-
-            if (contentType == 'absolute') {
-              $element.css('top', 0 - Math.round((top - pos) * speedFactor) + "px");
-            } else if (contentType == 'relative') {
-              $element.css('margin-top', 0 - Math.round((top - pos) * speedFactor) + "px");
-            }
-
-          }
-        });
-      }
-
-      $(window).bind('scroll', update).resize(update);
-      $(window).scroll();
-      update();
-    };
-})(jQuery);
-
+// Resizes the height of a parallax block according to it's width-height ratio
 function resizeHeader(elClass, fac){
-
-  if ($( window ).width() < 992){
+  var $window = $(window);
+  if ($window.width() < 992){
     $('.' + elClass).each(function () {
-      $(this).css("height", (($( window ).width() * fac) + 65) + "px");
+      $(this).css("height", (($window.width() * fac) + 65) + "px");
     });
   }
-  else if ($( window ).width() > 992 && $( window ).width() < 1200) {
+  else if ($window.width() > 992 && $window.width() < 1200) {
     $('.' + elClass).each(function () {
-      $(this).css("height", (($( window ).width() * fac) + 85) + "px");
+      $(this).css("height", (($window.width() * fac) + 85) + "px");
     });
   }
   else {
     $('.' + elClass).each(function () {
-      $(this).css("height", ($( window ).width() * fac) + "px");
+      $(this).css("height", ($window.width() * fac) + "px");
     });
   }
-
 }

@@ -20,6 +20,91 @@ var phrases = ["reinitializing model",
   "admiring caba",
 ];
 
+var codelines = ["NUT BOOT 2999.ABP&",
+"******************************",
+"* THIS IS A SECURE SYSTEM. &nbsp;&nbsp;*",
+"* ALL OPERATIONS ARE LOGGED. *",
+"******************************",
+"ANAL:     MUGUANG[character_not_found][character_not_found] 6777pn-",
+"MAC:      00:22:16:44:90:10:PR",
+"STOR:     512TB",
+"CONTROL:  DG-98FEDS 9233333.990023.239BZ",
+"DPLAY:    GOPSTOPP MUGUANGN",
+"BATT:     SNND_INTRL; Note test reveal t56",
+"HEFEI:    OPEN",
+"&nbsp;",
+"OPEN NETWORK",
+"TYPE: HEFEI DIRECT 68",
+"AUTOBOOT-ing in 5 seconds, wave <END> to end operation",
+"&nbsp;",
+"Running autoapp 67:AUTOUPDATE_MANDATED::3",
+"::3 || Using opennet tunnel",
+"::3 || Tunnel to default 322:422:&d",
+"::3 || Pinging ...",
+"::3 || Pinging ...",
+"::3 || Update found! Running proprietary secure session update system",
+"::3 || Bytes transferred from server ... 92,850,133,918 DONE",
+"::3 || Extracting ... DONE",
+"::3 || Scanning for malware ... DONE",
+"::3 || Installing digital controller firmware: K782822S ... DONE",
+"::3 || Restarting digital controller ... DONE",
+"::3 || Verifying integrity of installation ... DONE",
+"::3 || Exiting ... DON",
+"&nbsp;",
+"Data Size:    1161762 Bytes =  1.1 MB",
+"Load Address: d0001000",
+"Entry Point:  d0001000",
+"&nbsp;",
+"Verifying Checksum ... DONE",
+"Uncompressing Kernel Image ... DONE",
+"Console: colour dummy device 80x25",
+"NET: Registered protocol family 16",
+"Initializing random number generator... done.",
+"&nbsp;",
+"Starting sshd: OK",
+"Starting NFS statd: done",
+"Starting NFS services: done",
+"Starting NFS daemon: done",
+"Starting NFS mountd: done",
+"&nbsp;",
+"USER: krstno",
+"ENTER PASSWORD: ***************************************************",
+"RE-ENTER PASSWORD: ***************************************************",
+"ENTER BIO1: ...DONE",
+"ACCEPTED",
+"//LOADING ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣ ...DONE",
+"&nbsp;",
+"*** WELCOME TO NUT 3.23 ***",
+"LOADING ORGANIZATIONAL_MATRIX...",
+"WARNING: TERMINAL UNSTABLE",
+"//LOADING",
+"//LOADING",
+"&nbsp;",
+"LOADING PREDEFINED SETTINGS",
+"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/biological45.settings",
+"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/errorcheck.settings",
+"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/user.settings",
+"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/bootorder.settings",
+"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/biochipinterfacex12.settings",
+"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/augcomp.settings",
+"&nbsp;",
+"",
+"",
+"",
+"",
+"&nbsp;",
+"//RESTARTING SYSTEM",
+"&nbsp;",
+];
+
+var generatedCodelines = [];
+
+var numberOfLines = 0;
+var lineNumber = 0;
+
+var numberOfLinesSecond = 0;
+var lineNumberSecond = 0;
+
 var $spinText = $('.spinText');
 $spinText.each(function() {
   randomizeEcho(this);
@@ -76,6 +161,26 @@ $(document).ready( function() {
   setTimeout(function() {
     streakerRandomAnim('streaker-left-to-right', 'streaker_sp');
     streakerRandomAnim('streaker-right-to-left', 'streaker_spr');
+    spinFloatRandomAnim('spin-float-1');
+    spinFloatRandomAnim('spin-float-2');
+
+    $spinContainer = $('.spinContainer').first();
+    $spinBootupShuffle = $('.spinBootupShuffle');
+    quoteShuffle($spinBootupShuffle.first(), $spinContainer);
+    
+    for (var i = 0; i < 100; i++) {
+      var randomNumberOfLines = Math.floor(Math.random() * 6);
+      var randomLogLine = "";
+      for (var y = 0; y < randomNumberOfLines; y++) {
+        randomLogLine = randomLogLine.concat(Math.random().toString(36).substring(3) + ";0 ");
+      }
+      if (randomLogLine !== "") {
+        generatedCodelines.push(randomLogLine);
+      } else {
+        generatedCodelines.push("&nbsp;");
+      }
+    }
+    quoteShuffleSecond($spinBootupShuffle.first().next(), $spinContainer);
   }, 20);
 
   $('.hcdIcon_interactive').click(function() {
@@ -133,6 +238,33 @@ $(document).ready( function() {
   });
   
 });
+
+function spinFloatRandomAnim(elClass) {
+  $('.' + elClass).each(function () {
+    console.log('here')
+    var $el = $(this);
+    setTimeout(function() {
+      spinFloatRandomize($el);
+    }, (Math.floor(Math.random() * 20)));
+  });
+}
+
+function spinFloatRandomize(el) {
+  var $spinContainer = $('.spinContainer').first();
+  var randomTime = Math.floor(Math.random() * 5) + 1; // Time in milliseconds. Multiple is max
+  var randomMarginTop = Math.floor(Math.random() * $spinContainer.outerHeight()); // Multiple is max
+  var randomMarginLeft = Math.floor(Math.random() * $spinContainer.outerWidth()); // Multiple is max
+  var randomDimension = Math.floor(Math.random() * 40) + 30; // Multiple is max
+  $(el).css('margin-top', randomMarginTop + 'px');
+  $(el).css('margin-left', randomMarginLeft + 'px');
+
+  $(el).css('height', randomDimension + 'px');
+  $(el).css('width', randomDimension + 'px');
+
+  setTimeout(function() {
+    spinFloatRandomize(el);
+  }, (randomTime * 1000) );
+}
 
 function streakerRandomAnim(animation = 'streaker-left-to-right', elClass) {
   $('.' + elClass).each(function () {
@@ -201,8 +333,62 @@ function recursiveCodeIn(o, multi = 300) {
   }, Math.floor(Math.random() * multi));
 }
 
-function checkInView(container, element, partial) {
+function quoteShuffle(spinBootupShuffle, spinContainer) {
+  if ($(spinBootupShuffle).outerHeight() > $(spinContainer).outerHeight() + 10) {
+    $(spinBootupShuffle).find('div').first().remove();
+  } else {
+    numberOfLines++;
+  }
 
+  if (lineNumber >= codelines.length){
+    lineNumber = 0;
+  }
+
+  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + codelines[lineNumber++] + '</div>');
+
+  setTimeout(function() { 
+    quoteShuffle($(spinBootupShuffle), $(spinContainer)); 
+  }, Math.floor(Math.random() * 300));
+}
+
+function quoteShuffleSecond(spinBootupShuffle, spinContainer) {
+  if ($(spinBootupShuffle).outerHeight() > $(spinContainer).outerHeight() + 10) {
+    $(spinBootupShuffle).find('div').first().remove();
+  } else {
+    numberOfLinesSecond++;
+  }
+
+  if (lineNumberSecond >= generatedCodelines.length){
+    lineNumberSecond = 0;
+  }
+
+  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + generatedCodelines[lineNumberSecond++] + '</div>');
+
+  setTimeout(function() { 
+    quoteShuffleSecond($(spinBootupShuffle), $(spinContainer)); 
+  }, Math.floor(Math.random() * 300));
+}
+
+/* 
+function quoteShuffleSecond(spinBootupShuffle, spinContainer) {
+  if ($(spinBootupShuffle).outerHeight() > $(spinContainer).outerHeight() + 10) {
+    $(spinBootupShuffle).find('div').first().remove();
+  }
+
+  var randomNumberOfLines = Math.floor(Math.random() * 4) + 1;
+  var randomLogLine = "";
+  for (var i = 0; i < randomNumberOfLines; i++) {
+    randomLogLine = randomLogLine.concat(Math.random().toString(36).substring(3) + ";0 ");
+  }
+  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + randomLogLine + '</div>');
+
+  setTimeout(function() { 
+    quoteShuffleSecond($(spinBootupShuffle), $(spinContainer)); 
+  }, Math.floor(Math.random() * 300));
+}
+*/
+
+function checkInView(container, element, partial) {
     //Get container properties
     let cTop = container.scrollTop;
     let cBottom = cTop + container.clientHeight;

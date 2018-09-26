@@ -130,91 +130,115 @@ layout: blank_page
           {% elsif item.type == "spinBanner" %}
 
             <div class="spinContainer gridbg" id="{{ item.init.id }}">
-              <div class="spinCenter">
-                <h1 class="spinTitle">Unturned <strong>Stones</strong></h1>
-                <p class="spinDescription">a world defined by the technology of today's future</p>
-              </div>
+              <div class="spinContainerContent parallax" 
+                data-parallax-type="o" 
+                data-parallax-speed="0.3" 
+                data-parallax-offset="50%">
+                <div class="spinFloat spin-float-1">
+                  <div class="spinCorner hcdTopLeft"></div>
+                  <div class="spinCorner hcdTopRight"></div>
+                  <div class="spinCorner hcdBottomLeft"></div>
+                  <div class="spinCorner hcdBottomRight"></div>
+                </div>
+                <div class="spinFloat spin-float-1">
+                  <div class="spinCorner hcdTopLeft"></div>
+                  <div class="spinCorner hcdTopRight"></div>
+                  <div class="spinCorner hcdBottomLeft"></div>
+                  <div class="spinCorner hcdBottomRight"></div>
+                </div>
+                <!--<div class="spinFloat spin-float-2"></div>
+                <div class="spinFloat spin-float-2"></div>
+                <div class="hcdBodyScroller hcdBodyScroller1 scroller-pros-1"></div>
+                <div class="hcdBodyScroller hcdBodyScroller2 scroller-pros-2"></div>-->
+                <div class="spinBootupShuffle"></div>
+                <div class="spinBootupShuffle spinBootupRight"></div>
+                <div class="spinCenter">
+                  <h1 class="spinTitle">Unturned <strong>Stones</strong></h1>
+                  <p class="spinDescription">a world defined by the technology of today's future</p>
+                </div>
 
-              <svg class="spinSVG" width="100%" height="100%">
-                <svg class="spinCircle1C" x="50%" y="70%">
+                <svg class="spinSVG" width="100%" height="100%">
+                  <svg class="spinCircle1C" x="50%" y="70%">
 
-                  <defs>
-                    <mask id="cut-out-center-1">
-                      <rect width="1200" height="2" x="-600" y="-1" fill="#fff" />
-                      <circle r="355" />
-                    </mask>
-                    <mask id="cut-out-center-2">
-                      <rect width="800" height="2" x="-400" y="-1" fill="#fff" />
-                      <circle r="355" />
-                    </mask>
-                    <mask id="cut-out-center-3">
-                      <rect width="1600" height="2" x="-800" y="-1" fill="#fff" />
-                      <circle r="355" />
-                    </mask>
-                    <mask id="cut-out-center-4">
-                      <rect width="1100" height="2" x="-550" y="-1" fill="#fff" />
-                      <circle r="355" />
-                    </mask>
-                  </defs>
+                    <defs>
+                      <mask id="cut-out-center-1">
+                        <rect width="1200" height="2" x="-600" y="-1" fill="#fff" />
+                        <circle r="355" />
+                      </mask>
+                      <mask id="cut-out-center-2">
+                        <rect width="800" height="2" x="-400" y="-1" fill="#fff" />
+                        <circle r="355" />
+                      </mask>
+                      <mask id="cut-out-center-3">
+                        <rect width="1600" height="2" x="-800" y="-1" fill="#fff" />
+                        <circle r="355" />
+                      </mask>
+                      <mask id="cut-out-center-4">
+                        <rect width="1100" height="2" x="-550" y="-1" fill="#fff" />
+                        <circle r="355" />
+                      </mask>
+                    </defs>
 
-                  <!-- Innermost square -->
-                  <rect width="400" height="400" class="spinTurned" stroke="rgba(255,255,255,0.1)" stroke-width="4" fill="none" x="-200" y="-200"/>
-                  <!-- text on that square -->
-                  <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(45)">
-                    reinitializing model
-                  </text>
-                  <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(135)">
-                    deploying cloud solution for bahamut exploitation grid
-                  </text>
-                  <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(-45)">
-                    running operation counter kaizen HAN
-                  </text>
-                  <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(-135)">
-                    redistributing pattern recognition assets
-                  </text>
+                    <!-- Innermost square -->
+                    <rect width="400" height="400" class="spinTurned" stroke="rgba(255,255,255,0.1)" stroke-width="4" fill="none" x="-200" y="-200"/>
+                    <!-- text on that square -->
+                    <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(45)">
+                      reinitializing model
+                    </text>
+                    <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(135)">
+                      deploying cloud solution for bahamut exploitation grid
+                    </text>
+                    <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(-45)">
+                      running operation counter kaizen HAN
+                    </text>
+                    <text class="font-SVG spinText" x="0" y="-208" text-anchor="middle" transform="rotate(-135)">
+                      redistributing pattern recognition assets
+                    </text>
 
-                  <g class="spinRightBig">
+                    <g class="spinRightBig">
 
-                    <rect width="1400" height="4" x="-700" y="-2" mask="url(#cut-out-center-1)" fill="#fff" />
+                      <rect width="1400" height="4" x="-700" y="-2" mask="url(#cut-out-center-1)" fill="#fff" />
 
-                    <rect transform="rotate(45)" width="800" height="4" x="-400" y="-2" mask="url(#cut-out-center-2)" fill="#fff" />
+                      <rect transform="rotate(45)" width="800" height="4" x="-400" y="-2" mask="url(#cut-out-center-2)" fill="#fff" />
 
-                    <rect transform="rotate(90)" width="1600" height="4" x="-800" y="-2" mask="url(#cut-out-center-3)" fill="#fff" />
+                      <rect transform="rotate(90)" width="1600" height="4" x="-800" y="-2" mask="url(#cut-out-center-3)" fill="#fff" />
 
-                    <rect transform="rotate(135)" width="1100" height="4" x="-550" y="-2" mask="url(#cut-out-center-4)" fill="#fff" />
+                      <rect transform="rotate(135)" width="1100" height="4" x="-550" y="-2" mask="url(#cut-out-center-4)" fill="#fff" />
 
-                    <!-- dotted spinning circle -->
-                    <circle r="450" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round" />
+                      <!-- dotted spinning circle -->
+                      <!--<circle r="450" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round" />-->
 
-                    <circle class="spinFunk" r="355" fill="none" stroke="rgba(255,255,255,1)" stroke-width="2" stroke-dasharray="400" stroke-dashoffset="1000" />
+                      <circle class="spinFunk" r="355" fill="none" stroke="rgba(255,255,255,1)" stroke-width="2" stroke-dasharray="400" stroke-dashoffset="1000" />
 
-                    <circle r="440" fill="none" stroke="rgba(255,0,255,1)" stroke-width="2"  />
+                      <!--<circle r="440" fill="none" stroke="rgba(255,0,255,1)" stroke-width="2"  />
 
-                    <circle r="720" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"  />
+                      <circle r="720" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"  />-->
 
-                  </g>
+                    </g>
 
-                  <g class="spinLeftBig">
+                    <g class="spinLeftBig">
 
-                    <!-- dashed circle spinning -->
-                    <circle r="320" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="8 8" />
+                      <!-- dashed circle spinning -->
+                      <!--<circle r="320" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="8 8" />-->
 
-                    <!-- thick slitted stroke spinning circle -->
-                    <circle r="481" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="50" stroke-dasharray="10 10" />
+                      <!-- thick slitted stroke spinning circle -->
+                      <!--<circle r="481" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="50" stroke-dasharray="10 10" />-->
 
-                  </g>        
+                    </g>        
 
-                  <!-- solid circle -->
-                  <circle r="360" fill="none" stroke="rgba(255,255,255,1)" stroke-width="2" />
+                    <!-- solid circle -->
+                    <circle r="360" fill="none" stroke="rgba(255,255,255,1)" stroke-width="2" />
 
-                  <!-- Faint thick circle -->
-                  <circle class="" r="432" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="25" stroke-dasharray="1" stroke-linecap="round" />
+                    <!-- Faint thick circle -->
+                    <!--<circle class="" r="432" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="25" stroke-dasharray="1" stroke-linecap="round" />-->
 
-                  <!-- huge faint circle -->
-                  <circle r="610" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="200" />
+                    <!-- huge faint circle -->
+                    <!--<circle r="610" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="200" />-->
+                    <circle r="495" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="250" />
 
+                  </svg>
                 </svg>
-              </svg>
+              </div>
             </div>
 
             <script src="{% link assets/js/site/site-animateHome.js %}"></script>
@@ -227,15 +251,6 @@ layout: blank_page
                   <div class="homeButton">
                     <div class="homeButtonInset">
                       <div class="homeButtonImage">
-                        <!-- <svg 
-                           xmlns="http://www.w3.org/2000/svg"
-                           xmlns:xlink="http://www.w3.org/1999/xlink"
-                           width="30px" height="50px">
-                          <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                           d="M25.196,19.276 C25.188,19.270 25.181,19.264 25.173,19.259 C25.173,19.259 25.107,19.404 24.970,19.648 C24.309,20.714 23.509,21.669 22.860,22.367 C21.760,23.453 20.237,24.582 18.194,25.321 C19.794,24.865 21.284,24.566 22.267,24.392 C22.865,25.531 23.517,27.829 22.033,31.385 C21.936,31.617 21.840,31.862 21.744,32.098 C21.722,32.099 21.706,32.097 21.683,32.098 C21.683,32.098 19.938,36.116 18.260,36.947 C18.930,36.700 19.653,36.341 20.285,35.936 C18.799,40.217 17.667,44.971 17.845,49.930 C15.922,48.891 11.555,44.302 9.839,39.640 C11.688,38.906 13.000,37.110 13.000,35.000 L13.000,34.000 C13.000,31.239 10.761,29.000 8.000,29.000 L7.000,29.000 C4.306,29.000 2.125,31.135 2.020,33.803 C1.014,33.659 -0.021,33.245 0.047,32.098 C0.129,30.698 2.470,28.221 5.284,26.695 C6.562,26.569 8.886,26.334 11.563,26.035 C8.959,26.207 7.081,25.793 5.796,25.285 C4.334,24.533 1.550,22.620 1.443,18.902 C1.335,15.165 4.539,10.379 11.563,9.273 C12.825,9.066 13.308,8.916 13.308,8.916 L11.563,0.713 L12.261,0.356 L14.355,8.916 C14.355,8.916 26.220,8.342 26.220,16.049 C26.220,17.119 25.790,18.238 25.196,19.276 ZM6.344,19.250 C5.377,19.250 4.594,20.047 4.594,21.031 C4.594,22.015 5.377,22.812 6.344,22.812 C7.310,22.812 8.094,22.015 8.094,21.031 C8.094,20.047 7.310,19.250 6.344,19.250 ZM16.100,36.734 C16.792,37.290 17.223,37.250 17.845,36.734 C17.265,37.054 17.687,35.889 17.321,35.513 C15.473,33.361 18.543,30.315 18.543,30.315 C15.092,33.476 15.408,36.178 16.100,36.734 ZM15.750,19.250 C14.783,19.250 14.000,20.047 14.000,21.031 C14.000,22.015 14.783,22.812 15.750,22.812 C16.716,22.812 17.500,22.015 17.500,21.031 C17.500,20.047 16.716,19.250 15.750,19.250 Z"/>
-                          <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                           d="M7.500,30.000 C9.985,30.000 12.000,32.015 12.000,34.500 C12.000,36.985 9.985,39.000 7.500,39.000 C5.015,39.000 3.000,36.985 3.000,34.500 C3.000,32.015 5.015,30.000 7.500,30.000 Z"/>
-                        </svg>-->
                         <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24"><path fill="rgb(255, 255, 255)" d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
                       </div>
                       <div class="homeButtonText">
@@ -251,16 +266,7 @@ layout: blank_page
                   <div class="homeButton">
                     <div class="homeButtonInset">
                       <div class="homeButtonImage">
-                        <!--<svg 
-                           xmlns="http://www.w3.org/2000/svg"
-                           xmlns:xlink="http://www.w3.org/1999/xlink"
-                           width="0.472in" height="0.403in" style="margin-top: 10px; margin-left: 10px; transform: scale(1.2);">
-                          <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                           d="M0.689,28.359 L17.189,-0.000 L33.688,28.359 L0.689,28.359 ZM17.189,16.541 C17.189,16.541 8.953,15.929 7.289,23.702 C7.236,24.182 9.436,21.519 10.401,21.732 C11.313,23.809 13.191,25.034 17.189,25.034 C21.186,25.034 23.064,23.809 23.976,21.732 C24.942,21.519 27.142,24.182 27.088,23.702 C25.425,15.929 17.189,16.541 17.189,16.541 Z"/>
-                          <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                           d="M17.125,17.187 C19.161,17.187 20.812,18.824 20.812,20.843 C20.812,22.863 19.161,24.500 17.125,24.500 C15.088,24.500 13.437,22.863 13.437,20.843 C13.437,18.824 15.088,17.187 17.125,17.187 Z"/>
-                          </svg>-->
-                          <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24"><path fill="rgb(255, 255, 255)" d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24"><path fill="rgb(255, 255, 255)" d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/></svg>
                       </div>
                       <div class="homeButtonText">
                         unturned stones subreddit
@@ -301,27 +307,6 @@ layout: blank_page
 
             <div class="homeButtons font-code-l" id="{{ item.init.id }}">
                 <div class="homeButtonsInset update">
-
-            <!-- <div class="homeUpdate" id="{{ item.init.id }}">
-              <div class="homeUpdateInset"> -->
-
-                <!-- <div class="homeUpdateImage">
-                  <img src="http://via.placeholder.com/500x300" />
-                </div>
-                <div class="homeUpdateBody">
-                  <h1 class="font-code-l">Featured Update</h1>
-                  <hr class="full">
-                  <h2 class="font-title-primary"><a class="divLink" href="/codex/technology/spacecraft/metavaski-minke/">Metavaski Minke</a></h2>
-                  <p>The interstellar economy runs on information. Nothing, not even exotic matter ripped straight from black holes, is as precious as a corporation’s data.</p>
-                  <p>Metavaski Applied Technologies is just one of numerous similar organizations and corporations that can be found among the stars. Their mission statement: the secure transport and delivery of information to and from research labs and manufactories.</p>
-                </div>
-                <a class="divLink homeUpdateArrowLink" href="/codex/technology/spacecraft/metavaski-minke/">
-                <div class="homeUpdateArrow">
-                  <div class="homeUpdateArrowInset">
-                    <svg width="10px" height="10px" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
-                  </div>
-                </div>
-                </a> -->
 
                 <a class="divLink homeButtonLink" href="{{ link }}" target="_blank">
                   <div class="homeButton">
@@ -375,14 +360,7 @@ layout: blank_page
                     </div>
                   </div>
                 </a>
-
               </div>
-
-              <!--<div class="homeButtonsDarkbar">
-                <div class="homeButtonsTitle">
-                  <p class="font-code"><span class="color-highlight">\\></span> Visit the community</p>
-                </div>
-              </div>-->
             </div>
 
             <div class="featuredHidden">
@@ -407,9 +385,15 @@ layout: blank_page
 
           {% elsif item.type == "homeFinalContent" %}
 
-            <div class="homeContent parallax_ns5 homeBottomParallax">
+            <div class="homeContent parallax homeBottomParallax" 
+                data-parallax-type="b" 
+                data-parallax-speed="-0.3" 
+                data-parallax-offset="50%">
               <div class="gridbg-t" style="height: 200px; margin-top: -80px;"></div>
-              <div class="parallax_ns3 homeTopParallax">
+              <div class="parallax homeTopParallax" 
+                data-parallax-type="b" 
+                data-parallax-speed="-0.1" 
+                data-parallax-offset="50%">
                 <div class="homeContentContainer">
 
                   <div class="hcdStreakerContainer">
@@ -556,6 +540,8 @@ layout: blank_page
                       <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-prosthetic-soul"></div>
                     </div>
                     <div class="hcdBody gridBG">
+                      <div class="hcdBodyScroller hcdBodyScroller1 scroller-pros-1"></div>
+                      <div class="hcdBodyScroller hcdBodyScroller2 scroller-pros-2"></div>
                       <div class="hcdCodeline"><p class="font-code">NXT <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
                       <div class="hcdBodyContent">
                         <div class="hcdCorner hcdTopLeft"></div>
@@ -577,8 +563,7 @@ layout: blank_page
                           <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/prosthetic-soul_anim.png" />
                           <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/prosthetic-soul.png" />
                         </div> 
-                        <div class="hcdDesc"><p>In the distant future, during one of many nameless conflicts among the interstellar descendants of Earth, a technology was perfected that could replace a person's morality with programmable ethics.</p> 
-                        <p>It was called the <a href='#' class='infoTag common color-pros' data-info='prosthetic-soul' data-toggle='modal' data-target='#modalInfoTag'>prosthetic soul</a>.</p></div>
+                        <div class="hcdDesc"><p>In the distant future, during one of many nameless conflicts among the interstellar descendants of Earth, a technology was perfected that could replace a person's morality with programmable ethics. It was called the <a href='#' class='infoTag common color-pros' data-info='prosthetic-soul' data-toggle='modal' data-target='#modalInfoTag'>prosthetic soul</a>.</p></div>
                       </div>
                     </div>
                   </div>
@@ -594,6 +579,8 @@ layout: blank_page
                       <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-everyware"></div>
                     </div>
                     <div class="hcdBody gridBG">
+                      <div class="hcdBodyScroller hcdBodyScroller1 scroller-everyware-1 hcdRight"></div>
+                      <div class="hcdBodyScroller hcdBodyScroller2 scroller-everyware-2 hcdRight"></div>
                       <div class="hcdCodeline"><p class="font-code">ERW <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
                       <div class="hcdBodyContent">
                         <div class="hcdCorner hcdTopLeft"></div>
@@ -618,7 +605,7 @@ layout: blank_page
                           <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/everyware_anim.png" />
                           <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/everyware.png" />
                         </div> 
-                        <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">As cybertechnology became smaller and widespread, computers took their ultimate role in the form of the <a href='#' class='infoTag common color-everyware' data-info='computers-uts' data-toggle='modal' data-target='#modalInfoTag'>Ubiquitous Node Internet of Things</a>. Programming was no longer was a specialization - it became a second language; a requirement for living in the new age.</p></div>
+                        <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">As cybertechnology became smaller and more widespread, computers took their ultimate role in the form of <a href='#' class='infoTag common color-everyware' data-info='everyware' data-toggle='modal' data-target='#modalInfoTag'>everyware</a>. Microchips reached true ubiquity in everything from knives to doors to roads. Code was no longer was a specialization - it became a second language, and a requirement for living in the new age.</p></div>
                       </div>
                     </div>
                   </div>
@@ -634,6 +621,8 @@ layout: blank_page
                       <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-kaizen"></div>
                     </div>
                     <div class="hcdBody gridBG">
+                      <div class="hcdBodyScroller hcdBodyScroller1 scroller-kaizen-1"></div>
+                      <div class="hcdBodyScroller hcdBodyScroller2 scroller-kaizen-2"></div>
                       <div class="hcdCodeline"><p class="font-code">KZNM <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
                       <div class="hcdBodyContent">
                         <div class="hcdCorner hcdTopLeft"></div>
@@ -660,7 +649,55 @@ layout: blank_page
                           <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/kaizen_anim.png" />
                           <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/kaizen.png" />
                         </div> 
-                        <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">Artificial intelligence advanced far beyond expectations. Cloud-based services deployed by corporations and governments eventually replaced white-collar occupations, leaving behind niche professions and a growing grey-collar workforce. These hyper-intelligent expert systems, called <a href='#' class='infoTag common color-kaizen' data-info='kaizen' data-toggle='modal' data-target='#modalInfoTag'>kaizen</a>, would eventually integrate with everyware to become much more than what they were originally designed for.</p></div>
+                        <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">Artificial intelligence advanced far beyond expectations. Cloud-based services deployed by corporations and governments eventually replaced the white-collar, leaving behind niche professions and a growing grey-collar workforce. These hyper-intelligent expert systems, called <a href='#' class='infoTag common color-kaizen' data-info='kaizen' data-toggle='modal' data-target='#modalInfoTag'>kaizen</a>, would eventually integrate with everyware to become much more than what they were originally designed for.</p></div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="homeContentSpacing homeContentDialog hcd-slipstream">
+                    <div class="hcdReplace">
+                      <div class="hcdReplaceContent">
+                        yup
+                      </div>
+                    </div>
+                    <div class="hcdHeader">
+                      <div class="hcdTitle"><p class="font-code-l"><span class="color-slipstream">slipstrim_ftl.TXT - </span>slipstream</p></div>
+                      <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-slipstream"></div>
+                    </div>
+                    <div class="hcdBody gridBG">
+                      <div class="hcdBodyScroller hcdBodyScroller1 scroller-slipstream-1 hcdRight"></div>
+                      <div class="hcdBodyScroller hcdBodyScroller2 scroller-slipstream-2 hcdRight"></div>
+                      <div class="hcdCodeline"><p class="font-code">MBB <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                      <div class="hcdBodyContent">
+                        <div class="hcdCorner hcdTopLeft"></div>
+                        <div class="hcdCorner hcdTopRight"></div>
+                        <div class="hcdCorner hcdBottomLeft"></div>
+                        <div class="hcdCorner hcdBottomRight"></div>
+
+                        <div class="hcdSVG hcdSlipstreamSVG">
+                          <div class="hcdSVGPulse">
+                            <svg 
+                               xmlns="http://www.w3.org/2000/svg"
+                               xmlns:xlink="http://www.w3.org/1999/xlink"
+                               width="7.042in" height="3.889in">
+                              <path class="hcdSlipstreamBlink hcdSlipstream1" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                               d="M84.212,102.087 L97.555,115.433 "/>
+                              <path class="hcdSlipstreamBlink hcdSlipstream2" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                               d="M93.107,93.189 L106.451,106.535 "/>
+                              <path class="hcdSlipstreamBlink hcdSlipstream3" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                               d="M102.003,84.291 L115.346,97.638 "/>
+                              <path class="hcdSlipstreamBlink hcdSlipstream4" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                               d="M397.336,179.496 L410.679,192.843 "/>
+                              <path class="hcdSlipstreamBlink hcdSlipstream5" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                               d="M406.231,170.598 L419.575,183.945 "/>
+                            </svg>
+                          </div>
+                          <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/slipstream_anim.png" />
+                          <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/slipstream.png" />
+                        </div> 
+                        <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">After centuries of interstellar rocketry, a laboratory accident turned the fantasy of faster-than-light transfer into a part of everyday life. Superluminal Interstellar Projection Stream, or <a href='#' class='infoTag common color-slipstream' data-info='slipstrean' data-toggle='modal' data-target='#modalInfoTag'>SLIPSTREAM</a>, was supposed to bring the world closer together.</p></div>
                       </div>
                     </div>
                   </div>
@@ -779,7 +816,7 @@ layout: blank_page
 
     		  {% elsif item.type == "parallaxBlock" %}
 
-            <div id="{{ item.init.id }}" class="parallaxBlock parallax_s1 resizeHeader" style="background-image: url({{ item.init.backLayerURL }}); height: 100%;">
+            <div id="{{ item.init.id }}" class="parallaxBlock parallax resizeHeader" data-parallax-type="b" data-parallax-speed="0.1" data-parallax-offset="50%" style="background-image: url({{ item.init.backLayerURL }}); height: 100%;">
               <div class="parallaxBlockChild" style="background-image: url({{ item.init.frontLayerURL }});">
               </div>
             </div>
