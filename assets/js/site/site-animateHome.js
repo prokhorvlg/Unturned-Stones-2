@@ -1,130 +1,67 @@
-// List of phrases to cycle through for header spin texts.
-var phrases = ["reinitializing model", 
-  "deploying cloud solution", 
-  "running operation counter kaizen", 
-  "redistributing pattern recognition assets",
-  "recalculating yomi",
-  "finding cultural disposition",
-  "locating weaklink",
-  "planting deep agent",
-  "infiltrating rival network",
-  "optimizing infrastructure algorithm",
-  "defragmenting remote host server",
-  "training deep neural network",
-  "mapping new location into neural map",
-  "resolving proxy conflicts",
-  "optimizing lightspeed thought",
-  "running malware scan",
-  "deploying operations team",
-  "annoying grine_",
-  "admiring caba",
-];
-
-var codelines = ["NUT BOOT 2999.ABP&",
-"******************************",
-"* THIS IS A SECURE SYSTEM. &nbsp;&nbsp;*",
-"* ALL OPERATIONS ARE LOGGED. *",
-"******************************",
-"ANAL:     MUGUANG[character_not_found][character_not_found] 6777pn-",
-"MAC:      00:22:16:44:90:10:PR",
-"STOR:     512TB",
-"CONTROL:  DG-98FEDS 9233333.990023.239BZ",
-"DPLAY:    GOPSTOPP MUGUANGN",
-"BATT:     SNND_INTRL; Note test reveal t56",
-"HEFEI:    OPEN",
-"&nbsp;",
-"OPEN NETWORK",
-"TYPE: HEFEI DIRECT 68",
-"AUTOBOOT-ing in 5 seconds, wave <END> to end operation",
-"&nbsp;",
-"Running autoapp 67:AUTOUPDATE_MANDATED::3",
-"::3 || Using opennet tunnel",
-"::3 || Tunnel to default 322:422:&d",
-"::3 || Pinging ...",
-"::3 || Pinging ...",
-"::3 || Update found! Running proprietary secure session update system",
-"::3 || Bytes transferred from server ... 92,850,133,918 DONE",
-"::3 || Extracting ... DONE",
-"::3 || Scanning for malware ... DONE",
-"::3 || Installing digital controller firmware: K782822S ... DONE",
-"::3 || Restarting digital controller ... DONE",
-"::3 || Verifying integrity of installation ... DONE",
-"::3 || Exiting ... DON",
-"&nbsp;",
-"Data Size:    1161762 Bytes =  1.1 MB",
-"Load Address: d0001000",
-"Entry Point:  d0001000",
-"&nbsp;",
-"Verifying Checksum ... DONE",
-"Uncompressing Kernel Image ... DONE",
-"Console: colour dummy device 80x25",
-"NET: Registered protocol family 16",
-"Initializing random number generator... done.",
-"&nbsp;",
-"Starting sshd: OK",
-"Starting NFS statd: done",
-"Starting NFS services: done",
-"Starting NFS daemon: done",
-"Starting NFS mountd: done",
-"&nbsp;",
-"USER: krstno",
-"ENTER PASSWORD: ***************************************************",
-"RE-ENTER PASSWORD: ***************************************************",
-"ENTER BIO1: ...DONE",
-"ACCEPTED",
-"//LOADING ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣ ...DONE",
-"&nbsp;",
-"*** WELCOME TO NUT 3.23 ***",
-"LOADING ORGANIZATIONAL_MATRIX...",
-"WARNING: TERMINAL UNSTABLE",
-"//LOADING",
-"//LOADING",
-"&nbsp;",
-"LOADING PREDEFINED SETTINGS",
-"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/biological45.settings",
-"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/errorcheck.settings",
-"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/user.settings",
-"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/bootorder.settings",
-"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/biochipinterfacex12.settings",
-"bootsys/bio/user2344hh2345bn63kb25l29110313n2bert329gy92/new/augcomp.settings",
-"&nbsp;",
-"",
-"",
-"",
-"",
-"&nbsp;",
-"//RESTARTING SYSTEM",
-"&nbsp;",
-];
-
-var generatedCodelines = [];
-
-var numberOfLines = 0;
-var lineNumber = 0;
-
-var numberOfLinesSecond = 0;
-var lineNumberSecond = 0;
-
-var $spinText = $('.spinText');
-$spinText.each(function() {
-  randomizeEcho(this);
-});
-
-function randomizeEcho(element, multi = 3000) {
-  $(element).text(phrases[Math.floor(Math.random()*phrases.length)]);
-  setTimeout(function() { randomizeEcho( element, multi); }, Math.floor(Math.random() * multi));
-}
-
 $(document).ready( function() {
 
-  // Initiate home page spinner banner animations
+  // SPINBANNER ANIMATIONS (giant spinning elements at top of home page)
+  // Clockwise spinner
   TweenMax.to('.spinRightBig', 200, {rotation:"360", ease:Linear.easeNone, repeat:-1, transformOrigin:'50% 50%'}, {timeScale:0}
   );
-
+  // Counterclockwise spinner
   TweenMax.to('.spinLeftBig', 200, {rotation:"-360", ease:Linear.easeNone, repeat:-1, transformOrigin:'50% 50%'}, {timeScale:0}
   );
 
-  // Initiate scroll listeners for triggering animations
+  // SPINTEXT ANIMATIONS (randomized quotes appearing around square inside banner at top of home page)
+  // Activate random text
+  var $spinText = $('.spinText');
+  $spinText.each(function() {
+    randomizeEcho(this, window.phrases);
+  });
+
+  // SPINFLOAT ANIMATIONS (square selectors appearing inside banner at top of home page)
+  // Activate random timing, sizing, location
+  spinFloatRandomAnim('spin-float-1');
+  spinFloatRandomAnim('spin-float-2');
+
+  // STREAKER ANIMATIONS (small spaceships moving horizontally across screen in body)
+  // Activate streaker image-swap animations
+  streakerSwap($('.streaker_sp1 .hcdStreakerImage'), 'streaker_sp1_1', 'streaker_sp1_2');
+  streakerSwap($('.streaker_sp2 .hcdStreakerImage'), 'streaker_sp2_1', 'streaker_sp2_2');
+  streakerSwap($('.streaker_sp3 .hcdStreakerImage'), 'streaker_sp3_1', 'streaker_sp3_2');
+  streakerSwap($('.streaker_sp4 .hcdStreakerImage'), 'streaker_sp4_1', 'streaker_sp4_2');
+  streakerSwap($('.streaker_sp5 .hcdStreakerImage'), 'streaker_sp5_1', 'streaker_sp5_2');
+  streakerSwap($('.streaker_sp6 .hcdStreakerImage'), 'streaker_sp6_1', 'streaker_sp6_2');
+  // Activate streaker randomized movement animations
+  streakerRandomAnim('streaker-left-to-right', 'streaker_sp');
+  streakerRandomAnim('streaker-right-to-left', 'streaker_spr');
+
+  // CODELINEPARA ANIMATIONS (animated codelines at the top of each home page 'dialog')
+  // Activate randomized code generation
+  $('.hcdCodelinePara').each(function() {
+    hcdCodelinePara(this);
+  });
+
+  // QUOTESHUFFLE ANIMATIONS (streaming lines of code inside banner at top of home page)
+  $spinContainer = $('.spinContainer').first();
+  $spinBootupShuffle = $('.spinBootupShuffle');
+  // Activate LEFT quoteshuffle (reads through pre-existing variable)
+  quoteShuffle($spinBootupShuffle.first(), $spinContainer, window.codelines);
+  // Generate set of random 'machine learning' data for RIGHT quoteshuffle
+  var generatedCodelines = [];
+  for (var i = 0; i < 100; i++) {
+    var randomNumberOfLines = Math.floor(Math.random() * 6);
+    var randomLogLine = "";
+    for (var y = 0; y < randomNumberOfLines; y++) {
+      randomLogLine = randomLogLine.concat(Math.random().toString(36).substring(3) + ";0 ");
+    }
+    if (randomLogLine !== "") {
+      generatedCodelines.push(randomLogLine);
+    } else {
+      generatedCodelines.push("&nbsp;");
+    }
+  }
+  // Activate RIGHT quoteshuffle (reads through newly generated data)
+  quoteShuffleSecond($spinBootupShuffle.first().next(), $spinContainer, generatedCodelines);
+
+  // Initiate scroll listeners to trigger animations at certain scroll points
+  /*
   $(window).scroll(function() {
     var $scrollCheck = $('.scrollCheck');
     $scrollCheck.each( function() {
@@ -134,114 +71,24 @@ $(document).ready( function() {
           this.style.opacity = '1';
         }
         else if ($(this).hasClass('fadeInCodeParas')) {
-          animateCodeIn(this);
+          recursiveCodeIn($(this).children('p').first());
         }
 
       }
     });
   });
   $(window).scroll();
+  */
 
-  $('.hcdCodelinePara').each(function() {
-    hcdCodelinePara(this);
-  });
-
-  streakerSwap($('.streaker_sp1 img'), '/assets/images/streaker/sp1_1.png', '/assets/images/streaker/sp1_2.png');
-
-  streakerSwap($('.streaker_sp2 img'), '/assets/images/streaker/sp2_1.png', '/assets/images/streaker/sp2_2.png');
-
-  streakerSwap($('.streaker_sp3 img'), '/assets/images/streaker/sp3_1.png', '/assets/images/streaker/sp3_2.png');
-
-  streakerSwap($('.streaker_sp4 img'), '/assets/images/streaker/sp4_1.png', '/assets/images/streaker/sp4_2.png');
-
-  streakerSwap($('.streaker_sp5 img'), '/assets/images/streaker/sp5_1.png', '/assets/images/streaker/sp5_2.png');
-
-  streakerSwap($('.streaker_sp6 img'), '/assets/images/streaker/sp6_1.png', '/assets/images/streaker/sp6_2.png');
-
-  setTimeout(function() {
-    streakerRandomAnim('streaker-left-to-right', 'streaker_sp');
-    streakerRandomAnim('streaker-right-to-left', 'streaker_spr');
-    spinFloatRandomAnim('spin-float-1');
-    spinFloatRandomAnim('spin-float-2');
-
-    $spinContainer = $('.spinContainer').first();
-    $spinBootupShuffle = $('.spinBootupShuffle');
-    quoteShuffle($spinBootupShuffle.first(), $spinContainer);
-    
-    for (var i = 0; i < 100; i++) {
-      var randomNumberOfLines = Math.floor(Math.random() * 6);
-      var randomLogLine = "";
-      for (var y = 0; y < randomNumberOfLines; y++) {
-        randomLogLine = randomLogLine.concat(Math.random().toString(36).substring(3) + ";0 ");
-      }
-      if (randomLogLine !== "") {
-        generatedCodelines.push(randomLogLine);
-      } else {
-        generatedCodelines.push("&nbsp;");
-      }
-    }
-    quoteShuffleSecond($spinBootupShuffle.first().next(), $spinContainer);
-  }, 20);
-
-  $('.hcdIcon_interactive').click(function() {
-    var $target = $('.' + $(this).data('hcd'));
-    var $header = $target.find('.hcdHeader');
-    var $body = $target.find('.hcdBody');
-    var $replace = $target.find('.hcdReplace');
-    var $replaceChild = $replace.find('.hcdReplaceContent');
-
-    var height = $body.height() + $header.height();
-
-    $body.hide();
-    $header.hide();
-
-    var timeStretch = 50;
-    var scaleStretch = 50;
-    setTimeout(function() {
-      $replace.css('display','flex');
-      $replace.css('border','2px solid white');
-      $target.css('height', height + 'px');
-
-      $replace.css('margin', (scaleStretch * 1) + 'px auto');
-      // $replace.css('width', ($target.width() - (scaleStretch * 1)) + 'px');
-      $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
-    }, (timeStretch * 1));
-
-    setTimeout(function() {
-      $replace.css('margin', (scaleStretch * 2) + 'px auto');
-      // $replace.css('width', ($target.width() - (scaleStretch * 2)) + 'px');
-      $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
-    }, (timeStretch * 2));
-
-    setTimeout(function() {
-      $replace.css('margin', (scaleStretch * 3) + 'px auto');
-      // $replace.css('width', ($target.width() - (scaleStretch * 3)) + 'px');
-      $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
-    }, (timeStretch * 3));
-
-    setTimeout(function() {
-      $replace.css('margin', (scaleStretch * 4) + 'px auto');
-      // $replace.css('width', ($target.width() - (scaleStretch * 4)) + 'px');
-      $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
-    }, (timeStretch * 4));
-
-    setTimeout(function() {
-      $replace.css('border','none');
-      $replace.css('margin', '0px');
-      $replaceChild.css('opacity', '1');
-    }, (timeStretch * 5));
-    
-  }).on("keydown", function(event) {
-    if (event.which == 13) {
-      $(this).trigger( "click" );
-    }
-  });
-  
 });
+
+function randomizeEcho(element, phrases, multi = 3000) {
+  $(element).text(phrases[Math.floor(Math.random()*phrases.length)]);
+  setTimeout(function() { randomizeEcho( element, phrases, multi); }, Math.floor(Math.random() * multi));
+}
 
 function spinFloatRandomAnim(elClass) {
   $('.' + elClass).each(function () {
-    console.log('here')
     var $el = $(this);
     setTimeout(function() {
       spinFloatRandomize($el);
@@ -305,10 +152,13 @@ function streakerGenerateRandomAnim(el, animation) {
 }
 
 function streakerSwap(el, first, second) {
-  if ($(el).attr('src') == first) {
-    $(el).attr('src', second);
+  var $el = $(el);
+  if ($el.hasClass(first)) {
+    $el.removeClass(first);
+    $el.addClass(second);
   } else {
-    $(el).attr('src', first);
+    $el.removeClass(second);
+    $el.addClass(first);
   }
   setTimeout(function() {
     streakerSwap(el, first, second);
@@ -322,18 +172,8 @@ function hcdCodelinePara(o, multi = 300){
   }, Math.floor(Math.random() * multi));
 }
 
-function animateCodeIn(o) {
-  recursiveCodeIn($(o).children('p').first());
-}
-
-function recursiveCodeIn(o, multi = 300) {
-  $(o).css('opacity', '1');
-  setTimeout(function() { 
-    recursiveCodeIn($(o).next(), multi);
-  }, Math.floor(Math.random() * multi));
-}
-
-function quoteShuffle(spinBootupShuffle, spinContainer) {
+// Handles the animation for the LEFT codelines quoteshuffle element.
+function quoteShuffle(spinBootupShuffle, spinContainer, codelines, numberOfLines = 0, lineNumber = 0) {
   if ($(spinBootupShuffle).outerHeight() > $(spinContainer).outerHeight() + 10) {
     $(spinBootupShuffle).find('div').first().remove();
   } else {
@@ -347,46 +187,91 @@ function quoteShuffle(spinBootupShuffle, spinContainer) {
   $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + codelines[lineNumber++] + '</div>');
 
   setTimeout(function() { 
-    quoteShuffle($(spinBootupShuffle), $(spinContainer)); 
+    quoteShuffle($(spinBootupShuffle), $(spinContainer), codelines, numberOfLines, lineNumber); 
   }, Math.floor(Math.random() * 300));
 }
 
-function quoteShuffleSecond(spinBootupShuffle, spinContainer) {
+// Handles the animation for the RIGHT codelines quoteshuffle element.
+function quoteShuffleSecond(spinBootupShuffle, spinContainer, codelines, numberOfLines = 0, lineNumber = 0) {
   if ($(spinBootupShuffle).outerHeight() > $(spinContainer).outerHeight() + 10) {
     $(spinBootupShuffle).find('div').first().remove();
   } else {
-    numberOfLinesSecond++;
+    numberOfLines++;
   }
 
-  if (lineNumberSecond >= generatedCodelines.length){
-    lineNumberSecond = 0;
+  if (lineNumber >= codelines.length){
+    lineNumber = 0;
   }
 
-  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + generatedCodelines[lineNumberSecond++] + '</div>');
+  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + codelines[lineNumber++] + '</div>');
 
   setTimeout(function() { 
-    quoteShuffleSecond($(spinBootupShuffle), $(spinContainer)); 
+    quoteShuffleSecond($(spinBootupShuffle), $(spinContainer), codelines, numberOfLines, lineNumber); 
   }, Math.floor(Math.random() * 300));
 }
 
-/* 
-function quoteShuffleSecond(spinBootupShuffle, spinContainer) {
-  if ($(spinBootupShuffle).outerHeight() > $(spinContainer).outerHeight() + 10) {
-    $(spinBootupShuffle).find('div').first().remove();
-  }
-
-  var randomNumberOfLines = Math.floor(Math.random() * 4) + 1;
-  var randomLogLine = "";
-  for (var i = 0; i < randomNumberOfLines; i++) {
-    randomLogLine = randomLogLine.concat(Math.random().toString(36).substring(3) + ";0 ");
-  }
-  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + randomLogLine + '</div>');
-
+// Animates text element by element (code style)
+function recursiveCodeIn(o, multi = 300) {
+  $(o).css('opacity', '1');
   setTimeout(function() { 
-    quoteShuffleSecond($(spinBootupShuffle), $(spinContainer)); 
-  }, Math.floor(Math.random() * 300));
+    recursiveCodeIn($(o).next(), multi);
+  }, Math.floor(Math.random() * multi));
 }
-*/
+
+// Handles click of little close button on the top right of home page 'dialogs'.
+$('.hcdIcon_interactive').click(function() {
+  var $target = $('.' + $(this).data('hcd'));
+  var $header = $target.find('.hcdHeader');
+  var $body = $target.find('.hcdBody');
+  var $replace = $target.find('.hcdReplace');
+  var $replaceChild = $replace.find('.hcdReplaceContent');
+
+  var height = $body.height() + $header.height();
+
+  $body.hide();
+  $header.hide();
+
+  var timeStretch = 50;
+  var scaleStretch = 50;
+  setTimeout(function() {
+    $replace.css('display','flex');
+    $replace.css('border','2px solid white');
+    $target.css('height', height + 'px');
+
+    $replace.css('margin', (scaleStretch * 1) + 'px auto');
+    // $replace.css('width', ($target.width() - (scaleStretch * 1)) + 'px');
+    $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
+  }, (timeStretch * 1));
+
+  setTimeout(function() {
+    $replace.css('margin', (scaleStretch * 2) + 'px auto');
+    // $replace.css('width', ($target.width() - (scaleStretch * 2)) + 'px');
+    $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
+  }, (timeStretch * 2));
+
+  setTimeout(function() {
+    $replace.css('margin', (scaleStretch * 3) + 'px auto');
+    // $replace.css('width', ($target.width() - (scaleStretch * 3)) + 'px');
+    $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
+  }, (timeStretch * 3));
+
+  setTimeout(function() {
+    $replace.css('margin', (scaleStretch * 4) + 'px auto');
+    // $replace.css('width', ($target.width() - (scaleStretch * 4)) + 'px');
+    $replace.css('width', ($replace.innerHeight() * 1.5) + 'px');
+  }, (timeStretch * 4));
+
+  setTimeout(function() {
+    $replace.css('border','none');
+    $replace.css('margin', '0px');
+    $replaceChild.css('opacity', '1');
+  }, (timeStretch * 5));
+  
+}).on("keydown", function(event) {
+  if (event.which == 13) {
+    $(this).trigger( "click" );
+  }
+});
 
 function checkInView(container, element, partial) {
     //Get container properties

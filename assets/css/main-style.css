@@ -1269,16 +1269,18 @@ body {
 .hcdStreakerMover {
   margin-left: 0vw;
   cursor: pointer;
-}
-.hcdStreakerMover img {
   transform: scale(0.7);
 }
-.hcdStreakerMover.streakerMoverR img {
+.hcdStreakerMover.streakerMoverR {
   transform: rotate(180deg) scale(0.7);
 }
 .hcdStreakerMover.streakerMoverR {
   margin-left: 0;
   margin-right: 0vw;
+}
+.hcdStreakerImage {
+  height: 50px;
+  width: 153px;
 }
 .streaker_sp {
   display: none;
@@ -1286,8 +1288,42 @@ body {
 .streaker_spr {
   display: none;
 }
-.streaker_spr img {
-  transform: rotate(180deg);
+
+.streaker_sp1_1 {
+  background-image: url(/assets/images/streaker/sp1_1.png);
+}
+.streaker_sp1_2 {
+  background-image: url(/assets/images/streaker/sp1_2.png);
+}
+.streaker_sp2_1 {
+  background-image: url(/assets/images/streaker/sp2_1.png);
+}
+.streaker_sp2_2 {
+  background-image: url(/assets/images/streaker/sp2_2.png);
+}
+.streaker_sp3_1 {
+  background-image: url(/assets/images/streaker/sp3_1.png);
+}
+.streaker_sp3_2 {
+  background-image: url(/assets/images/streaker/sp3_2.png);
+}
+.streaker_sp4_1 {
+  background-image: url(/assets/images/streaker/sp4_1.png);
+}
+.streaker_sp4_2 {
+  background-image: url(/assets/images/streaker/sp4_2.png);
+}
+.streaker_sp5_1 {
+  background-image: url(/assets/images/streaker/sp5_1.png);
+}
+.streaker_sp5_2 {
+  background-image: url(/assets/images/streaker/sp5_2.png);
+}
+.streaker_sp6_1 {
+  background-image: url(/assets/images/streaker/sp6_1.png);
+}
+.streaker_sp6_2 {
+  background-image: url(/assets/images/streaker/sp6_2.png);
 }
 
 @keyframes streaker-left-to-right {

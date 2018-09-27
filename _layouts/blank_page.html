@@ -62,14 +62,25 @@ layout: blank_page
     <script src="{% link assets/js/greensock/TweenMax.min.js %}"></script>
     <script src="{% link assets/js/snap/snap.svg-min.js %}"></script>
 
+    <!--     Custom Data     -->
+    <!-- Script: Loads data into global namespace variables  -->
+    <script src="{% link assets/js/site/data/site-data.js %}"></script>
+
     <!--     Custom Scripts     -->
-    <!-- Script: Provides parallaxing background functionality -->
+    <!-- Script: Provides image source reference data -->
     <script src="{% link assets/js/site/site-svgref.js %}"></script>
+    <!-- Script: Provides quote shuffling animation functions -->
     <script src="{% link assets/js/site/site-shufflequote.js %}"></script>
+    <!-- Script: Provides navigation generation -->
     <script src="{% link assets/js/site/site-nav.js %}"></script>
+    <!-- Script: Provides site terminal handler -->
     <script src="{% link assets/js/site/site-terminal.js %}"></script>
+    <!-- Script: Provides codex page specific code -->
     <script src="{% link assets/js/site/site-codexPage.js %}"></script>
+    <!-- Script: Provides infotag functionality (link modals) -->
     <script src="{% link assets/js/site/site-infotag.js %}"></script>
+    <!-- Script: Provides parallaxing functionality -->
+    <script src="{% link assets/js/site/site-parallax.js %}"></script>
 
   </head>
   <body class="codex" id="body">
@@ -400,37 +411,37 @@ layout: blank_page
 
                     <div class="hcdStreaker parallax_content_ns4 streaker_sp streaker_sp1">
                       <div class="hcdStreakerMover">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker parallax_content_ns5 streaker_sp streaker_sp2">
                       <div class="hcdStreakerMover">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker parallax_content_ns6 streaker_sp streaker_sp3">
                       <div class="hcdStreakerMover">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker parallax_content_ns4 streaker_sp streaker_sp4">
                       <div class="hcdStreakerMover">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker parallax_content_ns5 streaker_sp streaker_sp5">
                       <div class="hcdStreakerMover">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker parallax_content_ns6 streaker_sp streaker_sp6">
                       <div class="hcdStreakerMover">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
@@ -438,44 +449,44 @@ layout: blank_page
 
                     <div class="hcdStreaker hcdStreakerR parallax_content_ns4 streaker_spr streaker_sp1">
                       <div class="hcdStreakerMover streakerMoverR">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker hcdStreakerR parallax_content_ns5 streaker_spr streaker_sp2">
                       <div class="hcdStreakerMover streakerMoverR">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker hcdStreakerR parallax_content_ns6 streaker_spr streaker_sp3">
                       <div class="hcdStreakerMover streakerMoverR">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker hcdStreakerR parallax_content_ns4 streaker_spr streaker_sp4">
                       <div class="hcdStreakerMover streakerMoverR">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker hcdStreakerR parallax_content_ns5 streaker_spr streaker_sp5">
                       <div class="hcdStreakerMover streakerMoverR">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                     <div class="hcdStreaker hcdStreakerR parallax_content_ns6 streaker_spr streaker_sp6">
                       <div class="hcdStreakerMover streakerMoverR">
-                        <img src="" />
+                        <div class="hcdStreakerImage"></div>
                       </div>
                     </div>
 
                   </div>
                   
                   <div class="homeContentSpacing homeContentCode">
-                    <div class="homeContentCodeContent scrollCheck fadeInCodeParas noVisibility">
+                    <div class="homeContentCodeContent scrollCheck fadeInCodeParas">
                       <p>*** WELCOME TO <span class="color-secondaryAccent">NUT</span> 3.88 ***</p>
                       <p>LOADING ORGANIZATIONAL_MATRIX...</p>
                       <p>&nbsp;</p>
@@ -499,7 +510,7 @@ layout: blank_page
                     </div>
                   </div>
 
-                  <div class="homeContentSpacing homeContentCuratorIntro scrollCheck fadeInCodeParas noVisibility">
+                  <div class="homeContentSpacing homeContentCuratorIntro scrollCheck fadeInCodeParas">
                     <p>c@neutral <span class="color-primaryAccent">~ >></span> IT is I the magnificent curator!</p>
                     <div class="swapImageContainer">
                       <img src='/assets/images/cast/curator-beautiful.png' class="swapImage"/>
@@ -508,7 +519,7 @@ layout: blank_page
                     <p>i am here to absolve you of your confusion.</p>
                   </div>
 
-                  <div class="homeContentSpacing homeContentWelcome scrollCheck fadeInCodeParas noVisibility">
+                  <div class="homeContentSpacing homeContentWelcome scrollCheck fadeInCodeParas">
                     <p>Welcome to Unturned Stones - a world defined by the technology of today’s future.</p>
                     <p>This world was <span class="color-primaryAccent">magnificent</span>, yet dark.</p>
                     <p>It tested everything it meant to be <span class="color-primaryAccent">human</span>.</p>
@@ -1035,6 +1046,5 @@ layout: blank_page
         });
       </script>
 
-      <script src="{% link assets/js/site/site-parallax.js %}"></script>
   </body>
 </html>
