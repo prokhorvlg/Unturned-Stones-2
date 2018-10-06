@@ -51,3 +51,6 @@ permalink: pretty
 #  - title: "Codex"
 #    url: "/geography"
 # End
+
+sass:
+    style: compressed

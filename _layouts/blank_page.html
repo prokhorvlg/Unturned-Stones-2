@@ -5,30 +5,32 @@ layout: blank_page
 <!doctype>
 <html lang="en">
   <head>
-    <!--     Custom Styles     -->
-
+    <!-- Basic meta setup -->
     <meta charset="utf-8">
+    <meta name="theme-color" content="#222" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="{{ page.excerpt }}">
-    <meta name="author" content="{{ page.author }}">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="revisit-after" content="5 days">
 
-    <meta name="theme-color" content="#222" />
+    <!-- Side brand Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
 
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-
+    <!-- Site brand Color -->
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Page variables -->
     <title>{{ page.title }}</title>
+    <meta name="author" content="{{ page.author }}">
+    <meta name="description" content="{{ page.excerpt }}">
+    <meta name="og:image" content="{{ page.image }}" /> 
 
     <!--     jQuery     -->
     <!--     The jQuery library.     -->
     <script src="{% link assets/js/jQuery/jquery-3.3.1.min.js %}"></script>
-    <link rel="stylesheet" href="{% link assets/css/jQuery/jquery-ui.min.css %}">
-    <link rel="stylesheet" href="{% link assets/css/jQuery/jquery-ui.theme.min.css %}">
-    <script src="{% link assets/js/jQuery/jquery-ui.min.js %}"></script>
-
-    <!--     jQuery: Shuffle Letters     -->
-    <!--    The plugin that shuffles letters on certain text elements.     -->
-    <script src="{% link assets/js/jQuery-plugins/jquery.shuffleLetters.js %}"></script>
 
     <!--     jQuery: Terminal     -->
     <!--    The plugin that operates the terminal component.     -->
@@ -53,14 +55,13 @@ layout: blank_page
 
     <!--     Custom Styles     -->
     <!--     Adds my site styles.     -->
-    <link href="{% link assets/css/main-style.css %}" rel="stylesheet">
+    <link href="{% link assets/css/main-style.scss %}" rel="stylesheet">
 
     <!--     Normalize     -->
     <!--     Adds cross-browser consistency and fixes some bugs.     -->
     <link href="{% link assets/css/normalize/normalize.css %}" rel="stylesheet">
 
     <script src="{% link assets/js/greensock/TweenMax.min.js %}"></script>
-    <script src="{% link assets/js/snap/snap.svg-min.js %}"></script>
 
     <!--     Custom Data     -->
     <!-- Script: Loads data into global namespace variables  -->
@@ -257,7 +258,7 @@ layout: blank_page
           {% elsif item.type == "socialButtonSet" %}
 
             <div class="homeButtons font-code-l" id="{{ item.init.id }}">
-                <div class="homeButtonsInset social">
+                <div class="homeButtonsInset homeSocial">
                   <a class="divLink homeButtonLink" href="https://www.reddit.com/r/worldbuilding/" target="_blank">
                   <div class="homeButton">
                     <div class="homeButtonInset">
@@ -396,7 +397,7 @@ layout: blank_page
 
           {% elsif item.type == "homeFinalContent" %}
 
-            <div class="homeContent parallax homeBottomParallax" 
+          <!--<div class="homeContent parallax homeBottomParallax" 
                 data-parallax-type="b" 
                 data-parallax-speed="-0.3" 
                 data-parallax-offset="50%">
@@ -404,316 +405,567 @@ layout: blank_page
               <div class="parallax homeTopParallax" 
                 data-parallax-type="b" 
                 data-parallax-speed="-0.1" 
-                data-parallax-offset="50%">
-                <div class="homeContentContainer">
+                data-parallax-offset="50%">-->
 
-                  <div class="hcdStreakerContainer">
+            <div class="homeContent">
+              <div class="gridbg-t" style="height: 200px; margin-top: -80px;"></div>
+              <div class="homeContentContainer">
 
-                    <div class="hcdStreaker parallax_content_ns4 streaker_sp streaker_sp1">
-                      <div class="hcdStreakerMover">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
+                <!-- Streakers: animated, randomized spaceships going across screen -->
+                <div class="hcdStreakerContainer">
 
-                    <div class="hcdStreaker parallax_content_ns5 streaker_sp streaker_sp2">
-                      <div class="hcdStreakerMover">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                    <div class="hcdStreaker parallax_content_ns6 streaker_sp streaker_sp3">
-                      <div class="hcdStreakerMover">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                    <div class="hcdStreaker parallax_content_ns4 streaker_sp streaker_sp4">
-                      <div class="hcdStreakerMover">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                    <div class="hcdStreaker parallax_content_ns5 streaker_sp streaker_sp5">
-                      <div class="hcdStreakerMover">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                    <div class="hcdStreaker parallax_content_ns6 streaker_sp streaker_sp6">
-                      <div class="hcdStreakerMover">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-
-
-                    <div class="hcdStreaker hcdStreakerR parallax_content_ns4 streaker_spr streaker_sp1">
-                      <div class="hcdStreakerMover streakerMoverR">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                    <div class="hcdStreaker hcdStreakerR parallax_content_ns5 streaker_spr streaker_sp2">
-                      <div class="hcdStreakerMover streakerMoverR">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                    <div class="hcdStreaker hcdStreakerR parallax_content_ns6 streaker_spr streaker_sp3">
-                      <div class="hcdStreakerMover streakerMoverR">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                    <div class="hcdStreaker hcdStreakerR parallax_content_ns4 streaker_spr streaker_sp4">
-                      <div class="hcdStreakerMover streakerMoverR">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                    <div class="hcdStreaker hcdStreakerR parallax_content_ns5 streaker_spr streaker_sp5">
-                      <div class="hcdStreakerMover streakerMoverR">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                    <div class="hcdStreaker hcdStreakerR parallax_content_ns6 streaker_spr streaker_sp6">
-                      <div class="hcdStreakerMover streakerMoverR">
-                        <div class="hcdStreakerImage"></div>
-                      </div>
-                    </div>
-
-                  </div>
-                  
-                  <div class="homeContentSpacing homeContentCode">
-                    <div class="homeContentCodeContent scrollCheck fadeInCodeParas">
-                      <p>*** WELCOME TO <span class="color-secondaryAccent">NUT</span> 3.88 ***</p>
-                      <p>LOADING ORGANIZATIONAL_MATRIX...</p>
-                      <p>&nbsp;</p>
-                      <p><span class="color-primaryAccent">\\></span> RUN CURATOR.EXE</p>
-                      <p>ENTER PASSWORD: ***************************************************</p>
-                      <p>RE-ENTER PASSWORD: ***************************************************</p>
-                      <p><span class="color-positiveAccent">ACCEPTED</span></p>
-                      <p>LOADING <span class="color-primaryAccent">CURATOR</span></p>
-                      <p>c@neutral <span class="color-primaryAccent">~ >></span> HI!</p>
-                      <p>c@neutral <span class="color-primaryAccent">~ >></span> OH, WAIT.</p>
-                      <p>&nbsp;</p>
-                      <p>c@neutral <span class="color-primaryAccent">~ >></span> COMPILERR -P P.AL </p>
-                      <p>FILE FOUND</p>
-                      <p>GENERATING OBJECT...</p>
-                      <p>GRAPHICAL OBJECT GENERATED <span class="color-positiveAccent">SUCCESS</span></p>
-                      <p>c@neutral <span class="color-primaryAccent">~ >></span> ONE MORE THING...</p>
-                      <p>&nbsp;</p>
-                      <p>c@neutral <span class="color-primaryAccent">~ >></span> DISPLAYGUI -D F9000:233:00001</p>
-                      <p>Locating device...</p>
-                      <p>PUSHING DDS BY DHIA:8080...</p>
+                  <div class="hcdStreaker parallax_content_ns4 streaker_sp streaker_sp1">
+                    <div class="hcdStreakerMover">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp1_1" data-second-streaker="streaker_sp1_2"></div>
                     </div>
                   </div>
 
-                  <div class="homeContentSpacing homeContentCuratorIntro scrollCheck fadeInCodeParas">
-                    <p>c@neutral <span class="color-primaryAccent">~ >></span> IT is I the magnificent curator!</p>
-                    <div class="swapImageContainer">
-                      <img src='/assets/images/cast/curator-beautiful.png' class="swapImage"/>
-                      <img src='/assets/images/cast/curator-beautiful-darq.png' class="swapTarget"/>
+                  <div class="hcdStreaker parallax_content_ns5 streaker_sp streaker_sp2">
+                    <div class="hcdStreakerMover">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp2_1" data-second-streaker="streaker_sp2_2"></div>
                     </div>
-                    <p>i am here to absolve you of your confusion.</p>
                   </div>
 
-                  <div class="homeContentSpacing homeContentWelcome scrollCheck fadeInCodeParas">
-                    <p>Welcome to Unturned Stones - a world defined by the technology of today’s future.</p>
-                    <p>This world was <span class="color-primaryAccent">magnificent</span>, yet dark.</p>
-                    <p>It tested everything it meant to be <span class="color-primaryAccent">human</span>.</p>
+                  <div class="hcdStreaker parallax_content_ns6 streaker_sp streaker_sp3">
+                    <div class="hcdStreakerMover">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp3_1" data-second-streaker="streaker_sp3_2"></div>
+                    </div>
+                  </div>
+
+                  <div class="hcdStreaker parallax_content_ns4 streaker_sp streaker_sp4">
+                    <div class="hcdStreakerMover">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp4_1" data-second-streaker="streaker_sp4_2"></div>
+                    </div>
+                  </div>
+
+                  <div class="hcdStreaker parallax_content_ns5 streaker_sp streaker_sp5">
+                    <div class="hcdStreakerMover">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp5_1" data-second-streaker="streaker_sp5_2"></div>
+                    </div>
+                  </div>
+
+                  <div class="hcdStreaker parallax_content_ns6 streaker_sp streaker_sp6">
+                    <div class="hcdStreakerMover">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp6_1" data-second-streaker="streaker_sp6_2"></div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="hcdStreaker hcdStreakerR parallax_content_ns4 streaker_spr streaker_sp1">
+                    <div class="hcdStreakerMover streakerMoverR">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp1_1" data-second-streaker="streaker_sp1_2"></div>
+                    </div>
+                  </div>
+
+                  <div class="hcdStreaker hcdStreakerR parallax_content_ns5 streaker_spr streaker_sp2">
+                    <div class="hcdStreakerMover streakerMoverR">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp2_1" data-second-streaker="streaker_sp2_2"></div>
+                    </div>
+                  </div>
+
+                  <div class="hcdStreaker hcdStreakerR parallax_content_ns6 streaker_spr streaker_sp3">
+                    <div class="hcdStreakerMover streakerMoverR">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp3_1" data-second-streaker="streaker_sp3_2"></div>
+                    </div>
+                  </div>
+
+                  <div class="hcdStreaker hcdStreakerR parallax_content_ns4 streaker_spr streaker_sp4">
+                    <div class="hcdStreakerMover streakerMoverR">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp4_1" data-second-streaker="streaker_sp4_2"></div>
+                    </div>
+                  </div>
+
+                  <div class="hcdStreaker hcdStreakerR parallax_content_ns5 streaker_spr streaker_sp5">
+                    <div class="hcdStreakerMover streakerMoverR">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp5_1" data-second-streaker="streaker_sp5_2"></div>
+                    </div>
+                  </div>
+
+                  <div class="hcdStreaker hcdStreakerR parallax_content_ns6 streaker_spr streaker_sp6">
+                    <div class="hcdStreakerMover streakerMoverR">
+                      <div class="hcdStreakerImage" data-first-streaker="streaker_sp6_1" data-second-streaker="streaker_sp6_2"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-codeIntro"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentCode">
+                  <div class="homeContentCodeContent scrollCheck fadeInCodeParas">
+                    <p>*** WELCOME TO <span class="color-secondaryAccent">NUT</span> 3.88 ***</p>
+                    <p>LOADING ORGANIZATIONAL_MATRIX...</p>
                     <p>&nbsp;</p>
-                    <p>No flash photography.</p>
-                    <p>Now, please scroll to the FIRST exhibit.</p>
+                    <p><span class="color-primaryAccent">\\></span> RUN CURATOR.EXE</p>
+                    <p>ENTER PASSWORD: ***************************************************</p>
+                    <p>RE-ENTER PASSWORD: ***************************************************</p>
+                    <p><span class="color-positiveAccent">ACCEPTED</span></p>
+                    <p>LOADING <span class="color-primaryAccent">CURATOR</span></p>
+                    <p>c@neutral <span class="color-primaryAccent">~ >></span> HI!</p>
+                    <p>c@neutral <span class="color-primaryAccent">~ >></span> OH, WAIT.</p>
+                    <p>&nbsp;</p>
+                    <p>c@neutral <span class="color-primaryAccent">~ >></span> COMPILERR -P P.AL </p>
+                    <p>FILE FOUND</p>
+                    <p>GENERATING OBJECT...</p>
+                    <p>GRAPHICAL OBJECT GENERATED <span class="color-positiveAccent">SUCCESS</span></p>
+                    <p>c@neutral <span class="color-primaryAccent">~ >></span> ONE MORE THING...</p>
+                    <p>&nbsp;</p>
+                    <p>c@neutral <span class="color-primaryAccent">~ >></span> DISPLAYGUI -D F9000:233:00001</p>
+                    <p>Locating device...</p>
+                    <p>PUSHING DDS BY DHIA:8080...</p>
                   </div>
+                </div>
+                </div>
+                </div>
 
-                  <div class="homeContentSpacing homeContentScroll">
-                    <svg 
-                     xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                     width="83px" height="70px" stroke="white">
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                     d="M2.000,2.000 L41.000,41.000 L81.000,2.000 "/>
-                    <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                     d="M2.000,12.000 L41.000,51.000 L81.000,12.000 "/>
-                    </svg>
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-curatorIntro"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentCuratorIntro scrollCheck fadeInCodeParas">
+                  <p>c@neutral <span class="color-primaryAccent">~ >></span> IT is I the magnificent curator!</p>
+                  <div class="swapImageContainer">
+                    <img src='/assets/images/cast/curator-beautiful.png' class="swapImage"/>
+                    <img src='/assets/images/cast/curator-beautiful-darq.png' class="swapTarget"/>
                   </div>
+                  <p>i am here to absolve you of your confusion.</p>
+                </div>
 
-                  <div class="homeContentSpacing homeContentDialog hcd-prosthetic-soul">
-                    <div class="hcdReplace">
-                      <div class="hcdReplaceContent">
-                        hi
-                      </div>
-                    </div>
-                    <div class="hcdHeader">
-                      <div class="hcdTitle"><p class="font-code-l"><span class="color-pros">pROs.TXT - </span>PROSTHETIC SOUL</p></div>
-                      <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-prosthetic-soul"></div>
-                    </div>
-                    <div class="hcdBody gridBG">
-                      <div class="hcdBodyScroller hcdBodyScroller1 scroller-pros-1"></div>
-                      <div class="hcdBodyScroller hcdBodyScroller2 scroller-pros-2"></div>
-                      <div class="hcdCodeline"><p class="font-code">NXT <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
-                      <div class="hcdBodyContent">
-                        <div class="hcdCorner hcdTopLeft"></div>
-                        <div class="hcdCorner hcdTopRight"></div>
-                        <div class="hcdCorner hcdBottomLeft"></div>
-                        <div class="hcdCorner hcdBottomRight"></div>
+                <div class="homeContentSpacing homeContentWelcome scrollCheck fadeInCodeParas">
+                  <p>Welcome to Unturned Stones - a world defined by the technology of today’s future.</p>
+                  <p>This world was <span class="color-primaryAccent">magnificent</span>, yet dark.</p>
+                  <p>It tested everything it meant to be <span class="color-primaryAccent">human</span>.</p>
+                  <p>&nbsp;</p>
+                  <p>No flash photography.</p>
+                  <p>Now, please scroll to the FIRST exhibit.</p>
+                </div>
 
-                        <div class="hcdSVG hcdProstheticSoulSVG">
-                          <div class="hcdSVGPulse">
-                            <svg 
-                               xmlns="http://www.w3.org/2000/svg"
-                               xmlns:xlink="http://www.w3.org/1999/xlink"
-                               width="2.722in" height="2.722in">
-                              <path class="hcdProsDiamond" fill-rule="evenodd" fill="rgb(2, 236, 244)"
-                               d="M80.932,97.241 L97.896,80.254 L114.860,97.241 L97.896,114.227 L80.932,97.241 Z" />
-                               <!-- <polygon points="50,0 100,50 50,100 0,50" /> -->
-                              </svg>
-                          </div>
-                          <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/prosthetic-soul_anim.png" />
-                          <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/prosthetic-soul.png" />
-                        </div> 
-                        <div class="hcdDesc"><p>In the distant future, during one of many nameless conflicts among the interstellar descendants of Earth, a technology was perfected that could replace a person's morality with programmable ethics. It was called the <a href='#' class='infoTag common color-pros' data-info='prosthetic-soul' data-toggle='modal' data-target='#modalInfoTag'>prosthetic soul</a>.</p></div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="homeContentSpacing homeContentScroll">
+                  <svg 
+                   xmlns="http://www.w3.org/2000/svg"
+                   xmlns:xlink="http://www.w3.org/1999/xlink"
+                   width="83px" height="70px" stroke="white">
+                  <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                   d="M2.000,2.000 L41.000,41.000 L81.000,2.000 "/>
+                  <path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                   d="M2.000,12.000 L41.000,51.000 L81.000,12.000 "/>
+                  </svg>
+                </div>
+                </div>
+                </div>
 
-                  <div class="homeContentSpacing homeContentDialog hcd-everyware">
-                    <div class="hcdReplace">
-                      <div class="hcdReplaceContent">
-                        ok
-                      </div>
-                    </div>
-                    <div class="hcdHeader">
-                      <div class="hcdTitle"><p class="font-code-l"><span class="color-everyware">everyware.TXT - </span>everyware</p></div>
-                      <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-everyware"></div>
-                    </div>
-                    <div class="hcdBody gridBG">
-                      <div class="hcdBodyScroller hcdBodyScroller1 scroller-everyware-1 hcdRight"></div>
-                      <div class="hcdBodyScroller hcdBodyScroller2 scroller-everyware-2 hcdRight"></div>
-                      <div class="hcdCodeline"><p class="font-code">ERW <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
-                      <div class="hcdBodyContent">
-                        <div class="hcdCorner hcdTopLeft"></div>
-                        <div class="hcdCorner hcdTopRight"></div>
-                        <div class="hcdCorner hcdBottomLeft"></div>
-                        <div class="hcdCorner hcdBottomRight"></div>
-
-                        <div class="hcdSVG hcdEverywareSVG">
-                          <div class="hcdSVGPulse">
-                            <svg 
-                               xmlns="http://www.w3.org/2000/svg"
-                               xmlns:xlink="http://www.w3.org/1999/xlink"
-                               width="3.139in" height="2.847in">
-                              <path class="hcdEverywareTopLine" fill-rule="evenodd"  stroke="rgb(255, 0, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                               d="M91.000,84.000 L132.000,84.000 "/>
-                              <path class="hcdEverywareMiddleLine" fill-rule="evenodd"  stroke="rgb(255, 0, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                               d="M84.000,101.000 L139.000,101.000 "/>
-                              <path class="hcdEverywareBottomLine" fill-rule="evenodd"  stroke="rgb(255, 0, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                               d="M91.000,118.000 L132.000,118.000 "/>
-                              </svg>
-                          </div>
-                          <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/everyware_anim.png" />
-                          <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/everyware.png" />
-                        </div> 
-                        <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">As cybertechnology became smaller and more widespread, computers took their ultimate role in the form of <a href='#' class='infoTag common color-everyware' data-info='everyware' data-toggle='modal' data-target='#modalInfoTag'>everyware</a>. Microchips reached true ubiquity in everything from knives to doors to roads. Code was no longer was a specialization - it became a second language, and a requirement for living in the new age.</p></div>
-                      </div>
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-pros"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentDialog hcd-prosthetic-soul">
+                  <div class="hcdReplace">
+                    <div class="hcdReplaceContent">
+                      hi
                     </div>
                   </div>
+                  <div class="hcdHeader">
+                    <div class="hcdTitle"><p class="font-code-l"><span class="color-pros">pROs.TXT - </span>PROSTHETIC SOUL</p></div>
+                    <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-prosthetic-soul"></div>
+                  </div>
+                  <div class="hcdBody gridBG">
+                    <div class="hcdBodyScroller hcdBodyScroller1 scroller-pros-1"></div>
+                    <div class="hcdBodyScroller hcdBodyScroller2 scroller-pros-2"></div>
+                    <div class="hcdCodeline"><p class="font-code">NXT <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                    <div class="hcdBodyContent">
+                      <div class="hcdCorner hcdTopLeft"></div>
+                      <div class="hcdCorner hcdTopRight"></div>
+                      <div class="hcdCorner hcdBottomLeft"></div>
+                      <div class="hcdCorner hcdBottomRight"></div>
 
-                  <div class="homeContentSpacing homeContentDialog hcd-kaizen">
-                    <div class="hcdReplace">
-                      <div class="hcdReplaceContent">
-                        ok
-                      </div>
-                    </div>
-                    <div class="hcdHeader">
-                      <div class="hcdTitle"><p class="font-code-l"><span class="color-kaizen-dark">kaizen_ai.TXT - </span>kaizen AI</p></div>
-                      <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-kaizen"></div>
-                    </div>
-                    <div class="hcdBody gridBG">
-                      <div class="hcdBodyScroller hcdBodyScroller1 scroller-kaizen-1"></div>
-                      <div class="hcdBodyScroller hcdBodyScroller2 scroller-kaizen-2"></div>
-                      <div class="hcdCodeline"><p class="font-code">KZNM <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
-                      <div class="hcdBodyContent">
-                        <div class="hcdCorner hcdTopLeft"></div>
-                        <div class="hcdCorner hcdTopRight"></div>
-                        <div class="hcdCorner hcdBottomLeft"></div>
-                        <div class="hcdCorner hcdBottomRight"></div>
-
-                        <div class="hcdSVG hcdKaizenSVG">
-                          <div class="hcdSVGPulse">
-                            <svg 
+                      <div class="hcdSVG hcdProstheticSoulSVG">
+                        <div class="hcdSVGPulse">
+                          <svg 
                              xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink"
-                             width="3.181in" height="2.75in">
-                             <defs>
-                              <clipPath id="diamondMask" style="transform: translate(-120px,-85px);">
-                                <path fill-rule="evenodd" class="hcdKaizenDiamondReverse" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M113.000,111.000 L84.000,98.000 L113.000,84.000 L142.000,98.000 L113.000,111.000 Z"/>
-                              </clipPath>
-                            </defs>
-                            <path style="transform: translateX(20px);" fill-rule="evenodd" class="hcdKaizenDiamond" clip-path="url(#diamondMask)" fill="rgb(255, 255, 0)"
-                             d="M12.635,0.879 L24.756,13.000 L12.635,25.121 L0.515,13.000 L12.635,0.879 Z"/>
+                             width="2.722in" height="2.722in">
+                            <path class="hcdProsDiamond" fill-rule="evenodd" fill="rgb(2, 236, 244)"
+                             d="M80.932,97.241 L97.896,80.254 L114.860,97.241 L97.896,114.227 L80.932,97.241 Z" />
+                             <!-- <polygon points="50,0 100,50 50,100 0,50" /> -->
                             </svg>
-                          </div>
-
-                          <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/kaizen_anim.png" />
-                          <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/kaizen.png" />
-                        </div> 
-                        <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">Artificial intelligence advanced far beyond expectations. Cloud-based services deployed by corporations and governments eventually replaced the white-collar, leaving behind niche professions and a growing grey-collar workforce. These hyper-intelligent expert systems, called <a href='#' class='infoTag common color-kaizen' data-info='kaizen' data-toggle='modal' data-target='#modalInfoTag'>kaizen</a>, would eventually integrate with everyware to become much more than what they were originally designed for.</p></div>
-                      </div>
+                        </div>
+                        <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/prosthetic-soul_anim.png" />
+                        <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/prosthetic-soul.png" />
+                      </div> 
+                      <div class="hcdDesc"><p>In the distant future, during one of many nameless conflicts among the interstellar descendants of Earth, a technology was perfected that could replace a person's morality with programmable ethics. It was called the <a href='#' class='infoTag common color-pros' data-info='prosthetic-soul' data-toggle='modal' data-target='#modalInfoTag'>prosthetic soul</a>.</p></div>
                     </div>
                   </div>
-
-
-
-                  <div class="homeContentSpacing homeContentDialog hcd-slipstream">
-                    <div class="hcdReplace">
-                      <div class="hcdReplaceContent">
-                        yup
-                      </div>
-                    </div>
-                    <div class="hcdHeader">
-                      <div class="hcdTitle"><p class="font-code-l"><span class="color-slipstream">slipstrim_ftl.TXT - </span>slipstream</p></div>
-                      <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-slipstream"></div>
-                    </div>
-                    <div class="hcdBody gridBG">
-                      <div class="hcdBodyScroller hcdBodyScroller1 scroller-slipstream-1 hcdRight"></div>
-                      <div class="hcdBodyScroller hcdBodyScroller2 scroller-slipstream-2 hcdRight"></div>
-                      <div class="hcdCodeline"><p class="font-code">MBB <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
-                      <div class="hcdBodyContent">
-                        <div class="hcdCorner hcdTopLeft"></div>
-                        <div class="hcdCorner hcdTopRight"></div>
-                        <div class="hcdCorner hcdBottomLeft"></div>
-                        <div class="hcdCorner hcdBottomRight"></div>
-
-                        <div class="hcdSVG hcdSlipstreamSVG">
-                          <div class="hcdSVGPulse">
-                            <svg 
-                               xmlns="http://www.w3.org/2000/svg"
-                               xmlns:xlink="http://www.w3.org/1999/xlink"
-                               width="7.042in" height="3.889in">
-                              <path class="hcdSlipstreamBlink hcdSlipstream1" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                               d="M84.212,102.087 L97.555,115.433 "/>
-                              <path class="hcdSlipstreamBlink hcdSlipstream2" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                               d="M93.107,93.189 L106.451,106.535 "/>
-                              <path class="hcdSlipstreamBlink hcdSlipstream3" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                               d="M102.003,84.291 L115.346,97.638 "/>
-                              <path class="hcdSlipstreamBlink hcdSlipstream4" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                               d="M397.336,179.496 L410.679,192.843 "/>
-                              <path class="hcdSlipstreamBlink hcdSlipstream5" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                               d="M406.231,170.598 L419.575,183.945 "/>
-                            </svg>
-                          </div>
-                          <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/slipstream_anim.png" />
-                          <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/slipstream.png" />
-                        </div> 
-                        <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">After centuries of interstellar rocketry, a laboratory accident turned the fantasy of faster-than-light transfer into a part of everyday life. Superluminal Interstellar Projection Stream, or <a href='#' class='infoTag common color-slipstream' data-info='slipstrean' data-toggle='modal' data-target='#modalInfoTag'>SLIPSTREAM</a>, was supposed to bring the world closer together.</p></div>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
+                </div>
+                </div>
+
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-everyware"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentDialog hcd-everyware">
+                  <div class="hcdReplace">
+                    <div class="hcdReplaceContent">
+                      ok
+                    </div>
+                  </div>
+                  <div class="hcdHeader">
+                    <div class="hcdTitle"><p class="font-code-l"><span class="color-everyware">everyware.TXT - </span>everyware</p></div>
+                    <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-everyware"></div>
+                  </div>
+                  <div class="hcdBody gridBG">
+                    <div class="hcdBodyScroller hcdBodyScroller1 scroller-everyware-1 hcdRight"></div>
+                    <div class="hcdBodyScroller hcdBodyScroller2 scroller-everyware-2 hcdRight"></div>
+                    <div class="hcdCodeline"><p class="font-code">ERW <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                    <div class="hcdBodyContent">
+                      <div class="hcdCorner hcdTopLeft"></div>
+                      <div class="hcdCorner hcdTopRight"></div>
+                      <div class="hcdCorner hcdBottomLeft"></div>
+                      <div class="hcdCorner hcdBottomRight"></div>
+
+                      <div class="hcdSVG hcdEverywareSVG">
+                        <div class="hcdSVGPulse">
+                          <svg 
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             width="3.139in" height="2.847in">
+                            <path class="hcdEverywareTopLine" fill-rule="evenodd"  stroke="rgb(255, 0, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                             d="M91.000,84.000 L132.000,84.000 "/>
+                            <path class="hcdEverywareMiddleLine" fill-rule="evenodd"  stroke="rgb(255, 0, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                             d="M84.000,101.000 L139.000,101.000 "/>
+                            <path class="hcdEverywareBottomLine" fill-rule="evenodd"  stroke="rgb(255, 0, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                             d="M91.000,118.000 L132.000,118.000 "/>
+                            </svg>
+                        </div>
+                        <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/everyware_anim.png" />
+                        <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/everyware.png" />
+                      </div> 
+                      <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">As cybertechnology became smaller and more widespread, computers took their ultimate role in the form of <a href='#' class='infoTag common color-everyware' data-info='everyware' data-toggle='modal' data-target='#modalInfoTag'>everyware</a>. Microchips reached true ubiquity in everything from knives to doors to roads. Code was no longer was a specialization - it became a second language, and a requirement for living in the new age.</p></div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+
+                
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-kaizen"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentDialog hcd-kaizen">
+                  <div class="hcdReplace">
+                    <div class="hcdReplaceContent">
+                      ok
+                    </div>
+                  </div>
+                  <div class="hcdHeader">
+                    <div class="hcdTitle"><p class="font-code-l"><span class="color-kaizen-dark">kaizen_ai.TXT - </span>kaizen AI</p></div>
+                    <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-kaizen"></div>
+                  </div>
+                  <div class="hcdBody gridBG">
+                    <div class="hcdBodyScroller hcdBodyScroller1 scroller-kaizen-1"></div>
+                    <div class="hcdBodyScroller hcdBodyScroller2 scroller-kaizen-2"></div>
+                    <div class="hcdCodeline"><p class="font-code">KZNM <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                    <div class="hcdBodyContent">
+                      <div class="hcdCorner hcdTopLeft"></div>
+                      <div class="hcdCorner hcdTopRight"></div>
+                      <div class="hcdCorner hcdBottomLeft"></div>
+                      <div class="hcdCorner hcdBottomRight"></div>
+
+                      <div class="hcdSVG hcdKaizenSVG">
+                        <div class="hcdSVGPulse">
+                          <svg 
+                           xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink"
+                           width="3.181in" height="2.75in">
+                           <defs>
+                            <clipPath id="diamondMask" style="transform: translate(-120px,-85px);">
+                              <path fill-rule="evenodd" class="hcdKaizenDiamondReverse" stroke="rgb(255, 255, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M113.000,111.000 L84.000,98.000 L113.000,84.000 L142.000,98.000 L113.000,111.000 Z"/>
+                            </clipPath>
+                          </defs>
+                          <path style="transform: translateX(20px);" fill-rule="evenodd" class="hcdKaizenDiamond" clip-path="url(#diamondMask)" fill="rgb(255, 255, 0)"
+                           d="M12.635,0.879 L24.756,13.000 L12.635,25.121 L0.515,13.000 L12.635,0.879 Z"/>
+                          </svg>
+                        </div>
+
+                        <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/kaizen_anim.png" />
+                        <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/kaizen.png" />
+                      </div> 
+                      <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">Artificial intelligence advanced far beyond expectations. Cloud-based services deployed by corporations and governments eventually replaced the white-collar, leaving behind niche professions and a growing grey-collar workforce. These hyper-intelligent expert systems, called <a href='#' class='infoTag common color-kaizen' data-info='kaizen' data-toggle='modal' data-target='#modalInfoTag'>kaizen</a>, would eventually integrate with everyware to become much more than what they were originally designed for.</p></div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-slip"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentDialog hcd-slipstream">
+                  <div class="hcdReplace">
+                    <div class="hcdReplaceContent">
+                      yup
+                    </div>
+                  </div>
+                  <div class="hcdHeader">
+                    <div class="hcdTitle"><p class="font-code-l"><span class="color-slipstream">slipstrim_ftl.TXT - </span>slipstream</p></div>
+                    <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-slipstream"></div>
+                  </div>
+                  <div class="hcdBody gridBG">
+                    <div class="hcdBodyScroller hcdBodyScroller1 scroller-slipstream-1 hcdRight"></div>
+                    <div class="hcdBodyScroller hcdBodyScroller2 scroller-slipstream-2 hcdRight"></div>
+                    <div class="hcdCodeline"><p class="font-code">MBB <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                    <div class="hcdBodyContent">
+                      <div class="hcdCorner hcdTopLeft"></div>
+                      <div class="hcdCorner hcdTopRight"></div>
+                      <div class="hcdCorner hcdBottomLeft"></div>
+                      <div class="hcdCorner hcdBottomRight"></div>
+
+                      <div class="hcdSVG hcdSlipstreamSVG">
+                        <div class="hcdSVGPulse">
+                          <svg 
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             width="7.042in" height="3.889in">
+                            <path class="hcdSlipstreamBlink hcdSlipstream1" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                             d="M84.212,102.087 L97.555,115.433 "/>
+                            <path class="hcdSlipstreamBlink hcdSlipstream2" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                             d="M93.107,93.189 L106.451,106.535 "/>
+                            <path class="hcdSlipstreamBlink hcdSlipstream3" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                             d="M102.003,84.291 L115.346,97.638 "/>
+                            <path class="hcdSlipstreamBlink hcdSlipstream4" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                             d="M397.336,179.496 L410.679,192.843 "/>
+                            <path class="hcdSlipstreamBlink hcdSlipstream5" fill-rule="evenodd"  stroke="rgb(0, 136, 255)" stroke-width="4px" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                             d="M406.231,170.598 L419.575,183.945 "/>
+                          </svg>
+                        </div>
+                        <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/slipstream_anim.png" />
+                        <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/slipstream.png" />
+                      </div> 
+                      <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">After centuries of interstellar rocketry, a laboratory accident turned the fantasy of faster-than-light transfer into a part of everyday life. Superluminal Interstellar Projection Stream, or <a href='#' class='infoTag common color-slipstream' data-info='slipstrean' data-toggle='modal' data-target='#modalInfoTag'>SLIPSTREAM</a>, was supposed to bring the world closer together.</p></div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-halfIntro"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentWelcome scrollCheck fadeInCodeParas">
+                  <p>Cybertechnology was honed as a tool of perfect oppression.</p>
+                  <p>How could anyone resist something they didn't know was happening?</p>
+                  <p>How does one defy a weapon designed in its entirety to target everything that makes you, you?</p>
+                  <p>&nbsp;</p>
+                  <p>The <span class="color-primaryAccent">new world order</span> emerged in a way no one expected.</p>
+                </div>
+                </div>
+                </div>
+
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-reset"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentDialog hcd-reset">
+                  <div class="hcdReplace">
+                    <div class="hcdReplaceContent">
+                      hi
+                    </div>
+                  </div>
+                  <div class="hcdHeader">
+                    <div class="hcdTitle"><p class="font-code-l"><span class="color-reset">re.TXT - </span>reset</p></div>
+                    <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-reset"></div>
+                  </div>
+                  <div class="hcdBody gridBG">
+                    <div class="hcdBodyScroller hcdBodyScroller1 scroller-reset-1"></div>
+                    <div class="hcdBodyScroller hcdBodyScroller2 scroller-reset-2"></div>
+                    <div class="hcdCodeline"><p class="font-code">HVL <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                    <div class="hcdBodyContent">
+                      <div class="hcdCorner hcdTopLeft"></div>
+                      <div class="hcdCorner hcdTopRight"></div>
+                      <div class="hcdCorner hcdBottomLeft"></div>
+                      <div class="hcdCorner hcdBottomRight"></div>
+
+                      <div class="hcdSVG hcdResetSVG">
+                        <div class="hcdResetButton"></div>
+                        <div class="hcdSVGPulse hcd-reset-points"></div>
+                        <img class="hcdDesktopImage" src="/assets/images/centerpiece/reset_anim.png" />
+                        <img class="hcdMobileImage" src="/assets/images/centerpiece/reset.png" />
+                      </div> 
+                      <div class="hcdDesc"><p>With the emergence of a globalized, post-scarcity society, a doomed world order rooted in materialistic imperialism collapsed during the <a href='#' class='infoTag common color-reset' data-info='reset' data-toggle='modal' data-target='#modalInfoTag'>Reset</a>, giving way to a new, self-aware system in which war was obsolete, ethics were a mere suggestion, and information became more relevant than commodities and products.</p></div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-pravo"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentDialog hcd-pravo">
+                  <div class="hcdReplace">
+                    <div class="hcdReplaceContent">
+                      yup
+                    </div>
+                  </div>
+                  <div class="hcdHeader">
+                    <div class="hcdTitle"><p class="font-code-l"><span class="color-pravo">pravos.TXT - </span>pravo powers</p></div>
+                    <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-pravo"></div>
+                  </div>
+                  <div class="hcdBody gridBG">
+                    <div class="hcdBodyScroller hcdBodyScroller1 scroller-pravo-1 hcdRight"></div>
+                    <div class="hcdBodyScroller hcdBodyScroller2 scroller-pravo-2 hcdRight"></div>
+                    <div class="hcdCodeline"><p class="font-code">PRV <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                    <div class="hcdBodyContent">
+                      <div class="hcdCorner hcdTopLeft"></div>
+                      <div class="hcdCorner hcdTopRight"></div>
+                      <div class="hcdCorner hcdBottomLeft"></div>
+                      <div class="hcdCorner hcdBottomRight"></div>
+
+                      <div class="hcdSVG hcdPravoSVG">
+                        <div class="hcdSVGPulse hcd-pravo-icons-container">
+                          <div class="hcd-pravo-icons hcd-pravo-icons-1 hcd-pravo-1"></div>
+                          <div class="hcd-pravo-icons hcd-pravo-icons-2 hcd-pravo-2"></div>
+                          <div class="hcd-pravo-icons hcd-pravo-icons-3 hcd-pravo-3"></div>
+                          <div class="hcd-pravo-icons hcd-pravo-icons-4 hcd-pravo-4"></div>
+                        </div>
+                        <img class="hcdDesktopImage" src="/assets/images/centerpiece/pravo_anim.png" />
+                        <img class="hcdMobileImage" src="/assets/images/centerpiece/pravo.png" />
+                      </div> 
+                      <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">From the chaos, five nations rose to power, taking advantage of new technologies and doctrines to place themselves and their ideologies ahead of each other on the interstellar stage. These became known as the <a href='#' class='infoTag common color-pravo' data-info='pravo' data-toggle='modal' data-target='#modalInfoTag'>Pravo powers</a>.</p></div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-attrition"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentDialog hcd-attrition">
+                  <div class="hcdReplace">
+                    <div class="hcdReplaceContent">
+                      hi
+                    </div>
+                  </div>
+                  <div class="hcdHeader">
+                    <div class="hcdTitle"><p class="font-code-l"><span class="color-attrition">trrition.TXT - </span>attrition</p></div>
+                    <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-attrition"></div>
+                  </div>
+                  <div class="hcdBody gridBG">
+                    <div class="hcdBodyScroller hcdBodyScroller1 scroller-attrition-1"></div>
+                    <div class="hcdBodyScroller hcdBodyScroller2 scroller-attrition-2"></div>
+                    <div class="hcdCodeline"><p class="font-code">TTR <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                    <div class="hcdBodyContent">
+                      <div class="hcdCorner hcdTopLeft"></div>
+                      <div class="hcdCorner hcdTopRight"></div>
+                      <div class="hcdCorner hcdBottomLeft"></div>
+                      <div class="hcdCorner hcdBottomRight"></div>
+
+                      <div class="hcdSVG hcdAttritionSVG">
+                        <div class="hcdSVGPulse hcd-attrition-codelines"></div>
+                        <img class="hcdDesktopImage" src="/assets/images/centerpiece/attrition_anim.png" />
+                        <img class="hcdMobileImage" src="/assets/images/centerpiece/attrition.png" />
+                      </div> 
+                      <div class="hcdDesc"><p>Armed with the ability to program their troops, spies, and officials using the prosthetic soul; to destabilize their rivals using black operations; and to engineer their societies en masse using kaizen; these nations would end up locked in spiteful rivalry, manifesting itself as a clandestine conflict known as the <a href='#' class='infoTag common color-attrition' data-info='attrition' data-toggle='modal' data-target='#modalInfoTag'>Attrition</a>.</p>
+
+                      <p>As the tension between the Pravo powers escalated, the ideals that they once stood for were slowly abandoned in favor of improving the effectiveness of their society. Free will and privacy eroded in favor of state security and brutal efficiency.</p></div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-rift"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentDialog hcd-rift">
+                  <div class="hcdReplace">
+                    <div class="hcdReplaceContent">
+                      yup
+                    </div>
+                  </div>
+                  <div class="hcdHeader">
+                    <div class="hcdTitle"><p class="font-code-l"><span class="color-rift">rf-.TXT - </span>Rift</p></div>
+                    <div class="hcdIcon hcdIcon_interactive" tabindex="0" data-hcd="hcd-rift"></div>
+                  </div>
+                  <div class="hcdBody gridBG">
+                    <div class="hcdBodyScroller hcdBodyScroller1 scroller-slipstream-1 hcdRight"></div>
+                    <div class="hcdBodyScroller hcdBodyScroller2 scroller-slipstream-2 hcdRight"></div>
+                    <div class="hcdCodeline"><p class="font-code">RFT <span class="color-slightlyDark hcdCodelinePara">IC22FG1238EQ921B49927130544444401</span></p></div>
+                    <div class="hcdBodyContent">
+                      <div class="hcdCorner hcdTopLeft"></div>
+                      <div class="hcdCorner hcdTopRight"></div>
+                      <div class="hcdCorner hcdBottomLeft"></div>
+                      <div class="hcdCorner hcdBottomRight"></div>
+
+                      <div class="hcdSVG hcdRiftSVG">
+                        <img class="hcdDesktopImage" src="/assets/images/centerpiece/rift_anim.png" />
+                        <img class="hcdMobileImage" src="/assets/images/centerpiece/rift.png" />
+                        <div class="hcdSVGPulse">
+                          <img src="/assets/images/centerpiece/rift_border.png" />
+                        </div>
+                      </div> 
+                      <div class="hcdDesc"><p>Meanwhile, bizarre anomalies discovered on the <a href='#' class='infoTag common color-rift' data-info='rift' data-toggle='modal' data-target='#modalInfoTag'>expanding frontiers</a> - starships from the future, derelict human civilizations, supernatural timeloops - began to bring everything about humanity's place among the stars into question.</p>
+                      <p>Perhaps things wouldn't have to stay the way they are forever.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+
               </div>
             </div>
 
@@ -780,6 +1032,8 @@ layout: blank_page
                 </div>
               </div>
             </div>
+
+            <div class="hcdLoadAssets"></div>
 
           {% elsif item.type == "wikiHead" %}
 
@@ -999,12 +1253,10 @@ layout: blank_page
       
       <div class="appendNavElements"></div>
     
-    <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()" onmouseleave="resetSpin()">
+    <div id="menuBarContainer" class="menuBarContainer color-primary" onclick="manipNav()">
 
         <div class="menuBarFlex">
-          <div class="menuBarChild menuBarLogo">
-            <!--<img src="{% link assets/images/spinning_logo/d1.png %}" class="menuBarLogoImage" />-->
-          </div>
+          <div class="menuBarChild menuBarLogo spinning-logo-d1"></div>
           <div class="menuBarChildMenu">
             <svg class="menuBarArrow menuBarArrowRight" x="0px" y="0px" viewBox="0 0 6.4 10" xml:space="preserve" _v-978818ec=""> <polygon fill="#fff" points="3.6,5 0,1.4 1.4,0 5,3.6 6.4,5 5,6.4 1.4,10 0,8.6 " _v-978818ec=""></polygon></svg>
 
@@ -1015,6 +1267,22 @@ layout: blank_page
           <div class="menuBarChildText">
             <p class="font-code">Contemporary Cyberpunk<span class="blinkingScore">_</span></p>
           </div>
+        </div>
+
+        <div class="imagePreload">
+          <div class="spinning-logo-d1"></div>
+          <div class="spinning-logo-d2"></div>
+          <div class="spinning-logo-d3"></div>
+          <div class="spinning-logo-d4"></div>
+          <div class="spinning-logo-d5"></div>
+          <div class="spinning-logo-d6"></div>
+          <div class="spinning-logo-d7"></div>
+          <div class="spinning-logo-d8"></div>
+          <div class="spinning-logo-d9"></div>
+          <div class="spinning-logo-d10"></div>
+          <div class="spinning-logo-d11"></div>
+          <div class="spinning-logo-d12"></div>
+          <div class="spinning-logo-d13"></div>
         </div>
         
       </div>
