@@ -362,6 +362,7 @@ window.headings = {
     "subheadings": [
       "list-of-computer-science",
       "computers",
+      "everyware",
       "gadgets",
       "malware",
       "kaizen",
@@ -384,6 +385,14 @@ window.headings = {
     "actions": "direct",
     "icon": ">",
     "link": "/codex/technology/computer-science/computers",
+    "subheadings": []
+  },
+  "everyware": {
+    "title": "Everyware",
+    "description": "True technological ubiquity", 
+    "actions": "direct",
+    "icon": ">",
+    "link": "/codex/technology/computer-science/everyware",
     "subheadings": []
   },
   "gadgets": {

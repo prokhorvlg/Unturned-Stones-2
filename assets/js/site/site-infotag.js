@@ -205,14 +205,30 @@ $(document).ready( function() {
           <p class='text-left'>However... it doesn't quite work as one would expect.</p>",
         color: '#00ffff',
         imageType: 'source',
-        image: '/assets/images/centerpiece/prosthetic-soul.png',
+        image: '/assets/images/codex/prosthetic-soul.png',
         styles: [
           [ 'margin', '10px' ],
           [ 'marginBottom', '20px' ],
         ],
         centerImageParent: true,
-        link: '',
+        link: '/codex/technology/medical-science/prosthetic-soul/',
       },
+      'everyware': {
+        name: 'Everyware',
+        body: "<p class='text-left'>In Unturned Stones, true technological ubiquity was achieved. Everything, from the clothes people wore  to the cars people drove, was imbued with networked microchips. This concept became known as everyware, and it would govern the lives of billions of people.</p> \
+          <p class='text-left'>It can sometimes be referred to as UNIT: the Ubiquitous Network Internet of Things.</p>",
+        color: '#ff00ff',
+        imageType: 'source',
+        image: '/assets/images/codex/everyware.png',
+        styles: [
+          [ 'margin', '10px' ],
+          [ 'marginBottom', '20px' ],
+        ],
+        centerImageParent: true,
+        link: '/codex/technology/computer-science/everyware/',
+      },
+
+
     };
     var target = $(this).data('info');
 

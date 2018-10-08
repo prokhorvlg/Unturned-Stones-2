@@ -34,6 +34,7 @@ page_features: [
                       "kerastoxis",
                       "productive-life",
                       "powered-firearms",
+                      "everyware",
                     ],
                   }
                 },
