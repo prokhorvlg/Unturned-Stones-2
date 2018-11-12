@@ -71,8 +71,6 @@ $(document).ready(function(){
     if (window.menuBarLogoIterator < window.menuBarLogoClasses.length-1) {
       for (var i = 0; i < window.menuBarLogos.length; i++) {
         if (window.menuBarLogos[i].classList.contains(window.menuBarLogoStatus)) {
-          console.log(window.menuBarLogoIterator);
-          console.log(window.menuBarLogoStatus);
           window.menuBarLogoIterator+=1;
           window.menuBarLogos[i].classList.remove(window.menuBarLogoStatus);
           window.menuBarLogos[i].classList.add(window.menuBarLogoClasses[window.menuBarLogoIterator]);
@@ -275,12 +273,16 @@ function findNavItems(target) {
   var currentHeadingObject = '';
 
   if (target == 'codex') {
+
     compileObjectOverhead('geography', window.headings);
-    compileObjectOverhead('technology', window.headings);
+    compileObjectOverhead('history', window.headings);
     compileObjectOverhead('society', window.headings);
+    compileObjectOverhead('technology', window.headings);
+
     currentHeadingObject += window.generatedNavButtons['geography'];
-    currentHeadingObject += window.generatedNavButtons['technology'];
+    currentHeadingObject += window.generatedNavButtons['history'];
     currentHeadingObject += window.generatedNavButtons['society'];
+    currentHeadingObject += window.generatedNavButtons['technology'];
   }
   return currentHeadingObject;
 }
@@ -409,7 +411,6 @@ function closeNavObject(currentHeading) {
 
 // Navigates to the selected page.
 function navigateNavObject(currentHeading) {
-  // console.log('navigating to', headings[currentHeading]['link']);
   window.location.href = window.headings[currentHeading]['link'];
 }
 
@@ -453,7 +454,6 @@ function compileSitemap(currentHeading, currentLeft = 0) {
 
   var calcLeft = currentLeft * 20;
 
-  // console.log(headings[currentHeading]['actions'])
   if (window.headings[currentHeading]['actions'] == 'expand') {
 
     var currentHeadingObject = '';

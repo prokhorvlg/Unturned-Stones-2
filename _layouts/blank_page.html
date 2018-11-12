@@ -51,11 +51,14 @@ layout: blank_page
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
     <!--     Custom Styles     -->
     <!--     Adds my site styles.     -->
-    <link href="{% link assets/css/main-style.scss %}" rel="stylesheet">
+    <link href="{% link assets/css/style.scss %}" rel="stylesheet">
 
     <!--     Normalize     -->
     <!--     Adds cross-browser consistency and fixes some bugs.     -->
@@ -129,7 +132,7 @@ layout: blank_page
                   </div>
                 </div>
               </div>
-              <div class="codexLower {{ item.init.lower_clear }}">
+              <div class="codexLower {{ item.init.lower_clear }} {{ item.init.lower_nothing }}">
                 <div class="codexScrollLine">
                   <hr class="fullDim">
                 </div>
@@ -141,7 +144,8 @@ layout: blank_page
 
           {% elsif item.type == "spinBanner" %}
 
-            <div class="spinContainer gridbg" id="{{ item.init.id }}">
+            <div class="spinContainerOuter" id="{{ item.init.id }}">
+              <div class="spinContainer">
               <div class="spinContainerContent parallax" 
                 data-parallax-type="o" 
                 data-parallax-speed="0.3" 
@@ -165,8 +169,12 @@ layout: blank_page
                 <div class="spinBootupShuffle"></div>
                 <div class="spinBootupShuffle spinBootupRight"></div>
                 <div class="spinCenter">
-                  <h1 class="spinTitle">Unturned <strong>Stones</strong></h1>
-                  <p class="spinDescription">a world defined by the technology of today's future</p>
+                  <h1 class="spinTitle">^MORNING ARTIFICE</h1>
+                  <p class="spinDescription">The wonders of cyberspace come with fine print</p> 
+                  <!-- neon starships, vector graphics, and a digital subscription from birth-->
+                  <!-- enjoy the wonders of the digital world * make sure to read the fine print -->
+                  <!-- *The wonders of the digital world come with fine print -->
+                  <!-- Read between the lines of code -->
                 </div>
 
                 <svg class="spinSVG" width="100%" height="100%">
@@ -250,6 +258,7 @@ layout: blank_page
 
                   </svg>
                 </svg>
+              </div>
               </div>
             </div>
 
@@ -408,7 +417,6 @@ layout: blank_page
                 data-parallax-offset="50%">-->
 
             <div class="homeContent">
-              <div class="gridbg-t" style="height: 200px; margin-top: -80px;"></div>
               <div class="homeContentContainer">
 
                 <!-- Streakers: animated, randomized spaceships going across screen -->
@@ -769,7 +777,7 @@ layout: blank_page
                         <img class="hcdDesktopImage pulsing-color-image" src="/assets/images/centerpiece/slipstream_anim.png" />
                         <img class="hcdMobileImage pulsing-color-image" src="/assets/images/centerpiece/slipstream.png" />
                       </div> 
-                      <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">After centuries of interstellar rocketry, a laboratory accident turned the fantasy of faster-than-light transfer into a part of everyday life. Superluminal Interstellar Projection Stream, or <a href='#' class='infoTag common color-slipstream' data-info='slipstrean' data-toggle='modal' data-target='#modalInfoTag'>SLIPSTREAM</a>, was supposed to bring the world closer together.</p></div>
+                      <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">After centuries of interstellar rocketry, a laboratory accident turned the fantasy of faster-than-light transfer into a part of everyday life. Superluminal Interstellar Projection Stream, or <a href='#' class='infoTag common color-slipstream' data-info='slipstream' data-toggle='modal' data-target='#modalInfoTag'>SLIPSTREAM</a>, was supposed to bring the world closer together.</p></div>
                     </div>
                   </div>
                 </div>
@@ -828,7 +836,7 @@ layout: blank_page
                         <img class="hcdDesktopImage" src="/assets/images/centerpiece/reset_anim.png" />
                         <img class="hcdMobileImage" src="/assets/images/centerpiece/reset.png" />
                       </div> 
-                      <div class="hcdDesc"><p>With the emergence of a globalized, post-scarcity society, a doomed world order rooted in materialistic imperialism collapsed during the <a href='#' class='infoTag common color-reset' data-info='reset' data-toggle='modal' data-target='#modalInfoTag'>Reset</a>, giving way to a new, self-aware system in which war was obsolete, ethics were a mere suggestion, and information became more relevant than commodities and products.</p></div>
+                      <div class="hcdDesc"><p>With the emergence of a globalized, post-scarcity society, a doomed world order rooted in materialistic imperialism collapsed during the <a href='#' class='infoTag common color-reset' data-info='reset' data-toggle='modal' data-target='#modalInfoTag'>Reset</a>, giving way to a new system in which war was obsolete, ethics were a mere suggestion, and information became more relevant than commodities and products.</p></div>
                     </div>
                   </div>
                 </div>
@@ -873,7 +881,7 @@ layout: blank_page
                         <img class="hcdDesktopImage" src="/assets/images/centerpiece/pravo_anim.png" />
                         <img class="hcdMobileImage" src="/assets/images/centerpiece/pravo.png" />
                       </div> 
-                      <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">From the chaos, five nations rose to power, taking advantage of new technologies and doctrines to place themselves and their ideologies ahead of each other on the interstellar stage. These became known as the <a href='#' class='infoTag common color-pravo' data-info='pravo' data-toggle='modal' data-target='#modalInfoTag'>Pravo powers</a>.</p></div>
+                      <div class="hcdDesc"><p style="margin-top: 27px; margin-bottom: 34px;">From the chaos, four nations rose to power, taking advantage of new technologies and doctrines to place themselves and their ideologies ahead of each other on the interstellar stage. These self-aware regimes became known as the <a href='#' class='infoTag common color-pravo' data-info='pravo' data-toggle='modal' data-target='#modalInfoTag'>Pravo powers</a>.</p></div>
                     </div>
                   </div>
                 </div>
@@ -913,7 +921,7 @@ layout: blank_page
                         <img class="hcdDesktopImage" src="/assets/images/centerpiece/attrition_anim.png" />
                         <img class="hcdMobileImage" src="/assets/images/centerpiece/attrition.png" />
                       </div> 
-                      <div class="hcdDesc"><p>Armed with the ability to program their troops, spies, and officials using the prosthetic soul; to destabilize their rivals using black operations; and to engineer their societies en masse using kaizen; these nations would end up locked in spiteful rivalry, manifesting itself as a clandestine conflict known as the <a href='#' class='infoTag common color-attrition' data-info='attrition' data-toggle='modal' data-target='#modalInfoTag'>Attrition</a>.</p>
+                      <div class="hcdDesc"><p>Armed with the ability to program their troops, spies, and officials using the prosthetic soul; to destabilize their rivals using black operations; and to engineer their own societies en masse using kaizen; these nations would end up locked in spiteful rivalry, manifesting itself as a clandestine conflict known as the <a href='#' class='infoTag common color-attrition' data-info='attrition' data-toggle='modal' data-target='#modalInfoTag'>Attrition</a>.</p>
 
                       <p>As the tension between the Pravo powers escalated, the ideals that they once stood for were slowly abandoned in favor of improving the effectiveness of their society. Free will and privacy eroded in favor of state security and brutal efficiency.</p></div>
                     </div>
@@ -958,10 +966,24 @@ layout: blank_page
                         </div>
                       </div> 
                       <div class="hcdDesc"><p>Meanwhile, bizarre anomalies discovered on the <a href='#' class='infoTag common color-rift' data-info='rift' data-toggle='modal' data-target='#modalInfoTag'>expanding frontiers</a> - starships from the future, derelict human civilizations, supernatural timeloops - began to bring everything about humanity's place among the stars into question.</p>
-                      <p>Perhaps things wouldn't have to stay the way they are forever.</p>
+                      <p>Nothing was the way it seemed.</p>
                       </div>
                     </div>
                   </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="homeContentBGWrapper parallax homeBG-stars"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.5" 
+                  data-parallax-offset="50%">
+                <div class="homeContentBGWrapper parallax homeBG-halfIntro"
+                  data-parallax-type="b" 
+                  data-parallax-speed="-0.4" 
+                  data-parallax-offset="50%">
+                <div class="homeContentSpacing homeContentWelcome scrollCheck fadeInCodeParas">
+                  <p>bla</p>
                 </div>
                 </div>
                 </div>
@@ -1090,38 +1112,55 @@ layout: blank_page
 
           {% elsif item.type == "imageBlock" %}
 
-            <div id="{{ item.init.id }}" class="imageBlock gridBG row">
+            <div id="{{ item.init.id }}" class="imageBlock gridBG row {{ item.init.class }}">
               <div class="col-md-12 col-lg-2"></div>
               <div class="col-md-12 col-lg-8 imageBlockContainer">
                 {% for dataItem in item.init.items %}
                   <div class="imageBlockChild">
                     <a class="image-popup-no-margins" href="{{ dataItem.full }}" target="_blank" style="text-decoration: none;"><img src="{{ dataItem.thumb }}" class="imageBlockImage {% if item.init.circle %}circle{% endif %}  {% if item.init.rounded %}rounded{% endif %}"/></a>
-                    <h1 class="colorMinke">{{ dataItem.title }}</h1>
-                    <p class="statBlockContent imageBlockDesc">{{ dataItem.desc }}</p>
+                    <h3 class="{{ dataItem.title-alignment }} {{ dataItem.class }}" style="{{ dataItem.style }}">{{ dataItem.title }}</h3>
+                    <p class="statBlockContent imageBlockDesc" style="{{ dataItem.desc-style }}">{{ dataItem.desc }}</p>
                   </div>
                 {% endfor %}
               </div>
               <div class="col-md-12 col-lg-2"></div>
             </div>
 
+          {% elsif item.type == "stripesBar" %}
+
+            <div id="{{ item.init.id }}" class="stripesBar gridBG {{ item.init.class }}">
+              <div class="stripesContent" style="background: repeating-linear-gradient(45deg,rgba(255,255,255,0),rgba(255,255,255,0) 10px, {{ item.init.color }} 10px, {{ item.init.color }} 20px)"></div>
+            </div>
+
           {% elsif item.type == "headingBar" %}
 
-          <div class="row gridBG" id="{{ item.init.id }}">
+          <div class="row gridBG {% if item.init.center %}center{% endif %} {{ item.init.class }}" id="{{ item.init.id }}" style="{{ item.init.style }}">
             <div class="col-md-0 col-lg-2"></div>
             <div class="col-md-0 col-lg-8">
               {% if item.init.decor_square %}
                 <div class="infoDecorSquare"></div>
               {% endif %}
-              <div>
-                <p class="font-code-l infoBlockOvertitle" style="color: {{ page.page_highlight }};">{{ item.init.overtitle }}</p>
-                <hr class="full">
-                <h1 class="bodyTitle colorMinke">{{ item.init.title }}</h1>
-                {% if item.init.desc_color %}
-                  <p class="statBlockContent font-code" style="color: {{ item.init.desc_color }};">{{ item.init.desc }}</p>
-                {% else %}
-                  <p class="statBlockContent font-code" style="color: {{ page.page_highlight }};">{{ item.init.desc }}</p>
+              {% if item.init.img_left %}
+                <div class="headingBarLeft">
+                {{ item.init.img_left }}
+              {% endif %}
+              <div class="headingBar">
+                {% if item.init.overtitle %}
+                  <p class="font-code-l infoBlockOvertitle" style="color: {{ page.page_highlight }};">{{ item.init.overtitle }}</p>
+                {% endif %}
+                {% if item.init.noHR %}{% else %}<hr class="full">{% endif %}
+                <h2 class="bodyTitle colorMinke">{{ item.init.title }}</h2>
+                {% if item.init.desc %}
+                  {% if item.init.desc_color %}
+                    <p class="statBlockContent font-code" style="color: {{ item.init.desc_color }};">{{ item.init.desc }}</p>
+                  {% else %}
+                    <p class="statBlockContent font-code" style="color: {{ page.page_highlight }};">{{ item.init.desc }}</p>
+                  {% endif %}
                 {% endif %}
               </div>
+              {% if item.init.img_left %}
+                </div>
+              {% endif %}
             </div>
             <div class="col-md-0 col-lg-2"></div>
           </div>
@@ -1170,15 +1209,15 @@ layout: blank_page
 
           {% elsif item.type == "infoBlock" %}
 
-            <div class="row gridBG paddingTopBottom" id="{{ item.init.id }}">
+            <div class="row gridBG paddingTopBottom {{ item.init.class }}" id="{{ item.init.id }}" style="{{ item.init.style }}">
               <div class="col-md-0 col-lg-{% if item.init.width == "8" %}2{% elsif item.init.width == "10" %}1{% elsif item.init.width == "6" %}3{% endif %}"></div>
               <div class="col-md-12 col-lg-{{ item.init.width }}">
-                <div class="infoBlockBody {% if item.init.dualFloatBlock %}dualFloatBlock{% endif %} {% if item.init.dualFloatBlockAdvanced %}dualFloatBlock{% endif %} {% if item.init.centered %}center{% endif %} {% if item.init.curatorBlock %}curatorBlock{% endif %}">
+                <div class="infoBlockBody {% if item.init.dualFloatBlock %}dualFloatBlock{% endif %} {% if item.init.dualFloatBlockLeft %}dualFloatBlockLeft{% endif %} {% if item.init.centered %}center{% endif %} {% if item.init.curatorBlock %}curatorBlock{% endif %}">
 
                   {% if item.init.dualFloatBlockAdvanced %}
                     <div class="imageBlockChild">
                       <a class="image-popup-no-margins" href="{{ item.init.dualFloatBlockInit.image.full }}" target="_blank" style="text-decoration: none;"><img src="{{ item.init.dualFloatBlockInit.image.thumb }}" class="imageBlockImage {% if item.init.dualFloatBlockInit.image.circle %}circle{% endif %}"/></a>
-                      <h1 class="colorMinke">{{ item.init.dualFloatBlockInit.image.title }}</h1>
+                      <h3 class="{{ item.init.dualFloatBlockInit.image.title-alignment }}">{{ item.init.dualFloatBlockInit.image.title }}</h3>
                       <p class="statBlockContent imageBlockDesc">{{ item.init.dualFloatBlockInit.image.desc }}</p>
                     </div>
                   {% endif %}
@@ -1189,6 +1228,16 @@ layout: blank_page
               </div>
               <div class="col-md-0 col-lg-{% if item.init.width == "8" %}2{% elsif item.init.width == "10" %}1{% elsif item.init.width == "6" %}3{% endif %}"></div>
             </div>
+
+          {% elsif item.type == "scrollerBlock" %}
+
+            <div class="row gridBG paddingTopBottom scrollerBlock" id="{{ item.init.id }}" style="{{ item.init.style }}">
+                <div class="hcdBodyScroller hcdBodyScroller1 {{ item.init.scroller_one }}"></div>
+                <div class="hcdBodyScroller hcdBodyScroller2 {{ item.init.scroller_two }}"></div>
+                <div class="">{{ item.init.content }}</div>
+            </div>
+
+            <script src="{% link assets/js/site/site-animateHome.js %}"></script>
 
           {% elsif item.type == "galleryBlock" %}
 

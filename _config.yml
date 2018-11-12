@@ -13,11 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Unturned Stones
+title: Morning Artifice
 description: > # this means to ignore newlines until "baseurl:"
-  Unturned Stones is a space cyberpunk world that explores the implications of trends emerging in the realm of cybertechnology and society today.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+  The wonderful world of cyberspace.
+baseurl: # the subpath of your site, e.g. /blog
+url: # the base hostname & protocol for your site, e.g. http://example.com
 host: localhost
 
 # theme: minima
@@ -31,7 +31,7 @@ exclude:
 # End
 
 # Github metadata settings
-repository: prokhorvlg/Unturned-Stones-2
+repository: prokhorvlg/morning-artifice
 # End
 
 #logo: /assets/img/logo/MvvmCross-avatar.png

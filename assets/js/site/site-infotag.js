@@ -5,22 +5,28 @@ $(document).ready( function() {
   var $infoTagBody = $('.infoTagBody');
   var $infoTagFooter = $('.infoTagFooter');
 
+  var $siteContainer = $('.siteContainer');
+  var $menuBarContainer = $('.menuBarContainer');
+  var $modal = $('#modalInfoTag');
+  
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.attributeName === "class") {
+        if (!$modal.hasClass('show')) {
+          $siteContainer.css('filter', '');
+          $menuBarContainer.css('filter', '');
+        }
+      }
+    });
+  });
+  observer.observe($modal[0], {
+    attributes: true
+  });
+
   $infoTag.click(function() {
+    $siteContainer.css('filter', 'blur(3px)');
+    $menuBarContainer.css('filter', 'blur(3px)');
     var tags = {
-      'attrition': {
-        name: 'The Attrition',
-        body: "<p class='text-left'>A rare form of matter that enables faster-than-light travel.</p> \
-          <p class='text-left'>Sagar-Chang Type 1, widely referred to simply as 'exotic matter', runs the modern world. It's most well known for facilitating SLIP faster-than-light travel, but the incredible nature of the substance makes it useful in nearly any technological application.</p>",
-        color: '#e62823',
-        imageType: 'img',
-        image: 'exoticMatterIMG',
-        styles: [
-          [ 'margin', '10px' ],
-          [ 'marginBottom', '20px' ],
-        ],
-        centerImageParent: true,
-        link: '',
-      },
       'covert-firearms': {
         name: 'Covert Firearms',
         body: "<p class='text-left'>It shouldn't be surprising that covert firearms are those used by spies and operatives - valuing concealability and deception above all else. These are the sorts of weapons that induce heart attacks and disassamble into neat misdirecting components, or are built to be disguised as inconspicious or miniature objects.</p>",
@@ -65,12 +71,13 @@ $(document).ready( function() {
         name: 'Computers',
         body: "<p class='text-left'>These are the computer paradigms of Unturned Stones. It’s hard to say that it’s the most important aspect of the world - since everything is interlinked through and though - but if there was one thing one could point to that has somehow impacted everything, it would be these innocent electronic devices.</p>",
         color: '#c165d8',
-        imageType: 'img',
-        image: 'computersIMG',
+        imageType: 'source',
+        image: '/assets/images/codex/computers.png',
         styles: [
           [ 'margin', '10px' ],
           [ 'marginBottom', '20px' ],
         ],
+        centerImageParent: true,
         link: '/codex/technology/compsci/computers/',
       },
       'exotic-matter': {
@@ -99,34 +106,6 @@ $(document).ready( function() {
         ],
         centerImageParent: true,
         link: '/codex/technology/gear/firearms/powered-firearms/',
-      },
-      'pravo-powers': {
-        name: 'Pravo Powers',
-        body: "<p class='text-left'>A rare form of matter that enables faster-than-light travel.</p> \
-          <p class='text-left'>Sagar-Chang Type 1, widely referred to simply as 'exotic matter', runs the modern world. It's most well known for facilitating SLIP faster-than-light travel, but the incredible nature of the substance makes it useful in nearly any technological application.</p>",
-        color: '#e62823',
-        imageType: 'img',
-        image: 'exoticMatterIMG',
-        styles: [
-          [ 'margin', '10px' ],
-          [ 'marginBottom', '20px' ],
-        ],
-        centerImageParent: true,
-        link: '',
-      },
-      'slip-ftl': {
-        name: 'SLIP Faster Than Light',
-        body: "<p class='text-left'>A rare form of matter that enables faster-than-light travel.</p> \
-          <p class='text-left'>Sagar-Chang Type 1, widely referred to simply as 'exotic matter', runs the modern world. It's most well known for facilitating SLIP faster-than-light travel, but the incredible nature of the substance makes it useful in nearly any technological application.</p>",
-        color: '#e62823',
-        imageType: 'img',
-        image: 'exoticMatterIMG',
-        styles: [
-          [ 'margin', '10px' ],
-          [ 'marginBottom', '20px' ],
-        ],
-        centerImageParent: true,
-        link: '',
       },
       'standard-firearms': {
         name: 'Standard Firearms',
@@ -201,8 +180,7 @@ $(document).ready( function() {
 
       'prosthetic-soul': {
         name: 'Prosthetic Soul',
-        body: "<p class='text-left'>An old technique which involves cutting out the morality center of the brain, and replacing it with a cybernetic device which replaces the target's personal morality.</p> \
-          <p class='text-left'>However... it doesn't quite work as one would expect.</p>",
+        body: "<p class='text-left'>While the term 'prosthetic soul' merely describes a cybernetic device implanted into someone's brain to modify their morality, it is very closely associated with the extensive and advanced psychological techniques designed to make that placebo device work.</p>",
         color: '#00ffff',
         imageType: 'source',
         image: '/assets/images/codex/prosthetic-soul.png',
@@ -215,8 +193,7 @@ $(document).ready( function() {
       },
       'everyware': {
         name: 'Everyware',
-        body: "<p class='text-left'>In Unturned Stones, true technological ubiquity was achieved. Everything, from the clothes people wore  to the cars people drove, was imbued with networked microchips. This concept became known as everyware, and it would govern the lives of billions of people.</p> \
-          <p class='text-left'>It can sometimes be referred to as UNIT: the Ubiquitous Network Internet of Things.</p>",
+        body: "<p class='text-left'>In Unturned Stones, true technological ubiquity was achieved. Everything, from the clothes people wore  to the cars people drove, was imbued with networked microchips. This concept became known as everyware, and it would govern the lives of billions of people.</p>",
         color: '#ff00ff',
         imageType: 'source',
         image: '/assets/images/codex/everyware.png',
@@ -227,11 +204,79 @@ $(document).ready( function() {
         centerImageParent: true,
         link: '/codex/technology/computer-science/everyware/',
       },
+      'kaizen': {
+        name: 'Kaizen',
+        body: "<p class='text-left'>Kaizen are both software and hardware that make up the artificial intelligences of Unturned Stones. Since some kaizen can extend themselves across multiple devices much like some computer programs, it is difficult to tell where kaizen end and the world begins.</p> \
+          <p class='text-left'>The term 'kaizen' is derived from the Japanese word used to describe the concept of 'continuous improvement'.</p>",
+        color: '#ffff00',
+        imageType: 'source',
+        image: '/assets/images/codex/kaizen.png',
+        styles: [
+          [ 'margin', '10px' ],
+          [ 'marginBottom', '20px' ],
+        ],
+        centerImageParent: true,
+        link: '/codex/technology/computer-science/kaizen/',
+      },
+      'slipstream': {
+        name: 'SLIPSTREAM',
+        body: "<p class='text-left'>The invention of SLIPSTREAM, a method of achieving faster-than-light transportation, was one of the events that caused the Reset.</p> \
+          <p class='text-left'>Today, it is used to beam people and information between the five stars that make up the Bahamut region. Since it has only been around for several decades, not much is known about its intricacies, or its physiological effect on people.</p>",
+        color: '#0088ff',
+        imageType: 'source',
+        image: '/assets/images/codex/slipstream.png',
+        styles: [
+          [ 'margin', '10px' ],
+          [ 'marginBottom', '20px' ],
+        ],
+        centerImageParent: true,
+        link: '/codex/technology/infrastructure/slipstream/',
+      },
+      'reset': {
+        name: 'Reset',
+        body: "<p class='text-left'>The Reset was a series of world-spanning events that occured about 50 years prior to year 0, which oversaw the creation of the world as the people of Unturned Stones would know it - a post-scarcity paradise, maintained by ethically questionable information technology.</p>",
+        color: '#ff0000',
+        imageType: 'source',
+        image: '/assets/images/codex/reset.png',
+        styles: [
+          [ 'margin', '10px' ],
+          [ 'marginBottom', '20px' ],
+        ],
+        centerImageParent: true,
+        link: '/codex/technology/infrastructure/slipstream/',
+      },
+      'pravo': {
+        name: 'Pravo Powers',
+        body: "<p class='text-left'>The four major nations in Unturned Stones: the Confederacy, Federation, Empire, and Directorate - are referred to as the Pravo powers, due to their overwhelming usage of en-masse social engineering tactics.</p> \
+          <p class='text-left'>The term 'pravo' stems from 'pravoslavie', the Eastern European name for Orthodox Christian faith, which literally translates to 'the correct way to worship'.</p>",
+        color: '#00ff00',
+        imageType: 'source',
+        image: '/assets/images/codex/pravo.png',
+        styles: [
+          [ 'margin', '10px' ],
+          [ 'marginBottom', '20px' ],
+        ],
+        centerImageParent: true,
+        link: '/codex/technology/infrastructure/slipstream/',
+      },
+      'attrition': {
+        name: 'Attrition',
+        body: "<p class='text-left'>The Attrition is a world-spanning, clandestine conflict between the Pravo powers. The Attrition is fought with with information and code, as each nation involved attempts to outwit and destabilize the other using black operations and information-era doctrines, rather than using direct confrontation.</p>",
+        color: '#ff8800',
+        imageType: 'source',
+        image: '/assets/images/codex/attrition.png',
+        styles: [
+          [ 'margin', '10px' ],
+          [ 'marginBottom', '20px' ],
+        ],
+        centerImageParent: true,
+        link: '/codex/technology/infrastructure/slipstream/',
+      },
 
 
     };
-    var target = $(this).data('info');
 
+    var target = $(this).data('info');
     $infoTagTitle.html(tags[target].name);
 
     if ('imageType' in tags[target]) {

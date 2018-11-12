@@ -1,109 +1,106 @@
 $(document).ready( function() {
 
-  // SPINBANNER ANIMATIONS (giant spinning elements at top of home page)
-  // Clockwise spinner
-  TweenMax.to('.spinRightBig', 200, {rotation:"360", ease:Linear.easeNone, repeat:-1, transformOrigin:'50% 50%'}, {timeScale:0}
-  );
-  // Counterclockwise spinner
-  TweenMax.to('.spinLeftBig', 200, {rotation:"-360", ease:Linear.easeNone, repeat:-1, transformOrigin:'50% 50%'}, {timeScale:0}
-  );
+  if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    // Mobile code
+  } else {
+    // Desktop code
 
-  // SPINTEXT ANIMATIONS (randomized quotes appearing around square inside banner at top of home page)
-  // Activate random text
-  var $spinText = $('.spinText');
-  $spinText.each(function() {
-    randomizeEcho(this, window.phrases);
-  });
+    // SPINFLOAT ANIMATIONS (square selectors appearing inside banner at top of home page)
+    // Activate random timing, sizing, location
+    spinFloatRandomAnim('spin-float-1');
+    spinFloatRandomAnim('spin-float-2');
 
-  // SPINFLOAT ANIMATIONS (square selectors appearing inside banner at top of home page)
-  // Activate random timing, sizing, location
-  spinFloatRandomAnim('spin-float-1');
-  spinFloatRandomAnim('spin-float-2');
+    // SPINBANNER ANIMATIONS (giant spinning elements at top of home page)
+    // Clockwise spinner
+    TweenMax.to('.spinRightBig', 200, {rotation:"360", ease:Linear.easeNone, repeat:-1, transformOrigin:'50% 50%'}, {timeScale:0}
+    );
+    // Counterclockwise spinner
+    TweenMax.to('.spinLeftBig', 200, {rotation:"-360", ease:Linear.easeNone, repeat:-1, transformOrigin:'50% 50%'}, {timeScale:0}
+    );
 
-  // STREAKER ANIMATIONS (small spaceships moving horizontally across screen in body)
-  // Activate streaker image-swap animations
-  window.streakers = [];
-  window.streakersClasses = [];
+    // SPINTEXT ANIMATIONS (randomized quotes appearing around square inside banner at top of home page)
+    // Activate random text
+    var $spinText = $('.spinText');
+    $spinText.each(function() {
+      randomizeEcho(this, window.phrases);
+    });
 
-  function streakerSwap() {
-    for (var i = 0; i < window.streakers.length; i++) {
-      if (window.streakers[i].classList.contains(window.streakersClasses[i][0])) {
-        window.streakers[i].classList.remove(window.streakersClasses[i][0]);
-        window.streakers[i].classList.add(window.streakersClasses[i][1]);
+    // STREAKER ANIMATIONS (small spaceships moving horizontally across screen in body)
+    // Activate streaker image-swap animations
+    window.streakers = [];
+    window.streakersClasses = [];
+
+    function streakerSwap() {
+      for (var i = 0; i < window.streakers.length; i++) {
+        if (window.streakers[i].classList.contains(window.streakersClasses[i][0])) {
+          window.streakers[i].classList.remove(window.streakersClasses[i][0]);
+          window.streakers[i].classList.add(window.streakersClasses[i][1]);
+        } else {
+          window.streakers[i].classList.remove(window.streakersClasses[i][1]);
+          window.streakers[i].classList.add(window.streakersClasses[i][0]);
+        }
+      }
+      setTimeout(function() {
+        window.requestAnimationFrame(streakerSwap);
+      }, 500);
+    }
+
+    for (var i = 0; i < 7; i++) {
+      $('.streaker_sp' + i + ' .hcdStreakerImage').each(function() {
+        window.streakers.push(this);
+        window.streakersClasses.push([$(this).data('first-streaker'),$(this).data('second-streaker')]);
+      });
+    }
+    window.requestAnimationFrame(streakerSwap);
+
+    // Activate streaker randomized movement animations
+    streakerRandomAnim('streaker-left-to-right', 'streaker_sp');
+    streakerRandomAnim('streaker-right-to-left', 'streaker_spr');
+
+    cycleThroughImageBackgrounds($('.hcd-reset-points'), ["hcd-reset-points-1", "hcd-reset-points-2", "hcd-reset-points-3", "hcd-reset-points-4", "hcd-reset-points-5", "hcd-reset-points-6", "hcd-reset-points-2", "hcd-reset-points-3", "hcd-reset-points-4", "hcd-reset-points-5", "hcd-reset-points-6", "hcd-reset-points-1"], 80, 2000);
+    cycleThroughImageBackgrounds($('.hcd-attrition-codelines'), ["hcd-attrition-codelines-1", "hcd-attrition-codelines-2", "hcd-attrition-codelines-3"], 200);
+    //cycleThroughSpinner($('.hcd-pravo-icons-container'), ["hcd-pravo-1", "hcd-pravo-2", "hcd-pravo-3", "hcd-pravo-4"], 5000, 100);
+    cycleThroughSpinnerColor($('.hcd-pravo-icons-container'), "hcd-pravo-icon-selected", 2000);
+
+    $spinContainer = $('.spinContainer').first();
+    $spinBootupShuffle = $('.spinBootupShuffle');
+
+    // Activate RIGHT quoteshuffle (reads through newly generated data)
+    quoteShuffleSecond($spinBootupShuffle.first().next(), $spinContainer, generatedCodelines);
+
+    // CODELINEPARA ANIMATIONS (animated codelines at the top of each home page 'dialog')
+    // Activate randomized code generation
+    $('.hcdCodelinePara').each(function() {
+      hcdCodelinePara(this);
+    });
+
+    // QUOTESHUFFLE ANIMATIONS (streaming lines of code inside banner at top of home page)
+    
+    // Activate LEFT quoteshuffle (reads through pre-existing variable)
+    quoteShuffle($spinBootupShuffle.first(), $spinContainer, window.codelines);
+    // Generate set of random 'machine learning' data for RIGHT quoteshuffle
+    var generatedCodelines = [];
+    for (var i = 0; i < 100; i++) {
+      var randomNumberOfLines = Math.floor(Math.random() * 6);
+      var randomLogLine = "";
+      for (var y = 0; y < randomNumberOfLines; y++) {
+        randomLogLine = randomLogLine.concat(Math.random().toString(36).substring(3) + ";0 ");
+      }
+      if (randomLogLine !== "") {
+        generatedCodelines.push(randomLogLine);
       } else {
-        window.streakers[i].classList.remove(window.streakersClasses[i][1]);
-        window.streakers[i].classList.add(window.streakersClasses[i][0]);
+        generatedCodelines.push("&nbsp;");
       }
     }
-    setTimeout(function() {
-      window.requestAnimationFrame(streakerSwap);
-    }, 500);
-  }
 
-  for (var i = 0; i < 7; i++) {
-    $('.streaker_sp' + i + ' .hcdStreakerImage').each(function() {
-      window.streakers.push(this);
-      window.streakersClasses.push([$(this).data('first-streaker'),$(this).data('second-streaker')]);
-    });
-  }
-  window.requestAnimationFrame(streakerSwap);
+  } // End desktop code
 
-  // Activate streaker randomized movement animations
-  streakerRandomAnim('streaker-left-to-right', 'streaker_sp');
-  streakerRandomAnim('streaker-right-to-left', 'streaker_spr');
+  
 
-  // CODELINEPARA ANIMATIONS (animated codelines at the top of each home page 'dialog')
-  // Activate randomized code generation
-  $('.hcdCodelinePara').each(function() {
-    hcdCodelinePara(this);
-  });
+  
+  
 
-  // QUOTESHUFFLE ANIMATIONS (streaming lines of code inside banner at top of home page)
-  $spinContainer = $('.spinContainer').first();
-  $spinBootupShuffle = $('.spinBootupShuffle');
-  // Activate LEFT quoteshuffle (reads through pre-existing variable)
-  quoteShuffle($spinBootupShuffle.first(), $spinContainer, window.codelines);
-  // Generate set of random 'machine learning' data for RIGHT quoteshuffle
-  var generatedCodelines = [];
-  for (var i = 0; i < 100; i++) {
-    var randomNumberOfLines = Math.floor(Math.random() * 6);
-    var randomLogLine = "";
-    for (var y = 0; y < randomNumberOfLines; y++) {
-      randomLogLine = randomLogLine.concat(Math.random().toString(36).substring(3) + ";0 ");
-    }
-    if (randomLogLine !== "") {
-      generatedCodelines.push(randomLogLine);
-    } else {
-      generatedCodelines.push("&nbsp;");
-    }
-  }
-  // Activate RIGHT quoteshuffle (reads through newly generated data)
-  quoteShuffleSecond($spinBootupShuffle.first().next(), $spinContainer, generatedCodelines);
-
-  cycleThroughImageBackgrounds($('.hcd-reset-points'), ["hcd-reset-points-1", "hcd-reset-points-2", "hcd-reset-points-3", "hcd-reset-points-4", "hcd-reset-points-5", "hcd-reset-points-6", "hcd-reset-points-2", "hcd-reset-points-3", "hcd-reset-points-4", "hcd-reset-points-5", "hcd-reset-points-6", "hcd-reset-points-1"], 80, 2000);
-  cycleThroughImageBackgrounds($('.hcd-attrition-codelines'), ["hcd-attrition-codelines-1", "hcd-attrition-codelines-2", "hcd-attrition-codelines-3"], 200);
-  //cycleThroughSpinner($('.hcd-pravo-icons-container'), ["hcd-pravo-1", "hcd-pravo-2", "hcd-pravo-3", "hcd-pravo-4"], 5000, 100);
-  cycleThroughSpinnerColor($('.hcd-pravo-icons-container'), "hcd-pravo-icon-selected", 2000);
-
-  // Initiate scroll listeners to trigger animations at certain scroll points
-  /*
-  $(window).scroll(function() {
-    var $scrollCheck = $('.scrollCheck');
-    $scrollCheck.each( function() {
-      if ( checkInView(document.getElementById('body'), this, 1000) ){
-
-        if ($(this).hasClass('homeContentFade')) {
-          this.style.opacity = '1';
-        }
-        else if ($(this).hasClass('fadeInCodeParas')) {
-          recursiveCodeIn($(this).children('p').first());
-        }
-
-      }
-    });
-  });
-  $(window).scroll();
-  */
+  
 
   // Handles click of little close button on the top right of home page 'dialogs'.
   $('.hcdIcon_interactive').click(function() {
@@ -246,11 +243,11 @@ function quoteShuffle(spinBootupShuffle, spinContainer, codelines, numberOfLines
     numberOfLines++;
   }
 
-  if (lineNumber >= codelines.length){
+  if (lineNumber >= window.codelines.length){
     lineNumber = 0;
   }
 
-  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + codelines[lineNumber++] + '</div>');
+  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + window.codelines[lineNumber++] + '</div>');
 
   setTimeout(function() { 
     quoteShuffle($(spinBootupShuffle), $(spinContainer), codelines, numberOfLines, lineNumber); 
@@ -265,11 +262,11 @@ function quoteShuffleSecond(spinBootupShuffle, spinContainer, codelines, numberO
     numberOfLines++;
   }
 
-  if (lineNumber >= codelines.length){
+  if (lineNumber >= window.codelines.length){
     lineNumber = 0;
   }
 
-  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + codelines[lineNumber++] + '</div>');
+  $(spinBootupShuffle).append('<div style="pointer-events: none; overflow-anchor: none; user-select:none;">' + window.codelines[lineNumber++] + '</div>');
 
   setTimeout(function() { 
     quoteShuffleSecond($(spinBootupShuffle), $(spinContainer), codelines, numberOfLines, lineNumber); 

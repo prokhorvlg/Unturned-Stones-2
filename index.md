@@ -1,11 +1,6 @@
 ---
-title: "Unturned Stones"
-excerpt: ""
-permalink: /
-layout: blank_page
-
-title: "Unturned Stones"
-excerpt: "A world defined by the technology of today's future."
+title: "Morning Artifice"
+excerpt: "The wonderful world of cyberspace."
 author: "prokhorVLG"
 
 permalink: /

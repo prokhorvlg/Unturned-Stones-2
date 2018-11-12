@@ -19,7 +19,7 @@ window.svgRef = {
   'exoticMatterIMG': "\\assets\\images\\codex\\technology\\exoticMatterIMG.png",
   'covert-firearms': "\\assets\\images\\codex\\technology\\covert-firearms.png",
   'bogatyrIMG': "\\assets\\images\\bogatyrIMG.png",
-  'computersIMG': "\\assets\\images\\codex\\technology\\compsci\\computers-uts.png",
+  'computersIMG': "\\assets\\images\\codex\\computers.png",
   'standard-firearms': "\\assets\\images\\codex\\technology\\standard-firearms.png",
   'powered-firearms': "\\assets\\images\\codex\\technology\\powered-firearms.png",
   'personal-transport': "\\assets\\images\\codex\\technology\\personal-transport.png",

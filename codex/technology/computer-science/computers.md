@@ -8,7 +8,7 @@ permalink: /codex/technology/computer-science/computers/
 layout: blank_page
 
 page_highlight: "#c165d8"
-image: "/assets/images/codex/technology/compsci/computers-uts.png"
+image: "/assets/images/codex/computers.png"
 
 page_features: [
                 {
@@ -31,20 +31,45 @@ page_features: [
 
 <p class='text-left'>While each nation’s computers operate in their own, very unique ways, that isn’t the biggest factor in the modern political landscape. It’s simply the fact that they are different. Different enough to have hampered trade and communication when these societies first came in contact. Different enough that these societies, despite being fully human, were effectively alien to each other as their digital devices could not communicate.</p>
 
-<p class='text-left'>Of course, that has all changed over time. With the right set of skills and resources, any device could communicate with any other; but that all came far too late to change the world. With the four <a href='#' class='infoTag common' data-info='pravo-powers' data-toggle='modal' data-target='#modalInfoTag'>pravo powers</a> pitted against each other in the world-spanning <a href='#' class='infoTag common' data-info='attrition' data-toggle='modal' data-target='#modalInfoTag'>Attrition</a>, none of them would willingly adapt in a way that would allow the others to take advantage of them. The people of Unturned Stones are doomed to live in a world where international relationships can hardly take root, as each society grows further and further apart from the others despite being physically closer than ever with the advent of <a href='#' class='infoTag common' data-info='slip-ftl' data-toggle='modal' data-target='#modalInfoTag'>faster than light travel</a>.</p>",
+<p class='text-left'>Of course, that has all changed over time. With the right set of skills and resources, any device could communicate with any other; but that all came far too late to change the world. With the four <a href='#' class='infoTag common' data-info='pravo' data-toggle='modal' data-target='#modalInfoTag'>pravo powers</a> pitted against each other in the world-spanning <a href='#' class='infoTag common' data-info='attrition' data-toggle='modal' data-target='#modalInfoTag'>Attrition</a>, none of them would willingly adapt in a way that would allow the others to take advantage of them. The people of Unturned Stones are doomed to live in a world where international relationships can hardly take root, as each society grows further and further apart from the others despite being physically closer than ever with the advent of <a href='#' class='infoTag common' data-info='slipstream' data-toggle='modal' data-target='#modalInfoTag'>faster than light travel</a>.</p>",
 
-                    image: "/assets/images/codex/technology/compsci/computers-uts.png",
+                    image: "/assets/images/codex/computers.png",
                     imageBlurb: "Computers. Importantish.",
                     lower_clear: 'codexLowerClear', 
                   }
                 },
                 {
-                  type: 'headingBar', init: {
+                  type: 'infoBlock', init: {
+                    id: 'introductionCuratorBlock',
+                    class: 'paddingBottomResponsive80',
+                    dualFloatBlock: true,
+                    dualFloatBlockLeft: true,
+                    curatorBlock: true,
+                    width: '8',
+                    data: "<img height='100' src='/assets/images/cast/curator-beautiful.png'/>
+                      <div>
+                        <h5>CURATOR</h5>
+                        <p>Going forward, note that the technology for 'mobile personal digital assistants' was never quite perfected in this world as opposed to yours. Unturned Stones jumped straight from personal computers to what might be referred to as 'smarthome' technology.</p>
+                      </div>",
+                  } 
+                },
+                {
+                  type: 'stripesBar', init: {
                     id: 'confederacy',
+                    class: '',
+                    color: '#31e05a',
+                  }
+                },
+                {
+                  type: 'headingBar', init: {
+                    id: 'confederacyTitle',
                     overtitle: '',
                     title: 'Confederate Terminals',
                     desc: 'Thin client terminals, powered by the fastest internet ever created by man',
+                    class: 'paddingTopResponsive80 paddingBottomResponsive80',
                     desc_color: '#31e05a',
+                    center: true,
+                    noHR: true,
                   }
                 },
                 {
@@ -53,16 +78,23 @@ page_features: [
                     cols: 2,
                     items: [
                       {
-                        thumb: '/assets/images/codex/technology/compsci/computerCard_PROPOLD.png',
-                        full: '/assets/images/codex/technology/compsci/computerCard_PROPOLD.png',
-                        title: '',
-                        desc: "QUTNUMA's Salamis series might not have been very innovative when it came out 16 years ago relative to existing Confederate technology, but the stability and ubiquity the design brought to the table made it rather popular. <br><br>Unfortunately, the new claytronic technology used in the screen caused it to 'sweat' under extended load. This created an interesting cultural phenomenon in which digital content producers based all experiences around the 72-minute screen threshold.",
+                        thumb: '/assets/images/codex/technology/compsci/salamis_torqueplus_thumb.png',
+                        full: '/assets/images/codex/technology/compsci/salamis_torqueplus.png',
+                        title: 'QUTNUMA Salamis Torqueplus',
+                        title-alignment: "left-center",
+                        desc: "<span class='description-italics'>Digital Life 4; Golemguard</span><br><br>QUTNUMA's Salamis series might not have been very innovative when it came out 16 years ago relative to existing Confederate technology, but the stability and ubiquity the design brought to the table made it rather popular.
+                        <br>
+                        <br>
+                        Unfortunately, the new claytronic technology used in the screen caused it to 'sweat' under extended load. This created an interesting cultural phenomenon in which digital content producers based all experiences around the 72-minute screen threshold.",
+                        desc-style: 'margin-top: -15px;',
                       },
                       {
-                        thumb: '/assets/images/codex/technology/compsci/computerCard_PROP113.png',
-                        full: '/assets/images/codex/technology/compsci/computerCard_PROP113.png',
-                        title: '',
-                        desc: "Simply put, QUTNUMA is a member of the old guard and they don't really innovate anymore. The only changes their desktop terminals have seen in the past decade is an increase in all of the version numbers, as minor aspects of the platform have gradually improved across the board. Most of the changes with the Onepoint 2 come in the form of design streamlining and software upgrades, as the Serpentguard virtual machines are several times faster than their older counterparts.",
+                        thumb: '/assets/images/codex/technology/compsci/salamis_onepoint_thumb.png',
+                        full: '/assets/images/codex/technology/compsci/salamis_onepoint.png',
+                        title: 'QUTNUMA Onepoint 2',
+                        title-alignment: "left-center",
+                        desc: "<span class='description-italics'>Digital Life 12; Serpentguard</span><br><br>Simply put, QUTNUMA is a member of the old guard and they don't really innovate anymore. The only changes their desktop terminals have seen in the past decade is an increase in all of the version numbers, as minor aspects of the platform have gradually improved across the board. Most of the changes with the Onepoint 2 come in the form of design streamlining and software upgrades, as the Serpentguard virtual machines are several times faster than their older counterparts.",
+                        desc-style: 'margin-top: -15px;',
                       },
                     ],
                   } 
@@ -102,30 +134,45 @@ page_features: [
                   }
                 },
                 {
-                  type: 'headingBar', init: {
+                  type: 'stripesBar', init: {
                     id: 'federation',
+                    class: '',
+                    color: '#e63a2d',
+                  }
+                },
+                {
+                  type: 'headingBar', init: {
+                    id: 'federationTitle',
                     overtitle: '',
                     title: 'Federation Portables',
                     desc: 'Thick client portable computers. Playful and powerful.',
+                    class: 'paddingTopResponsive80 paddingBottomResponsive80',
                     desc_color: '#e63a2d',
+                    center: true,
+                    noHR: true,
                   }
                 },
                 {
                   type: 'imageBlock', init: {
                     id: 'federationImages',
+                    class: '',
                     cols: 2,
                     items: [
                       {
-                        thumb: '/assets/images/codex/technology/compsci/computerCard_IBM_old.png',
-                        full: '/assets/images/codex/technology/compsci/computerCard_IBM_old.png',
-                        title: '',
-                        desc: "The Gearkid *was* innovative when it came onto market 23 years ago. It's one of those classic devices everyone remembers for being amazing because of how much better it was than everything else was at the time, even though it was actually plagued with issues. Despite this, the Gearkid remains in widespread use by hardcore Gearkid loyalists.<br><br>A successor to the Gearkid Company's Gearkid was never created for whatever reason (the creators don't know how to replicate their success without tarnishing their reputation), but people still hope for the next one.",
+                        thumb: '/assets/images/codex/technology/compsci/gearkid_thumb.png',
+                        full: '/assets/images/codex/technology/compsci/gearkid.png',
+                        title: 'Gearkid',
+                        title-alignment: "left-center",
+                        desc: "<span class='description-italics'>Touch OS 2.1</span><br><br>The Gearkid *was* innovative when it came onto market 23 years ago. It's one of those classic devices everyone remembers for being amazing because of how much better it was than everything else was at the time, even though it was actually plagued with issues. Despite this, the Gearkid remains in widespread use by hardcore Gearkid loyalists.<br><br>A successor to the Gearkid Company's Gearkid was never created for whatever reason (the creators don't know how to replicate their success without tarnishing their reputation), but people still hope for the next one.",
+                        desc-style: 'margin-top: -15px;',
                       },
                       {
-                        thumb: '/assets/images/codex/technology/compsci/computerCard_IBM.png',
-                        full: '/assets/images/codex/technology/compsci/computerCard_IBM.png',
-                        title: '',
-                        desc: "After years of losing buckets of market share to competitors that capitolized on the mobile computing shift that began with Gearkid, long-time electronics kingpin Berkeley finally re-established confidence with consumers after completely reevaluating their strategies, marketing, and product lines 2 years ago.<br><br>The Berkeley Touch explores the full potential of their Touch OS software as a claytronic tablet that unfolds perfectly into a device over three times its initial size.",
+                        thumb: '/assets/images/codex/technology/compsci/berkeley_touch_thumb.png',
+                        full: '/assets/images/codex/technology/compsci/berkeley_touch.png',
+                        title: 'Berkeley Touch',
+                        title-alignment: "left-center",
+                        desc: "<span class='description-italics'>Touch OS Ultimate</span><br><br>After years of losing buckets of market share to competitors that capitolized on the mobile computing shift that began with Gearkid, long-time electronics kingpin Berkeley finally re-established confidence with consumers after completely reevaluating their strategies, marketing, and product lines 2 years ago.<br><br>The Berkeley Touch explores the full potential of their Touch OS software as a claytronic tablet that unfolds perfectly into a device over three times its initial size.",
+                        desc-style: 'margin-top: -15px;',
                       },
                     ],
                   } 
@@ -165,12 +212,22 @@ page_features: [
                   }
                 },
                 {
-                  type: 'headingBar', init: {
+                  type: 'stripesBar', init: {
                     id: 'empire',
+                    class: '',
+                    color: '#dfba24',
+                  }
+                },
+                {
+                  type: 'headingBar', init: {
+                    id: 'empireTitle',
                     overtitle: '',
                     title: 'Imperial Powerhouses',
                     desc: 'The big boys have come out to play: ternary modular powerhouses.',
+                    class: 'paddingTopResponsive80 paddingBottomResponsive80',
                     desc_color: '#dfba24',
+                    center: true,
+                    noHR: true,
                   }
                 },
                 {
@@ -179,16 +236,20 @@ page_features: [
                     cols: 2,
                     items: [
                       {
-                        thumb: '/assets/images/codex/technology/compsci/computerCard_sOGAS_old.png',
-                        full: '/assets/images/codex/technology/compsci/computerCard_sOGAS_old.png',
-                        title: '',
-                        desc: "While the big ol' ZNA PK isn't really around anymore outside of a few underdeveloped regions, this beast introduced just 18 years ago is something most adults remember very well. While it may look ugly and old compared to its counterparts from other nations, it established certain fundamantal concepts in Imperial computer doctrine that weren't possible before: military-level ruggedness for civilian computers, the idea that each and any computer should be portable in one way or another, and most importantly, limited modularity.",
+                        thumb: '/assets/images/codex/technology/compsci/zna_pk_thumb.png',
+                        full: '/assets/images/codex/technology/compsci/zna_pk.png',
+                        title: 'ZNA PK',
+                        title-alignment: "left-center",
+                        desc: "<span class='description-italics'>Mun Solaris 56</span><br><br>While the big ol' ZNA PK isn't really around anymore outside of a few underdeveloped regions, this beast introduced just 18 years ago is something most adults remember very well. While it may look ugly and old compared to its counterparts from other nations, it established certain fundamantal concepts in Imperial computer doctrine that weren't possible before: military-level ruggedness for civilian computers, the idea that each and any computer should be portable in one way or another, and most importantly, limited modularity.",
+                        desc-style: 'margin-top: -15px;',
                       },
                       {
-                        thumb: '/assets/images/codex/technology/compsci/computerCard_sOGAS.png',
-                        full: '/assets/images/codex/technology/compsci/computerCard_sOGAS.png',
-                        title: '',
-                        desc: "Today's ZNA Vezdehod is the best the Empire can come up with... for now. Borrowing design ideas from other nations, this enormous briefcase laptop designed 3 years ago is relatively compact compared to its older counterparts, has the capacity to run complex neural networks and artificial intelligences on a client level, and includes a built-in light pen for some of the first GUI interactions the Empire has ever seen.<br><br>Imperial citizens can finally begin to enjoy the wonders of modern gaming with interactive media such as Antiassault 1.6, a multiplayer shooter featuring cutting-edge 3d vector graphics and keyboard controls.",
+                        thumb: '/assets/images/codex/technology/compsci/zna_vezdehod_thumb.png',
+                        full: '/assets/images/codex/technology/compsci/zna_vezdehod.png',
+                        title: 'ZNA Vezdehod',
+                        title-alignment: "left-center",
+                        desc: "<span class='description-italics'>Eternity Solaris GUI</span><br><br>Today's ZNA Vezdehod is the best the Empire can come up with... for now. Borrowing design ideas from other nations, this enormous briefcase laptop designed 3 years ago is relatively compact compared to its older counterparts, has the capacity to run complex neural networks and artificial intelligences on a client level, and includes a built-in light pen for some of the first GUI interactions the Empire has ever seen.<br><br>Imperial citizens can finally begin to enjoy the wonders of modern gaming with interactive media such as Antiassault 1.6, a multiplayer shooter featuring cutting-edge 3d vector graphics and keyboard controls.",
+                        desc-style: 'margin-top: -15px;',
                       },
                     ],
                   } 
@@ -228,12 +289,22 @@ page_features: [
                   }
                 },
                 {
-                  type: 'headingBar', init: {
+                  type: 'stripesBar', init: {
                     id: 'directorate',
+                    class: '',
+                    color: '#48d0e4',
+                  }
+                },
+                {
+                  type: 'headingBar', init: {
+                    id: 'directorateTitle',
                     overtitle: '',
                     title: 'Directorate Machines',
-                    desc: 'Proprietary quantum machines, the most powerful in their class',
+                    desc: 'Proprietary quantum machines, the most powerful in their class.',
+                    class: 'paddingTopResponsive80 paddingBottomResponsive80',
                     desc_color: '#48d0e4',
+                    center: true,
+                    noHR: true,
                   }
                 },
                 {
@@ -242,16 +313,20 @@ page_features: [
                     cols: 2,
                     items: [
                       {
-                        thumb: '/assets/images/codex/technology/compsci/computerCardAnalytical2.png',
-                        full: '/assets/images/codex/technology/compsci/computerCardAnalytical2.png',
-                        title: '',
-                        desc: "The Deskmate/Pengtai Pro 28 running Deskmate 2.0 appeared in offices 18 years ago. While they are relatively old now, Deskmate software has been kept up to date and it holds up well especially when compared to older systems offered in other nations.",
+                        thumb: '/assets/images/codex/technology/compsci/pengtai_pro_thumb.png',
+                        full: '/assets/images/codex/technology/compsci/pengtai_pro.png',
+                        title: 'Deskmate/Pengtai Pro 28',
+                        title-alignment: "left-center",
+                        desc: "<span class='description-italics'>Deskmate 2.0</span><br><br>The Deskmate/Pengtai Pro 28 running Deskmate 2.0 appeared in offices 18 years ago. While they are relatively old now, Deskmate software has been kept up to date and it holds up well especially when compared to older systems offered in other nations.",
+                        desc-style: 'margin-top: -15px;',
                       },
                       {
-                        thumb: '/assets/images/codex/technology/compsci/computerCardAnalytical.png',
-                        full: '/assets/images/codex/technology/compsci/computerCardAnalytical.png',
-                        title: '',
-                        desc: "Introduced just 2 years ago by the <a href='#' class='infoTag common' data-info='vision-muguang' data-toggle='modal' data-target='#modalInfoTag'>Vision/Muguang</a> Zaibatsu, the Envy 28 may be the most powerful personal computer in history. Unfortunately, as it is illegal to modify outside of a few strict guidelines, its full potential will likely never be explored.",
+                        thumb: '/assets/images/codex/technology/compsci/muguang_envy_thumb.png',
+                        full: '/assets/images/codex/technology/compsci/muguang_envy.png',
+                        title: 'Vision/Muguang Envy 28',
+                        title-alignment: "left-center",
+                        desc: "<span class='description-italics'>OS 9 Daydream</span><br><br>Introduced just 2 years ago by the <a href='#' class='infoTag common' data-info='vision-muguang' data-toggle='modal' data-target='#modalInfoTag'>Vision/Muguang</a> Zaibatsu, the Envy 28 may be the most powerful personal computer in history. Unfortunately, as it is illegal to modify outside of a few strict guidelines, its full potential will likely never be explored.",
+                        desc-style: 'margin-top: -15px;',
                       },
                     ],
                   } 

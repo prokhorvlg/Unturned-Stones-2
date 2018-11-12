@@ -33,7 +33,16 @@ page_features: [
                     image: "/assets/images/codex/prosthetic-soul.png",
                     imageBlurb: "being old really sucks",
                     lower_clear: 'codexLowerClear', 
+                    lower_nothing: 'codexLowerNothing', 
                   }
+                },
+                {
+                  type: 'scrollerBlock', init: {
+                    id: 'prostheticScroller',
+                    scroller_one: 'scroller-pros-1',
+                    scroller_two: 'scroller-pros-2',
+                    content: "<h2 class='font-code-l center scrollerBlockHomeHeader'>It was a typical mistake for mankind to assume that all life would resemble <span class='color-pros'>itself</span>.</h2>",
+                  } 
                 },
                 {
                   type: 'paddingBar', init: {

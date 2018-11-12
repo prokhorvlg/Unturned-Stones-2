@@ -162,6 +162,7 @@ window.headings = {
       "geography",
       "technology",
       "society",
+      "history",
     ]
   },
   "geography": {
@@ -229,11 +230,11 @@ window.headings = {
     ]
   },
   "technology-page": {
-    "title": "Technology",
-    "description": "Description.", 
+    "title": "< Technology: Introduction >",
+    "description": "", 
     "actions": "direct",
     "icon": ">",
-    "link": "/technology",
+    "link": "/codex/technology/",
     "subheadings": []
   },
   "rocketry": {
@@ -374,7 +375,7 @@ window.headings = {
     "details": "A list of stuff",
     "actions": "expand",
     "icon": "═",
-    "link": "/technology/computer-science/list-of-stuff",
+    "link": "/codex/technology/computer-science/list-of-stuff/",
     "subheadings": [
       "",
     ],
@@ -384,7 +385,7 @@ window.headings = {
     "description": "Different, yet familiar", 
     "actions": "direct",
     "icon": ">",
-    "link": "/codex/technology/computer-science/computers",
+    "link": "/codex/technology/computer-science/computers/",
     "subheadings": []
   },
   "everyware": {
@@ -392,7 +393,7 @@ window.headings = {
     "description": "True technological ubiquity", 
     "actions": "direct",
     "icon": ">",
-    "link": "/codex/technology/computer-science/everyware",
+    "link": "/codex/technology/computer-science/everyware/",
     "subheadings": []
   },
   "gadgets": {
@@ -400,7 +401,7 @@ window.headings = {
     "description": "Tools of the trade", 
     "actions": "direct",
     "icon": ">",
-    "link": "/codex/technology/computer-science/gadgets",
+    "link": "/codex/technology/computer-science/gadgets/",
     "subheadings": []
   },
   "malware": {
@@ -408,7 +409,7 @@ window.headings = {
     "description": "Getting things done", 
     "actions": "direct",
     "icon": ">",
-    "link": "/codex/technology/computer-science/malware",
+    "link": "/codex/technology/computer-science/malware/",
     "subheadings": []
   },
   "kaizen": {
@@ -550,7 +551,7 @@ window.headings = {
       "black-hole-mining",
       "defense",
       "railgun-express",
-      "slip",
+      "slipstream",
       "transportation",
     ],
   },
@@ -597,12 +598,12 @@ window.headings = {
     "link": "/codex/technology/infrastructure/railgun-express",
     "subheadings": []
   },
-  "slip": {
-    "title": "SLIP",
+  "slipstream": {
+    "title": "SLIPSTREAM",
     "description": "Superluminal travel", 
     "actions": "direct",
     "icon": ">",
-    "link": "/codex/technology/infrastructure/slip",
+    "link": "/codex/technology/infrastructure/slipstream",
     "subheadings": []
   },
   "transportation": {
@@ -1123,4 +1124,64 @@ window.headings = {
     "link": "/codex/society/individuals/good-emperor-king",
     "subheadings": []
   },
+
+
+  "history": {
+    "title": "History",
+    "details": "...",
+    "description": "", 
+    "actions": "expand",
+    "icon": "═",
+    "link": "",
+    "subheadings": [
+      "events",
+    ]
+  },
+  "events": {
+    "title": "Events",
+    "details": "...",
+    "description": "", 
+    "actions": "expand",
+    "icon": "═",
+    "link": "",
+    "subheadings": [
+      "cat-pre-reset",
+      "cat-reset",
+      "cat-post-reset",
+    ]
+  },
+  "cat-pre-reset": {
+    "title": "Pre-Reset Era",
+    "details": "...",
+    "description": "", 
+    "actions": "expand",
+    "icon": "═",
+    "link": "",
+    "subheadings": [
+      "",
+    ]
+  },
+  "cat-reset": {
+    "title": "Reset Era",
+    "details": "...",
+    "description": "", 
+    "actions": "expand",
+    "icon": "═",
+    "link": "",
+    "subheadings": [
+      "",
+    ]
+  },
+  "cat-post-reset": {
+    "title": "Post-Reset Era",
+    "details": "...",
+    "description": "", 
+    "actions": "expand",
+    "icon": "═",
+    "link": "",
+    "subheadings": [
+      "",
+    ]
+  },
+
 }
